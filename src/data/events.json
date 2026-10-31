@@ -3170,5 +3170,647 @@
         "accessedAt": "2026-10-30"
       }
     ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "second-industrial-revolution",
+    "title": "第2次産業革命",
+    "category": "economy",
+    "start": {
+      "year": 1870,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1914,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 51.5,
+      "lng": 7.2,
+      "placeName": "ドイツ・アメリカ合衆国など（代表点：ルール地方）",
+      "precision": "region"
+    },
+    "summary": "19世紀後半、電気・石油・化学・鉄鋼などの分野で技術革新が進み、ドイツやアメリカの工業力がイギリスに迫った。大企業による大量生産が広がる一方、原料と市場を求める列強の競争は、植民地獲得の争いを激しくした。",
+    "historicalNote": "時期の区切りははっきり定まっておらず、1860年代後半〜1870年代初めから第一次世界大戦前までを指すことが多い。地点は代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「第二次産業革命」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E7%94%A3%E6%A5%AD%E9%9D%A9%E5%91%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "russo-japanese-war",
+    "title": "日露戦争",
+    "category": "war",
+    "start": {
+      "year": 1904,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1905,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 41.8,
+      "lng": 123.43,
+      "placeName": "満洲南部（代表点：奉天＝現・瀋陽）",
+      "precision": "region"
+    },
+    "summary": "朝鮮半島と満洲の支配をめぐって、日本とロシアが戦った。アメリカの仲介で講和が結ばれ、日本は朝鮮での優越的な立場や南満洲の権益を得た。アジアの国が欧米の大国に勝ったことは、アジアの民族運動にも影響を与えた。",
+    "historicalNote": "講和条約はアメリカのポーツマスで結ばれた。日本は賠償金を得られず、国内では講和への不満が高まった。地点は主な戦場の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「日露戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E9%9C%B2%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "march-first",
+    "title": "三・一独立運動",
+    "category": "politics",
+    "start": {
+      "year": 1919,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 37.571,
+      "lng": 126.988,
+      "placeName": "京城（現・ソウル、タプコル公園付近）",
+      "precision": "city"
+    },
+    "summary": "日本の植民地支配のもとにあった朝鮮で、独立を宣言する文書が読み上げられ、「独立万歳」を叫ぶ人々の運動が各地に広がった。運動は武力で鎮圧されたが、日本はその後、統治の方針を一部改めた。",
+    "historicalNote": "韓国では3月1日が国の祝日とされている。呼び名は立場によって異なり、当時の日本では「騒擾事件」などと呼ばれた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「三・一運動」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E3%83%BB%E4%B8%80%E9%81%8B%E5%8B%95",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "league-of-nations",
+    "title": "国際連盟の発足",
+    "category": "politics",
+    "start": {
+      "year": 1920,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1946,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 46.2,
+      "lng": 6.15,
+      "placeName": "ジュネーヴ（本部の所在地）",
+      "precision": "city"
+    },
+    "summary": "第一次世界大戦の反省から、国々が協力して戦争を防ぐための国際機関として国際連盟がつくられた。しかし提唱国のアメリカが加わらず、大国の侵略を止める力も弱かったため、第二次世界大戦を防ぐことはできなかった。",
+    "historicalNote": "アメリカのウィルソン大統領が提唱したが、アメリカ議会が加盟を認めなかった。第二次世界大戦後の1946年に活動を終えた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「国際連盟」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%9A%9B%E9%80%A3%E7%9B%9F",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "nazi-seizure",
+    "title": "ナチ党の政権獲得",
+    "category": "politics",
+    "start": {
+      "year": 1933,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 52.5186,
+      "lng": 13.3762,
+      "placeName": "ベルリン（国会議事堂）",
+      "precision": "city"
+    },
+    "summary": "世界恐慌で失業者があふれたドイツで、ヒトラーの率いるナチ党が支持を広げ、ヒトラーが首相に任命された。ナチ党は短い期間のうちに他の政党や労働組合をつぶし、議会の手続きを使って独裁体制をつくり上げた。",
+    "historicalNote": "ヒトラー内閣の成立は1933年1月30日。権力の掌握が選挙と法の手続きを通じて進められたことは、民主政の弱点を考える材料とされる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ナチ党の権力掌握」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%81%E5%85%9A%E3%81%AE%E6%A8%A9%E5%8A%9B%E6%8E%8C%E6%8F%A1",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「国民社会主義ドイツ労働者党」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E6%B0%91%E7%A4%BE%E4%BC%9A%E4%B8%BB%E7%BE%A9%E3%83%89%E3%82%A4%E3%83%84%E5%8A%B4%E5%83%8D%E8%80%85%E5%85%9A",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "second-sino-japanese-war",
+    "title": "日中戦争",
+    "category": "war",
+    "start": {
+      "year": 1937,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1945,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.849,
+      "lng": 116.213,
+      "placeName": "盧溝橋（北京郊外）",
+      "precision": "exact"
+    },
+    "summary": "北京郊外の盧溝橋での衝突をきっかけに、日本と中国の全面的な戦争が始まった。戦争は長期化して中国の多くの人々が犠牲となり、日本はその後、アメリカやイギリスとの戦争にも突き進んでいった。",
+    "historicalNote": "当時の日本では「支那事変」などと呼ばれた。1931年の満洲事変から続く一連の戦争とみる見方もある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「日中戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E4%B8%AD%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "holocaust",
+    "title": "ホロコースト",
+    "category": "war",
+    "start": {
+      "year": 1941,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1945,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 50.027,
+      "lng": 19.204,
+      "placeName": "アウシュヴィッツ＝ビルケナウ強制収容所（現ポーランド）",
+      "precision": "exact"
+    },
+    "summary": "ナチス・ドイツは、ユダヤ人を中心に、ロマの人々や障害のある人々などを組織的に迫害し、殺害した。ヨーロッパのユダヤ人の約3分の2にあたる約600万人が命を奪われ、人間の尊厳を否定する差別の行き着く先として記憶されている。",
+    "historicalNote": "ユダヤ人への迫害は1933年の政権獲得直後から始まり、組織的な大量殺害は1941年頃から本格化した。地点は最大の絶滅収容所の一つ。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ホロコースト」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9B%E3%83%AD%E3%82%B3%E3%83%BC%E3%82%B9%E3%83%88",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "atomic-bombings",
+    "title": "広島・長崎への原子爆弾投下",
+    "category": "war",
+    "start": {
+      "year": 1945,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.3955,
+      "lng": 132.4536,
+      "placeName": "広島（爆心地付近）",
+      "precision": "exact"
+    },
+    "summary": "アメリカは1945年8月、広島と長崎に原子爆弾を投下した。多くの市民が一瞬で、あるいはその後の放射線の影響で命を落とし、生き残った人々も長く苦しんだ。核兵器が実戦で使われた、ただ二つの例である。",
+    "historicalNote": "広島は8月6日、長崎は8月9日。死者の数は推計によって幅がある。地点は広島に置いた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「日本への原子爆弾投下」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%B8%E3%81%AE%E5%8E%9F%E5%AD%90%E7%88%86%E5%BC%BE%E6%8A%95%E4%B8%8B",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「広島市への原子爆弾投下」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B8%82%E3%81%B8%E3%81%AE%E5%8E%9F%E5%AD%90%E7%88%86%E5%BC%BE%E6%8A%95%E4%B8%8B",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "united-nations",
+    "title": "国際連合の発足",
+    "category": "politics",
+    "start": {
+      "year": 1945,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 37.7793,
+      "lng": -122.4193,
+      "placeName": "サンフランシスコ（国際連合憲章の調印地）",
+      "precision": "city"
+    },
+    "summary": "第二次世界大戦の末期、戦争を防げなかった国際連盟の反省をふまえて、新しい国際機関の憲章がまとめられ、国際連合が発足した。大国に強い権限を与える安全保障理事会を置き、平和の維持と国際協力をめざした。",
+    "historicalNote": "発足は1945年10月24日、原加盟国は51か国。憲章の調印は同年6月のサンフランシスコ会議で行われた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「国際連合」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "india-partition",
+    "title": "インド・パキスタンの分離独立",
+    "category": "politics",
+    "start": {
+      "year": 1947,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 31.6,
+      "lng": 74.57,
+      "placeName": "インドとパキスタンの境界（代表点：ラホール〜アムリトサル間）",
+      "precision": "region"
+    },
+    "summary": "イギリスの植民地支配が終わり、インドとパキスタンが別々の国として独立した。宗教の違いを境に国が分けられたため、大規模な住民の移動と衝突が起こり、多くの人々が故郷を失い、命を落とした。",
+    "historicalNote": "独立は1947年8月14日（パキスタン）と15日（インド）。難民は1500万人以上、死者は100万人以上と推計されている。地点は境界の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「インド・パキスタン分離独立」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%89%E3%83%BB%E3%83%91%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%E5%88%86%E9%9B%A2%E7%8B%AC%E7%AB%8B",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "prc-founding",
+    "title": "中華人民共和国の成立",
+    "category": "politics",
+    "start": {
+      "year": 1949,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.9055,
+      "lng": 116.3976,
+      "placeName": "北京（天安門）",
+      "precision": "city"
+    },
+    "summary": "国民党との内戦に勝利した中国共産党が、北京で中華人民共和国の成立を宣言した。敗れた国民党の政府は台湾に移り、中国大陸と台湾が別々に統治される状態がその後も続いている。",
+    "historicalNote": "建国の宣言は1949年10月1日、天安門で行われた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「中華人民共和国」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "korean-war",
+    "title": "朝鮮戦争",
+    "category": "war",
+    "start": {
+      "year": 1950,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1953,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 37.956,
+      "lng": 126.677,
+      "placeName": "板門店（休戦協定の調印地）",
+      "precision": "exact"
+    },
+    "summary": "南北に分かれて独立した朝鮮半島で、北朝鮮が南へ侵攻して戦争が始まった。アメリカ中心の国連軍と中国の義勇軍も加わって半島全体が戦場となり、休戦後も南北の分断が続いている。",
+    "historicalNote": "1953年に休戦協定が結ばれたが、平和条約は結ばれておらず、法的には戦争が終わっていない状態が続く。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「朝鮮戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%9D%E9%AE%AE%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "bandung",
+    "title": "アジア・アフリカ会議（バンドン会議）",
+    "category": "politics",
+    "start": {
+      "year": 1955,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": -6.921,
+      "lng": 107.607,
+      "placeName": "バンドン（インドネシア）",
+      "precision": "city"
+    },
+    "summary": "第二次世界大戦後に独立したアジアとアフリカの国々の代表がインドネシアのバンドンに集まり、植民地主義への反対や平和共存を訴えた。米ソどちらの陣営にも属さない「第三世界」が国際政治に姿を現した出来事とされる。",
+    "historicalNote": "インドのネルー、インドネシアのスカルノ、中国の周恩来、エジプトのナセルらが参加した。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アジア・アフリカ会議」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B8%E3%82%A2%E3%83%BB%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%E4%BC%9A%E8%AD%B0",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "year-of-africa",
+    "title": "アフリカの年",
+    "category": "politics",
+    "start": {
+      "year": 1960,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 14.69,
+      "lng": -17.44,
+      "placeName": "アフリカ大陸（代表点：ダカール）",
+      "precision": "region"
+    },
+    "summary": "1960年、旧フランス植民地を中心にアフリカの17か国が独立し、この年は「アフリカの年」と呼ばれた。ただし植民地時代に引かれた国境や経済の仕組みはそのまま残り、独立後の国づくりには多くの課題があった。",
+    "historicalNote": "地点は、この年に独立したセネガルの首都ダカールを代表点とした。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アフリカの年」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%E3%81%AE%E5%B9%B4",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "cuban-missile-crisis",
+    "title": "キューバ危機",
+    "category": "war",
+    "start": {
+      "year": 1962,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 23.11,
+      "lng": -82.37,
+      "placeName": "キューバ（ハバナ）",
+      "precision": "region"
+    },
+    "summary": "ソ連がキューバに核ミサイル基地を築いていることが明らかになり、アメリカは海上を封鎖して撤去を求めた。米ソの対立は核戦争の一歩手前まで達したが、交渉によってミサイルは撤去された。",
+    "historicalNote": "危機は1962年10月〜11月。この経験から、米ソの首脳を結ぶ直通の通信回線が設けられた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「キューバ危機」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%90%E5%8D%B1%E6%A9%9F",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "vietnam-war",
+    "title": "ベトナム戦争",
+    "category": "war",
+    "start": {
+      "year": 1955,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1975,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 10.776,
+      "lng": 106.7,
+      "placeName": "ベトナム（代表点：サイゴン＝現ホーチミン市）",
+      "precision": "region"
+    },
+    "summary": "南北に分かれたベトナムで、北ベトナムと南ベトナム解放民族戦線が、アメリカの支援する南ベトナムと戦った。アメリカは大規模な軍事介入を行ったが撤退し、最終的にベトナムは北の主導で統一された。",
+    "historicalNote": "開始の年は1955年・1960年・1964年（アメリカの本格介入）など見方が分かれる。アメリカ軍の撤退は1973年、サイゴンの陥落は1975年。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ベトナム戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "soviet-dissolution",
+    "title": "ソ連の解体",
+    "category": "politics",
+    "start": {
+      "year": 1991,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 55.752,
+      "lng": 37.617,
+      "placeName": "モスクワ（クレムリン）",
+      "precision": "city"
+    },
+    "summary": "改革の行き詰まりと各共和国の独立の動きのなかで、ソビエト連邦は解体し、ロシアなど15の国に分かれた。冷戦を戦った一方の超大国が消え、世界の国際秩序は大きく変わった。",
+    "historicalNote": "「崩壊」ではなく、指導者たちの選択の結果として「解体」と呼ぶべきだという見方もある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ソビエト連邦の崩壊」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%93%E3%82%A8%E3%83%88%E9%80%A3%E9%82%A6%E3%81%AE%E5%B4%A9%E5%A3%8A",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "eu-founding",
+    "title": "ヨーロッパ連合（EU）の発足",
+    "category": "politics",
+    "start": {
+      "year": 1993,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 50.851,
+      "lng": 5.69,
+      "placeName": "マーストリヒト（条約の調印地、オランダ）",
+      "precision": "city"
+    },
+    "summary": "二度の世界大戦を経験したヨーロッパでは、経済の協力から統合が進められてきた。マーストリヒト条約の発効によってヨーロッパ連合が発足し、共通の通貨ユーロの導入や、外交・安全保障での協力もめざされた。",
+    "historicalNote": "統合の出発点は1951年の欧州石炭鉄鋼共同体。条約の調印は1992年、発効は1993年11月。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「欧州連合」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AC%A7%E5%B7%9E%E9%80%A3%E5%90%88",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「マーストリヒト条約」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%82%B9%E3%83%88%E3%83%AA%E3%83%92%E3%83%88%E6%9D%A1%E7%B4%84",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "apartheid-end",
+    "title": "アパルトヘイトの撤廃",
+    "category": "politics",
+    "start": {
+      "year": 1994,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": -25.74,
+      "lng": 28.21,
+      "placeName": "プレトリア（南アフリカ）",
+      "precision": "city"
+    },
+    "summary": "南アフリカでは、白人と非白人を法律で分けて差別するアパルトヘイトが続いていた。国内外の反対運動の高まりのなかで制度が廃止され、全人種が参加した初めての選挙で、長く投獄されていたマンデラが大統領に選ばれた。",
+    "historicalNote": "アパルトヘイトが法制度として確立したのは1948年。マンデラは27年間の獄中生活の後、1990年に釈放された。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アパルトヘイト」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%91%E3%83%AB%E3%83%88%E3%83%98%E3%82%A4%E3%83%88",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「ネルソン・マンデラ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%8D%E3%83%AB%E3%82%BD%E3%83%B3%E3%83%BB%E3%83%9E%E3%83%B3%E3%83%87%E3%83%A9",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "september-11",
+    "title": "アメリカ同時多発テロ",
+    "category": "war",
+    "start": {
+      "year": 2001,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 40.7115,
+      "lng": -74.0134,
+      "placeName": "ニューヨーク（世界貿易センタービル跡地）",
+      "precision": "exact"
+    },
+    "summary": "イスラーム過激派の組織が旅客機を乗っ取り、ニューヨークやワシントンなどで同時にテロ攻撃を行った。約3000人が犠牲となり、アメリカはその後、アフガニスタンやイラクでの戦争に踏み切った。",
+    "historicalNote": "事件は2001年9月11日。「対テロ戦争」は多くの犠牲者と難民を生み、その評価はいまも議論が続いている。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アメリカ同時多発テロ事件」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%90%8C%E6%99%82%E5%A4%9A%E7%99%BA%E3%83%86%E3%83%AD%E4%BA%8B%E4%BB%B6",
+        "accessedAt": "2026-10-30"
+      }
+    ]
   }
 ]
