@@ -16,7 +16,7 @@ const completeTotal = events.length + shortfall;
 const doneUnits = counted.filter((u) => have(u) >= u.min).length;
 // 未実施の回（候補が残っている回）。実施済みの回は units.json から候補が消え、収録済みに移る
 const batches = [...new Set(units.flatMap((u) => u.candidates.map((c) => c.batch)))].filter((b) => b !== "予備").sort();
-const DONE = ["第1次（ツアー用13件）", "第2次（C(3)・D(2)・D(3) の20件）", "第3次（D(3)・D(4)・E(1) の20件）"];
+const DONE = ["第1次（ツアー用13件）", "第2次（C(3)・D(2)・D(3) の20件）", "第3次（D(3)・D(4)・E(1) の20件）", "第4次（C(3)・D(2)・E(2)・E(3) の20件）"];
 
 const majorName = Object.fromEntries(majors.map((m) => [m.code, m.name]));
 const unitLabel = (u) => `${u.major}(${u.code.slice(1)}) ${u.name}`;
