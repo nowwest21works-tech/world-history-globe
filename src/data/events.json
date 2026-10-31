@@ -2468,5 +2468,707 @@
         "accessedAt": "2026-10-30"
       }
     ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "suleiman",
+    "title": "スレイマン1世とオスマン帝国の最盛期",
+    "category": "politics",
+    "start": {
+      "year": 1520,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1566,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 41.016,
+      "lng": 28.964,
+      "placeName": "イスタンブル（スレイマニエ・モスク付近）",
+      "precision": "city"
+    },
+    "summary": "スレイマン1世はたびたび遠征を行い、オスマン帝国の領土を東ヨーロッパから西アジア、北アフリカにまで広げた。法の整備にも力を入れ、帝国の制度を整えたことから、トルコでは「立法者」と呼ばれる。",
+    "historicalNote": "期間は在位年。1529年にはウィーンを包囲したが攻略できなかった（第1次ウィーン包囲）。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「スレイマン1世」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%AC%E3%82%A4%E3%83%9E%E3%83%B31%E4%B8%96",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「オスマン帝国」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%82%B9%E3%83%9E%E3%83%B3%E5%B8%9D%E5%9B%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "safavid",
+    "title": "サファヴィー朝とエスファハーン",
+    "category": "politics",
+    "start": {
+      "year": 1501,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1736,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 32.657,
+      "lng": 51.677,
+      "placeName": "エスファハーン（現イラン）",
+      "precision": "city"
+    },
+    "summary": "イランに成立したサファヴィー朝は、イスラームのシーア派を国の宗教とし、隣のオスマン帝国と争った。16世紀末に都となったエスファハーンには壮麗なモスクや広場が築かれ、その繁栄は「世界の半分」とたたえられた。",
+    "historicalNote": "エスファハーンへの遷都は16世紀末（1598年頃）。都の大規模な建設はアッバース1世のもとで進められた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「サファヴィー朝」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%95%E3%82%A1%E3%83%B4%E3%82%A3%E3%83%BC%E6%9C%9D",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「エスファハーン」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%B9%E3%83%95%E3%82%A1%E3%83%8F%E3%83%BC%E3%83%B3",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "qing-beijing",
+    "title": "清の北京入城",
+    "category": "politics",
+    "start": {
+      "year": 1644,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.916,
+      "lng": 116.397,
+      "placeName": "北京（紫禁城）",
+      "precision": "city"
+    },
+    "summary": "中国東北部の満洲人が建てた清は、明が反乱で倒れた混乱に乗じて北京に入り、中国全土の支配へと向かった。少数の満洲人が多数の漢人を治めるため、漢人の官僚も登用しながら、広大な領域を支配する体制を築いた。",
+    "historicalNote": "清の建国は1636年（前身の後金は1616年）。1644年に都を北京に移した。清は1912年まで続いた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「清」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B8%85",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "voc",
+    "title": "オランダ東インド会社の設立",
+    "category": "economy",
+    "start": {
+      "year": 1602,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1799,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 52.372,
+      "lng": 4.9,
+      "placeName": "アムステルダム",
+      "precision": "city"
+    },
+    "summary": "オランダの商人たちは出資を集めて東インド会社をつくり、アジアとの交易に乗り出した。会社は条約の締結や軍隊の保有まで認められ、ジャワを拠点に香辛料の交易を支配し、日本とも貿易を続けた。",
+    "historicalNote": "「世界初の株式会社」と呼ばれることが多い。日本では平戸、のちに長崎の出島に商館を置いた。1799年に解散した。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「オランダ東インド会社」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%A9%E3%83%B3%E3%83%80%E6%9D%B1%E3%82%A4%E3%83%B3%E3%83%89%E4%BC%9A%E7%A4%BE",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "westphalia",
+    "title": "三十年戦争とウェストファリア条約",
+    "category": "war",
+    "start": {
+      "year": 1618,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1648,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 51.962,
+      "lng": 7.626,
+      "placeName": "ミュンスター（講和条約の締結地の一つ）",
+      "precision": "city"
+    },
+    "summary": "神聖ローマ帝国内の宗派の対立から始まった戦争は、周辺の国々を巻き込む長い国際戦争となった。講和条約では各国が互いの領土を認め合い、国家どうしが対等に向き合うヨーロッパの秩序の出発点とされる。",
+    "historicalNote": "講和条約はミュンスターとオスナブリュックの2か所で結ばれた。条約が「主権国家体制」をつくったという見方には、近年の研究で見直しもある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「三十年戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%8D%81%E5%B9%B4%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「ヴェストファーレン条約」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A7%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%83%BC%E3%83%AC%E3%83%B3%E6%9D%A1%E7%B4%84",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "glorious-revolution",
+    "title": "名誉革命と権利の章典",
+    "category": "politics",
+    "start": {
+      "year": 1688,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1689,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 51.4995,
+      "lng": -0.1248,
+      "placeName": "ロンドン（ウェストミンスター）",
+      "precision": "city"
+    },
+    "summary": "イングランドでは議会と対立した国王が国外に逃れ、議会が新たな国王を迎えた。新しい国王は議会の権利を確認する文書を受け入れ、国王も法と議会に従うという立憲政治の土台が築かれた。",
+    "historicalNote": "大きな流血がなかったとして「無血革命」とも呼ばれるが、小規模な戦闘はあった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「名誉革命」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E8%AA%89%E9%9D%A9%E5%91%BD",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「権利の章典」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A8%A9%E5%88%A9%E3%81%AE%E7%AB%A0%E5%85%B8",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "newton-principia",
+    "title": "ニュートン『プリンキピア』（科学革命）",
+    "category": "culture",
+    "start": {
+      "year": 1687,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 52.207,
+      "lng": 0.117,
+      "placeName": "ケンブリッジ（ニュートンの研究の拠点）",
+      "precision": "city"
+    },
+    "summary": "ニュートンは、地上の物体の落下と天体の運動を、同じ万有引力の法則で説明できることを数学を用いて示した。自然を観察と数学で解き明かそうとする考え方が広がり、のちの啓蒙思想にも影響を与えた。",
+    "historicalNote": "書物はロンドンで刊行された。地点はニュートンが研究を行ったケンブリッジ大学に置いた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「自然哲学の数学的諸原理」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%87%AA%E7%84%B6%E5%93%B2%E5%AD%A6%E3%81%AE%E6%95%B0%E5%AD%A6%E7%9A%84%E8%AB%B8%E5%8E%9F%E7%90%86",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「アイザック・ニュートン」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A4%E3%82%B6%E3%83%83%E3%82%AF%E3%83%BB%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%B3",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "nerchinsk",
+    "title": "ネルチンスク条約",
+    "category": "politics",
+    "start": {
+      "year": 1689,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 51.98,
+      "lng": 116.58,
+      "placeName": "ネルチンスク（現ロシア・ザバイカル地方）",
+      "precision": "city"
+    },
+    "summary": "シベリアを東へ進んだロシアと清は、アムール川流域で衝突したのち条約を結び、両国の境界を定めた。清がヨーロッパの国と対等な形で結んだ最初の条約とされる。",
+    "historicalNote": "清は康熙帝、ロシアはピョートル1世の時代。条約の文面はラテン語などでも作成された。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ネルチンスク条約」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%8D%E3%83%AB%E3%83%81%E3%83%B3%E3%82%B9%E3%82%AF%E6%9D%A1%E7%B4%84",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "haiti-revolution",
+    "title": "ハイチ革命",
+    "category": "politics",
+    "start": {
+      "year": 1791,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1804,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 19.76,
+      "lng": -72.2,
+      "placeName": "サン＝ドマング北部（現ハイチ・カパイシアン付近）",
+      "precision": "region"
+    },
+    "summary": "フランスの砂糖植民地サン＝ドマングで、奴隷にされていた人々が反乱を起こし、長い戦いの末に独立を勝ち取った。奴隷とされた人々自身が奴隷制を倒して国家を建てた、世界で初めての例とされる。",
+    "historicalNote": "フランス革命の人権の理念が影響を与えた一方、独立後のハイチは列強から長く孤立させられた。地点は反乱が始まった北部の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ハイチ革命」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%8F%E3%82%A4%E3%83%81%E9%9D%A9%E5%91%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "latin-american-independence",
+    "title": "ラテンアメリカ諸国の独立",
+    "category": "politics",
+    "start": {
+      "year": 1810,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1825,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 10.5,
+      "lng": -66.92,
+      "placeName": "南アメリカ北部（カラカスなど）",
+      "precision": "region"
+    },
+    "summary": "スペインの本国がナポレオンに占領された混乱をきっかけに、中南米の植民地で独立をめざす戦いが広がった。ボリバルらに率いられた運動によって、多くの国がスペインやポルトガルから独立した。",
+    "historicalNote": "独立の過程は地域によって大きく異なり、期間は目安。独立後も、植民地時代に生まれた大土地所有などの社会構造は残った。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「シモン・ボリバル」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A2%E3%83%B3%E3%83%BB%E3%83%9C%E3%83%AA%E3%83%90%E3%83%AB",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "congress-of-vienna",
+    "title": "ウィーン会議",
+    "category": "politics",
+    "start": {
+      "year": 1814,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1815,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 48.185,
+      "lng": 16.312,
+      "placeName": "ウィーン（シェーンブルン宮殿）",
+      "precision": "exact"
+    },
+    "summary": "ナポレオンの没落後、ヨーロッパ諸国の代表がウィーンに集まり、戦後の国境や秩序を話し合った。革命前の君主たちの支配を取り戻し、大国の力の均衡で平和を保とうとする体制がつくられた。",
+    "historicalNote": "議長はオーストリアのメッテルニヒ。会議がなかなか進まない様子は「会議は踊る、されど進まず」と言われた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ウィーン会議」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A3%E3%83%BC%E3%83%B3%E4%BC%9A%E8%AD%B0",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "indian-rebellion",
+    "title": "インド大反乱",
+    "category": "war",
+    "start": {
+      "year": 1857,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1858,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 28.656,
+      "lng": 77.241,
+      "placeName": "デリー（反乱軍が拠点とした都）",
+      "precision": "city"
+    },
+    "summary": "東インド会社に雇われたインド人兵士の反乱をきっかけに、イギリスの支配に反発する人々の抵抗が北インドの広い範囲に広がった。反乱は鎮圧され、ムガル帝国は名実ともに終わり、インドはイギリス政府が直接治めることになった。",
+    "historicalNote": "かつては「シパーヒー（セポイ）の反乱」と呼ばれたが、参加者が兵士以外にも広がっていたことから、現在は「インド大反乱」と呼ぶことが多い。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「インド大反乱」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%89%E5%A4%A7%E5%8F%8D%E4%B9%B1",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "us-civil-war",
+    "title": "アメリカ南北戦争",
+    "category": "war",
+    "start": {
+      "year": 1861,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1865,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.82,
+      "lng": -77.23,
+      "placeName": "アメリカ合衆国東部（代表点：ゲティスバーグ）",
+      "precision": "region"
+    },
+    "summary": "奴隷制の存続を求めた南部の州が合衆国から離れ、北部との間で内戦となった。北部が勝利して合衆国の統一が保たれ、奴隷制は廃止されたが、解放された人々への差別はその後も長く続いた。",
+    "historicalNote": "1863年にリンカン大統領が奴隷解放宣言を出した。地点は激戦地の一つを代表点としたもの。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「南北戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8D%97%E5%8C%97%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "german-empire",
+    "title": "ドイツ帝国の成立",
+    "category": "politics",
+    "start": {
+      "year": 1871,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 48.8049,
+      "lng": 2.1204,
+      "placeName": "ヴェルサイユ宮殿（鏡の間）",
+      "precision": "exact"
+    },
+    "summary": "プロイセンはオーストリアやフランスとの戦争に勝ち、プロイセン国王を皇帝とするドイツ帝国が成立した。ヨーロッパの中央に強い統一国家が生まれ、大国どうしの力関係が大きく変わった。",
+    "historicalNote": "皇帝の即位は、フランスとの戦争中に占領していたヴェルサイユ宮殿で宣言された。この屈辱はフランス側に長く記憶された。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ドイツ帝国」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A4%E3%83%84%E5%B8%9D%E5%9B%BD",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「ドイツ統一」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A4%E3%83%84%E7%B5%B1%E4%B8%80",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "scramble-for-africa",
+    "title": "アフリカ分割（ベルリン会議）",
+    "category": "politics",
+    "start": {
+      "year": 1884,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1912,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": -4.3,
+      "lng": 15.3,
+      "placeName": "コンゴ川流域（代表点）",
+      "precision": "region"
+    },
+    "summary": "ヨーロッパの列強はベルリンで会議を開き、アフリカを植民地にする際の原則を取り決めた。その後わずか30年ほどで、アフリカのほとんどの地域が列強に分割され、現地の人々の意思とは関係なく境界線が引かれた。",
+    "historicalNote": "会議の開催地はベルリン（1884〜1885年）。1912年までに独立を保ったのはエチオピアとリベリアだけだった。地点はアフリカの代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ベルリン会議 (アフリカ分割)」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%83%AA%E3%83%B3%E4%BC%9A%E8%AD%B0_(%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%E5%88%86%E5%89%B2)",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「アフリカ分割」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%E5%88%86%E5%89%B2",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "xinhai-revolution",
+    "title": "辛亥革命",
+    "category": "politics",
+    "start": {
+      "year": 1911,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1912,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 30.55,
+      "lng": 114.3,
+      "placeName": "武昌（現・武漢）",
+      "precision": "city"
+    },
+    "summary": "武昌で起きた兵士の蜂起をきっかけに、各地の省が次々と清からの独立を宣言した。孫文を臨時大総統とする中華民国が建てられ、皇帝が退位して、二千年以上続いた皇帝政治が終わった。",
+    "historicalNote": "中華民国はアジアで最初の共和国とされる。成立後まもなく、実権は袁世凱に移った。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「辛亥革命」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%BE%9B%E4%BA%A5%E9%9D%A9%E5%91%BD",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「武昌起義」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E6%98%8C%E8%B5%B7%E7%BE%A9",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "may-fourth",
+    "title": "五・四運動",
+    "category": "politics",
+    "start": {
+      "year": 1919,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.9055,
+      "lng": 116.3976,
+      "placeName": "北京（天安門前）",
+      "precision": "city"
+    },
+    "summary": "第一次世界大戦後の講和会議で、日本がドイツから得た中国の権益が認められたことに抗議して、北京の学生たちが立ち上がった。運動は全国の商人や労働者にも広がり、中国の民族運動の大きな転機となった。",
+    "historicalNote": "背景には1915年の日本による二十一か条の要求があった。反帝国主義だけでなく、古い伝統への批判という性格もあった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「五四運動」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E5%9B%9B%E9%81%8B%E5%8B%95",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "versailles-treaty",
+    "title": "ヴェルサイユ条約",
+    "category": "politics",
+    "start": {
+      "year": 1919,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 48.8049,
+      "lng": 2.1204,
+      "placeName": "ヴェルサイユ宮殿（鏡の間）",
+      "precision": "exact"
+    },
+    "summary": "第一次世界大戦の講和条約がドイツとの間で結ばれ、ドイツは領土や植民地を失い、巨額の賠償を課された。この条約を中心とする戦後の国際秩序はヴェルサイユ体制と呼ばれ、国際連盟もこの流れのなかで生まれた。",
+    "historicalNote": "調印の場所は、1871年にドイツ帝国の成立が宣言されたのと同じ鏡の間だった。厳しい講和の内容は、のちのドイツの不満の一因になったとされる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ヴェルサイユ条約」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A7%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%A6%E6%9D%A1%E7%B4%84",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "turkey-republic",
+    "title": "トルコ共和国の成立",
+    "category": "politics",
+    "start": {
+      "year": 1923,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.93,
+      "lng": 32.86,
+      "placeName": "アンカラ",
+      "precision": "city"
+    },
+    "summary": "第一次世界大戦に敗れて解体の危機にあったオスマン帝国で、ムスタファ・ケマルらがアンカラに新しい政府を立て、占領軍を退けた。帝政を廃止してトルコ共和国を建て、政治と宗教を分ける改革を進めた。",
+    "historicalNote": "ムスタファ・ケマルは初代大統領となり、のちに「アタテュルク（トルコの父）」の姓を贈られた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「トルコ革命」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%AB%E3%82%B3%E9%9D%A9%E5%91%BD",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「ムスタファ・ケマル・アタテュルク」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%A0%E3%82%B9%E3%82%BF%E3%83%95%E3%82%A1%E3%83%BB%E3%82%B1%E3%83%9E%E3%83%AB%E3%83%BB%E3%82%A2%E3%82%BF%E3%83%86%E3%83%A5%E3%83%AB%E3%82%AF",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "salt-march",
+    "title": "ガンディーと塩の行進",
+    "category": "politics",
+    "start": {
+      "year": 1930,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 20.893,
+      "lng": 72.802,
+      "placeName": "ダーンディー海岸（現インド・グジャラート州）",
+      "precision": "exact"
+    },
+    "summary": "イギリスがインドで塩の生産と販売を独占していたことに抗議して、ガンディーは支持者とともに海岸まで歩き、自ら塩をつくった。暴力を使わずに不当な法に従わない運動は広く共感を集め、独立運動の大きな転機となった。",
+    "historicalNote": "行進はアフマダーバードからダーンディーまで約386km、1930年3月から4月にかけて行われた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「塩の行進」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E3%81%AE%E8%A1%8C%E9%80%B2",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「マハトマ・ガンディー」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%8F%E3%83%88%E3%83%9E%E3%83%BB%E3%82%AC%E3%83%B3%E3%83%87%E3%82%A3%E3%83%BC",
+        "accessedAt": "2026-10-30"
+      }
+    ]
   }
 ]
