@@ -16,7 +16,7 @@ const completeTotal = events.length + shortfall;
 const doneUnits = counted.filter((u) => have(u) >= u.min).length;
 // 未実施の回（候補が残っている回）。実施済みの回は units.json から候補が消え、収録済みに移る
 const batches = [...new Set(units.flatMap((u) => u.candidates.map((c) => c.batch)))].filter((b) => b !== "予備").sort();
-const DONE = ["第1次（ツアー用13件）", "第2次（C(3)・D(2)・D(3) の20件）", "第3次（D(3)・D(4)・E(1) の20件）", "第4次（C(3)・D(2)・E(2)・E(3) の20件）"];
+const DONE = ["第1次（ツアー用13件）", "第2次（C(3)・D(2)・D(3) の20件）", "第3次（D(3)・D(4)・E(1) の20件）", "第4次（C(3)・D(2)・E(2)・E(3) の20件）", "第5次（A(1)・A(2)・B(3)・C(2) の20件）"];
 
 const majorName = Object.fromEntries(majors.map((m) => [m.code, m.name]));
 const unitLabel = (u) => `${u.major}(${u.code.slice(1)}) ${u.name}`;
@@ -34,7 +34,9 @@ let md = `# 単元カバー表（世界史探究）
 **件数の目安を設けた ${counted.length} 単元のすべてで、イベント件数が最低件数を満たした状態**を「高校世界史の骨格の完成」とする。
 
 - 最低件数の合計：${minTotal}件
-- 現在、最低件数を満たしている単元：${doneUnits} / ${counted.length}
+- 現在、最低件数を満たしている単元：${doneUnits} / ${counted.length}${
+  shortfall === 0 ? `\n- **すべての単元が最低件数を満たし、「高校世界史の骨格」は完成している（${events.length}件）。**` : ""
+}
 - 不足の合計：${shortfall}件 → 骨格の完成時の合計は **約${completeTotal}件**（B(2) などすでに最低件数を超えている単元があるため、最低件数の合計より多くなる）
 - 骨格の完成後は、ツアーの充実や地域の偏りの解消のために 170〜200件程度まで増やすことを想定する。
 
@@ -69,7 +71,8 @@ for (const u of units) {
   }
 }
 
-md += `\n## 追加の計画（1回20件以内）\n\nこれまでの C 案（第2次〜第4次）を、上の不足分に合わせて組み直した。不足が大きい単元から順に埋める。\n\n- 実施済み：${DONE.join("、")}\n\n| 回 | 件数 | 対象の単元（件数） |\n|---|---|---|\n`;
+md += `\n## 追加の計画（1回20件以内）\n\nこれまでの C 案（第2次〜第4次）を、上の不足分に合わせて組み直した。不足が大きい単元から順に埋める。\n\n- 実施済み：${DONE.join("、")}\n\n`;
+md += batches.length ? `| 回 | 件数 | 対象の単元（件数） |\n|---|---|---|\n` : `未実施の回はない（骨格の完成に必要な追加はすべて終えた）。\n`;
 for (const b of batches) {
   const per = counted
     .map((u) => [u, u.candidates.filter((c) => c.batch === b).length])

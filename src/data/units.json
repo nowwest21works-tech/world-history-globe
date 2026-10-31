@@ -29,21 +29,12 @@
       "name": "地球環境から見る人類の歴史",
       "summary": "気候や地形、感染症などの自然環境が、人類の移動や暮らしとどう関わってきたかを考える導入の単元。",
       "min": 3,
-      "eventIds": [],
-      "candidates": [
-        {
-          "title": "黒死病（ペスト）の大流行（14世紀）",
-          "batch": "第5次"
-        },
-        {
-          "title": "小氷期（14〜19世紀）",
-          "batch": "第5次"
-        },
-        {
-          "title": "タンボラ山の噴火と「夏のない年」（1815年）",
-          "batch": "第5次"
-        }
-      ]
+      "eventIds": [
+        "black-death",
+        "little-ice-age",
+        "tambora"
+      ],
+      "candidates": []
     },
     {
       "code": "A2",
@@ -51,21 +42,12 @@
       "name": "日常生活から見る世界の歴史",
       "summary": "衣食住や嗜好品など身近なモノから、世界の結び付きや社会の変化をたどる導入の単元。",
       "min": 3,
-      "eventIds": [],
-      "candidates": [
-        {
-          "title": "砂糖プランテーションの拡大（カリブ海）",
-          "batch": "第5次"
-        },
-        {
-          "title": "コーヒーハウスの広がり（イスタンブル）",
-          "batch": "第5次"
-        },
-        {
-          "title": "茶の世界商品化（中国からイギリスへ）",
-          "batch": "第5次"
-        }
-      ]
+      "eventIds": [
+        "sugar-plantation",
+        "london-coffeehouse",
+        "tea-global"
+      ],
+      "candidates": []
     },
     {
       "code": "B1",
@@ -132,37 +114,16 @@
         "heian-kyo",
         "paper-east-asia",
         "abbasid-baghdad",
-        "talas"
+        "talas",
+        "xiongnu",
+        "han-dynasty",
+        "funan",
+        "sasanian",
+        "justinian",
+        "sui-grand-canal",
+        "umayyad"
       ],
       "candidates": [
-        {
-          "title": "漢の成立",
-          "batch": "第5次"
-        },
-        {
-          "title": "匈奴と遊牧国家",
-          "batch": "第5次"
-        },
-        {
-          "title": "隋の統一と大運河",
-          "batch": "第5次"
-        },
-        {
-          "title": "ササン朝ペルシア",
-          "batch": "第5次"
-        },
-        {
-          "title": "ユスティニアヌス帝とビザンツ帝国",
-          "batch": "第5次"
-        },
-        {
-          "title": "ウマイヤ朝",
-          "batch": "第5次"
-        },
-        {
-          "title": "東南アジアの初期国家（扶南など）",
-          "batch": "第5次"
-        },
         {
           "title": "アクスム王国",
           "batch": "予備"
@@ -202,37 +163,16 @@
         "inca-conquest",
         "potosi",
         "manila-galleon",
-        "atlantic-slave-trade"
+        "atlantic-slave-trade",
+        "angkor-wat",
+        "yuan-dadu",
+        "ottoman-founding",
+        "ming",
+        "joseon",
+        "malacca",
+        "renaissance"
       ],
       "candidates": [
-        {
-          "title": "元の成立（大都）",
-          "batch": "第5次"
-        },
-        {
-          "title": "明の成立",
-          "batch": "第5次"
-        },
-        {
-          "title": "朝鮮王朝の成立",
-          "batch": "第5次"
-        },
-        {
-          "title": "アンコール・ワット",
-          "batch": "第5次"
-        },
-        {
-          "title": "マラッカ王国",
-          "batch": "第5次"
-        },
-        {
-          "title": "オスマン帝国の成立",
-          "batch": "第5次"
-        },
-        {
-          "title": "ルネサンス（フィレンツェ）",
-          "batch": "第5次"
-        },
         {
           "title": "グレート・ジンバブエ",
           "batch": "予備"
