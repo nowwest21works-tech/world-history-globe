@@ -1,0 +1,1920 @@
+[
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "egypt-unification",
+    "title": "エジプトの統一と第1王朝",
+    "category": "politics",
+    "start": {
+      "year": -2999,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 25.1,
+      "lng": 32.78,
+      "placeName": "ナイル川流域（ヒエラコンポリス付近）",
+      "precision": "region"
+    },
+    "summary": "ナイル川の上流側と下流側に分かれていた勢力がひとつの王権のもとにまとめられ、王朝による統治が始まった。王を神聖な存在とする考え方や、文字による記録の整備がこの時期から進んだ。",
+    "historicalNote": "統一の年代は前3100年頃とする説もあり、統一者をナルメル王とみる説が有力だが確定していない。地点は代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ナルメル」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%AB%E3%83%A1%E3%83%AB",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「エジプト第1王朝」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%B8%E3%83%97%E3%83%88%E7%AC%AC1%E7%8E%8B%E6%9C%9D",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "uruk-cuneiform",
+    "title": "ウルクと楔形文字の成立",
+    "category": "culture",
+    "start": {
+      "year": -3199,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -2999,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 31.32,
+      "lng": 45.64,
+      "placeName": "ウルク（現イラク南部）",
+      "precision": "city"
+    },
+    "summary": "メソポタミア南部の都市ウルクでは、神殿が穀物や家畜を管理するために粘土板へ記号を刻むようになった。この記号が発達して、粘土に葦の筆を押しつけて書く楔形文字となった。",
+    "historicalNote": "絵文字的な記号から楔形文字への移行は段階的で、成立年を一点に定めることはできない。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「楔形文字」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A5%94%E5%BD%A2%E6%96%87%E5%AD%97",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「ウルク (メソポタミア)」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%83%AB%E3%82%AF_(%E3%83%A1%E3%82%BD%E3%83%9D%E3%82%BF%E3%83%9F%E3%82%A2)",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "sumerian-city-states",
+    "title": "シュメール人の都市国家",
+    "category": "politics",
+    "start": {
+      "year": -2899,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -2349,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 30.96,
+      "lng": 46.1,
+      "placeName": "メソポタミア南部（ウル・ラガシュなど）",
+      "precision": "region"
+    },
+    "summary": "メソポタミア南部では、神殿を中心とする都市国家が並び立ち、灌漑用水や耕地をめぐって互いに争った。王や神官が人々を組織して大規模な灌漑や神殿建設を行ったことが、粘土板の記録からうかがえる。",
+    "historicalNote": "考古学上の「初期王朝時代」におおむね相当する。年代は研究上の区分による目安で、地点は代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「シュメール」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A5%E3%83%A1%E3%83%BC%E3%83%AB",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "indus-civilization",
+    "title": "インダス文明の都市",
+    "category": "culture",
+    "start": {
+      "year": -2599,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -1899,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 27.33,
+      "lng": 68.14,
+      "placeName": "モヘンジョ=ダロ（現パキスタン）",
+      "precision": "city"
+    },
+    "summary": "インダス川流域に、焼きれんがで造られ、排水路を備えた計画的な都市が築かれた。印章に刻まれたインダス文字はまだ解読されておらず、社会の仕組みには不明な点が多い。",
+    "historicalNote": "衰退の原因は、気候変動や河川の流路変化など複数の説があり定まっていない。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「インダス文明」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%80%E3%82%B9%E6%96%87%E6%98%8E",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「モヘンジョダロ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%98%E3%83%B3%E3%82%B8%E3%83%A7%E3%83%80%E3%83%AD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "great-pyramid",
+    "title": "ギザの大ピラミッド",
+    "category": "culture",
+    "start": {
+      "year": -2559,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 29.979,
+      "lng": 31.134,
+      "placeName": "ギザ（現エジプト）",
+      "precision": "exact"
+    },
+    "summary": "古王国時代のクフ王の墓とされる巨大な石造建築。膨大な労働力と資材を動かせたことは、当時の王権が強い統治力を持っていたことを示している。",
+    "historicalNote": "建造年代は王の在位年の推定に依存し、数十年程度の幅がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ギザの大ピラミッド」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AE%E3%82%B6%E3%81%AE%E5%A4%A7%E3%83%94%E3%83%A9%E3%83%9F%E3%83%83%E3%83%89",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "sargon-akkad",
+    "title": "サルゴンによるメソポタミアの統一",
+    "category": "politics",
+    "start": {
+      "year": -2299,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 33.1,
+      "lng": 44.1,
+      "placeName": "メソポタミア中部（都アッカドの所在地は未確定）",
+      "precision": "region"
+    },
+    "summary": "セム語系のアッカド人の王サルゴンが、シュメール人の都市国家群を征服し、メソポタミアを広く支配する国家をつくった。複数の都市や民族をひとつの王が治める体制の早い例とされる。",
+    "historicalNote": "在位年代は前24〜前23世紀で諸説あり。都アッカドの遺跡は発見されていないため地点は地域レベルの代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「サルゴン (アッカド王)」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%AB%E3%82%B4%E3%83%B3_(%E3%82%A2%E3%83%83%E3%82%AB%E3%83%89%E7%8E%8B)",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「アッカド帝国」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%83%E3%82%AB%E3%83%89%E5%B8%9D%E5%9B%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "minoan-crete",
+    "title": "クレタ島のミノア文明",
+    "category": "culture",
+    "start": {
+      "year": -1999,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -1399,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 35.298,
+      "lng": 25.163,
+      "placeName": "クノッソス（クレタ島）",
+      "precision": "city"
+    },
+    "summary": "エーゲ海のクレタ島では、城壁を持たない大規模な宮殿を中心に海上交易で栄える文明が生まれた。壁画には海の生き物や祭礼の様子が明るい色彩で描かれている。",
+    "historicalNote": "「ミノア」は伝説の王ミノスにちなむ近代の呼び名。年代は考古学上の区分により幅がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ミノア文明」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%8E%E3%82%A2%E6%96%87%E6%98%8E",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「クノッソス」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%8E%E3%83%83%E3%82%BD%E3%82%B9",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "hammurabi-code",
+    "title": "ハンムラビ法典",
+    "category": "politics",
+    "start": {
+      "year": -1749,
+      "uncertainty": {
+        "kind": "plusMinus",
+        "years": 50
+      }
+    },
+    "location": {
+      "lat": 32.536,
+      "lng": 44.421,
+      "placeName": "バビロン（現イラク）",
+      "precision": "city"
+    },
+    "summary": "バビロン第1王朝のハンムラビ王が、裁判の基準となる多数の条文を石碑に刻ませた。刑罰が被害者の身分によって変わる点など、当時の社会の階層構造を読み取ることができる。",
+    "historicalNote": "年代はメソポタミア年代学のどの体系（中年代説など）を採るかで数十年以上ずれるため ±50年 とした。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ハンムラビ法典」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%B3%E3%83%A0%E3%83%A9%E3%83%93%E6%B3%95%E5%85%B8",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "shang-dynasty",
+    "title": "殷（商）王朝",
+    "category": "politics",
+    "start": {
+      "year": -1599,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -1045,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 36.13,
+      "lng": 114.31,
+      "placeName": "黄河中流域（殷墟＝現・安陽付近）",
+      "precision": "region"
+    },
+    "summary": "黄河流域に成立した王朝で、王は占いによって祖先や神の意思を確かめながら政治を行った。占いの内容を亀の甲羅や牛の骨に刻んだ甲骨文字は、漢字の祖先にあたる。",
+    "historicalNote": "成立年は前17〜前16世紀と幅がある。殷墟は後期の都であり、王朝全期間の中心地ではない。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「殷」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AE%B7",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "hittite",
+    "title": "ヒッタイト王国",
+    "category": "politics",
+    "start": {
+      "year": -1649,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -1179,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 40.02,
+      "lng": 34.615,
+      "placeName": "ハットゥシャ（現トルコ中部）",
+      "precision": "city"
+    },
+    "summary": "アナトリア高原にインド=ヨーロッパ語系の人々が王国を築き、オリエントの大国のひとつとなった。エジプト新王国と勢力を争い、のちに講和を結んだことでも知られる。",
+    "historicalNote": "かつて強調された「鉄器を独占した国」という見方は、近年の研究では見直しが進んでいる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ヒッタイト」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%92%E3%83%83%E3%82%BF%E3%82%A4%E3%83%88",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「カデシュの戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%87%E3%82%B7%E3%83%A5%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "vedic-aryans",
+    "title": "アーリヤ人の進入とヴェーダ",
+    "category": "religion",
+    "start": {
+      "year": -1499,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -999,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 31,
+      "lng": 75,
+      "placeName": "パンジャーブ地方（インダス川上流域）",
+      "precision": "region"
+    },
+    "summary": "中央アジア方面からインド北西部に移り住んだ人々が、神々への賛歌を口伝えで受け継ぎ、のちにヴェーダとしてまとめた。祭祀を担う人々を頂点とする身分の考え方も、この流れのなかで形づくられていった。",
+    "historicalNote": "「進入」の規模や性格には議論がある。ヴェーダの成立年代も推定であり幅が大きい。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「リグ・ヴェーダ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%B0%E3%83%BB%E3%83%B4%E3%82%A7%E3%83%BC%E3%83%80",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「ヴェーダ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A7%E3%83%BC%E3%83%80",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "amarna-reform",
+    "title": "アマルナ改革（アテン信仰）",
+    "category": "religion",
+    "start": {
+      "year": -1349,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -1334,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 27.645,
+      "lng": 30.896,
+      "placeName": "アマルナ（新都アケトアテン）",
+      "precision": "exact"
+    },
+    "summary": "新王国の王アメンホテプ4世は、太陽円盤アテンだけを崇拝する宗教改革を進め、新しい都を築いた。写実的な美術も生まれたが、王の死後、改革は否定され元に戻された。",
+    "historicalNote": "アテン信仰を「一神教」と呼べるかどうかについては研究者の間で見解が分かれる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アクエンアテン」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%82%A8%E3%83%B3%E3%82%A2%E3%83%86%E3%83%B3",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「アマルナ時代」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%9E%E3%83%AB%E3%83%8A%E6%99%82%E4%BB%A3",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "olmec",
+    "title": "オルメカ文明",
+    "category": "culture",
+    "start": {
+      "year": -1199,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -399,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 17.75,
+      "lng": -94.76,
+      "placeName": "メキシコ湾岸（サン・ロレンソ付近）",
+      "precision": "region"
+    },
+    "summary": "メキシコ湾岸の低地で、巨石の人頭像や祭祀の中心地をもつ文明が栄えた。のちのメソアメリカの諸文明に共通する宗教観や暦の基礎がここで見られる。",
+    "historicalNote": "オルメカを後続文明の「母体」とみる説と、同時期の諸文化の一つとみる説がある。地点は代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「オルメカ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%AB%E3%83%A1%E3%82%AB",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "phoenicia",
+    "title": "フェニキア人の地中海交易",
+    "category": "economy",
+    "start": {
+      "year": -1199,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -799,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 33.27,
+      "lng": 35.196,
+      "placeName": "ティルス（現レバノン）",
+      "precision": "city"
+    },
+    "summary": "東地中海沿岸の都市を拠点とするフェニキア人は、船で地中海の各地に交易拠点を築いた。彼らが使った表音文字は、ギリシア文字などを経て現在のアルファベットにつながっている。",
+    "historicalNote": "期間は交易活動が特に盛んだった時期の目安で、植民市カルタゴの建設（前9世紀頃）以降も活動は続いた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「フェニキア」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A7%E3%83%8B%E3%82%AD%E3%82%A2",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「フェニキア文字」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A7%E3%83%8B%E3%82%AD%E3%82%A2%E6%96%87%E5%AD%97",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "western-zhou",
+    "title": "周の成立（西周）",
+    "category": "politics",
+    "start": {
+      "year": -1045,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -770,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.23,
+      "lng": 108.8,
+      "placeName": "渭水流域（都・鎬京＝現・西安付近）",
+      "precision": "region"
+    },
+    "summary": "殷を倒した周は、一族や功臣に土地を与えて各地を治めさせる封建の仕組みをとった。王の支配を天の命令によって正当化する考え方も、この時代に重視された。",
+    "historicalNote": "殷周革命の年は諸説あり、前1046年は中国の研究計画による推定値。終了年は都を東に移した前770年の前年とした。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「周」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%91%A8",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "assyria-unification",
+    "title": "アッシリアによるオリエント統一",
+    "category": "politics",
+    "start": {
+      "year": -669,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -611,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 36.36,
+      "lng": 43.15,
+      "placeName": "ニネヴェ（現イラク北部）",
+      "precision": "city"
+    },
+    "summary": "アッシリアは強い軍事力でメソポタミアからエジプトまでを支配下に置き、初めてオリエント全体をまとめた帝国となった。しかし強圧的な支配への反発もあり、都ニネヴェの陥落によって崩壊した。",
+    "historicalNote": "エジプト征服は前671年頃。統一の時期は前7世紀前半と幅をもって理解するのがよい。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アッシリア」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%83%E3%82%B7%E3%83%AA%E3%82%A2",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "darius-royal-road",
+    "title": "ダレイオス1世と「王の道」",
+    "category": "economy",
+    "start": {
+      "year": -521,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": -485,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 32.19,
+      "lng": 48.25,
+      "placeName": "スサ（現イラン南西部）",
+      "precision": "city"
+    },
+    "summary": "アケメネス朝の王ダレイオス1世は、広い領土を州に分けて総督に治めさせ、各地を結ぶ幹線道路と駅伝制を整えた。道路網は軍隊や命令の移動だけでなく、商人の往来も支えた。",
+    "historicalNote": "期間は在位年。「王の道」はスサと小アジアのサルデスを結んだとされる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ダレイオス1世」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%AC%E3%82%A4%E3%82%AA%E3%82%B91%E4%B8%96",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「王の道」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%8E%8B%E3%81%AE%E9%81%93",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "confucius",
+    "title": "孔子と儒家の思想",
+    "category": "religion",
+    "start": {
+      "year": -550,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -478,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.6,
+      "lng": 116.99,
+      "placeName": "曲阜（魯の国、現・山東省）",
+      "precision": "city"
+    },
+    "summary": "春秋時代の魯に生まれた孔子は、家族への思いやりを社会や政治の秩序にまで広げる道徳を説いた。その言葉は弟子たちによって記録され、のちに東アジア各地の政治や教育に長く影響を与えた。",
+    "historicalNote": "生年には前552年説もある。期間は生没年。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「孔子」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AD%94%E5%AD%90",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "roman-republic",
+    "title": "ローマ共和政の成立",
+    "category": "politics",
+    "start": {
+      "year": -508,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 41.89,
+      "lng": 12.48,
+      "placeName": "ローマ",
+      "precision": "city"
+    },
+    "summary": "ローマでは王が追放され、任期のある複数の役職者と元老院が国を運営する共和政が始まった。貴族と平民の対立を経ながら、市民が政治に参加する仕組みが少しずつ整えられた。",
+    "historicalNote": "前509年はローマの伝承にもとづく年で、考古学的に確かめられた年代ではない。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「共和政ローマ」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%B1%E5%92%8C%E6%94%BF%E3%83%AD%E3%83%BC%E3%83%9E",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "persian-wars",
+    "title": "ペルシア戦争",
+    "category": "war",
+    "start": {
+      "year": -499,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": -448,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 38.5,
+      "lng": 24,
+      "placeName": "エーゲ海周辺（ギリシア本土・小アジア西岸）",
+      "precision": "region"
+    },
+    "summary": "小アジアのギリシア人都市の反乱をきっかけに、アケメネス朝とギリシアのポリスが繰り返し戦った。ギリシア側の勝利は、アテネの民主政が発展する背景のひとつとなった。",
+    "historicalNote": "開始年は前500年・前499年、終結を前449年の和約とするかは研究者で扱いが異なる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ペルシア戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9A%E3%83%AB%E3%82%B7%E3%82%A2%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "buddha",
+    "title": "ガウタマ=シッダールタと仏教",
+    "category": "religion",
+    "start": {
+      "year": -449,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 24.695,
+      "lng": 84.991,
+      "placeName": "ブッダガヤ（現インド・ビハール州）",
+      "precision": "city"
+    },
+    "summary": "北インドの小国の王子として生まれたとされるガウタマ=シッダールタは、出家と修行を経て悟りを開き、苦しみから解放される道を説いた。身分による差別を否定する教えは、商人や都市の人々にも受け入れられた。",
+    "historicalNote": "生没年は前566〜前486年頃、前463〜前383年頃など大きく異なる説があり、ここでは前5世紀の目安として置いた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「釈迦」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%87%88%E8%BF%A6",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "alexander-campaign",
+    "title": "アレクサンドロスの東方遠征",
+    "category": "exchange",
+    "start": {
+      "year": -333,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": -322,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 36.36,
+      "lng": 43.45,
+      "placeName": "ガウガメラ付近（現イラク北部）",
+      "precision": "region"
+    },
+    "summary": "マケドニアの王アレクサンドロスは、アケメネス朝を滅ぼしてインダス川流域まで遠征した。遠征の結果、ギリシア文化と西アジア・エジプトの文化が混ざり合う時代（ヘレニズム時代）が始まった。",
+    "historicalNote": "遠征は広範囲にわたるため、地点は前331年の決戦地付近の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アレクサンドロス3世」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AC%E3%82%AF%E3%82%B5%E3%83%B3%E3%83%89%E3%83%AD%E3%82%B93%E4%B8%96",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "ashoka",
+    "title": "アショーカ王と仏教の保護",
+    "category": "religion",
+    "start": {
+      "year": -267,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -231,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 25.61,
+      "lng": 85.14,
+      "placeName": "パータリプトラ（現パトナ）",
+      "precision": "city"
+    },
+    "summary": "マウリヤ朝のアショーカ王は、戦争の犠牲を悔いて仏教に帰依し、法（ダルマ）による統治を目指した。王の考えを刻んだ石柱や磨崖碑が、領内の各地に残されている。",
+    "historicalNote": "在位年は推定で、数年程度の幅がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アショーカ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B7%E3%83%A7%E3%83%BC%E3%82%AB",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「アショーカ王碑文」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B7%E3%83%A7%E3%83%BC%E3%82%AB%E7%8E%8B%E7%A2%91%E6%96%87",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "qin-unification",
+    "title": "秦による中国統一",
+    "category": "politics",
+    "start": {
+      "year": -220,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.33,
+      "lng": 108.71,
+      "placeName": "咸陽（現・陝西省）",
+      "precision": "city"
+    },
+    "summary": "戦国時代の諸国を滅ぼした秦王は、自らを皇帝と称し、全国を郡と県に分けて中央から役人を派遣した。文字・貨幣・度量衡の統一は、のちの王朝にも受け継がれた。",
+    "historicalNote": "秦王朝そのものは短命で、前206年に滅亡した。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「秦」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A7%A6",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「始皇帝」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A7%8B%E7%9A%87%E5%B8%9D",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "zhang-qian",
+    "title": "張騫の西域派遣",
+    "category": "exchange",
+    "start": {
+      "year": -138,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -125,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 34.27,
+      "lng": 108.95,
+      "placeName": "長安（現・西安）",
+      "precision": "city"
+    },
+    "summary": "前漢の武帝は、遊牧国家の匈奴に対抗する同盟相手を求めて張騫を西方へ送った。同盟は実現しなかったが、中央アジアの情報が漢にもたらされ、東西を結ぶ交易路の発展につながった。",
+    "historicalNote": "出発年・帰還年には数年の幅がある。「シルクロード」は19世紀の研究者による呼び名。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「張騫」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%BC%B5%E9%A8%AB",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "roman-principate",
+    "title": "ローマ帝政の開始",
+    "category": "politics",
+    "start": {
+      "year": -26,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 41.89,
+      "lng": 12.48,
+      "placeName": "ローマ",
+      "precision": "city"
+    },
+    "summary": "内乱を収めたオクタウィアヌスが「アウグストゥス」の称号を受け、共和政の形を残しながら実質的に一人で国を導く体制をつくった。以後、地中海世界の広い範囲で比較的安定した時代が続いた。",
+    "historicalNote": "共和政から帝政への移行は段階的であり、前27年は便宜上の区切り。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アウグストゥス」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A6%E3%82%B0%E3%82%B9%E3%83%88%E3%82%A5%E3%82%B9",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「ローマ帝国」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%BC%E3%83%9E%E5%B8%9D%E5%9B%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jesus-christianity",
+    "title": "イエスの処刑とキリスト教の成立",
+    "category": "religion",
+    "start": {
+      "year": 30,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 31.778,
+      "lng": 35.235,
+      "placeName": "エルサレム",
+      "precision": "city"
+    },
+    "summary": "ローマ支配下のパレスチナで神の愛と隣人愛を説いたイエスは、エルサレムで処刑された。弟子たちはイエスの復活を信じて布教を始め、教えはやがてローマ帝国の各地に広まった。",
+    "historicalNote": "処刑の年は30年頃または33年頃とする説が多い。生年も紀元前とする見方が一般的。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「イエス・キリスト」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%82%A8%E3%82%B9%E3%83%BB%E3%82%AD%E3%83%AA%E3%82%B9%E3%83%88",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「キリスト教」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%AA%E3%82%B9%E3%83%88%E6%95%99",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "cai-lun-paper",
+    "title": "蔡倫による製紙法の改良",
+    "category": "culture",
+    "start": {
+      "year": 105,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.62,
+      "lng": 112.45,
+      "placeName": "洛陽（後漢の都）",
+      "precision": "city"
+    },
+    "summary": "後漢の宦官蔡倫が、樹皮や麻くずなどを原料とする紙を皇帝に献上したと伝えられる。安く大量に作れる書写材料の普及は、記録と学問の広がりを支えた。",
+    "historicalNote": "蔡倫以前の紙も出土しており、「発明」ではなく「改良」とみるのが一般的。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「蔡倫」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%94%A1%E5%80%AB",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「紙」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%B4%99",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "maya-classic",
+    "title": "マヤ文明の古典期",
+    "category": "culture",
+    "start": {
+      "year": 250,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 900,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 17.222,
+      "lng": -89.623,
+      "placeName": "ティカル（現グアテマラ）",
+      "precision": "city"
+    },
+    "summary": "ユカタン半島周辺では、石造の神殿ピラミッドをもつ都市国家が数多く栄えた。精密な暦や、音と意味を組み合わせたマヤ文字が使われ、王の事績が石碑に記録された。",
+    "historicalNote": "古典期の区分は研究上の目安。マヤは統一国家ではなく、多数の都市国家の集まりだった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「マヤ文明」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%A4%E6%96%87%E6%98%8E",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "gupta",
+    "title": "グプタ朝とインド古典文化",
+    "category": "culture",
+    "start": {
+      "year": 320,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 550,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 25.61,
+      "lng": 85.14,
+      "placeName": "パータリプトラ（現パトナ）",
+      "precision": "city"
+    },
+    "summary": "北インドを統一したグプタ朝のもとで、サンスクリット語の文学やヒンドゥー教が発展した。数学や天文学も進み、インド古典文化の完成期とされる。",
+    "historicalNote": "終了年は王朝の衰退が進んだ時期の目安。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「グプタ朝」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%97%E3%82%BF%E6%9C%9D",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "germanic-migration",
+    "title": "ゲルマン人の大移動",
+    "category": "exchange",
+    "start": {
+      "year": 375,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 568,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 46,
+      "lng": 25,
+      "placeName": "ドナウ川下流域〜黒海北岸",
+      "precision": "region"
+    },
+    "summary": "東方から来たフン人の圧力をきっかけに、ゲルマン系の諸集団が次々とローマ帝国の領内へ移動した。移動先で建てられた王国は、のちのヨーロッパ諸国の土台の一つとなった。",
+    "historicalNote": "375年（西ゴート人の移動開始）と568年（ランゴバルド人のイタリア侵入）は教科書的な区切りで、移動は長期にわたる複雑な過程だった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「民族移動時代」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B0%91%E6%97%8F%E7%A7%BB%E5%8B%95%E6%99%82%E4%BB%A3",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「ゲルマン人」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B2%E3%83%AB%E3%83%9E%E3%83%B3%E4%BA%BA",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "western-rome-fall",
+    "title": "西ローマ帝国の滅亡",
+    "category": "politics",
+    "start": {
+      "year": 476,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 44.418,
+      "lng": 12.2,
+      "placeName": "ラヴェンナ（西ローマ帝国末期の都）",
+      "precision": "city"
+    },
+    "summary": "ゲルマン人の傭兵隊長オドアケルが西ローマ皇帝を退位させ、西方の皇帝位は途絶えた。一方で東ローマ（ビザンツ）帝国はその後も約千年存続した。",
+    "historicalNote": "476年を「滅亡」とみなすのは後世の区切り方で、当時の人々が大きな断絶と感じたかについては議論がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「西ローマ帝国」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E3%83%AD%E3%83%BC%E3%83%9E%E5%B8%9D%E5%9B%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "tang",
+    "title": "唐の成立と繁栄",
+    "category": "politics",
+    "start": {
+      "year": 618,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 907,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.27,
+      "lng": 108.95,
+      "placeName": "長安（現・西安）",
+      "precision": "city"
+    },
+    "summary": "隋に代わって成立した唐は、律令にもとづく統治体制を整え、都の長安には各地から商人や僧、留学生が集まった。日本や朝鮮半島の国家づくりにも大きな影響を与えた。",
+    "historicalNote": "690〜705年には武則天による周（武周）の時期が挟まる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「唐」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%94%90",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "hijra",
+    "title": "ヒジュラ（聖遷）",
+    "category": "religion",
+    "start": {
+      "year": 622,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 24.467,
+      "lng": 39.61,
+      "placeName": "メディナ（ヤスリブ）",
+      "precision": "city"
+    },
+    "summary": "メッカで迫害を受けたムハンマドと信者たちがメディナへ移り、信仰を共にする共同体をつくった。この年はのちにイスラームの暦（ヒジュラ暦）の起点とされた。",
+    "historicalNote": "ヒジュラ暦の元年は移住そのものの日付ではなく、その年の年初に合わせて定められた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ヒジュラ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%92%E3%82%B8%E3%83%A5%E3%83%A9",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "talas",
+    "title": "タラス河畔の戦い",
+    "category": "war",
+    "start": {
+      "year": 751,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 42.9,
+      "lng": 71.4,
+      "placeName": "タラス川流域（現カザフスタン・キルギス国境付近）",
+      "precision": "region"
+    },
+    "summary": "中央アジアの支配をめぐって、唐の軍とアッバース朝の軍が衝突し、唐が敗れた。この戦いは、イスラーム勢力が中央アジアへ広がる流れのなかに位置づけられる。",
+    "historicalNote": "捕虜を通じて製紙法が西方へ伝わったという話は有名だが、史料上の裏付けには疑問も出されている。戦場の正確な位置は不明。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「タラス河畔の戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%BF%E3%83%A9%E3%82%B9%E6%B2%B3%E7%95%94%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "charlemagne-coronation",
+    "title": "カールの戴冠",
+    "category": "politics",
+    "start": {
+      "year": 800,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 41.902,
+      "lng": 12.457,
+      "placeName": "ローマ（サン・ピエトロ大聖堂）",
+      "precision": "exact"
+    },
+    "summary": "フランク王国のカールが、ローマ教皇から西ローマ皇帝の冠を受けた。ローマの伝統、キリスト教、ゲルマンの要素が結びついた西ヨーロッパ世界の成立を象徴する出来事とされる。",
+    "historicalNote": "現在のサン・ピエトロ大聖堂は16〜17世紀の再建で、戴冠が行われた建物そのものではない。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「カール大帝」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%BC%E3%83%AB%E5%A4%A7%E5%B8%9D",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "song-dynasty",
+    "title": "宋の成立と商業の発展",
+    "category": "economy",
+    "start": {
+      "year": 960,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1279,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.8,
+      "lng": 114.35,
+      "placeName": "開封（北宋の都）",
+      "precision": "city"
+    },
+    "summary": "宋では、試験で選ばれた官僚が皇帝を支える文治の政治が行われた。農業生産の向上を背景に商業が発達し、紙幣の使用や海上交易の拡大もみられた。",
+    "historicalNote": "1127年に都を南の臨安（現・杭州）に移し、それ以前を北宋、以後を南宋と呼ぶ。地点は北宋の都。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「宋 (王朝)」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%8B_(%E7%8E%8B%E6%9C%9D)",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「北宋」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E5%AE%8B",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "first-crusade",
+    "title": "第1回十字軍",
+    "category": "war",
+    "start": {
+      "year": 1096,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1099,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 31.778,
+      "lng": 35.235,
+      "placeName": "エルサレム",
+      "precision": "city"
+    },
+    "summary": "ビザンツ皇帝の援軍要請を受けたローマ教皇の呼びかけで、西ヨーロッパの騎士たちが東方へ遠征し、エルサレムを占領した。遠征は地中海の交易や東西の文化交流を活発にする一方、多くの犠牲を生んだ。",
+    "historicalNote": "地点は到達目標であったエルサレム。遠征路は西ヨーロッパから小アジアを経る広い範囲にわたる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「第1回十字軍」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AC%AC1%E5%9B%9E%E5%8D%81%E5%AD%97%E8%BB%8D",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "genghis-khan",
+    "title": "チンギス=カンのモンゴル統一",
+    "category": "politics",
+    "start": {
+      "year": 1206,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 48.5,
+      "lng": 110.5,
+      "placeName": "オノン川上流域（現モンゴル北東部）",
+      "precision": "region"
+    },
+    "summary": "テムジンがモンゴル高原の遊牧諸集団をまとめ、チンギス=カンの称号を得た。その後のモンゴル帝国の拡大によって、ユーラシアの東西を結ぶ人とモノの往来が盛んになった。",
+    "historicalNote": "即位した集会（クリルタイ）の正確な場所は特定されていないため地域レベルの代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「チンギス・カン」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%B3%E3%82%AE%E3%82%B9%E3%83%BB%E3%82%AB%E3%83%B3",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "mansa-musa",
+    "title": "マンサ=ムーサのメッカ巡礼",
+    "category": "economy",
+    "start": {
+      "year": 1324,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 16.77,
+      "lng": -3,
+      "placeName": "マリ王国（トンブクトゥ付近）",
+      "precision": "region"
+    },
+    "summary": "西アフリカのマリ王国の王マンサ=ムーサは、大量の金を携えてメッカへの巡礼を行った。途中のカイロで金を大量に使ったと伝えられ、サハラを越える金の交易と王国の豊かさが広く知られるきっかけとなった。",
+    "historicalNote": "巡礼は1324〜1325年頃。金の量や物価への影響に関する記述には誇張が含まれる可能性がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「マンサ・ムーサ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%B3%E3%82%B5%E3%83%BB%E3%83%A0%E3%83%BC%E3%82%B5",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "zheng-he",
+    "title": "鄭和の南海遠征",
+    "category": "exchange",
+    "start": {
+      "year": 1405,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1433,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 32.06,
+      "lng": 118.8,
+      "placeName": "南京（明の初期の都）",
+      "precision": "city"
+    },
+    "summary": "明の永楽帝の命を受けた鄭和は、大船団を率いて東南アジア・インド洋沿岸、さらにアフリカ東岸まで航海した。各地の国々に明への朝貢をうながし、海上の交流を広げた。",
+    "historicalNote": "遠征は計7回。船の大きさについては史料の記述と技術的な推定のあいだに議論がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「鄭和」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%84%AD%E5%92%8C",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "gutenberg",
+    "title": "グーテンベルクの活版印刷",
+    "category": "culture",
+    "start": {
+      "year": 1450,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 49.99,
+      "lng": 8.27,
+      "placeName": "マインツ（現ドイツ）",
+      "precision": "city"
+    },
+    "summary": "金属の活字を組み合わせて印刷する技術が実用化され、書物を速く大量に作れるようになった。情報が広く行き渡るようになったことは、のちの宗教改革や科学の発展を支えた。",
+    "historicalNote": "活字による印刷そのものは東アジアにより早い例がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ヨハネス・グーテンベルク」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%A8%E3%83%8F%E3%83%8D%E3%82%B9%E3%83%BB%E3%82%B0%E3%83%BC%E3%83%86%E3%83%B3%E3%83%99%E3%83%AB%E3%82%AF",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「活版印刷」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B4%BB%E7%89%88%E5%8D%B0%E5%88%B7",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "fall-of-constantinople",
+    "title": "コンスタンティノープルの陥落",
+    "category": "war",
+    "start": {
+      "year": 1453,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 41.01,
+      "lng": 28.95,
+      "placeName": "コンスタンティノープル（現イスタンブル）",
+      "precision": "city"
+    },
+    "summary": "オスマン帝国のメフメト2世が都市を攻め落とし、ビザンツ帝国は滅亡した。都市はオスマン帝国の都となり、ヨーロッパとアジアを結ぶ要地として繁栄を続けた。",
+    "historicalNote": "攻城戦では大砲が大きな役割を果たしたとされる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「コンスタンティノープルの陥落」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%86%E3%82%A3%E3%83%8E%E3%83%BC%E3%83%97%E3%83%AB%E3%81%AE%E9%99%A5%E8%90%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "columbus",
+    "title": "コロンブスのカリブ海到達",
+    "category": "exchange",
+    "start": {
+      "year": 1492,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 24.05,
+      "lng": -74.5,
+      "placeName": "バハマ諸島（最初の上陸地は諸説あり）",
+      "precision": "region"
+    },
+    "summary": "スペインの支援を受けたコロンブスが大西洋を横断し、カリブ海の島々に到達した。これを機に南北アメリカとヨーロッパ・アフリカの間で人・作物・病原体が大規模に行き来するようになり、先住民社会は深刻な打撃を受けた。",
+    "historicalNote": "「発見」という表現はヨーロッパ側の視点であり、先住民はすでに暮らしていた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「クリストファー・コロンブス」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%83%BC%E3%83%BB%E3%82%B3%E3%83%AD%E3%83%B3%E3%83%96%E3%82%B9",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "reformation",
+    "title": "ルターと宗教改革",
+    "category": "religion",
+    "start": {
+      "year": 1517,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 51.866,
+      "lng": 12.646,
+      "placeName": "ヴィッテンベルク（現ドイツ）",
+      "precision": "city"
+    },
+    "summary": "ルターは、罪が赦されるとして販売されていた贖宥状を批判する意見を公にした。信仰と聖書を重んじる主張は印刷物を通じて広まり、カトリック教会から分かれる新しい宗派が生まれた。",
+    "historicalNote": "論題を教会の扉に貼り出したという有名な場面は、史実かどうかについて議論がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「宗教改革」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%97%E6%95%99%E6%94%B9%E9%9D%A9",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "mughal-empire",
+    "title": "ムガル帝国",
+    "category": "politics",
+    "start": {
+      "year": 1526,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1858,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 27.18,
+      "lng": 78,
+      "placeName": "アグラ（初期の都の一つ）",
+      "precision": "city"
+    },
+    "summary": "中央アジア出身のバーブルが北インドに建てた王朝で、のちにインドの大部分を支配した。イスラームとインドの文化が融合し、建築や絵画に独自の様式が生まれた。",
+    "historicalNote": "18世紀以降は実権を失っており、終了年はイギリスにより最後の皇帝が廃された年。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ムガル帝国」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%A0%E3%82%AC%E3%83%AB%E5%B8%9D%E5%9B%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "atlantic-slave-trade",
+    "title": "大西洋奴隷貿易",
+    "category": "economy",
+    "start": {
+      "year": 1501,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1866,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 6.36,
+      "lng": 2.08,
+      "placeName": "西アフリカのギニア湾沿岸（ウィダ付近）",
+      "precision": "region"
+    },
+    "summary": "ヨーロッパの商人は、アフリカ西岸で手に入れた人々を奴隷として南北アメリカへ運び、農園での労働を強いた。この取引は大西洋をまたぐ商品の流れと結びつき、アフリカ社会に長期的な損失をもたらした。",
+    "historicalNote": "期間は16世紀初頭〜19世紀後半の目安。強制的に運ばれた人数の推計には幅がある。地点は代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「大西洋奴隷貿易」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%A5%BF%E6%B4%8B%E5%A5%B4%E9%9A%B7%E8%B2%BF%E6%98%93",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「三角貿易」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E8%A7%92%E8%B2%BF%E6%98%93",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "industrial-revolution",
+    "title": "イギリス産業革命",
+    "category": "economy",
+    "start": {
+      "year": 1760,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1830,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 53.48,
+      "lng": -2.24,
+      "placeName": "イングランド北西部（マンチェスター周辺）",
+      "precision": "region"
+    },
+    "summary": "綿織物工業で機械と蒸気機関の利用が進み、工場で大量に生産する仕組みが生まれた。都市への人口集中や労働問題など、社会のあり方も大きく変わった。",
+    "historicalNote": "開始・終了の年代には研究者によって幅があり、「革命」と呼ぶほど急激だったかについても議論がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「産業革命」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%A3%E6%A5%AD%E9%9D%A9%E5%91%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "us-independence",
+    "title": "アメリカ独立宣言",
+    "category": "politics",
+    "start": {
+      "year": 1776,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.949,
+      "lng": -75.15,
+      "placeName": "フィラデルフィア（独立記念館）",
+      "precision": "exact"
+    },
+    "summary": "イギリスの課税と統治に反発した北米13植民地が、独立を宣言した。人は生まれながらに権利をもち、政府はそれを守るために存在するという考え方が示された。",
+    "historicalNote": "宣言のうたう権利は、当時は奴隷や先住民、女性には十分に及んでいなかった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アメリカ独立宣言」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E7%8B%AC%E7%AB%8B%E5%AE%A3%E8%A8%80",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "french-revolution",
+    "title": "フランス革命",
+    "category": "politics",
+    "start": {
+      "year": 1789,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1799,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 48.853,
+      "lng": 2.369,
+      "placeName": "パリ（バスティーユ）",
+      "precision": "city"
+    },
+    "summary": "財政難をきっかけに身分制の社会への不満が高まり、民衆と議会が王政を倒した。人権宣言にみられる自由・平等の理念は、ヨーロッパ各地に影響を与えた。",
+    "historicalNote": "終了年は、ナポレオンが政権を握った1799年とすることが多い。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「フランス革命」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E9%9D%A9%E5%91%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "opium-war",
+    "title": "アヘン戦争",
+    "category": "war",
+    "start": {
+      "year": 1840,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1842,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 23.13,
+      "lng": 113.26,
+      "placeName": "広州周辺（現・広東省）",
+      "precision": "region"
+    },
+    "summary": "清がアヘンの密輸を取り締まったことに対し、イギリスが軍を送り、清は敗れた。結ばれた条約によって港の開放や香港の割譲が定められ、東アジアの国際関係が大きく変わった。",
+    "historicalNote": "戦闘は沿岸の広い範囲で行われたため、地点は代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アヘン戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%98%E3%83%B3%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "meiji-restoration",
+    "title": "明治維新",
+    "category": "politics",
+    "start": {
+      "year": 1868,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.68,
+      "lng": 139.75,
+      "placeName": "東京（江戸）",
+      "precision": "city"
+    },
+    "summary": "江戸幕府が倒れ、天皇を中心とする新しい政府が成立した。政府は身分制度の改革や工業化を進め、短い期間で近代的な国家の仕組みを整えようとした。",
+    "historicalNote": "明治維新は一つの出来事ではなく一連の改革の総称で、始まりと終わりの年については複数の見方がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「明治維新」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB%E7%B6%AD%E6%96%B0",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "world-war-1",
+    "title": "第一次世界大戦",
+    "category": "war",
+    "start": {
+      "year": 1914,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1918,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 49.2,
+      "lng": 5.4,
+      "placeName": "ヨーロッパ西部戦線（ヴェルダン付近）",
+      "precision": "region"
+    },
+    "summary": "ヨーロッパの列強が二つの陣営に分かれて戦い、植民地の人々も動員された。戦車や毒ガスなどの新兵器が使われ、国全体の力を注ぎ込む総力戦となった。",
+    "historicalNote": "戦場は世界各地に及んだため、地点は代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「第一次世界大戦」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%B8%96%E7%95%8C%E5%A4%A7%E6%88%A6",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "world-war-2",
+    "title": "第二次世界大戦",
+    "category": "war",
+    "start": {
+      "year": 1939,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1945,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 52,
+      "lng": 20,
+      "placeName": "ヨーロッパ東部（ポーランド付近）",
+      "precision": "region"
+    },
+    "summary": "ヨーロッパとアジア・太平洋で戦争が広がり、世界の多くの国が参戦した。民間人を含めて膨大な数の人々が犠牲となり、戦後には国際連合が設立された。",
+    "historicalNote": "アジアでは1937年の日中戦争開始を起点とみる見方もある。地点は代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「第二次世界大戦」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%B8%96%E7%95%8C%E5%A4%A7%E6%88%A6",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "cold-war",
+    "title": "冷戦",
+    "category": "politics",
+    "start": {
+      "year": 1947,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1991,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 52.52,
+      "lng": 13.4,
+      "placeName": "ヨーロッパ中部（ベルリン）",
+      "precision": "region"
+    },
+    "summary": "アメリカを中心とする陣営とソ連を中心とする陣営が、直接の全面戦争には至らないまま政治・軍事・経済で対立した。対立は朝鮮やベトナムなど各地の戦争にも影響した。",
+    "historicalNote": "開始年は1945〜1947年で見方が分かれる。終了はソ連が解体した1991年とした。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「冷戦」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%86%B7%E6%88%A6",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "berlin-wall",
+    "title": "ベルリンの壁崩壊",
+    "category": "politics",
+    "start": {
+      "year": 1989,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 52.516,
+      "lng": 13.378,
+      "placeName": "ベルリン（ブランデンブルク門付近）",
+      "precision": "exact"
+    },
+    "summary": "東西に分断されていたベルリンで、東ドイツ政府が国境の通行を認めたことをきっかけに、市民が壁を越えて行き来した。冷戦の終わりを象徴する出来事となり、翌年ドイツは統一された。",
+    "historicalNote": "壁そのものの撤去は、その後時間をかけて進められた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ベルリンの壁崩壊」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%83%AA%E3%83%B3%E3%81%AE%E5%A3%81%E5%B4%A9%E5%A3%8A",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "name": "world-history-globe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "高校世界史探究向けインタラクティブ3D世界史Webアプリ（MVP）",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "node tests/e2e/run.mjs",
+    "serve": "node scripts/serve-out.mjs",
+    "check:sources": "node scripts/check-sources.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-globe.gl": "2.38.0",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@types/three": "0.180.0",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  }
+}
