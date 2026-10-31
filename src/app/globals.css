@@ -54,6 +54,7 @@ a { color: var(--accent); }
 
 /* ── 中央 ── */
 .stage { position: relative; flex: 1; min-height: 0; overflow: hidden; }
+.stage-main { position: absolute; inset: 0; }
 .globe-box { position: absolute; inset: 0; z-index: 0; }
 .globe-loading { display: grid; place-items: center; color: var(--muted); }
 
@@ -122,6 +123,8 @@ a { color: var(--accent); }
 .sources { margin: 0; padding-left: 1.2em; font-size: 14px; }
 .sources .sub { display: block; margin-left: 0; }
 .unverified-note { margin-top: 14px !important; font-size: 12px; color: var(--muted); }
+.head-only { display: inline-flex; align-items: center; gap: 6px; }
+.foot-only { display: none; }
 
 .badge { font-size: 11px; padding: 1px 8px; border-radius: 999px; border: 1px solid; }
 .badge-unverified { color: #a7adba; border-color: #4a5060; background: rgba(255, 255, 255, 0.04); }
@@ -186,11 +189,34 @@ a { color: var(--accent); }
     border: 1px solid var(--panel-border); border-radius: 12px; padding: 8px 12px;
   }
 
+  /* 詳細を開いたら、ヘッダと下部バーの間を「上55%：地球（または年表）／下45%：詳細」に分ける。
+     地球の描画領域そのものが縮むので、選んだ地点は見えている地球の中央に来る。 */
+  .has-detail .stage { display: flex; flex-direction: column; }
+  .has-detail .stage-main { position: relative; inset: auto; flex: 0 0 55%; min-height: 0; }
+  .has-detail .chronology { right: 0; }
   .detail {
-    left: 0; right: 0; top: auto; bottom: 0; width: auto; max-height: 58%;
-    border-radius: 16px 16px 0 0; border-bottom: none;
+    position: relative; inset: auto; flex: 1 1 0; min-height: 0; width: auto;
+    border-radius: 16px 16px 0 0; border-bottom: none; padding: 12px 16px 20px;
+    overscroll-behavior: contain;
   }
-  .has-detail .chronology { right: 0; bottom: 58%; }
+  /* 最初に見える順は タイトル → 年代 → 場所 → 概要。閉じるボタンだけ上部に固定し、分類と未検証は末尾へ */
+  .detail-head { position: sticky; top: 0; height: 0; justify-content: flex-end; z-index: 1; }
+  .detail-close { background: var(--panel); }
+  .head-only { display: none; }
+  .detail-title { margin-top: 0; padding-right: 44px; font-size: 18px; }
+  .detail-foot { margin-top: 16px; padding-top: 10px; border-top: 1px solid var(--panel-border); }
+  .foot-only { display: flex; align-items: center; gap: 8px; }
+
+  /* 詳細表示中の下部バー：▶と年代スライダーだけを1行で残し、同時代リストなどは隠す */
+  .has-detail .bottombar { padding: 4px 12px; }
+  .has-detail .strip,
+  .has-detail .credit,
+  .has-detail .speed,
+  .has-detail .follow,
+  .has-detail .ticks { display: none; }
+  .has-detail .time-controls { flex-direction: row; align-items: center; gap: 10px; margin-top: 0; }
+  .has-detail .slider-wrap { padding-bottom: 0; }
+  .has-detail .play-btn { width: 40px; height: 40px; }
 
   .bottombar { padding: 6px 12px 4px; }
   .time-controls { flex-direction: column; align-items: stretch; gap: 4px; }
