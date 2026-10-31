@@ -81,6 +81,28 @@ a { color: var(--accent); }
 @keyframes pulse { from { transform: scale(1); opacity: 0.9; } to { transform: scale(2.6); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .marker.is-selected::before { animation: none; } }
 .marker.is-behind { opacity: 0 !important; pointer-events: none; }
+/* ほぼ同じ地点に複数あるマーカー：件数のバッジを付け、押すと一覧を出す */
+.marker-count {
+  position: absolute; right: -8px; top: -8px; min-width: 18px; height: 18px; padding: 0 4px;
+  border-radius: 999px; background: #fff; color: #0b0f19; font-size: 11px; font-weight: 700;
+  line-height: 18px; text-align: center; box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35);
+}
+.marker-picker {
+  position: fixed; z-index: 15; width: 260px; max-height: 200px; overflow-y: auto;
+  background: #0e121e; border: 1px solid var(--panel-border); border-radius: 12px; padding: 6px 8px 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+.marker-picker-head { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--muted); }
+.marker-picker ul { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 4px; }
+.marker-picker-item {
+  width: 100%; min-height: 40px; display: grid; grid-template-columns: auto 1fr; gap: 0 8px; align-items: center;
+  text-align: left; padding: 4px 8px; border-radius: 8px; cursor: pointer;
+  background: rgba(255, 255, 255, 0.04); border: 1px solid var(--panel-border);
+}
+.marker-picker-item .sub { grid-column: 2; margin-left: 0; }
+.marker-picker-item.is-dim { opacity: 0.7; }
+.marker-picker-title { font-size: 13px; font-weight: 600; }
+
 /* タップ領域を 44px 以上に広げる */
 .marker::after { content: ""; position: absolute; inset: -10px; border-radius: 50%; }
 
