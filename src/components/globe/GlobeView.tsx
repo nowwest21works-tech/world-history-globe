@@ -6,6 +6,7 @@ import type { HistoryEvent } from "@/types/event";
 import { CATEGORIES } from "@/lib/categories";
 import { formatSpan } from "@/lib/year";
 import { assetPath } from "@/lib/assetPath";
+import type { TourArcView } from "@/lib/tours";
 import { useElementSize } from "./useElementSize";
 
 export interface FlyTarget {
@@ -25,14 +26,49 @@ export interface GlobeViewProps {
   onSelect: (id: string) => void;
   /** ユーザーがドラッグ・ズームを始めたとき */
   onUserInteract: () => void;
+  /** 学習ツアー（つながり型）の弧 */
+  arcs?: TourArcView[];
 }
 
 interface Marker {
+  kind: "marker";
   id: string;
   lat: number;
   lng: number;
   event: HistoryEvent;
   active: boolean;
+}
+
+/** 弧の中点に置く短いラベル（「伝承」などを地球上でも見分けられるようにする） */
+interface ArcLabel {
+  kind: "arc-label";
+  id: string;
+  lat: number;
+  lng: number;
+  arc: TourArcView;
+}
+
+const ARC_STYLE = {
+  // 史実＝実線、伝承＝破線、諸説あり＝点線
+  established: { color: "rgba(255, 210, 122, 0.95)", dash: 1, gap: 0 },
+  traditional: { color: "rgba(255, 255, 255, 0.95)", dash: 0.05, gap: 0.035 },
+  debated: { color: "rgba(170, 196, 255, 0.95)", dash: 0.012, gap: 0.02 },
+} as const;
+
+const ARC_PREFIX = { established: "", traditional: "伝承：", debated: "諸説あり：" } as const;
+
+/** 大円上の中点（緯度経度） */
+function midpoint(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
+  const r = Math.PI / 180;
+  const toV = (p: { lat: number; lng: number }) => [
+    Math.cos(p.lat * r) * Math.cos(p.lng * r),
+    Math.cos(p.lat * r) * Math.sin(p.lng * r),
+    Math.sin(p.lat * r),
+  ];
+  const [x1, y1, z1] = toV(a);
+  const [x2, y2, z2] = toV(b);
+  const x = x1! + x2!, y = y1! + y2!, z = z1! + z2!;
+  return { lat: Math.atan2(z, Math.hypot(x, y)) / r, lng: Math.atan2(y, x) / r };
 }
 
 declare global {
@@ -49,6 +85,7 @@ export default function GlobeView({
   flyTo,
   onSelect,
   onUserInteract,
+  arcs = [],
 }: GlobeViewProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const [boxRef, size] = useElementSize<HTMLDivElement>();
@@ -67,16 +104,24 @@ export default function GlobeView({
   );
   onInteractRef.current = onUserInteract;
 
-  const markers = useMemo<Marker[]>(
-    () =>
-      events.map((e) => ({
+  const markers = useMemo<(Marker | ArcLabel)[]>(
+    () => [
+      ...events.map((e): Marker => ({
+        kind: "marker",
         id: e.id,
         lat: e.location.lat,
         lng: e.location.lng,
         event: e,
         active: activeIds.has(e.id),
       })),
-    [events, activeIds],
+      ...arcs.map((a): ArcLabel => ({
+        kind: "arc-label",
+        id: a.id,
+        ...midpoint({ lat: a.startLat, lng: a.startLng }, { lat: a.endLat, lng: a.endLng }),
+        arc: a,
+      })),
+    ],
+    [events, activeIds, arcs],
   );
 
   // 選択状態はクラスの付け替えだけで反映する（要素を作り直すと一瞬位置が未確定になるため）
@@ -93,6 +138,16 @@ export default function GlobeView({
   }, [selectedId, markers]);
 
   const makeElement = useCallback((d: object) => {
+    if ((d as ArcLabel).kind === "arc-label") {
+      const { arc } = d as ArcLabel;
+      const el = document.createElement("div");
+      el.className = `arc-label is-${arc.certainty}${arc.current ? " is-current" : ""}`;
+      el.dataset.testid = "arc-label";
+      el.dataset.certainty = arc.certainty;
+      // 地球上ではラベルだけが見えるので、確かさを文字でも添える
+      el.textContent = `${ARC_PREFIX[arc.certainty]}${arc.label}`;
+      return el;
+    }
     const m = d as Marker;
     const cat = CATEGORIES[m.event.category];
     const el = document.createElement("button");
@@ -159,6 +214,14 @@ export default function GlobeView({
           htmlElementVisibilityModifier={(el, visible) => {
             el.classList.toggle("is-behind", !visible);
           }}
+          arcsData={arcs}
+          arcColor={(d: object) => ARC_STYLE[(d as TourArcView).certainty].color}
+          arcDashLength={(d: object) => ARC_STYLE[(d as TourArcView).certainty].dash}
+          arcDashGap={(d: object) => ARC_STYLE[(d as TourArcView).certainty].gap}
+          arcDashAnimateTime={0}
+          arcStroke={(d: object) => ((d as TourArcView).current ? 0.9 : 0.55)}
+          arcAltitudeAutoScale={0.35}
+          arcsTransitionDuration={1200}
         />
       )}
     </div>

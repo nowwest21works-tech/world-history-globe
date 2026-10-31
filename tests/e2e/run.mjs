@@ -476,6 +476,187 @@ const browser = await chromium.launch();
   await ctx.close();
 }
 
+
+// ───────────── 学習ツアー ─────────────
+const near = (pov, lat, lng, tol = 4) => Math.abs(pov.lat - lat) < tol && Math.abs(((pov.lng - lng + 540) % 360) - 180) < tol;
+const query = (page) => page.evaluate(() => location.search);
+
+{
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await openGlobe(page);
+
+  await check("ツアー(PC): 一覧から「紙の旅」を開始できる", async () => {
+    await page.getByTestId("tour-open").click();
+    const menu = page.getByTestId("tour-menu");
+    await menu.waitFor();
+    const titles = await menu.locator(".tour-card h3").allInnerTexts();
+    assert(titles.join("/") === "前500年頃、世界では？/紙の旅/銀が世界をめぐる/800年頃、世界では？", `ツアー一覧が違う: ${titles}`);
+    await page.getByTestId("tour-start-paper").click();
+    await page.getByTestId("tour-panel").waitFor();
+    assert((await menu.count()) === 0, "一覧が閉じない");
+    const pos = await page.getByTestId("tour-position").innerText();
+    assert(pos === "はじめに", `最初の表示が導入でない: ${pos}`);
+    assert((await query(page)) === "?tour=paper&step=0", `URL が更新されない: ${await query(page)}`);
+    assert(await page.getByTestId("play").isDisabled(), "ツアー中に自動再生ボタンが押せる");
+    return `一覧 ${titles.length} 本 → 導入（URL ${await query(page)}）`;
+  });
+
+  await check("ツアー(PC): 次へで年・カメラ・URL がステップに合わせて動く", async () => {
+    await page.getByTestId("tour-next").click();
+    await page.waitForTimeout(1900);
+    const pos = await page.getByTestId("tour-position").innerText();
+    const title = await page.getByTestId("tour-step-title").innerText();
+    const y = await yearText(page);
+    const p = await pov(page);
+    assert(pos === "1 / 6" && title.includes("蔡倫") && y === "105年", `1番目が違う: ${pos} ${title} ${y}`);
+    assert(near(p, 34.62, 112.45), `カメラが洛陽に向いていない ${JSON.stringify(p)}`);
+    assert((await query(page)) === "?tour=paper&step=1", "URL が step=1 にならない");
+    return `${pos}「${title.trim()}」${y}、カメラ lat ${p.lat.toFixed(1)} lng ${p.lng.toFixed(1)}`;
+  });
+
+  await check("ツアー(PC): つながり型の弧が積み重なり、タラス→バグダードは「伝承」と表示される", async () => {
+    for (let i = 0; i < 3; i++) await page.getByTestId("tour-next").click();
+    await page.waitForTimeout(1900);
+    const title = await page.getByTestId("tour-step-title").innerText();
+    assert(title.includes("バグダード"), `4番目がバグダードでない: ${title}`);
+    const arcText = await page.getByTestId("tour-arc").innerText();
+    assert(arcText.includes("伝承"), `パネルに伝承の表示がない: ${arcText}`);
+    const labels = await page.locator("[data-testid=arc-label]").evaluateAll((els) =>
+      els.map((e) => ({ c: e.dataset.certainty, t: e.textContent, cur: e.classList.contains("is-current") })),
+    );
+    assert(labels.length === 3, `弧が3本積み重なっていない（${labels.length}本）`);
+    const cur = labels.find((l) => l.cur);
+    assert(cur && cur.c === "traditional" && cur.t.includes("伝承"), `いまの弧が伝承になっていない ${JSON.stringify(labels)}`);
+    await page.screenshot({ path: `${SHOTS}/tour-paper-baghdad.png` });
+    return `弧 ${labels.length} 本（いまの弧：${cur.t}）`;
+  });
+
+  await check("ツアー(PC): 前へ・キーボード（← →）で行き来できる", async () => {
+    await page.getByTestId("tour-prev").click();
+    const a = await page.getByTestId("tour-position").innerText();
+    const ta = await page.getByTestId("tour-step-title").innerText();
+    await page.locator("body").click({ position: { x: 5, y: 790 } }).catch(() => {});
+    await page.keyboard.press("ArrowRight");
+    const b = await page.getByTestId("tour-position").innerText();
+    await page.keyboard.press("ArrowLeft");
+    const c = await page.getByTestId("tour-position").innerText();
+    assert(a === "3 / 6" && ta.includes("タラス"), `前へで戻らない: ${a} ${ta}`);
+    assert(b === "4 / 6" && c === "3 / 6", `キー操作が効かない: ${b} ${c}`);
+    return `前へ → ${a}、→ ${b}、← ${c}`;
+  });
+
+  await check("ツアー(PC): ツアー中に詳細を開き、「ツアーに戻る」で戻れる", async () => {
+    await page.getByTestId("tour-detail").click();
+    await page.getByTestId("event-detail").waitFor();
+    assert((await page.getByTestId("tour-panel").count()) === 0, "詳細とツアーが重なって表示される");
+    await page.getByRole("button", { name: "ツアーに戻る" }).click();
+    await page.getByTestId("tour-panel").waitFor();
+    const pos = await page.getByTestId("tour-position").innerText();
+    assert(pos === "3 / 6", `戻った位置が違う: ${pos}`);
+    return `詳細 → ツアー（${pos}）`;
+  });
+
+  await check("ツアー(PC): 途中で抜けると、その年のまま自由に見て回れる状態に戻る", async () => {
+    const y = await yearText(page);
+    await page.getByTestId("tour-exit").click();
+    assert((await page.getByTestId("tour-panel").count()) === 0, "ツアーのパネルが消えない");
+    assert((await query(page)) === "", `URL にツアーが残っている: ${await query(page)}`);
+    assert((await yearText(page)) === y, "抜けたときに年が変わった");
+    assert(!(await page.getByTestId("play").isDisabled()), "抜けても自動再生が押せない");
+    assert((await page.locator("[data-testid=arc-label]").count()) === 0, "弧が残っている");
+    return `抜けたあとの年 ${y}`;
+  });
+
+  await check("ツアー(PC): URL（?tour=silver&step=3）から直接開始できる", async () => {
+    await page.goto(`${URL}?tour=silver&step=3`);
+    await page.getByTestId("tour-panel").waitFor({ timeout: 20000 });
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    const pos = await page.getByTestId("tour-position").innerText();
+    const title = await page.getByTestId("tour-step-title").innerText();
+    const arcText = await page.getByTestId("tour-arc").innerText();
+    assert(pos === "3 / 8" && title.includes("ガマ"), `直接開始の位置が違う: ${pos} ${title}`);
+    assert(arcText.includes("諸説あり"), `諸説ありの弧の表示がない: ${arcText}`);
+    assert((await yearText(page)) === "1498年", "年が合っていない");
+    return `${pos}「${title.trim()}」（${arcText.replace(/\s+/g, " ").trim()}）`;
+  });
+
+  await check("ツアー(PC): 同時代型は年を止めたまま各地を巡り、まとめで終われる", async () => {
+    await page.goto(`${URL}?tour=bc500&step=1`);
+    await page.getByTestId("tour-panel").waitFor({ timeout: 20000 });
+    const years = [];
+    const places = [];
+    for (let i = 0; i < 7; i++) {
+      years.push(await yearText(page));
+      places.push((await page.getByTestId("tour-step-title").innerText()).trim());
+      await page.getByTestId("tour-next").click();
+    }
+    assert(new Set(years).size === 1 && years[0] === "前500年", `年が動いている: ${years}`);
+    assert((await page.getByTestId("tour-position").innerText()) === "まとめ", "まとめに着かない");
+    await page.getByTestId("tour-finish").click();
+    assert((await page.getByTestId("tour-panel").count()) === 0, "終えてもパネルが残る");
+    return `${years[0]}のまま ${places.length} か所 → まとめ → 終了`;
+  });
+
+  await check("ツアー(PC): ページエラーなし", async () => {
+    assert(errors.length === 0, errors.join(" | "));
+  });
+  await ctx.close();
+}
+
+{
+  const { defaultBrowserType: _ignored2, ...iphone2 } = devices["iPhone 13"];
+  const ctx = await browser.newContext(iphone2);
+  const page = await ctx.newPage();
+  await openGlobe(page);
+
+  await check("ツアー(SP): ヘッダーから開始でき、地球55%・ツアー45%で、地点が地球の中央に来る", async () => {
+    const noScroll0 = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
+    assert(noScroll0, "ヘッダーのボタンで横スクロールが出る");
+    await page.getByTestId("tour-open").tap();
+    await page.getByTestId("tour-start-silver").tap();
+    await page.getByTestId("tour-next").tap();
+    await page.getByTestId("tour-next").tap(); // 2番目：コロンブス
+    await page.waitForTimeout(1900);
+    const g = await page.getByTestId("globe").boundingBox();
+    const panel = await page.getByTestId("tour-panel").boundingBox();
+    const ratio = g.height / (g.height + panel.height);
+    assert(Math.abs(ratio - 0.55) < 0.03, `比率が想定外（地球 ${Math.round(ratio * 100)}%）`);
+    const r = await page.evaluate(() => {
+      const el = document.querySelector('.marker[data-event-id="columbus"]');
+      const globe = document.querySelector("[data-testid=globe]").getBoundingClientRect();
+      const m = el.getBoundingClientRect();
+      const cx = m.x + m.width / 2, cy = m.y + m.height / 2;
+      return {
+        behind: el.classList.contains("is-behind"),
+        hit: document.elementFromPoint(cx, cy)?.closest(".marker") === el,
+        dx: Math.abs(cx - (globe.left + globe.width / 2)),
+        dy: Math.abs(cy - (globe.top + globe.height / 2)),
+      };
+    });
+    assert(!r.behind && r.hit && r.dx < 20 && r.dy < 20, `地点が中央に見えていない ${JSON.stringify(r)}`);
+    const nav = await page.getByTestId("tour-next").boundingBox();
+    assert(nav.y + nav.height <= panel.y + panel.height + 1 && nav.y >= panel.y, "前へ／次へがパネルの外にはみ出す");
+    assert(nav.height >= 40, `ボタンが小さい（${nav.height}px）`);
+    const noScroll = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
+    assert(noScroll, "ツアー中に横スクロールが出る");
+    await page.screenshot({ path: `${SHOTS}/sp-tour.png` });
+    return `地球 ${Math.round(ratio * 100)}%・中央からのずれ 横${Math.round(r.dx)}px 縦${Math.round(r.dy)}px`;
+  });
+
+  await check("ツアー(SP): 途中で抜けると全画面の地球に戻る", async () => {
+    await page.getByTestId("tour-exit").tap();
+    await page.waitForTimeout(400);
+    const stage = await page.locator(".stage").boundingBox();
+    const g = await page.getByTestId("globe").boundingBox();
+    assert(Math.abs(g.height - stage.height) < 2, "地球が全画面に戻らない");
+    return `地球 ${Math.round(g.height)}px`;
+  });
+  await ctx.close();
+}
+
 await browser.close();
 server.close();
 

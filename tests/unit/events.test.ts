@@ -10,9 +10,9 @@ describe("events.json", () => {
     expect(validateEvents(EVENTS)).toEqual([]);
   });
 
-  it("件数は 30〜60 件", () => {
+  it("件数は 30〜250 件（骨格の完成目標は150〜200件）", () => {
     expect(EVENTS.length).toBeGreaterThanOrEqual(30);
-    expect(EVENTS.length).toBeLessThanOrEqual(60);
+    expect(EVENTS.length).toBeLessThanOrEqual(250);
   });
 
   it("verified はすべて false（人間による確認前）", () => {
@@ -38,10 +38,17 @@ describe("events.json", () => {
     }
   });
 
-  it("将来拡張フィールド（question / relatedEventIds）はMVPでは空", () => {
+  it("イベント側の question はまだ使わない（問いはツアー側に持たせる）", () => {
+    for (const e of EVENTS) expect(e.question ?? "").toBe("");
+  });
+
+  it("relatedEventIds は存在するイベントを指し、自分自身や重複を含まない", () => {
+    const ids = new Set(EVENTS.map((e) => e.id));
     for (const e of EVENTS) {
-      expect(e.question ?? "").toBe("");
-      expect(e.relatedEventIds ?? []).toEqual([]);
+      const rel = e.relatedEventIds ?? [];
+      expect(rel.every((r) => ids.has(r)), e.id).toBe(true);
+      expect(rel.includes(e.id), e.id).toBe(false);
+      expect(new Set(rel).size, e.id).toBe(rel.length);
     }
   });
 

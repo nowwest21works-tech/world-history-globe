@@ -15,6 +15,8 @@ export interface TimeControlsProps {
   onTogglePlay: () => void;
   onSpeed: (s: number) => void;
   onFollow: (f: boolean) => void;
+  /** ツアー中は自動再生を使わない */
+  playDisabled?: boolean;
 }
 
 export function TimeControls(p: TimeControlsProps) {
@@ -26,6 +28,8 @@ export function TimeControls(p: TimeControlsProps) {
           className="play-btn"
           onClick={p.onTogglePlay}
           aria-label={p.playing ? "一時停止" : "自動再生"}
+          title={p.playDisabled ? "ツアー中は自動再生を使えません" : undefined}
+          disabled={p.playDisabled}
           data-testid="play"
         >
           {p.playing ? "❚❚" : "▶"}

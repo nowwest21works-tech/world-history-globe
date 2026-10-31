@@ -992,6 +992,10 @@
         "url": "https://ja.wikipedia.org/wiki/%E7%B4%99",
         "accessedAt": "2026-10-30"
       }
+    ],
+    "relatedEventIds": [
+      "paper-east-asia",
+      "talas"
     ]
   },
   {
@@ -1229,6 +1233,9 @@
         "url": "https://ja.wikipedia.org/wiki/%E3%82%BF%E3%83%A9%E3%82%B9%E6%B2%B3%E7%95%94%E3%81%AE%E6%88%A6%E3%81%84",
         "accessedAt": "2026-10-30"
       }
+    ],
+    "relatedEventIds": [
+      "baghdad-paper"
     ]
   },
   {
@@ -1489,6 +1496,9 @@
         "url": "https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%86%E3%82%A3%E3%83%8E%E3%83%BC%E3%83%97%E3%83%AB%E3%81%AE%E9%99%A5%E8%90%BD",
         "accessedAt": "2026-10-30"
       }
+    ],
+    "relatedEventIds": [
+      "vasco-da-gama"
     ]
   },
   {
@@ -1518,6 +1528,10 @@
         "url": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%83%BC%E3%83%BB%E3%82%B3%E3%83%AD%E3%83%B3%E3%83%96%E3%82%B9",
         "accessedAt": "2026-10-30"
       }
+    ],
+    "relatedEventIds": [
+      "magellan",
+      "aztec-conquest"
     ]
   },
   {
@@ -1981,6 +1995,476 @@
       {
         "title": "ウィキペディア日本語版「ベルリンの壁崩壊」",
         "url": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%83%AA%E3%83%B3%E3%81%AE%E5%A3%81%E5%B4%A9%E5%A3%8A",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "athens-democracy",
+    "title": "クレイステネスの改革（アテネの民主政）",
+    "category": "politics",
+    "start": {
+      "year": -507,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 37.975,
+      "lng": 23.722,
+      "placeName": "アテネ（アゴラ付近）",
+      "precision": "city"
+    },
+    "summary": "僭主政が倒れたあとのアテネで、クレイステネスは血縁にもとづく古い部族を廃止し、居住地の区（デーモス）を単位として市民を組み直した。評議会の改革や陶片追放の制度もあわせて、市民が政治に加わる民主政の土台が整えられた。",
+    "historicalNote": "改革の年は前508年または前507年とされる。陶片追放の創設をクレイステネスに帰すことには異論もある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「クレイステネス」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AC%E3%82%A4%E3%82%B9%E3%83%86%E3%83%8D%E3%82%B9",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "abbasid-baghdad",
+    "title": "アッバース朝とバグダード",
+    "category": "politics",
+    "start": {
+      "year": 750,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1258,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 33.315,
+      "lng": 44.366,
+      "placeName": "バグダード（現イラク）",
+      "precision": "city"
+    },
+    "summary": "ウマイヤ朝に代わったアッバース朝は、ティグリス川のほとりに新しい都バグダードを築いた。民族の違いよりもイスラームの信仰を重んじる体制のもとで、交易と学問の中心として大いに栄えた。",
+    "historicalNote": "王朝の成立は750年、バグダードの建設開始は762年。1258年にモンゴル軍によってバグダードが攻略され、王朝は滅んだ。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アッバース朝」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%83%E3%83%90%E3%83%BC%E3%82%B9%E6%9C%9D",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「バグダード」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%82%B0%E3%83%80%E3%83%BC%E3%83%89",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "heian-kyo",
+    "title": "平安京への遷都",
+    "category": "politics",
+    "start": {
+      "year": 794,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.0116,
+      "lng": 135.7681,
+      "placeName": "平安京（現・京都）",
+      "precision": "city"
+    },
+    "summary": "桓武天皇は、中国の都にならった碁盤目状の新しい都を造り、都を移した。以後、平安京は長く天皇の住む都となり、政治と文化の中心であり続けた。",
+    "historicalNote": "建設は793年に始まり、遷都は794年。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「平安京」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%AE%89%E4%BA%AC",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "baghdad-paper",
+    "title": "バグダードでの製紙",
+    "category": "culture",
+    "start": {
+      "year": 795,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 33.315,
+      "lng": 44.366,
+      "placeName": "バグダード（現イラク）",
+      "precision": "city"
+    },
+    "summary": "アッバース朝の都バグダードでは紙が作られるようになり、羊皮紙やパピルスに代わって行政文書や書物に広く使われた。紙の普及は、翻訳や学問がさかんになった背景の一つとされる。",
+    "historicalNote": "最初の製紙工房ができた年を8世紀末（795年頃）とする説明が多いが、具体的な年の根拠ははっきりしない。紙そのものは、それ以前から中央アジアのサマルカンドなどで作られていたとされる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「紙」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%B4%99",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「バグダード」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%82%B0%E3%83%80%E3%83%BC%E3%83%89",
+        "accessedAt": "2026-10-30"
+      }
+    ],
+    "relatedEventIds": [
+      "european-paper"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "european-paper",
+    "title": "ヨーロッパでの製紙の始まり（イベリア半島）",
+    "category": "culture",
+    "start": {
+      "year": 1150,
+      "uncertainty": {
+        "kind": "century"
+      }
+    },
+    "location": {
+      "lat": 38.99,
+      "lng": -0.518,
+      "placeName": "シャティバ（ハティバ、現スペイン・バレンシア州）",
+      "precision": "city"
+    },
+    "summary": "イスラーム勢力が治めていたイベリア半島では、ヨーロッパの中でも早い時期に紙が作られた。製紙の技術はその後イタリアなどにも広がり、13世紀にはファブリアーノが紙の産地として知られるようになった。",
+    "historicalNote": "シャティバでの製紙は12世紀に記録があるとされるが、年代と最初の場所については諸説がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「シャティバ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A3%E3%83%86%E3%82%A3%E3%83%90",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「ファブリアーノ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%96%E3%83%AA%E3%82%A2%E3%83%BC%E3%83%8E",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「紙」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%B4%99",
+        "accessedAt": "2026-10-30"
+      }
+    ],
+    "relatedEventIds": [
+      "gutenberg"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": false,
+    "verified": false,
+    "id": "paper-east-asia",
+    "title": "曇徴の来日と紙・墨の製法",
+    "category": "exchange",
+    "start": {
+      "year": 610,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.47,
+      "lng": 135.82,
+      "placeName": "飛鳥（大和）",
+      "precision": "region"
+    },
+    "summary": "高句麗から日本に来た僧の曇徴は、紙と墨の作り方を伝えたと記録されている。中国で生まれた製紙の技術は、朝鮮半島を通じて日本にも伝わっていった。",
+    "historicalNote": "曇徴が製紙法を伝えたという話は『日本書紀』の記事にもとづく。日本ではそれ以前から紙が使われていた可能性も指摘されている。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「曇徴」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9B%87%E5%BE%B4",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "fall-of-granada",
+    "title": "グラナダ開城（レコンキスタの完了）",
+    "category": "politics",
+    "start": {
+      "year": 1492,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 37.176,
+      "lng": -3.588,
+      "placeName": "グラナダ（アルハンブラ宮殿）",
+      "precision": "city"
+    },
+    "summary": "イベリア半島で最後に残ったイスラーム王朝の都グラナダが、カスティリャとアラゴンの連合軍に明け渡された。キリスト教勢力が半島全体を支配する体制が整い、同じ年、スペインの支援を受けたコロンブスの航海が始まった。",
+    "historicalNote": "「レコンキスタ（再征服）」という呼び名は後の時代に作られたもので、8世紀から1492年までを一続きの運動とみる見方自体にも議論がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「レコンキスタ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%AC%E3%82%B3%E3%83%B3%E3%82%AD%E3%82%B9%E3%82%BF",
+        "accessedAt": "2026-10-30"
+      }
+    ],
+    "relatedEventIds": [
+      "columbus"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "vasco-da-gama",
+    "title": "ヴァスコ・ダ・ガマのインド到達",
+    "category": "exchange",
+    "start": {
+      "year": 1498,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 11.25,
+      "lng": 75.78,
+      "placeName": "カリカット（現インド・コーリコード）",
+      "precision": "city"
+    },
+    "summary": "ポルトガルのヴァスコ・ダ・ガマの船隊は、アフリカ南端を回ってインド西岸のカリカットに着いた。ヨーロッパからアジアへ海路で直接向かう道が開かれ、ポルトガルはインド洋の香辛料交易に乗り出した。",
+    "historicalNote": "リスボンを出たのは1497年。インド洋にはそれ以前からアラブやインドの商人による活発な交易網があり、ガマの航海もその知識に助けられた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ヴァスコ・ダ・ガマ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%82%B9%E3%82%B3%E3%83%BB%E3%83%80%E3%83%BB%E3%82%AC%E3%83%9E",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "magellan",
+    "title": "マゼラン一行の世界周航",
+    "category": "exchange",
+    "start": {
+      "year": 1519,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1522,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": -53.5,
+      "lng": -70.9,
+      "placeName": "マゼラン海峡（南アメリカ南端）",
+      "precision": "region"
+    },
+    "summary": "スペインの船隊を率いたマゼランは、南アメリカ南端の海峡を抜けて太平洋を横断した。マゼランは途中のフィリピンで亡くなったが、残った船が西回りで帰国し、地球を一周できることが実際の航海で示された。",
+    "historicalNote": "マゼランの死後はエルカーノが指揮を引き継ぎ、1522年に帰国した。出発した船5隻のうち帰り着いたのは1隻だった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「フェルディナンド・マゼラン」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A7%E3%83%AB%E3%83%87%E3%82%A3%E3%83%8A%E3%83%B3%E3%83%89%E3%83%BB%E3%83%9E%E3%82%BC%E3%83%A9%E3%83%B3",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "aztec-conquest",
+    "title": "アステカ王国の征服",
+    "category": "war",
+    "start": {
+      "year": 1519,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1521,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 19.435,
+      "lng": -99.133,
+      "placeName": "テノチティトラン（現メキシコシティ）",
+      "precision": "city"
+    },
+    "summary": "スペインのコルテスは、アステカの支配に反発する周辺の勢力と手を結び、湖上の都テノチティトランを攻め落とした。持ち込まれた感染症の流行も先住民社会に大きな打撃を与え、この地はスペインの植民地となった。",
+    "historicalNote": "コルテスの上陸は1519年、テノチティトランの陥落は1521年。征服を少数のスペイン人だけの成果とみる従来の見方は、先住民の同盟勢力の役割を重視する研究によって見直されている。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アステカ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B9%E3%83%86%E3%82%AB",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「テノチティトラン」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%8E%E3%83%81%E3%83%86%E3%82%A3%E3%83%88%E3%83%A9%E3%83%B3",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「エルナン・コルテス」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%AB%E3%83%8A%E3%83%B3%E3%83%BB%E3%82%B3%E3%83%AB%E3%83%86%E3%82%B9",
+        "accessedAt": "2026-10-30"
+      }
+    ],
+    "relatedEventIds": [
+      "inca-conquest"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "inca-conquest",
+    "title": "インカ帝国の征服",
+    "category": "war",
+    "start": {
+      "year": 1532,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1533,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": -7.164,
+      "lng": -78.51,
+      "placeName": "カハマルカ（現ペルー北部）",
+      "precision": "city"
+    },
+    "summary": "スペインのピサロは、内紛で揺れていたインカ帝国の皇帝アタワルパをカハマルカで捕らえ、のちに処刑した。首都クスコも占領され、アンデスの広い地域がスペインの支配下に入った。",
+    "historicalNote": "皇帝の捕縛は1532年、クスコ占領は1533年。インカ側の抵抗はその後も数十年続いた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「インカ帝国」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%AB%E5%B8%9D%E5%9B%BD",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「フランシスコ・ピサロ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B7%E3%82%B9%E3%82%B3%E3%83%BB%E3%83%94%E3%82%B5%E3%83%AD",
+        "accessedAt": "2026-10-30"
+      }
+    ],
+    "relatedEventIds": [
+      "potosi"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "potosi",
+    "title": "ポトシ銀山の発見",
+    "category": "economy",
+    "start": {
+      "year": 1545,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": -19.62,
+      "lng": -65.75,
+      "placeName": "セロ・リコ（ポトシ、現ボリビア）",
+      "precision": "exact"
+    },
+    "summary": "アンデス山中の山で豊かな銀の鉱脈が見つかり、ふもとのポトシは短い間に大都市へと成長した。銀の採掘には先住民が強制的に動員され、多くの人々が過酷な労働で命を落とした。",
+    "historicalNote": "発見は1545年とされる。ここで産出された大量の銀はヨーロッパやアジアへ流れ、世界の物価や交易に影響を与えたと考えられている。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「セロ・リコ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%AD%E3%83%BB%E3%83%AA%E3%82%B3",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「ポトシ」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%88%E3%82%B7",
+        "accessedAt": "2026-10-30"
+      }
+    ],
+    "relatedEventIds": [
+      "manila-galleon"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "manila-galleon",
+    "title": "マニラ・ガレオン（太平洋の銀の道）",
+    "category": "economy",
+    "start": {
+      "year": 1565,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1815,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 14.594,
+      "lng": 120.97,
+      "placeName": "マニラ（現フィリピン）",
+      "precision": "city"
+    },
+    "summary": "スペインの大型帆船が、メキシコのアカプルコとフィリピンのマニラの間を毎年往復し、アメリカ大陸の銀を運んで中国の絹や陶磁器と交換した。こうして銀は太平洋を渡り、明では税を銀で納める仕組みが広まっていった。",
+    "historicalNote": "太平洋の往復航路が開かれたのは1565年、スペインがマニラを拠点として建設したのは1571年。航海はメキシコの独立戦争の時期まで、およそ250年続いた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「マニラ・ガレオン」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%8B%E3%83%A9%E3%83%BB%E3%82%AC%E3%83%AC%E3%82%AA%E3%83%B3",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「一条鞭法」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E6%9D%A1%E9%9E%AD%E6%B3%95",
         "accessedAt": "2026-10-30"
       }
     ]
