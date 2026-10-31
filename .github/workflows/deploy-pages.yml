@@ -1,0 +1,61 @@
+# GitHub Pages へのデプロイ。main への push 時と、Actions 画面からの手動実行で動く。
+# 事前に「Settings → Pages → Build and deployment → Source」を「GitHub Actions」にしておくこと。
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時に走るデプロイは1つだけにする（実行中のものは取り消さない）
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: 型チェックと単体テスト
+        run: |
+          npm run typecheck
+          npm test
+
+      - name: 静的書き出し（サブパス = /リポジトリ名）
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+          NEXT_TELEMETRY_DISABLED: 1
+
+      # _next/ などアンダースコアで始まるフォルダを配信させるため（public/.nojekyll からもコピーされる）
+      - run: touch out/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

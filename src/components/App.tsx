@@ -15,6 +15,7 @@ import { ContemporaryStrip } from "@/components/timeline/ContemporaryStrip";
 import { CategoryLegend } from "@/components/legend/CategoryLegend";
 import { EventDetail } from "@/components/panel/EventDetail";
 import { ChronologyList } from "@/components/fallback/ChronologyList";
+import { PreviewBanner } from "@/components/PreviewBanner";
 
 const TICK_MS = 450;
 
@@ -105,6 +106,7 @@ export default function App() {
 
   return (
     <div className={`app${selected ? " has-detail" : ""}`}>
+      <PreviewBanner />
       <header className="topbar">
         <h1 className="brand">World History Globe</h1>
         <div className="current-year" aria-live="polite" data-testid="current-year">

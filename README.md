@@ -22,8 +22,25 @@ npm run dev          # http://localhost:3000
 | `npm run serve` | `out/` をローカル配信（http://127.0.0.1:4173/） |
 | `npm run check:sources` | 出典URL（ja.wikipedia.org）の実在を再確認 |
 
-### GitHub Pages で公開する場合（未実施）
-サブパスで公開するときは `NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run build` のように basePath を指定してビルドし、`out/` を配信します。デプロイ設定は含めていません。
+### GitHub Pages での公開
+`.github/workflows/deploy-pages.yml` が、main への push 時と Actions 画面からの手動実行で動きます。
+型チェックと単体テストのあと、`NEXT_PUBLIC_BASE_PATH=/リポジトリ名` で静的書き出しし、`out/`（`.nojekyll` を含む）を GitHub Pages にデプロイします。
+
+初回だけ、リポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** にしてください。
+
+サブパス付きの状態をローカルで確かめるとき：
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run build
+NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run test:e2e   # 操作テスト
+NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run serve      # http://127.0.0.1:4173/world-history-globe/
+```
+
+### 試作版の表示
+`src/config/site.ts` の `PREVIEW_MODE` 1か所で切り替えます。
+
+- `true`（現在）：画面上部に「試作版｜掲載内容は検証中です」の帯（×で閉じられる。閉じた状態はそのタブのあいだ保持）を出し、`<meta name="robots" content="noindex">` を出力する。
+- `false`：帯も noindex も出さない。
 
 ## 画面
 

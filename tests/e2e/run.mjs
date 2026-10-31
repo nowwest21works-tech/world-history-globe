@@ -1,5 +1,8 @@
 // 操作テスト（Playwright / Chromium headless）。事前に `npm run build` で out/ を作っておくこと。
 // 実行: npm run test:e2e
+// GitHub Pages と同じサブパスで確かめるときは、ビルドと実行の両方で NEXT_PUBLIC_BASE_PATH を指定する:
+//   NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run build
+//   NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run test:e2e
 import { createRequire } from "node:module";
 import { mkdirSync } from "node:fs";
 import { serve } from "../../scripts/serve-out.mjs";
@@ -8,7 +11,9 @@ const require = createRequire(import.meta.url);
 const { chromium, devices } = require("playwright");
 
 const PORT = 4175;
-const URL = `http://127.0.0.1:${PORT}/`;
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const ORIGIN = `http://127.0.0.1:${PORT}`;
+const URL = `${ORIGIN}${BASE}/`;
 const SHOTS = "tests/e2e/screenshots";
 mkdirSync(SHOTS, { recursive: true });
 
@@ -57,7 +62,7 @@ async function clickVisibleMarker(page, { tap = false } = {}) {
   return box.id;
 }
 
-const server = await serve(PORT);
+const server = await serve(PORT, BASE);
 const browser = await chromium.launch();
 
 // ───────────── PC ─────────────
@@ -66,7 +71,48 @@ const browser = await chromium.launch();
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
+  // 同じオリジンへのリクエストの結果をすべて記録する（サブパス配信で読み込めない資源がないかを見る）
+  const loaded = [];
+  page.on("response", (r) => {
+    if (r.url().startsWith(ORIGIN)) loaded.push({ path: r.url().slice(ORIGIN.length), status: r.status() });
+  });
+  page.on("requestfailed", (r) => {
+    if (r.url().startsWith(ORIGIN)) loaded.push({ path: r.url().slice(ORIGIN.length), status: "failed" });
+  });
   await openGlobe(page);
+
+  await check(`PC: サブパス「${BASE || "/"}」で地球の画像・JS・CSSがすべて読み込まれる`, async () => {
+    const bad = loaded.filter((x) => x.status !== 200);
+    assert(bad.length === 0, `読み込めなかった資源: ${bad.map((x) => `${x.path}(${x.status})`).join(", ")}`);
+    const outside = loaded.filter((x) => BASE && !x.path.startsWith(BASE + "/"));
+    assert(outside.length === 0, `サブパスの外を参照している: ${outside.map((x) => x.path).join(", ")}`);
+    const has = (re) => loaded.some((x) => re.test(x.path) && x.status === 200);
+    assert(has(/\/textures\/earth-blue-marble\.jpg$/), "地球の画像が読み込まれていない");
+    assert(has(/\/_next\/static\/.+\.js$/), "JS が読み込まれていない");
+    assert(has(/\/_next\/static\/.+\.css$/), "CSS が読み込まれていない");
+    const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+    assert(bg === "rgb(5, 7, 13)", `CSS が適用されていない（背景色 ${bg}）`);
+    const n = (re) => loaded.filter((x) => re.test(x.path)).length;
+    return `JS ${n(/\.js$/)}件・CSS ${n(/\.css$/)}件・地球画像 ${n(/earth-blue-marble/)}件（すべて200）`;
+  });
+
+  await check("PC: noindex の meta が出力されている", async () => {
+    const robots = await page.locator('meta[name="robots"]').getAttribute("content");
+    assert(robots === "noindex", `robots = ${robots}`);
+    return `<meta name="robots" content="${robots}">`;
+  });
+
+  await check("PC: 試作版の帯が表示され、閉じられる（再読み込み後も閉じたまま）", async () => {
+    const b = page.getByTestId("preview-banner");
+    assert(await b.isVisible(), "帯が表示されていない");
+    const text = await b.innerText();
+    assert(text.includes("試作版｜掲載内容は検証中です"), `文言が違う: ${text}`);
+    await page.getByLabel("試作版の表示を閉じる").click();
+    assert((await b.count()) === 0, "閉じても消えない");
+    await openGlobe(page);
+    assert((await page.getByTestId("preview-banner").count()) === 0, "再読み込みで帯が戻った");
+    return "表示 → 閉じる → 再読み込み後も非表示";
+  });
 
   await check("PC: 3D地球（WebGL canvas）が描画される", async () => {
     assert((await page.locator("canvas").count()) === 1, "canvas がない");
@@ -208,6 +254,16 @@ const browser = await chromium.launch();
   const ctx = await browser.newContext(iphone);
   const page = await ctx.newPage();
   await openGlobe(page);
+
+  await check("SP: 試作版の帯は1行に収まり、タップで閉じられる", async () => {
+    const b = page.getByTestId("preview-banner");
+    const box = await b.boundingBox();
+    assert(box && box.height <= 34, `帯が高すぎる（${box?.height}px）`);
+    await page.screenshot({ path: `${SHOTS}/sp-banner.png` });
+    await page.getByLabel("試作版の表示を閉じる").tap();
+    assert((await b.count()) === 0, "閉じても消えない");
+    return `高さ ${Math.round(box.height)}px`;
+  });
 
   await check("SP(390×844): 横スクロールが出ない", async () => {
     const r = await page.evaluate(() => ({ sw: document.documentElement.scrollWidth, w: innerWidth, h: innerHeight }));

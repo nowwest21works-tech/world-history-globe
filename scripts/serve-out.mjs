@@ -10,10 +10,18 @@ const TYPES = {
   ".png": "image/png", ".svg": "image/svg+xml", ".ico": "image/x-icon", ".woff2": "font/woff2",
 };
 
-export function serve(port = Number(process.env.PORT ?? 4173)) {
+/**
+ * basePath（例: "/world-history-globe"）を指定すると、GitHub Pages と同じくそのサブパスの下でだけ配信する。
+ * 環境変数 NEXT_PUBLIC_BASE_PATH が既定値。
+ */
+export function serve(port = Number(process.env.PORT ?? 4173), basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "") {
   const server = createServer(async (req, res) => {
     try {
       let p = decodeURIComponent(new URL(req.url ?? "/", "http://x").pathname);
+      if (basePath) {
+        if (p !== basePath && !p.startsWith(basePath + "/")) throw new Error("outside base path");
+        p = p.slice(basePath.length) || "/";
+      }
       let file = path.join(ROOT, p);
       if (!file.startsWith(ROOT)) throw new Error("forbidden");
       if ((await stat(file).catch(() => null))?.isDirectory()) file = path.join(file, "index.html");
@@ -28,5 +36,7 @@ export function serve(port = Number(process.env.PORT ?? 4173)) {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  serve().then(() => console.log(`http://127.0.0.1:${process.env.PORT ?? 4173}/`));
+  serve().then(() =>
+    console.log(`http://127.0.0.1:${process.env.PORT ?? 4173}${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/`),
+  );
 }
