@@ -85,6 +85,18 @@ describe("不確実性・継続期間の表示", () => {
     expect(uncertaintyRange(p)).toEqual([toAstronomical("BCE", 1800), toAstronomical("BCE", 1700)]);
   });
 
+  it("「前18世紀頃」（世紀単位）と、その幅", () => {
+    const p: TimePoint = { year: toAstronomical("BCE", 1750), uncertainty: { kind: "century" } };
+    expect(formatTimePoint(p)).toBe("前18世紀頃");
+    expect(uncertaintyRange(p)).toEqual([toAstronomical("BCE", 1800), toAstronomical("BCE", 1701)]);
+    const q: TimePoint = { year: 1450, uncertainty: { kind: "century" } };
+    expect(formatTimePoint(q)).toBe("15世紀頃");
+    expect(uncertaintyRange(q)).toEqual([1401, 1500]);
+    expect(formatTimePoint({ year: toAstronomical("BCE", 100), uncertainty: { kind: "century" } })).toBe("前1世紀頃");
+    expect(formatTimePoint({ year: 0, uncertainty: { kind: "century" } })).toBe("前1世紀頃");
+    expect(formatTimePoint({ year: 1, uncertainty: { kind: "century" } })).toBe("1世紀頃");
+  });
+
   it("不確実な端点を含む期間には「約」がつく", () => {
     const s: TimePoint = { year: toAstronomical("BCE", 2600), uncertainty: { kind: "circa" } };
     const e: TimePoint = { year: toAstronomical("BCE", 1900), uncertainty: { kind: "circa" } };

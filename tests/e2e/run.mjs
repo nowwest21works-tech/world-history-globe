@@ -149,7 +149,7 @@ const browser = await chromium.launch();
     const targets = [
       { slider: 362, title: "ローマ帝政の開始", expect: "前27年" },
       { slider: 30, title: "インダス文明の都市", expect: "前2600年頃〜前1900年頃（約700年間）" },
-      { slider: 125, title: "ハンムラビ法典", expect: "前1750年（±50年）" },
+      { slider: 125, title: "ハンムラビ法典", expect: "前18世紀頃" },
       { slider: 290, title: "アレクサンドロスの東方遠征", expect: "前334年〜前323年（11年間）" },
       ...cases.map(([slider, title, expect]) => ({ slider, title, expect })),
     ];

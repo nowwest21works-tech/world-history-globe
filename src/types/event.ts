@@ -9,7 +9,8 @@ export type AstroYear = number;
 export type Uncertainty =
   | { kind: "exact" } // 確定
   | { kind: "circa" } // 「頃」
-  | { kind: "plusMinus"; years: number }; // 「±n年」
+  | { kind: "plusMinus"; years: number } // 「±n年」
+  | { kind: "century" }; // 「前18世紀頃」：year を含む世紀単位でしか言えない場合（year は代表値）
 
 export interface TimePoint {
   year: AstroYear;

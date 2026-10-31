@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { EVENTS } from "@/data/events";
 import { validateEvents } from "@/lib/validate";
+import { CATEGORIES } from "@/lib/categories";
 import { contemporaryEvents } from "@/lib/visibility";
 import { MAX_YEAR, MIN_YEAR } from "@/lib/timeScale";
 
@@ -16,6 +17,11 @@ describe("events.json", () => {
 
   it("verified はすべて false（人間による確認前）", () => {
     expect(EVENTS.filter((e) => e.verified !== false).map((e) => e.id)).toEqual([]);
+  });
+
+  it("分類「religion」の表示名は「宗教・思想」", () => {
+    expect(CATEGORIES.religion.label).toBe("宗教・思想");
+    expect(EVENTS.find((e) => e.id === "confucius")?.category).toBe("religion");
   });
 
   it("6分類すべてが使われている", () => {

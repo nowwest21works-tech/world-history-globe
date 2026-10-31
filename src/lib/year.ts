@@ -28,8 +28,21 @@ export function formatYear(year: AstroYear): string {
   return era === "BCE" ? `前${n}年` : `${n}年`;
 }
 
-/** 不確実性つきの年代表示："前2560年頃" / "前1750年（±50年）" / "1453年" */
+/** year を含む世紀（前18世紀 → { era: "BCE", c: 18 }） */
+export function centuryOf(year: AstroYear): { era: Era; c: number } {
+  const { era, n } = fromAstronomical(year);
+  return { era, c: Math.ceil(n / 100) };
+}
+
+/** 世紀の表示："前18世紀" / "15世紀" */
+export function formatCentury(year: AstroYear): string {
+  const { era, c } = centuryOf(year);
+  return era === "BCE" ? `前${c}世紀` : `${c}世紀`;
+}
+
+/** 不確実性つきの年代表示："前2560年頃" / "前1750年（±50年）" / "前18世紀頃" / "1453年" */
 export function formatTimePoint(p: TimePoint): string {
+  if (p.uncertainty.kind === "century") return `${formatCentury(p.year)}頃`;
   const base = formatYear(p.year);
   switch (p.uncertainty.kind) {
     case "circa":
@@ -59,6 +72,13 @@ export function formatSpan(start: TimePoint, end?: TimePoint): string {
 export function uncertaintyRange(p: TimePoint): [AstroYear, AstroYear] {
   if (p.uncertainty.kind === "plusMinus") {
     return [p.year - p.uncertainty.years, p.year + p.uncertainty.years];
+  }
+  if (p.uncertainty.kind === "century") {
+    // 前18世紀 = 前1800年〜前1701年、15世紀 = 1401年〜1500年
+    const { era, c } = centuryOf(p.year);
+    return era === "BCE"
+      ? [toAstronomical("BCE", c * 100), toAstronomical("BCE", (c - 1) * 100 + 1)]
+      : [toAstronomical("CE", (c - 1) * 100 + 1), toAstronomical("CE", c * 100)];
   }
   return [p.year, p.year];
 }

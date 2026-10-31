@@ -2,7 +2,7 @@ import type { HistoryEvent } from "@/types/event";
 
 const CATEGORIES = ["politics", "war", "religion", "culture", "economy", "exchange"];
 const PRECISIONS = ["exact", "city", "region"];
-const UNCERTAINTIES = ["exact", "circa", "plusMinus"];
+const UNCERTAINTIES = ["exact", "circa", "plusMinus", "century"];
 
 /** events.json の整合性チェック。問題の一覧を返す（空なら OK）。 */
 export function validateEvents(events: HistoryEvent[]): string[] {

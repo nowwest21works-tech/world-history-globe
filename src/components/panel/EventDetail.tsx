@@ -9,7 +9,7 @@ import { UnverifiedBadge } from "./UnverifiedBadge";
 function rangeNote(e: HistoryEvent): string | null {
   const parts: string[] = [];
   for (const [label, p] of [["開始", e.start], ["終了", e.end]] as const) {
-    if (p?.uncertainty.kind === "plusMinus") {
+    if (p?.uncertainty.kind === "plusMinus" || p?.uncertainty.kind === "century") {
       const [a, b] = uncertaintyRange(p);
       parts.push(`${label}は${formatYear(a)}〜${formatYear(b)}の幅`);
     }
