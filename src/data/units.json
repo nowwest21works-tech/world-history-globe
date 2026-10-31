@@ -345,26 +345,13 @@
         "may-fourth",
         "versailles-treaty",
         "turkey-republic",
-        "salt-march"
+        "salt-march",
+        "second-industrial-revolution",
+        "russo-japanese-war",
+        "march-first",
+        "league-of-nations"
       ],
-      "candidates": [
-        {
-          "title": "第2次産業革命",
-          "batch": "第3次"
-        },
-        {
-          "title": "国際連盟の発足",
-          "batch": "第3次"
-        },
-        {
-          "title": "三・一独立運動",
-          "batch": "第3次"
-        },
-        {
-          "title": "日露戦争",
-          "batch": "第3次"
-        }
-      ]
+      "candidates": []
     },
     {
       "code": "D4",
@@ -374,42 +361,17 @@
       "min": 10,
       "eventIds": [
         "great-depression",
-        "world-war-2"
+        "world-war-2",
+        "nazi-seizure",
+        "second-sino-japanese-war",
+        "holocaust",
+        "atomic-bombings",
+        "united-nations",
+        "india-partition",
+        "prc-founding",
+        "korean-war"
       ],
-      "candidates": [
-        {
-          "title": "ナチ党の政権獲得",
-          "batch": "第3次"
-        },
-        {
-          "title": "日中戦争",
-          "batch": "第3次"
-        },
-        {
-          "title": "ホロコースト",
-          "batch": "第3次"
-        },
-        {
-          "title": "広島・長崎への原子爆弾投下",
-          "batch": "第3次"
-        },
-        {
-          "title": "国際連合の発足",
-          "batch": "第3次"
-        },
-        {
-          "title": "インド・パキスタンの分離独立",
-          "batch": "第3次"
-        },
-        {
-          "title": "中華人民共和国の成立",
-          "batch": "第3次"
-        },
-        {
-          "title": "朝鮮戦争",
-          "batch": "第3次"
-        }
-      ]
+      "candidates": []
     },
     {
       "code": "E1",
@@ -419,42 +381,17 @@
       "min": 10,
       "eventIds": [
         "cold-war",
-        "berlin-wall"
+        "berlin-wall",
+        "bandung",
+        "year-of-africa",
+        "cuban-missile-crisis",
+        "vietnam-war",
+        "soviet-dissolution",
+        "eu-founding",
+        "apartheid-end",
+        "september-11"
       ],
-      "candidates": [
-        {
-          "title": "バンドン会議（アジア・アフリカ会議）",
-          "batch": "第3次"
-        },
-        {
-          "title": "アフリカの年（1960年）",
-          "batch": "第3次"
-        },
-        {
-          "title": "キューバ危機",
-          "batch": "第3次"
-        },
-        {
-          "title": "ベトナム戦争",
-          "batch": "第3次"
-        },
-        {
-          "title": "ソ連の解体",
-          "batch": "第3次"
-        },
-        {
-          "title": "ヨーロッパ連合の発足",
-          "batch": "第3次"
-        },
-        {
-          "title": "アパルトヘイトの撤廃",
-          "batch": "第3次"
-        },
-        {
-          "title": "アメリカ同時多発テロ",
-          "batch": "第3次"
-        }
-      ]
+      "candidates": []
     },
     {
       "code": "E2",
