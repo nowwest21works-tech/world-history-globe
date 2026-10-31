@@ -255,30 +255,14 @@
         "westphalia",
         "glorious-revolution",
         "newton-principia",
-        "nerchinsk"
+        "nerchinsk",
+        "timurid-samarkand",
+        "edo-sakoku",
+        "peter-the-great",
+        "enlightenment-encyclopedie",
+        "seven-years-war"
       ],
-      "candidates": [
-        {
-          "title": "啓蒙思想と『百科全書』",
-          "batch": "第4次"
-        },
-        {
-          "title": "ピョートル1世とロシアの近代化",
-          "batch": "第4次"
-        },
-        {
-          "title": "ティムール朝とサマルカンド",
-          "batch": "第4次"
-        },
-        {
-          "title": "七年戦争と英仏の植民地争い",
-          "batch": "第4次"
-        },
-        {
-          "title": "江戸幕府の対外政策（いわゆる「鎖国」）",
-          "batch": "第4次"
-        }
-      ]
+      "candidates": []
     },
     {
       "code": "D1",
@@ -306,30 +290,14 @@
         "congress-of-vienna",
         "indian-rebellion",
         "us-civil-war",
-        "german-empire"
+        "german-empire",
+        "napoleon",
+        "tanzimat",
+        "revolutions-1848",
+        "taiping",
+        "suez-canal"
       ],
-      "candidates": [
-        {
-          "title": "ナポレオンの大陸支配",
-          "batch": "第4次"
-        },
-        {
-          "title": "1848年の諸革命",
-          "batch": "第4次"
-        },
-        {
-          "title": "太平天国",
-          "batch": "第4次"
-        },
-        {
-          "title": "オスマン帝国のタンジマート",
-          "batch": "第4次"
-        },
-        {
-          "title": "スエズ運河の開通",
-          "batch": "第4次"
-        }
-      ]
+      "candidates": []
     },
     {
       "code": "D3",
@@ -399,29 +367,14 @@
       "name": "経済のグローバル化と格差の是正",
       "summary": "戦後の国際経済の仕組みから、石油危機、新興国の成長、金融危機までを通して、経済の一体化と格差の問題を考える単元。",
       "min": 5,
-      "eventIds": [],
-      "candidates": [
-        {
-          "title": "ブレトン・ウッズ体制",
-          "batch": "第4次"
-        },
-        {
-          "title": "石油危機",
-          "batch": "第4次"
-        },
-        {
-          "title": "中国の改革開放",
-          "batch": "第4次"
-        },
-        {
-          "title": "世界貿易機関（WTO）の発足",
-          "batch": "第4次"
-        },
-        {
-          "title": "世界金融危機（2008年）",
-          "batch": "第4次"
-        }
-      ]
+      "eventIds": [
+        "bretton-woods",
+        "oil-crisis",
+        "reform-and-opening",
+        "wto",
+        "financial-crisis-2008"
+      ],
+      "candidates": []
     },
     {
       "code": "E3",
@@ -429,29 +382,14 @@
       "name": "科学技術の高度化と知識基盤社会",
       "summary": "原子力、宇宙開発、情報通信、生命科学などの発達が、社会や国際関係にもたらした変化と課題を考える単元。",
       "min": 5,
-      "eventIds": [],
-      "candidates": [
-        {
-          "title": "人工衛星スプートニクの打ち上げ",
-          "batch": "第4次"
-        },
-        {
-          "title": "アポロ11号の月面着陸",
-          "batch": "第4次"
-        },
-        {
-          "title": "ワールド・ワイド・ウェブの公開",
-          "batch": "第4次"
-        },
-        {
-          "title": "ヒトゲノムの解読",
-          "batch": "第4次"
-        },
-        {
-          "title": "パリ協定",
-          "batch": "第4次"
-        }
-      ]
+      "eventIds": [
+        "sputnik",
+        "apollo-11",
+        "www",
+        "human-genome",
+        "paris-agreement"
+      ],
+      "candidates": []
     },
     {
       "code": "E4",

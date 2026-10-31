@@ -3812,5 +3812,676 @@
         "accessedAt": "2026-10-30"
       }
     ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "timurid-samarkand",
+    "title": "ティムール朝とサマルカンド",
+    "category": "politics",
+    "start": {
+      "year": 1370,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1507,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.654,
+      "lng": 66.975,
+      "placeName": "サマルカンド（現ウズベキスタン）",
+      "precision": "city"
+    },
+    "summary": "モンゴル帝国の後を継ぐ勢力の一つとして中央アジアに興ったティムール朝は、西アジアまで広がる大帝国を築いた。都サマルカンドには青いタイルのモスクや学院が建てられ、イスラーム文化と学問の中心として栄えた。",
+    "historicalNote": "創始者ティムールの在位中の国家は「ティムール帝国」と呼ばれることも多い。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ティムール朝」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%86%E3%82%A3%E3%83%A0%E3%83%BC%E3%83%AB%E6%9C%9D",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「サマルカンド」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%9E%E3%83%AB%E3%82%AB%E3%83%B3%E3%83%89",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "edo-sakoku",
+    "title": "江戸幕府の対外政策（いわゆる「鎖国」）",
+    "category": "politics",
+    "start": {
+      "year": 1639,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1854,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 32.744,
+      "lng": 129.873,
+      "placeName": "長崎（出島）",
+      "precision": "exact"
+    },
+    "summary": "江戸幕府はキリスト教の禁止を徹底するため、ポルトガル船の来航を禁じ、日本人の海外渡航も禁止した。ただし長崎でのオランダ・中国との貿易や、朝鮮・琉球・アイヌとの交流は続き、幕府が窓口を限って対外関係を管理する体制だった。",
+    "historicalNote": "「鎖国」という言葉は19世紀初めに生まれたもので、国を完全に閉ざしたわけではないことから、近年は「管理された対外関係」として説明されることが多い。期間は目安。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「鎖国」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%8E%96%E5%9B%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "peter-the-great",
+    "title": "ピョートル1世とロシアの近代化",
+    "category": "politics",
+    "start": {
+      "year": 1682,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1725,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 59.939,
+      "lng": 30.316,
+      "placeName": "サンクトペテルブルク",
+      "precision": "city"
+    },
+    "summary": "ピョートル1世は西ヨーロッパの技術や制度を取り入れて軍隊や行政を改め、スウェーデンとの戦争に勝ってバルト海への出口を得た。バルト海に面して新しい都を築き、ロシアをヨーロッパの大国の一つに押し上げた。",
+    "historicalNote": "期間は在位年。サンクトペテルブルクの建設は1703年に始まった。「大帝」と称される。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ピョートル1世 (ロシア皇帝)」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%94%E3%83%A7%E3%83%BC%E3%83%88%E3%83%AB1%E4%B8%96_(%E3%83%AD%E3%82%B7%E3%82%A2%E7%9A%87%E5%B8%9D)",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "enlightenment-encyclopedie",
+    "title": "啓蒙思想と『百科全書』",
+    "category": "culture",
+    "start": {
+      "year": 1751,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1772,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 48.856,
+      "lng": 2.352,
+      "placeName": "パリ",
+      "precision": "city"
+    },
+    "summary": "理性によって偏見や古い権威を問い直そうとする啓蒙思想が、18世紀のヨーロッパで広まった。フランスではディドロらが当時の知識を集めた『百科全書』を刊行し、その考え方はやがてフランス革命にも影響を与えた。",
+    "historicalNote": "期間は『百科全書』の刊行期間。啓蒙思想は17世紀後半のイギリスに始まるとされる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「百科全書」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%99%BE%E7%A7%91%E5%85%A8%E6%9B%B8",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「啓蒙思想」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%95%93%E8%92%99%E6%80%9D%E6%83%B3",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "seven-years-war",
+    "title": "七年戦争と英仏の植民地争い",
+    "category": "war",
+    "start": {
+      "year": 1756,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1763,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 23.8,
+      "lng": 88.25,
+      "placeName": "プラッシー（インド・ベンガル地方。植民地での戦いの代表点）",
+      "precision": "region"
+    },
+    "summary": "ヨーロッパではプロイセンとオーストリアなどが争い、同じころ北アメリカやインドではイギリスとフランスが植民地をめぐって戦った。イギリスはこの戦いに勝って海外での優位を固め、インド支配への足がかりも得た。",
+    "historicalNote": "インドでは1757年のプラッシーの戦いでイギリス東インド会社が勝利した。北アメリカでの戦いは「フレンチ・インディアン戦争」とも呼ばれる。地点は植民地での戦いの代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「七年戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%83%E5%B9%B4%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「プラッシーの戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%A9%E3%83%83%E3%82%B7%E3%83%BC%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "napoleon",
+    "title": "ナポレオンの大陸支配",
+    "category": "war",
+    "start": {
+      "year": 1804,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1815,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 48.853,
+      "lng": 2.35,
+      "placeName": "パリ（ノートルダム大聖堂。皇帝の戴冠式の地）",
+      "precision": "city"
+    },
+    "summary": "フランス革命後の混乱を収めたナポレオンは皇帝となり、各国との戦争に勝ってヨーロッパ大陸の大半を支配した。征服地には法の下の平等などの考えが広まる一方、支配への反発から各地で国民意識が高まった。",
+    "historicalNote": "期間は皇帝としての時期（1804年の即位から1815年の退位まで、途中の流刑と「百日天下」を含む）。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ナポレオン・ボナパルト」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%9D%E3%83%AC%E3%82%AA%E3%83%B3%E3%83%BB%E3%83%9C%E3%83%8A%E3%83%91%E3%83%AB%E3%83%88",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "tanzimat",
+    "title": "オスマン帝国のタンジマート",
+    "category": "politics",
+    "start": {
+      "year": 1839,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1876,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 41.013,
+      "lng": 28.981,
+      "placeName": "イスタンブル（ギュルハネ庭園）",
+      "precision": "city"
+    },
+    "summary": "ヨーロッパ列強の圧力や領内の諸民族の離反に直面したオスマン帝国は、法や行政、軍隊を西欧にならって改める一連の改革を進めた。改革は1876年の憲法制定にまで至ったが、財政難や列強の介入のなかで十分な成果は上がらなかった。",
+    "historicalNote": "1839年のギュルハネ勅令に始まり、1876年のオスマン帝国憲法（ミドハト憲法）までの改革を指す。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「タンジマート」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%BF%E3%83%B3%E3%82%B8%E3%83%9E%E3%83%BC%E3%83%88",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "revolutions-1848",
+    "title": "1848年の諸革命",
+    "category": "politics",
+    "start": {
+      "year": 1848,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1849,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 50.111,
+      "lng": 8.68,
+      "placeName": "ヨーロッパ各地（代表点：フランクフルト）",
+      "precision": "region"
+    },
+    "summary": "パリの二月革命をきっかけに、自由主義や民族の自立を求める運動がヨーロッパ各地に広がった。多くは鎮圧されたが、ウィーン体制は崩れ、各地の国民国家づくりの動きが強まった。",
+    "historicalNote": "「諸国民の春」とも呼ばれる。地点は、ドイツ統一をめざした国民議会が開かれたフランクフルトを代表点とした。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「1848年革命」",
+        "url": "https://ja.wikipedia.org/wiki/1848%E5%B9%B4%E9%9D%A9%E5%91%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "taiping",
+    "title": "太平天国の乱",
+    "category": "war",
+    "start": {
+      "year": 1851,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1864,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 32.06,
+      "lng": 118.79,
+      "placeName": "天京（現・南京）",
+      "precision": "city"
+    },
+    "summary": "キリスト教の影響を受けた洪秀全らが太平天国を建て、清に対して大規模な反乱を起こした。南京を都として長く勢力を保ったが、漢人官僚の軍隊や外国の協力を得た清によって鎮圧された。",
+    "historicalNote": "1853年に南京を占領して「天京」と改めた。反乱の犠牲者は膨大で、推計には大きな幅がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「太平天国の乱」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%AA%E5%B9%B3%E5%A4%A9%E5%9B%BD%E3%81%AE%E4%B9%B1",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "suez-canal",
+    "title": "スエズ運河の開通",
+    "category": "economy",
+    "start": {
+      "year": 1869,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 30.6,
+      "lng": 32.3,
+      "placeName": "スエズ運河（エジプト、代表点：イスマイリア付近）",
+      "precision": "region"
+    },
+    "summary": "地中海と紅海を結ぶ運河が開通し、ヨーロッパとアジアの間の航路はアフリカ南端を回るより大幅に短くなった。運河は世界の交易を変える一方、その支配をめぐって列強がエジプトへの関与を強めた。",
+    "historicalNote": "建設はフランス人レセップスが主導した。のちにイギリスが運河会社の株を買い取り、エジプトへの影響力を強めた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「スエズ運河」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%A8%E3%82%BA%E9%81%8B%E6%B2%B3",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "bretton-woods",
+    "title": "ブレトン・ウッズ体制",
+    "category": "economy",
+    "start": {
+      "year": 1944,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 44.258,
+      "lng": -71.441,
+      "placeName": "ブレトン・ウッズ（アメリカ合衆国ニューハンプシャー州）",
+      "precision": "exact"
+    },
+    "summary": "第二次世界大戦中、連合国の代表が集まり、戦後の国際経済の仕組みを話し合った。国際通貨基金（IMF）と世界銀行の設立が決まり、ドルを中心とした為替の仕組みのもとで、戦後の世界経済が再建されていった。",
+    "historicalNote": "会議は1944年7月、協定の発効は1945年。ドルと金の交換は1971年に停止され、この体制は大きく変わった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ブレトン・ウッズ協定」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%AC%E3%83%88%E3%83%B3%E3%83%BB%E3%82%A6%E3%83%83%E3%82%BA%E5%8D%94%E5%AE%9A",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "oil-crisis",
+    "title": "石油危機",
+    "category": "economy",
+    "start": {
+      "year": 1973,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1979,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 26,
+      "lng": 50.5,
+      "placeName": "ペルシア湾岸（代表点）",
+      "precision": "region"
+    },
+    "summary": "中東での戦争や政変をきっかけに、産油国が原油の供給を絞り、価格が急に上がった。安い石油に頼っていた先進国の経済は大きく揺らぎ、省エネルギーや産業の転換が進むきっかけとなった。",
+    "historicalNote": "1973年の第1次と1979年の第2次の2度ある。地点は代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「オイルショック」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%82%A4%E3%83%AB%E3%82%B7%E3%83%A7%E3%83%83%E3%82%AF",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "reform-and-opening",
+    "title": "中国の改革開放",
+    "category": "economy",
+    "start": {
+      "year": 1978,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 22.543,
+      "lng": 114.058,
+      "placeName": "深圳（経済特区）",
+      "precision": "city"
+    },
+    "summary": "中国は計画経済を改め、市場のしくみや外国からの投資を取り入れる政策に転じた。沿岸部に経済特区が設けられ、その後の急速な経済成長につながる一方、地域や人々の間の格差も広がった。",
+    "historicalNote": "鄧小平の指導のもとで始められた。深圳は経済特区の一つで、小さな町から巨大都市へと成長した。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「改革開放」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%94%B9%E9%9D%A9%E9%96%8B%E6%94%BE",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「中華人民共和国」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "wto",
+    "title": "世界貿易機関（WTO）の発足",
+    "category": "economy",
+    "start": {
+      "year": 1995,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 46.224,
+      "lng": 6.15,
+      "placeName": "ジュネーヴ（事務局の所在地）",
+      "precision": "city"
+    },
+    "summary": "貿易の自由化をさらに進めるため、それまでの協定を引き継いで、紛争を解決する仕組みをもつ国際機関が発足した。多くの国が加わって世界の貿易は拡大したが、先進国と途上国の利害の対立から、交渉が行き詰まる場面も増えた。",
+    "historicalNote": "前身は1948年発効の「関税及び貿易に関する一般協定（GATT）」。中国は2001年に加盟した。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「世界貿易機関」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E8%B2%BF%E6%98%93%E6%A9%9F%E9%96%A2",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "financial-crisis-2008",
+    "title": "世界金融危機（リーマン・ショック）",
+    "category": "economy",
+    "start": {
+      "year": 2008,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 2010,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 40.76,
+      "lng": -73.98,
+      "placeName": "ニューヨーク",
+      "precision": "city"
+    },
+    "summary": "アメリカの住宅ローンの焦げ付きをきっかけに大手投資銀行が経営破綻し、金融危機が一気に世界中へ広がった。各国の経済が落ち込み、金融のグローバル化がもつ危うさが明らかになった。",
+    "historicalNote": "リーマン・ブラザーズの破綻は2008年9月15日。危機は2007年から表面化していた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「リーマン・ショック」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%BB%E3%82%B7%E3%83%A7%E3%83%83%E3%82%AF",
+        "accessedAt": "2026-10-30"
+      },
+      {
+        "title": "ウィキペディア日本語版「世界金融危機 (2007年-2010年)」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E9%87%91%E8%9E%8D%E5%8D%B1%E6%A9%9F_(2007%E5%B9%B4-2010%E5%B9%B4)",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "sputnik",
+    "title": "人工衛星スプートニクの打ち上げ",
+    "category": "culture",
+    "start": {
+      "year": 1957,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 45.92,
+      "lng": 63.34,
+      "placeName": "バイコヌール宇宙基地（現カザフスタン）",
+      "precision": "exact"
+    },
+    "summary": "ソ連が世界で初めて人工衛星を打ち上げることに成功した。軍事技術の差を突きつけられたアメリカは衝撃を受け、科学教育や宇宙開発に力を注ぎ、米ソの宇宙開発競争が本格化した。",
+    "historicalNote": "打ち上げは1957年10月4日。アメリカが受けた衝撃は「スプートニク・ショック」と呼ばれる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「スプートニク1号」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%97%E3%83%BC%E3%83%88%E3%83%8B%E3%82%AF1%E5%8F%B7",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "apollo-11",
+    "title": "アポロ11号の月面着陸",
+    "category": "culture",
+    "start": {
+      "year": 1969,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 28.573,
+      "lng": -80.649,
+      "placeName": "ケネディ宇宙センター（打ち上げ地、アメリカ合衆国フロリダ州）",
+      "precision": "exact"
+    },
+    "summary": "アメリカのアポロ11号が月に着陸し、人類が初めて月面に降り立った。米ソの宇宙開発競争の頂点となった出来事で、その映像は世界中に中継された。",
+    "historicalNote": "月面着陸は1969年7月。地点は打ち上げ地に置いた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アポロ11号」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%9D%E3%83%AD11%E5%8F%B7",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "www",
+    "title": "ワールド・ワイド・ウェブの公開",
+    "category": "culture",
+    "start": {
+      "year": 1991,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 46.234,
+      "lng": 6.055,
+      "placeName": "欧州原子核研究機構（CERN、スイス・フランス国境）",
+      "precision": "exact"
+    },
+    "summary": "研究者どうしが情報を共有するために考案された、文書をリンクでつなぐ仕組みが一般に公開された。インターネットが誰でも使える情報の基盤となるきっかけとなり、経済や社会、政治のあり方まで大きく変えた。",
+    "historicalNote": "考案者はティム・バーナーズ＝リー。公開の時期は1991年とされることが多い。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「World Wide Web」",
+        "url": "https://ja.wikipedia.org/wiki/World_Wide_Web",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "human-genome",
+    "title": "ヒトゲノムの解読",
+    "category": "culture",
+    "start": {
+      "year": 2003,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 38.999,
+      "lng": -77.103,
+      "placeName": "国際共同研究（代表点：アメリカ合衆国ベセスダ）",
+      "precision": "region"
+    },
+    "summary": "各国の研究機関が協力して、人の遺伝情報（ゲノム）の配列をほぼすべて読み取ったと発表した。医療や生命科学に大きな可能性を開く一方、遺伝情報の扱いや生命倫理をめぐる新しい課題も生まれた。",
+    "historicalNote": "計画は1990年に始まり、完了の発表はDNAの二重らせん構造の発見から50年にあたる2003年。地点は代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ヒトゲノム計画」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%92%E3%83%88%E3%82%B2%E3%83%8E%E3%83%A0%E8%A8%88%E7%94%BB",
+        "accessedAt": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "paris-agreement",
+    "title": "パリ協定",
+    "category": "politics",
+    "start": {
+      "year": 2015,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 48.936,
+      "lng": 2.425,
+      "placeName": "パリ（ル・ブルジェ、会議の会場）",
+      "precision": "city"
+    },
+    "summary": "気候変動を抑えるため、先進国も途上国も含むほぼすべての国が温室効果ガスの削減に取り組む国際的な枠組みが採択された。地球規模の課題に各国がどう協力するかを考える手がかりとなっている。",
+    "historicalNote": "採択は2015年12月12日、第21回気候変動枠組条約締約国会議（COP21）で行われた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「パリ協定 (気候変動)」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%AA%E5%8D%94%E5%AE%9A_(%E6%B0%97%E5%80%99%E5%A4%89%E5%8B%95)",
+        "accessedAt": "2026-10-30"
+      }
+    ]
   }
 ]
