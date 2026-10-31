@@ -1,0 +1,529 @@
+{
+  "basis": "高等学校学習指導要領（平成30年告示）地理歴史「世界史探究」の大項目・中項目",
+  "majors": [
+    {
+      "code": "A",
+      "name": "世界史へのまなざし"
+    },
+    {
+      "code": "B",
+      "name": "諸地域の歴史的特質の形成"
+    },
+    {
+      "code": "C",
+      "name": "諸地域の交流・再編"
+    },
+    {
+      "code": "D",
+      "name": "諸地域の結合・変容"
+    },
+    {
+      "code": "E",
+      "name": "地球世界の課題"
+    }
+  ],
+  "units": [
+    {
+      "code": "A1",
+      "major": "A",
+      "name": "地球環境から見る人類の歴史",
+      "summary": "気候や地形、感染症などの自然環境が、人類の移動や暮らしとどう関わってきたかを考える導入の単元。",
+      "min": 3,
+      "eventIds": [],
+      "candidates": [
+        {
+          "title": "黒死病（ペスト）の大流行（14世紀）",
+          "batch": "第5次"
+        },
+        {
+          "title": "小氷期（14〜19世紀）",
+          "batch": "第5次"
+        },
+        {
+          "title": "タンボラ山の噴火と「夏のない年」（1815年）",
+          "batch": "第5次"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "major": "A",
+      "name": "日常生活から見る世界の歴史",
+      "summary": "衣食住や嗜好品など身近なモノから、世界の結び付きや社会の変化をたどる導入の単元。",
+      "min": 3,
+      "eventIds": [],
+      "candidates": [
+        {
+          "title": "砂糖プランテーションの拡大（カリブ海）",
+          "batch": "第5次"
+        },
+        {
+          "title": "コーヒーハウスの広がり（イスタンブル）",
+          "batch": "第5次"
+        },
+        {
+          "title": "茶の世界商品化（中国からイギリスへ）",
+          "batch": "第5次"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "major": "B",
+      "name": "諸地域の歴史的特質への問い",
+      "summary": "大項目Bの学習を見通す問いを立てる単元。個別のイベントは置かず、ツアーや問いで扱う。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "B2",
+      "major": "B",
+      "name": "古代文明の歴史的特質",
+      "summary": "大河流域などに生まれた初期の文明が、どのような自然条件のもとで、どんな政治・宗教・文字の仕組みをもったかを比べる単元。",
+      "min": 15,
+      "eventIds": [
+        "uruk-cuneiform",
+        "egypt-unification",
+        "sumerian-city-states",
+        "indus-civilization",
+        "great-pyramid",
+        "sargon-akkad",
+        "minoan-crete",
+        "hammurabi-code",
+        "hittite",
+        "shang-dynasty",
+        "vedic-aryans",
+        "amarna-reform",
+        "olmec",
+        "phoenicia",
+        "western-zhou",
+        "assyria-unification",
+        "maya-classic"
+      ],
+      "candidates": []
+    },
+    {
+      "code": "B3",
+      "major": "B",
+      "name": "諸地域の歴史的特質",
+      "summary": "西アジア・地中海、南アジア、東南アジア、東アジア・中央ユーラシアなどの各地域で、宗教や国家の仕組みといった、その地域らしさが形づくられていく過程を扱う単元。",
+      "min": 30,
+      "eventIds": [
+        "darius-royal-road",
+        "confucius",
+        "roman-republic",
+        "persian-wars",
+        "athens-democracy",
+        "buddha",
+        "alexander-campaign",
+        "ashoka",
+        "qin-unification",
+        "zhang-qian",
+        "roman-principate",
+        "jesus-christianity",
+        "cai-lun-paper",
+        "gupta",
+        "germanic-migration",
+        "western-rome-fall",
+        "tang",
+        "hijra",
+        "charlemagne-coronation",
+        "heian-kyo",
+        "paper-east-asia",
+        "abbasid-baghdad",
+        "talas"
+      ],
+      "candidates": [
+        {
+          "title": "漢の成立",
+          "batch": "第5次"
+        },
+        {
+          "title": "匈奴と遊牧国家",
+          "batch": "第5次"
+        },
+        {
+          "title": "隋の統一と大運河",
+          "batch": "第5次"
+        },
+        {
+          "title": "ササン朝ペルシア",
+          "batch": "第5次"
+        },
+        {
+          "title": "ユスティニアヌス帝とビザンツ帝国",
+          "batch": "第5次"
+        },
+        {
+          "title": "ウマイヤ朝",
+          "batch": "第5次"
+        },
+        {
+          "title": "東南アジアの初期国家（扶南など）",
+          "batch": "第5次"
+        },
+        {
+          "title": "アクスム王国",
+          "batch": "予備"
+        }
+      ]
+    },
+    {
+      "code": "C1",
+      "major": "C",
+      "name": "諸地域の交流・再編への問い",
+      "summary": "大項目Cの学習を見通す問いを立てる単元。個別のイベントは置かない。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "C2",
+      "major": "C",
+      "name": "結び付くユーラシアと諸地域",
+      "summary": "イスラーム世界の広がり、中世ヨーロッパ、宋やモンゴル帝国、インド洋の交易、そして大航海によってユーラシアとアメリカ大陸が結び付いていく過程を扱う単元。",
+      "min": 25,
+      "eventIds": [
+        "baghdad-paper",
+        "song-dynasty",
+        "first-crusade",
+        "genghis-khan",
+        "mansa-musa",
+        "european-paper",
+        "zheng-he",
+        "gutenberg",
+        "fall-of-constantinople",
+        "fall-of-granada",
+        "columbus",
+        "vasco-da-gama",
+        "magellan",
+        "aztec-conquest",
+        "inca-conquest",
+        "potosi",
+        "manila-galleon",
+        "atlantic-slave-trade"
+      ],
+      "candidates": [
+        {
+          "title": "元の成立（大都）",
+          "batch": "第5次"
+        },
+        {
+          "title": "明の成立",
+          "batch": "第5次"
+        },
+        {
+          "title": "朝鮮王朝の成立",
+          "batch": "第5次"
+        },
+        {
+          "title": "アンコール・ワット",
+          "batch": "第5次"
+        },
+        {
+          "title": "マラッカ王国",
+          "batch": "第5次"
+        },
+        {
+          "title": "オスマン帝国の成立",
+          "batch": "第5次"
+        },
+        {
+          "title": "ルネサンス（フィレンツェ）",
+          "batch": "第5次"
+        },
+        {
+          "title": "グレート・ジンバブエ",
+          "batch": "予備"
+        }
+      ]
+    },
+    {
+      "code": "C3",
+      "major": "C",
+      "name": "アジア諸地域とヨーロッパの再編",
+      "summary": "16〜18世紀に、オスマン帝国・サファヴィー朝・ムガル帝国・清などのアジアの大帝国が栄える一方、ヨーロッパで主権国家や科学・啓蒙の考え方が育っていく過程を扱う単元。",
+      "min": 15,
+      "eventIds": [
+        "reformation",
+        "mughal-empire",
+        "suleiman",
+        "safavid",
+        "qing-beijing",
+        "voc",
+        "westphalia",
+        "glorious-revolution",
+        "newton-principia",
+        "nerchinsk"
+      ],
+      "candidates": [
+        {
+          "title": "啓蒙思想と『百科全書』",
+          "batch": "第4次"
+        },
+        {
+          "title": "ピョートル1世とロシアの近代化",
+          "batch": "第4次"
+        },
+        {
+          "title": "ティムール朝とサマルカンド",
+          "batch": "第4次"
+        },
+        {
+          "title": "七年戦争と英仏の植民地争い",
+          "batch": "第4次"
+        },
+        {
+          "title": "江戸幕府の対外政策（いわゆる「鎖国」）",
+          "batch": "第4次"
+        }
+      ]
+    },
+    {
+      "code": "D1",
+      "major": "D",
+      "name": "諸地域の結合・変容への問い",
+      "summary": "大項目Dの学習を見通す問いを立てる単元。個別のイベントは置かない。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "D2",
+      "major": "D",
+      "name": "世界市場の形成と諸地域の結合",
+      "summary": "産業革命と、アメリカ・フランスなど大西洋をまたぐ革命によって国民国家と世界市場が生まれ、アジア諸地域がそれに組み込まれていく過程を扱う単元。",
+      "min": 15,
+      "eventIds": [
+        "industrial-revolution",
+        "us-independence",
+        "french-revolution",
+        "opium-war",
+        "meiji-restoration",
+        "haiti-revolution",
+        "latin-american-independence",
+        "congress-of-vienna",
+        "indian-rebellion",
+        "us-civil-war",
+        "german-empire"
+      ],
+      "candidates": [
+        {
+          "title": "ナポレオンの大陸支配",
+          "batch": "第4次"
+        },
+        {
+          "title": "1848年の諸革命",
+          "batch": "第4次"
+        },
+        {
+          "title": "太平天国",
+          "batch": "第4次"
+        },
+        {
+          "title": "オスマン帝国のタンジマート",
+          "batch": "第4次"
+        },
+        {
+          "title": "スエズ運河の開通",
+          "batch": "第4次"
+        }
+      ]
+    },
+    {
+      "code": "D3",
+      "major": "D",
+      "name": "帝国主義とナショナリズムの高揚",
+      "summary": "列強による世界分割と、それに抗するアジア・アフリカの民族運動、第一次世界大戦とその後の国際秩序を扱う単元。",
+      "min": 12,
+      "eventIds": [
+        "world-war-1",
+        "russian-revolution",
+        "scramble-for-africa",
+        "xinhai-revolution",
+        "may-fourth",
+        "versailles-treaty",
+        "turkey-republic",
+        "salt-march"
+      ],
+      "candidates": [
+        {
+          "title": "第2次産業革命",
+          "batch": "第3次"
+        },
+        {
+          "title": "国際連盟の発足",
+          "batch": "第3次"
+        },
+        {
+          "title": "三・一独立運動",
+          "batch": "第3次"
+        },
+        {
+          "title": "日露戦争",
+          "batch": "第3次"
+        }
+      ]
+    },
+    {
+      "code": "D4",
+      "major": "D",
+      "name": "第二次世界大戦と諸地域の変容",
+      "summary": "世界恐慌から第二次世界大戦へと向かう過程と、大戦後の新しい国際秩序や、アジアの国々の独立を扱う単元。",
+      "min": 10,
+      "eventIds": [
+        "great-depression",
+        "world-war-2"
+      ],
+      "candidates": [
+        {
+          "title": "ナチ党の政権獲得",
+          "batch": "第3次"
+        },
+        {
+          "title": "日中戦争",
+          "batch": "第3次"
+        },
+        {
+          "title": "ホロコースト",
+          "batch": "第3次"
+        },
+        {
+          "title": "広島・長崎への原子爆弾投下",
+          "batch": "第3次"
+        },
+        {
+          "title": "国際連合の発足",
+          "batch": "第3次"
+        },
+        {
+          "title": "インド・パキスタンの分離独立",
+          "batch": "第3次"
+        },
+        {
+          "title": "中華人民共和国の成立",
+          "batch": "第3次"
+        },
+        {
+          "title": "朝鮮戦争",
+          "batch": "第3次"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "major": "E",
+      "name": "国際機構の形成と平和への模索",
+      "summary": "冷戦と脱植民地化のなかで、国際機構や地域の協力の仕組みがどのように平和を模索してきたかを扱う単元。",
+      "min": 10,
+      "eventIds": [
+        "cold-war",
+        "berlin-wall"
+      ],
+      "candidates": [
+        {
+          "title": "バンドン会議（アジア・アフリカ会議）",
+          "batch": "第3次"
+        },
+        {
+          "title": "アフリカの年（1960年）",
+          "batch": "第3次"
+        },
+        {
+          "title": "キューバ危機",
+          "batch": "第3次"
+        },
+        {
+          "title": "ベトナム戦争",
+          "batch": "第3次"
+        },
+        {
+          "title": "ソ連の解体",
+          "batch": "第3次"
+        },
+        {
+          "title": "ヨーロッパ連合の発足",
+          "batch": "第3次"
+        },
+        {
+          "title": "アパルトヘイトの撤廃",
+          "batch": "第3次"
+        },
+        {
+          "title": "アメリカ同時多発テロ",
+          "batch": "第3次"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "major": "E",
+      "name": "経済のグローバル化と格差の是正",
+      "summary": "戦後の国際経済の仕組みから、石油危機、新興国の成長、金融危機までを通して、経済の一体化と格差の問題を考える単元。",
+      "min": 5,
+      "eventIds": [],
+      "candidates": [
+        {
+          "title": "ブレトン・ウッズ体制",
+          "batch": "第4次"
+        },
+        {
+          "title": "石油危機",
+          "batch": "第4次"
+        },
+        {
+          "title": "中国の改革開放",
+          "batch": "第4次"
+        },
+        {
+          "title": "世界貿易機関（WTO）の発足",
+          "batch": "第4次"
+        },
+        {
+          "title": "世界金融危機（2008年）",
+          "batch": "第4次"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "major": "E",
+      "name": "科学技術の高度化と知識基盤社会",
+      "summary": "原子力、宇宙開発、情報通信、生命科学などの発達が、社会や国際関係にもたらした変化と課題を考える単元。",
+      "min": 5,
+      "eventIds": [],
+      "candidates": [
+        {
+          "title": "人工衛星スプートニクの打ち上げ",
+          "batch": "第4次"
+        },
+        {
+          "title": "アポロ11号の月面着陸",
+          "batch": "第4次"
+        },
+        {
+          "title": "ワールド・ワイド・ウェブの公開",
+          "batch": "第4次"
+        },
+        {
+          "title": "ヒトゲノムの解読",
+          "batch": "第4次"
+        },
+        {
+          "title": "パリ協定",
+          "batch": "第4次"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "major": "E",
+      "name": "地球世界の課題の探究",
+      "summary": "科目のまとめとして、紛争と共生、経済格差、科学技術と文化などから主題を立てて探究する単元。個別のイベントは置かず、これまでのイベントやツアーを素材にする。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    }
+  ]
+}
