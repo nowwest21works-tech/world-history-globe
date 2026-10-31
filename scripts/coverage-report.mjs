@@ -14,7 +14,9 @@ const minTotal = counted.reduce((s, u) => s + u.min, 0);
 const shortfall = counted.reduce((s, u) => s + Math.max(0, u.min - have(u)), 0);
 const completeTotal = events.length + shortfall;
 const doneUnits = counted.filter((u) => have(u) >= u.min).length;
-const batches = ["第2次", "第3次", "第4次", "第5次"];
+// 未実施の回（候補が残っている回）。実施済みの回は units.json から候補が消え、収録済みに移る
+const batches = [...new Set(units.flatMap((u) => u.candidates.map((c) => c.batch)))].filter((b) => b !== "予備").sort();
+const DONE = ["第1次（ツアー用13件）", "第2次（C(3)・D(2)・D(3) の20件）"];
 
 const majorName = Object.fromEntries(majors.map((m) => [m.code, m.name]));
 const unitLabel = (u) => `${u.major}(${u.code.slice(1)}) ${u.name}`;
@@ -67,7 +69,7 @@ for (const u of units) {
   }
 }
 
-md += `\n## 追加の計画（1回20件以内）\n\nこれまでの C 案（第2次〜第4次）を、上の不足分に合わせて組み直した。不足が大きい単元から順に埋める。\n\n| 回 | 件数 | 対象の単元（件数） |\n|---|---|---|\n`;
+md += `\n## 追加の計画（1回20件以内）\n\nこれまでの C 案（第2次〜第4次）を、上の不足分に合わせて組み直した。不足が大きい単元から順に埋める。\n\n- 実施済み：${DONE.join("、")}\n\n| 回 | 件数 | 対象の単元（件数） |\n|---|---|---|\n`;
 for (const b of batches) {
   const per = counted
     .map((u) => [u, u.candidates.filter((c) => c.batch === b).length])
