@@ -17,7 +17,16 @@ function rangeNote(e: HistoryEvent): string | null {
   return parts.length ? parts.join("、") : null;
 }
 
-export function EventDetail({ event, onClose }: { event: HistoryEvent; onClose: () => void }) {
+export function EventDetail({
+  event,
+  onClose,
+  closeLabel = "詳細を閉じる",
+}: {
+  event: HistoryEvent;
+  onClose: () => void;
+  /** ツアー中に開いたときは「ツアーに戻る」 */
+  closeLabel?: string;
+}) {
   const cat = CATEGORIES[event.category];
   const range = rangeNote(event);
   const { lat, lng } = event.location;
@@ -31,7 +40,7 @@ export function EventDetail({ event, onClose }: { event: HistoryEvent; onClose: 
         <span className="head-only">
           <UnverifiedBadge verified={event.verified} />
         </span>
-        <button type="button" className="icon-btn detail-close" onClick={onClose} aria-label="詳細を閉じる">
+        <button type="button" className="icon-btn detail-close" onClick={onClose} aria-label={closeLabel} title={closeLabel}>
           ×
         </button>
       </div>

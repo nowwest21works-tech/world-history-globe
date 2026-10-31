@@ -130,6 +130,82 @@ a { color: var(--accent); }
 .badge-unverified { color: #a7adba; border-color: #4a5060; background: rgba(255, 255, 255, 0.04); }
 .badge-verified { color: #8fe0b3; border-color: #2f6b4c; }
 
+/* ── 学習ツアー ── */
+.view-switch { display: flex; gap: 6px; justify-content: flex-end; }
+.tour-open { border-color: #6d5a2a; color: #f3dfa2; }
+
+.tour-menu-backdrop {
+  position: fixed; inset: 0; z-index: 20; background: rgba(0, 0, 0, 0.55);
+  display: grid; place-items: center; padding: 16px;
+}
+.tour-menu {
+  width: min(720px, 100%); max-height: 100%; overflow-y: auto;
+  background: #0e1220; border: 1px solid var(--panel-border); border-radius: 16px; padding: 16px 18px;
+}
+.tour-menu-head { display: flex; align-items: center; justify-content: space-between; }
+.tour-menu-head h2 { margin: 0; font-size: 18px; }
+.tour-menu-lead { margin: 6px 0 12px; color: var(--muted); font-size: 14px; }
+.tour-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+.tour-card {
+  display: flex; flex-direction: column; gap: 6px;
+  border: 1px solid var(--panel-border); border-radius: 12px; padding: 12px; background: rgba(255, 255, 255, 0.03);
+}
+.tour-card h3 { margin: 0; font-size: 16px; }
+.tour-card p { margin: 0; font-size: 13px; color: var(--muted); flex: 1; }
+.tour-card-meta { display: flex; align-items: center; gap: 8px; }
+.tour-card-start {
+  align-self: flex-start; margin-top: 4px; min-height: 40px; padding: 6px 16px; border-radius: 999px;
+  border: none; background: var(--accent); color: #0b0f19; font-weight: 700; cursor: pointer;
+}
+.tour-menu-note { margin: 12px 0 0; display: block; }
+.tour-kind { font-size: 11px; padding: 1px 8px; border-radius: 999px; border: 1px solid; white-space: nowrap; }
+.tour-kind.is-contemporary { color: #9fd4ff; border-color: #2d5577; }
+.tour-kind.is-connection { color: #ffd27a; border-color: #6d5a2a; }
+
+.tour-panel { display: flex; flex-direction: column; padding-bottom: 0; }
+.tour-head { display: flex; align-items: center; gap: 8px; }
+.tour-title { font-size: 13px; color: var(--muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tour-position { margin-left: auto; font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tour-body { flex: 1; }
+.tour-step-title { display: flex; align-items: center; gap: 8px; font-size: 20px; margin: 10px 0 4px; }
+.tour-meta { margin: 0 0 8px !important; font-size: 13px; color: var(--muted); }
+.tour-narration { line-height: 1.75; }
+.tour-hint { display: block; margin-top: 8px; }
+.tour-question { margin-top: 12px; border: 1px solid #3b4566; border-radius: 10px; padding: 8px 12px; background: rgba(138, 180, 255, 0.06); }
+.tour-question summary { cursor: pointer; font-weight: 600; font-size: 13px; color: var(--accent); }
+.tour-question p { margin-top: 6px !important; }
+.tour-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.tour-unverified { display: block; margin: 14px 0 8px; }
+.tour-arc { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 13px; margin-top: 10px !important; }
+.tour-arc .sub { margin-left: 0; }
+.tour-arc-line { display: inline-block; width: 28px; height: 0; border-top: 3px solid #ffd27a; flex: none; }
+.tour-arc.is-traditional .tour-arc-line { border-top: 3px dashed #fff; }
+.tour-arc.is-debated .tour-arc-line { border-top: 3px dotted #aac4ff; }
+.arc-legend { list-style: none; margin: 12px 0 0; padding: 0; }
+.tour-nav {
+  position: sticky; bottom: 0; display: flex; gap: 8px; justify-content: space-between;
+  margin: 0 -18px; padding: 10px 18px 14px; background: #0e121e; border-top: 1px solid var(--panel-border);
+  box-shadow: 0 -8px 12px rgba(5, 7, 13, 0.6);
+}
+.tour-nav-btn {
+  min-height: 44px; padding: 8px 16px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--panel-border); background: transparent; font-weight: 600;
+}
+.tour-nav-btn.is-primary { background: var(--accent); color: #0b0f19; border-color: var(--accent); }
+.tour-nav-btn:disabled { opacity: 0.35; cursor: default; }
+.play-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* 弧の中点のラベル */
+.arc-label {
+  transform: translate(-50%, -50%); pointer-events: none; white-space: nowrap;
+  font-size: 11px; padding: 1px 8px; border-radius: 999px;
+  background: rgba(10, 14, 24, 0.82); border: 1px solid rgba(255, 210, 122, 0.7); color: #ffe2a6;
+}
+.arc-label.is-traditional { border-style: dashed; border-color: #fff; color: #fff; }
+.arc-label.is-debated { border-style: dotted; border-color: #aac4ff; color: #cfdcff; }
+.arc-label:not(.is-current) { opacity: 0.65; }
+.arc-label.is-behind { opacity: 0 !important; }
+
 /* 年表（フォールバック） */
 .chronology { position: absolute; inset: 0; overflow-y: auto; padding: 12px 16px 24px; }
 .chronology h2 { font-size: 14px; color: var(--muted); margin: 16px 0 6px; border-bottom: 1px solid var(--panel-border); }
@@ -177,7 +253,10 @@ a { color: var(--accent); }
 /* ── スマートフォン ── */
 @media (max-width: 767px) {
   .topbar { padding: 6px 12px; }
-  .brand { font-size: 13px; }
+  /* ボタンが2つ並ぶため、スマホではロゴの文字を視覚上だけ隠す（読み上げ用には残す） */
+  .brand { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .current-year { text-align: left; }
+  .text-btn { padding: 4px 10px; font-size: 13px; }
   .current-year { font-size: 22px; }
   .view-switch { min-width: 0; }
 
@@ -206,6 +285,13 @@ a { color: var(--accent); }
   .detail-title { margin-top: 0; padding-right: 44px; font-size: 18px; }
   .detail-foot { margin-top: 16px; padding-top: 10px; border-top: 1px solid var(--panel-border); }
   .foot-only { display: flex; align-items: center; gap: 8px; }
+
+  /* ツアーのパネルも同じ下45%に出す。前へ／次へは下端に固定 */
+  .tour-panel { padding-top: 10px; padding-bottom: 0; }
+  .tour-step-title { font-size: 17px; margin-top: 6px; }
+  .tour-nav { margin: 0 -16px; padding: 8px 16px 10px; }
+  .tour-menu { padding: 12px 14px; }
+  .tour-cards { grid-template-columns: 1fr; }
 
   /* 詳細表示中の下部バー：▶と年代スライダーだけを1行で残し、同時代リストなどは隠す */
   .has-detail .bottombar { padding: 4px 12px; }
