@@ -1,12 +1,15 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Globe, { type GlobeMethods } from "react-globe.gl";
 import type { HistoryEvent } from "@/types/event";
 import { CATEGORIES } from "@/lib/categories";
 import { formatSpan } from "@/lib/year";
 import { assetPath } from "@/lib/assetPath";
 import type { TourArcView } from "@/lib/tours";
+import { groupNearby } from "@/lib/markerGroups";
+import { CategoryIcon } from "@/components/legend/CategoryIcon";
 import { useElementSize } from "./useElementSize";
 
 export interface FlyTarget {
@@ -30,13 +33,21 @@ export interface GlobeViewProps {
   arcs?: TourArcView[];
 }
 
+/** 地球上のマーカー。ほぼ同じ地点のイベントは1つにまとめる（events[0] が代表） */
 interface Marker {
   kind: "marker";
   id: string;
   lat: number;
   lng: number;
-  event: HistoryEvent;
+  events: HistoryEvent[];
   active: boolean;
+}
+
+/** まとめたマーカーを押したときに出す一覧 */
+interface Picker {
+  events: HistoryEvent[];
+  x: number;
+  y: number;
 }
 
 /** 弧の中点に置く短いラベル（「伝承」などを地球上でも見分けられるようにする） */
@@ -104,15 +115,17 @@ export default function GlobeView({
   );
   onInteractRef.current = onUserInteract;
 
+  const [picker, setPicker] = useState<Picker | null>(null);
+
   const markers = useMemo<(Marker | ArcLabel)[]>(
     () => [
-      ...events.map((e): Marker => ({
+      ...groupNearby(events).map((g): Marker => ({
         kind: "marker",
-        id: e.id,
-        lat: e.location.lat,
-        lng: e.location.lng,
-        event: e,
-        active: activeIds.has(e.id),
+        id: g.map((e) => e.id).join("+"),
+        lat: g[0]!.location.lat,
+        lng: g[0]!.location.lng,
+        events: g,
+        active: g.some((e) => activeIds.has(e.id)),
       })),
       ...arcs.map((a): ArcLabel => ({
         kind: "arc-label",
@@ -130,7 +143,7 @@ export default function GlobeView({
     if (!root) return;
     const sync = () =>
       root.querySelectorAll<HTMLElement>(".marker").forEach((el) => {
-        el.classList.toggle("is-selected", el.dataset.eventId === selectedId);
+        el.classList.toggle("is-selected", !!selectedId && (el.dataset.eventIds ?? "").split(" ").includes(selectedId));
       });
     sync();
     const id = requestAnimationFrame(sync);
@@ -149,23 +162,41 @@ export default function GlobeView({
       return el;
     }
     const m = d as Marker;
-    const cat = CATEGORIES[m.event.category];
+    const head = m.events[0]!;
+    const cat = CATEGORIES[head.category];
+    const ids = m.events.map((e) => e.id);
     const el = document.createElement("button");
     el.type = "button";
     el.className = [
       "marker",
-      `imp-${m.event.importance}`,
+      `imp-${Math.max(...m.events.map((e) => e.importance))}`,
       m.active ? "is-active" : "is-dim",
-      m.id === selectedIdRef.current ? "is-selected" : "",
+      selectedIdRef.current && ids.includes(selectedIdRef.current) ? "is-selected" : "",
+      m.events.length > 1 ? "is-group" : "",
     ].join(" ");
     el.style.setProperty("--c", cat.color);
-    el.dataset.eventId = m.id;
-    el.setAttribute("aria-label", `${m.event.title}（${formatSpan(m.event.start, m.event.end)}）`);
-    el.title = m.event.title;
-    el.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${cat.icon}"/></svg>`;
+    el.dataset.eventId = head.id;
+    el.dataset.eventIds = ids.join(" ");
+    el.dataset.count = String(m.events.length);
+    const label = m.events.map((e) => `${e.title}（${formatSpan(e.start, e.end)}）`).join("、");
+    el.setAttribute(
+      "aria-label",
+      m.events.length > 1 ? `この地点のできごと${m.events.length}件：${label}` : label,
+    );
+    el.title = m.events.map((e) => e.title).join(" / ");
+    el.innerHTML =
+      `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${cat.icon}"/></svg>` +
+      (m.events.length > 1 ? `<span class="marker-count" aria-hidden="true">${m.events.length}</span>` : "");
     el.addEventListener("click", (ev) => {
       ev.stopPropagation();
-      onSelectRef.current(m.id);
+      if (m.events.length === 1) {
+        setPicker(null);
+        onSelectRef.current(head.id);
+        return;
+      }
+      // ほぼ同じ地点に複数ある場合は、一覧を出して選んでもらう（画面座標で位置を決める）
+      const r = el.getBoundingClientRect();
+      setPicker({ events: m.events, x: r.left + r.width / 2, y: r.top + r.height / 2 });
     });
     // マーカー上で始まったドラッグが地球の回転として扱われないようにする
     el.addEventListener("pointerdown", (ev) => ev.stopPropagation());
@@ -180,7 +211,10 @@ export default function GlobeView({
     controls.enableDamping = true;
     controls.minDistance = 130;
     controls.maxDistance = 700;
-    controls.addEventListener("start", () => onInteractRef.current());
+    controls.addEventListener("start", () => {
+      setPicker(null);
+      onInteractRef.current();
+    });
     window.__WHG__ = { pov: () => globeRef.current?.pointOfView() };
   }, []);
 
@@ -192,8 +226,58 @@ export default function GlobeView({
     globeRef.current.pointOfView({ lat: flyTo.lat, lng: flyTo.lng, altitude }, 1500);
   }, [flyTo]);
 
+  // 表示中のイベントが変わったら（年を動かしたなど）一覧は閉じる
+  useEffect(() => setPicker(null), [events]);
+  useEffect(() => {
+    if (!picker) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setPicker(null);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [picker]);
+
   return (
     <div ref={setBox} className="globe-box" data-testid="globe">
+      {picker &&
+        createPortal(
+        <div
+          className="marker-picker"
+          role="dialog"
+          aria-label="この地点のできごと"
+          data-testid="marker-picker"
+          style={{
+            // 凡例などより手前に出すため body 直下に置き、画面からはみ出さない位置に置く
+            left: Math.max(8, Math.min(picker.x - 130, window.innerWidth - 268)),
+            top: picker.y + 22 + 200 > window.innerHeight ? Math.max(8, picker.y - 22 - 200) : picker.y + 22,
+          }}
+        >
+          <div className="marker-picker-head">
+            <span>この地点のできごと（{picker.events.length}件）</span>
+            <button type="button" className="icon-btn" onClick={() => setPicker(null)} aria-label="一覧を閉じる">
+              ×
+            </button>
+          </div>
+          <ul>
+            {picker.events.map((e) => (
+              <li key={e.id}>
+                <button
+                  type="button"
+                  className={`marker-picker-item${activeIds.has(e.id) ? "" : " is-dim"}`}
+                  onClick={() => {
+                    setPicker(null);
+                    onSelectRef.current(e.id);
+                  }}
+                  data-event-id={e.id}
+                >
+                  <CategoryIcon category={e.category} size={12} />
+                  <span className="marker-picker-title">{e.title}</span>
+                  <span className="sub">{formatSpan(e.start, e.end).replace(/（.*）$/, "")}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>,
+          document.body,
+        )}
       {size.width > 0 && (
         <Globe
           ref={globeRef}

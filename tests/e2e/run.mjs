@@ -46,7 +46,8 @@ async function openGlobe(page) {
 async function clickVisibleMarker(page, { tap = false } = {}) {
   const handle = await page.waitForFunction(() => {
     const vw = innerWidth, vh = innerHeight;
-    for (const el of document.querySelectorAll(".marker.is-active:not(.is-behind)")) {
+    // まとめたマーカー（一覧が出る）ではなく、1件だけのマーカーを選ぶ
+    for (const el of document.querySelectorAll('.marker.is-active[data-count="1"]:not(.is-behind)')) {
       const r = el.getBoundingClientRect();
       const cx = r.x + r.width / 2, cy = r.y + r.height / 2;
       if (cx > 0 && cy > 0 && cx < vw && cy < vh && document.elementFromPoint(cx, cy)?.closest(".marker") === el) {
@@ -347,7 +348,7 @@ const browser = await chromium.launch();
 
   await check("SP: 詳細を開いても、選んだマーカーが見えている地球の中央付近にある", async () => {
     const r = await page.evaluate((id) => {
-      const el = document.querySelector(`.marker[data-event-id="${id}"]`);
+      const el = document.querySelector(`.marker[data-event-ids~="${id}"]`);
       const globe = document.querySelector("[data-testid=globe]").getBoundingClientRect();
       const detail = document.querySelector("[data-testid=event-detail]").getBoundingClientRect();
       if (!el) return { error: "マーカーが描画されていない" };
@@ -423,7 +424,7 @@ const browser = await chromium.launch();
     const y1 = await yearText(page);
     assert(y0 !== y1, "スライダーをタップしても年が変わらない");
     assert(await page.getByTestId("event-detail").isVisible(), "スライダー操作で詳細が閉じてしまった");
-    const kept = await page.locator(`.marker[data-event-id="${spSelected}"]`).count();
+    const kept = await page.locator(`.marker[data-event-ids~="${spSelected}"]`).count();
     assert(kept === 1, "同時代から外れた選択中のマーカーが地球から消えた");
     return `${y0} → ${y1}（詳細は開いたまま）`;
   });
@@ -625,7 +626,7 @@ const query = (page) => page.evaluate(() => location.search);
     const ratio = g.height / (g.height + panel.height);
     assert(Math.abs(ratio - 0.55) < 0.03, `比率が想定外（地球 ${Math.round(ratio * 100)}%）`);
     const r = await page.evaluate(() => {
-      const el = document.querySelector('.marker[data-event-id="columbus"]');
+      const el = document.querySelector('.marker[data-event-ids~="columbus"]');
       const globe = document.querySelector("[data-testid=globe]").getBoundingClientRect();
       const m = el.getBoundingClientRect();
       const cx = m.x + m.width / 2, cy = m.y + m.height / 2;
@@ -654,6 +655,73 @@ const query = (page) => page.evaluate(() => location.search);
     assert(Math.abs(g.height - stage.height) < 2, "地球が全画面に戻らない");
     return `地球 ${Math.round(g.height)}px`;
   });
+  await ctx.close();
+}
+
+
+// ───────────── 同じ地点に重なるマーカー ─────────────
+async function checkGroupedMarker(page, { tap }) {
+  await setSlider(page, 965); // 1989年：「冷戦」と「ベルリンの壁崩壊」が同時に表示される
+  const y = await yearText(page);
+  assert(y === "1989年", `1989年にならない: ${y}`);
+  // 同時代チップでベルリンへカメラを移してから、詳細を閉じる
+  const chip = page.getByTestId("strip-list").getByRole("button", { name: /ベルリンの壁崩壊/ });
+  if (tap) await chip.tap(); else await chip.click();
+  await page.waitForTimeout(1900);
+  const close = page.getByLabel("詳細を閉じる");
+  if (tap) await close.tap(); else await close.click();
+  await page.waitForTimeout(500);
+  const group = page.locator('.marker[data-event-ids~="berlin-wall"][data-event-ids~="cold-war"]');
+  assert((await group.count()) === 1, "2件が1つのマーカーにまとまっていない");
+  assert((await group.getAttribute("data-count")) === "2", "件数のバッジが2でない");
+  assert((await page.locator(".marker[data-event-ids]").evaluateAll((els) =>
+    els.filter((e) => e.dataset.eventIds.split(" ").includes("berlin-wall")).length)) === 1, "ベルリンの壁が複数のマーカーに出ている");
+  const box = await group.boundingBox();
+  const cx = box.x + box.width / 2, cy = box.y + box.height / 2;
+  if (tap) await page.touchscreen.tap(cx, cy); else await page.mouse.click(cx, cy);
+  const picker = page.getByTestId("marker-picker");
+  await picker.waitFor({ timeout: 3000 });
+  const items = await picker.locator(".marker-picker-title").allInnerTexts();
+  assert(items.length === 2 && items.includes("冷戦") && items.includes("ベルリンの壁崩壊"), `一覧の中身が違う: ${items}`);
+  const pb = await picker.boundingBox();
+  const vp = page.viewportSize();
+  assert(pb.x >= 0 && pb.x + pb.width <= vp.width + 1, "一覧が画面からはみ出す");
+  await page.screenshot({ path: `${SHOTS}/${tap ? "sp" : "pc"}-group-picker.png` });
+  // 1件目を選ぶ → 詳細が開く → もう一度マーカーから2件目を選ぶ
+  const first = picker.getByRole("button", { name: /冷戦/ });
+  if (tap) await first.tap(); else await first.click();
+  const t1 = await page.locator(".detail-title").innerText();
+  if (tap) await page.getByLabel("詳細を閉じる").tap(); else await page.getByLabel("詳細を閉じる").click();
+  await page.waitForTimeout(300);
+  const box2 = await group.boundingBox();
+  if (tap) await page.touchscreen.tap(box2.x + box2.width / 2, box2.y + box2.height / 2);
+  else await page.mouse.click(box2.x + box2.width / 2, box2.y + box2.height / 2);
+  await picker.waitFor({ timeout: 3000 });
+  const second = picker.getByRole("button", { name: /ベルリンの壁崩壊/ });
+  if (tap) await second.tap(); else await second.click();
+  const t2 = await page.locator(".detail-title").innerText();
+  assert(t1 === "冷戦" && t2 === "ベルリンの壁崩壊", `選んだイベントが開かない: ${t1} / ${t2}`);
+  return `マーカー1つ（バッジ2）→ 一覧 →「${t1}」「${t2}」をそれぞれ選べた`;
+}
+
+{
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const page = await ctx.newPage();
+  await openGlobe(page);
+  await check("重なり(PC): 同じ地点の2件は1つのマーカーにまとまり、一覧からどちらも選べる", () =>
+    checkGroupedMarker(page, { tap: false }).then(async (r) => {
+      await page.screenshot({ path: `${SHOTS}/pc-group.png` });
+      return r;
+    }),
+  );
+  await ctx.close();
+}
+{
+  const { defaultBrowserType: _ignored3, ...iphone3 } = devices["iPhone 13"];
+  const ctx = await browser.newContext(iphone3);
+  const page = await ctx.newPage();
+  await openGlobe(page);
+  await check("重なり(SP): タップでも一覧が出て、どちらも選べる", () => checkGroupedMarker(page, { tap: true }));
   await ctx.close();
 }
 
