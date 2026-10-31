@@ -168,7 +168,7 @@ const browser = await chromium.launch();
     await d.waitFor({ timeout: 3000 });
     const t = await d.innerText();
     for (const k of ["概要", "年代", "位置", "出典", "歴史的な注記"]) assert(t.includes(k), `「${k}」がない`);
-    assert(await d.getByTestId("unverified-badge").isVisible(), "未検証バッジがない");
+    assert(await d.locator(".head-only [data-testid=unverified-badge]").isVisible(), "未検証バッジがない");
     assert((await d.locator(".sources a").count()) >= 1, "出典リンクがない");
     await page.screenshot({ path: `${SHOTS}/pc-detail.png` });
     return `選択: ${id}`;
@@ -321,29 +321,127 @@ const browser = await chromium.launch();
     return `altitude ${before.altitude.toFixed(2)} → ${after.altitude.toFixed(2)}`;
   });
 
-  await check("SP: マーカーをタップするとボトムシートで詳細が出る", async () => {
-    // 直前のピンチで大きくズームしているため、同時代チップでイベント地点へカメラを移してからタップする
+  let spSelected = null;
+  await check("SP: 詳細を開くと、上55%に地球・下45%に詳細の2段になる", async () => {
+    // 直前のピンチで大きくズームしているため、同時代チップでイベント地点へカメラを移してから閉じ、マーカーをタップする
     await page.getByTestId("strip-list").locator("button").first().tap();
     await page.waitForTimeout(1800);
     await page.getByLabel("詳細を閉じる").tap();
-    const id = await clickVisibleMarker(page, { tap: true });
+    await page.waitForTimeout(400);
+    spSelected = await clickVisibleMarker(page, { tap: true });
     const d = page.getByTestId("event-detail");
     await d.waitFor({ timeout: 3000 });
-    // ボトムシートは地図領域の下端（＝年代スライダー欄の直上）に全幅で表示され、スライダーは隠さない
+    await page.waitForTimeout(1900); // カメラ移動（1.5秒）を待つ
+    const g = await page.getByTestId("globe").boundingBox();
     const box = await d.boundingBox();
-    const bar = await page.locator(".bottombar").boundingBox();
-    const vw = page.viewportSize().width;
-    assert(Math.abs(box.y + box.height - bar.y) < 3, `シート下端 ${box.y + box.height} とスライダー欄 ${bar.y} がずれている`);
-    assert(box.x <= 1 && Math.abs(box.width - vw) < 2, `シートが全幅でない x=${box.x} w=${box.width}`);
-    assert(await page.getByTestId("year-slider").isVisible(), "スライダーが隠れている");
-    const r = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
-    assert(r, "詳細表示時に横スクロールが出る");
+    const ratio = g.height / (g.height + box.height);
+    assert(Math.abs(ratio - 0.55) < 0.03, `地球:詳細の比率が想定外（地球 ${Math.round(ratio * 100)}%）`);
+    assert(Math.abs(g.y + g.height - box.y) < 2, "地球と詳細の間にすき間・重なりがある");
+    const canvas = await page.locator("canvas").boundingBox();
+    assert(Math.abs(canvas.height - g.height) < 2, `canvas が縮んでいない（canvas ${canvas.height} / 領域 ${g.height}）`);
+    const noHScroll = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
+    assert(noHScroll, "詳細表示時に横スクロールが出る");
     await page.screenshot({ path: `${SHOTS}/sp-detail.png` });
-    return `選択: ${id}`;
+    return `地球 ${Math.round(g.height)}px（${Math.round(ratio * 100)}%）／詳細 ${Math.round(box.height)}px／選択: ${spSelected}`;
+  });
+
+  await check("SP: 詳細を開いても、選んだマーカーが見えている地球の中央付近にある", async () => {
+    const r = await page.evaluate((id) => {
+      const el = document.querySelector(`.marker[data-event-id="${id}"]`);
+      const globe = document.querySelector("[data-testid=globe]").getBoundingClientRect();
+      const detail = document.querySelector("[data-testid=event-detail]").getBoundingClientRect();
+      if (!el) return { error: "マーカーが描画されていない" };
+      const m = el.getBoundingClientRect();
+      const cx = m.x + m.width / 2, cy = m.y + m.height / 2;
+      return {
+        behind: el.classList.contains("is-behind"),
+        hit: document.elementFromPoint(cx, cy)?.closest(".marker") === el,
+        inGlobe: cx > globe.left && cx < globe.right && cy > globe.top && cy < globe.bottom,
+        underSheet: cy > detail.top,
+        dx: Math.abs(cx - (globe.left + globe.width / 2)),
+        dy: Math.abs(cy - (globe.top + globe.height / 2)),
+        h: globe.height,
+      };
+    }, spSelected);
+    assert(!r.error, r.error);
+    assert(!r.behind && r.inGlobe && !r.underSheet, `マーカーが見えていない ${JSON.stringify(r)}`);
+    assert(r.hit, "マーカーの上に別の要素が重なっている");
+    assert(r.dx < 20 && r.dy < 20, `マーカーが中央からずれている（横 ${Math.round(r.dx)}px・縦 ${Math.round(r.dy)}px）`);
+    return `中央からのずれ 横${Math.round(r.dx)}px・縦${Math.round(r.dy)}px（地球の高さ ${Math.round(r.h)}px）`;
+  });
+
+  await check("SP: 詳細は タイトル→年代→場所→概要 の順で、その下に注記→出典→未検証。詳細の中だけがスクロールする", async () => {
+    const r = await page.evaluate(() => {
+      const d = document.querySelector("[data-testid=event-detail]");
+      const top = (sel) => d.querySelector(sel).getBoundingClientRect().top;
+      const dds = d.querySelectorAll(".detail-meta dd");
+      return {
+        title: top(".detail-title"),
+        date: dds[0].getBoundingClientRect().top,
+        place: dds[1].getBoundingClientRect().top,
+        summary: top("[data-testid=detail-summary]"),
+        note: top("[data-testid=detail-note-head]"),
+        sources: top(".sources"),
+        unverified: top(".foot-only [data-testid=unverified-badge]"),
+        detailTop: d.getBoundingClientRect().top,
+        detailBottom: d.getBoundingClientRect().bottom,
+        scrollable: d.scrollHeight > d.clientHeight,
+      };
+    });
+    const order = [r.title, r.date, r.place, r.summary, r.note, r.sources, r.unverified];
+    assert(order.every((v, i) => i === 0 || v > order[i - 1]), `表示順が違う ${JSON.stringify(r)}`);
+    assert(r.title >= r.detailTop && r.summary < r.detailBottom, "最初の表示でタイトル〜概要の見出しが見えていない");
+    assert(r.scrollable, "詳細がスクロール可能になっていない");
+    const before = await page.evaluate(() => ({ win: scrollY, globe: document.querySelector("[data-testid=globe]").getBoundingClientRect().top }));
+    const d = page.getByTestId("event-detail");
+    const box = await d.boundingBox();
+    await page.touchscreen.tap(box.x + 20, box.y + box.height - 20); // フォーカスを詳細へ
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await page.mouse.wheel(0, 2000);
+    await page.waitForTimeout(500);
+    const after = await page.evaluate(() => ({
+      win: scrollY,
+      globe: document.querySelector("[data-testid=globe]").getBoundingClientRect().top,
+      dScroll: document.querySelector("[data-testid=event-detail]").scrollTop,
+    }));
+    assert(after.dScroll > 0, "詳細の中がスクロールしない");
+    assert(after.win === before.win && after.globe === before.globe, "ページ全体や地球まで動いてしまう");
+    assert(await page.locator(".foot-only [data-testid=unverified-badge]").isVisible(), "末尾までスクロールしても未検証表示が見えない");
+    await page.screenshot({ path: `${SHOTS}/sp-detail-scrolled.png` });
+    await d.evaluate((el) => (el.scrollTop = 0));
+    return `詳細内スクロール ${Math.round(after.dScroll)}px（ページ・地球は動かない）`;
+  });
+
+  await check("SP: 詳細表示中も年代スライダーは操作でき、同時代リストは隠れる", async () => {
+    assert(!(await page.getByTestId("strip-list").isVisible()), "同時代リストが表示されたまま");
+    const s = page.getByTestId("year-slider");
+    assert(await s.isVisible(), "スライダーが見えない");
+    const y0 = await yearText(page);
+    const sb = await s.boundingBox();
+    await page.touchscreen.tap(sb.x + sb.width * 0.2, sb.y + sb.height / 2);
+    await page.waitForTimeout(300);
+    const y1 = await yearText(page);
+    assert(y0 !== y1, "スライダーをタップしても年が変わらない");
+    assert(await page.getByTestId("event-detail").isVisible(), "スライダー操作で詳細が閉じてしまった");
+    const kept = await page.locator(`.marker[data-event-id="${spSelected}"]`).count();
+    assert(kept === 1, "同時代から外れた選択中のマーカーが地球から消えた");
+    return `${y0} → ${y1}（詳細は開いたまま）`;
+  });
+
+  await check("SP: 詳細を閉じると地球が全画面に戻る", async () => {
+    await page.getByLabel("詳細を閉じる").tap();
+    await page.waitForTimeout(500);
+    const stage = await page.locator(".stage").boundingBox();
+    const g = await page.getByTestId("globe").boundingBox();
+    const canvas = await page.locator("canvas").boundingBox();
+    assert(Math.abs(g.height - stage.height) < 2, `地球の領域が戻っていない（${g.height} / ${stage.height}）`);
+    assert(Math.abs(canvas.height - stage.height) < 2, "canvas が全画面に戻っていない");
+    assert(await page.getByTestId("strip-list").isVisible(), "同時代リストが戻っていない");
+    await page.screenshot({ path: `${SHOTS}/sp-closed.png` });
+    return `地球 ${Math.round(g.height)}px（全画面）`;
   });
 
   await check("SP: 凡例はボタンで開閉できる", async () => {
-    await page.getByLabel("詳細を閉じる").tap();
     const t = page.getByRole("button", { name: "凡例・絞り込み" });
     assert(await t.isVisible(), "凡例ボタンがない");
     await t.tap();

@@ -40,8 +40,12 @@ export default function App() {
   const filtered = useMemo(() => EVENTS.filter((e) => enabled.has(e.category)), [enabled]);
   const contemporary = useMemo(() => contemporaryEvents(filtered, year), [filtered, year]);
   const activeIds = useMemo(() => new Set(contemporary.events.map((e) => e.id)), [contemporary]);
-  const globeEvents = showAll ? filtered : contemporary.events;
   const selected = useMemo(() => EVENTS.find((e) => e.id === selectedId) ?? null, [selectedId]);
+  // 選択中のイベントは、年を動かして「同時代」から外れても地球上に（薄く）残す
+  const globeEvents = useMemo(() => {
+    const base = showAll ? filtered : contemporary.events;
+    return selected && !base.some((e) => e.id === selected.id) ? [...base, selected] : base;
+  }, [showAll, filtered, contemporary, selected]);
 
   const flyKey = useRef(0);
   const flyToEvent = useCallback((e: HistoryEvent) => {
@@ -133,6 +137,7 @@ export default function App() {
       )}
 
       <main className="stage">
+        <div className="stage-main">
         {showGlobe && (
           <>
             <GlobeLoader
@@ -149,6 +154,7 @@ export default function App() {
         {!showGlobe && webgl !== null && (
           <ChronologyList events={filtered} selectedId={selectedId} onSelect={setSelectedId} />
         )}
+        </div>
         {selected && <EventDetail event={selected} onClose={() => setSelectedId(null)} />}
       </main>
 

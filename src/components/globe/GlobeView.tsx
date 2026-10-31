@@ -133,12 +133,8 @@ export default function GlobeView({
     if (!flyTo || !globeRef.current) return;
     const current = globeRef.current.pointOfView();
     const altitude = flyTo.altitude ?? Math.min(current.altitude, 1.9);
-    // スマホでは詳細シートが画面下半分を覆うため、目標地点が画面の上寄りに来るよう視点を南へずらす
-    const latOffset = window.innerWidth < 768 ? altitude * 12 : 0;
-    globeRef.current.pointOfView(
-      { lat: Math.max(-80, flyTo.lat - latOffset), lng: flyTo.lng, altitude },
-      1500,
-    );
+    // スマホで詳細を開いたときは地球の描画領域そのものが上半分に縮むので、地点をそのまま中央に合わせればよい
+    globeRef.current.pointOfView({ lat: flyTo.lat, lng: flyTo.lng, altitude }, 1500);
   }, [flyTo]);
 
   return (

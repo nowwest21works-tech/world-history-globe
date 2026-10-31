@@ -24,11 +24,13 @@ export function EventDetail({ event, onClose }: { event: HistoryEvent; onClose: 
   return (
     <aside className="detail" aria-label="イベントの詳細" data-testid="event-detail">
       <div className="detail-head">
-        <span className="detail-cat">
+        <span className="detail-cat head-only">
           <CategoryIcon category={event.category} size={14} />
           {cat.label}
         </span>
-        <UnverifiedBadge verified={event.verified} />
+        <span className="head-only">
+          <UnverifiedBadge verified={event.verified} />
+        </span>
         <button type="button" className="icon-btn detail-close" onClick={onClose} aria-label="詳細を閉じる">
           ×
         </button>
@@ -49,9 +51,9 @@ export function EventDetail({ event, onClose }: { event: HistoryEvent; onClose: 
           </span>
         </dd>
       </dl>
-      <h3>概要</h3>
-      <p>{event.summary}</p>
-      <h3>歴史的な注記</h3>
+      <h3 className="detail-summary-head">概要</h3>
+      <p data-testid="detail-summary">{event.summary}</p>
+      <h3 data-testid="detail-note-head">歴史的な注記</h3>
       <p className="note">{event.historicalNote}</p>
       <h3>出典</h3>
       <ul className="sources">
@@ -71,9 +73,19 @@ export function EventDetail({ event, onClose }: { event: HistoryEvent; onClose: 
           </li>
         ))}
       </ul>
-      {!event.verified && (
-        <p className="unverified-note">このイベントの史実・出典は、まだ人間による確認を受けていません。</p>
-      )}
+      <div className="detail-foot">
+        {/* スマホでは分類と未検証バッジをここ（末尾）に表示する。PC では上部に表示済みなので隠す */}
+        <div className="foot-only">
+          <span className="detail-cat">
+            <CategoryIcon category={event.category} size={14} />
+            {cat.label}
+          </span>
+          <UnverifiedBadge verified={event.verified} />
+        </div>
+        {!event.verified && (
+          <p className="unverified-note">このイベントの史実・出典は、まだ人間による確認を受けていません。</p>
+        )}
+      </div>
     </aside>
   );
 }
