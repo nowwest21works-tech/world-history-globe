@@ -5,6 +5,8 @@ import { CATEGORIES, PRECISION_LABEL } from "@/lib/categories";
 import { formatSpan, formatYear, uncertaintyRange } from "@/lib/year";
 import { CategoryIcon } from "@/components/legend/CategoryIcon";
 import { UnverifiedBadge } from "./UnverifiedBadge";
+import { EventWorks } from "@/components/works/EventWorks";
+import { worksByEventId } from "@/data/works";
 
 function rangeNote(e: HistoryEvent): string | null {
   const parts: string[] = [];
@@ -21,11 +23,19 @@ export function EventDetail({
   event,
   onClose,
   closeLabel = "詳細を閉じる",
+  activeWorkId = null,
+  onWorkToggle,
+  scrollToWorksKey = 0,
 }: {
   event: HistoryEvent;
   onClose: () => void;
   /** ツアー中に開いたときは「ツアーに戻る」 */
   closeLabel?: string;
+  /** 「作品から探す」で選んだ作品（作品セクションで開いた状態にする） */
+  activeWorkId?: string | null;
+  onWorkToggle?: (id: string | null) => void;
+  /** 値が変わるたびに、作品セクションが見えるところまで詳細の中をスクロールする（0 は何もしない） */
+  scrollToWorksKey?: number;
 }) {
   const cat = CATEGORIES[event.category];
   const range = rangeNote(event);
@@ -64,6 +74,12 @@ export function EventDetail({
       <p data-testid="detail-summary">{event.summary}</p>
       <h3 data-testid="detail-note-head">歴史的な注記</h3>
       <p className="note">{event.historicalNote}</p>
+      <EventWorks
+        works={worksByEventId(event.id)}
+        activeWorkId={activeWorkId}
+        onToggle={onWorkToggle}
+        scrollKey={scrollToWorksKey}
+      />
       <h3>出典</h3>
       <ul className="sources">
         {event.sources.map((s, i) => (

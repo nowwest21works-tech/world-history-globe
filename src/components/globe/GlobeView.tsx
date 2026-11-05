@@ -105,6 +105,9 @@ export default function GlobeView({
   onSelectRef.current = onSelect;
   const selectedIdRef = useRef(selectedId);
   selectedIdRef.current = selectedId;
+  // 地球の準備ができる前に移動先が決まった場合（?work= などの URL から開いたとき）に、準備ができたら向かう
+  const flyToRef = useRef(flyTo);
+  flyToRef.current = flyTo;
   const boxEl = useRef<HTMLDivElement | null>(null);
   const setBox = useCallback(
     (node: HTMLDivElement | null) => {
@@ -216,6 +219,8 @@ export default function GlobeView({
       onInteractRef.current();
     });
     window.__WHG__ = { pov: () => globeRef.current?.pointOfView() };
+    const pending = flyToRef.current;
+    if (pending) g.pointOfView({ lat: pending.lat, lng: pending.lng, altitude: pending.altitude ?? 1.9 }, 1500);
   }, []);
 
   useEffect(() => {

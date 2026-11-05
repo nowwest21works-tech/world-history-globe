@@ -217,6 +217,75 @@ a { color: var(--accent); }
 .tour-nav-btn:disabled { opacity: 0.35; cursor: default; }
 .play-btn:disabled { opacity: 0.35; cursor: default; }
 
+/* ── 作品から探す ── */
+.works-open { border-color: #4f3a66; color: #e3cdff; }
+.works-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 6px; }
+.works-search { flex: 1 1 220px; min-width: 0; }
+.works-search input {
+  width: 100%; min-height: 40px; padding: 6px 12px; border-radius: 999px;
+  background: #121726; border: 1px solid var(--panel-border);
+}
+.works-search input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.works-media { display: flex; flex-wrap: wrap; gap: 6px; }
+.works-chip {
+  min-height: 36px; padding: 4px 12px; border-radius: 999px; cursor: pointer; font-size: 13px;
+  background: transparent; border: 1px solid var(--panel-border);
+}
+.works-chip.is-on { background: #2a2140; border-color: #b18cff; color: #fff; }
+.works-count { display: block; margin: 4px 0 8px; }
+.works-empty { color: var(--muted); font-size: 14px; }
+.works-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 8px; }
+.work-card {
+  width: 100%; height: 100%; text-align: left; cursor: pointer;
+  display: flex; flex-direction: column; gap: 3px;
+  border: 1px solid var(--panel-border); border-radius: 12px; padding: 10px 12px; background: rgba(255, 255, 255, 0.03);
+}
+.work-card:hover, .work-card:focus-visible { border-color: #b18cff; }
+.work-card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.work-card-title { font-size: 16px; font-weight: 700; }
+.work-card-sub, .work-card-era { font-size: 12px; color: var(--muted); }
+.work-card-hook { font-size: 13px; margin-top: 2px; }
+.work-media { font-size: 11px; color: var(--muted); }
+.work-fidelity { font-size: 11px; padding: 1px 8px; border-radius: 999px; border: 1px solid; white-space: nowrap; }
+.work-fidelity.is-historical { color: #9fe0bf; border-color: #2f6b4c; }
+.work-fidelity.is-historical-fiction { color: #ffd27a; border-color: #6d5a2a; }
+.work-fidelity.is-inspired { color: #d6bcff; border-color: #5a4580; }
+.works-legend { margin: 12px 0 0; display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+.works-legend div { display: flex; gap: 8px; align-items: baseline; }
+.works-legend dt { flex: none; }
+.works-legend dd { margin: 0; }
+
+/* イベント詳細の作品セクション */
+.detail-works { margin-top: 4px; scroll-margin-top: 8px; }
+.detail-works-lead { display: block; margin: 0 0 6px; }
+.detail-works-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.detail-work { border: 1px solid var(--panel-border); border-radius: 10px; background: rgba(255, 255, 255, 0.03); scroll-margin-top: 64px; }
+.detail-work.is-active { border-color: #b18cff; box-shadow: 0 0 0 1px #b18cff inset; background: rgba(177, 140, 255, 0.08); }
+.detail-work summary {
+  cursor: pointer; padding: 8px 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px;
+  min-height: 40px; list-style-position: inside;
+}
+.detail-work-title { font-weight: 600; font-size: 14px; }
+.detail-work-tags { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.detail-work-body { padding: 0 10px 10px; font-size: 14px; }
+.detail-work-body .detail-meta { font-size: 13px; }
+.work-gap {
+  margin: 10px 0 8px; padding: 8px 12px; border-radius: 10px;
+  border: 1px solid #6d5a2a; background: rgba(255, 210, 122, 0.08);
+}
+.work-gap h4 { margin: 0 0 2px; font-size: 13px; color: #ffd27a; }
+.work-gap p { font-size: 14px; line-height: 1.7; }
+.work-note { font-size: 13px; color: var(--muted); margin: 0 0 6px !important; }
+.work-rating { display: inline-block; margin-right: 6px; padding: 0 6px; border: 1px solid #7a4a4a; border-radius: 4px; color: #ffc2c2; font-size: 12px; }
+.work-official { font-size: 13px; margin: 0 0 6px !important; }
+.work-official .sub { margin-left: 0.2em; }
+.work-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px !important; }
+.work-foot .sub { margin-left: 0; }
+.chrono-works {
+  margin-left: 4px; font-size: 11px; font-weight: 600; padding: 0 8px; border-radius: 999px;
+  border: 1px solid #5a4580; color: #d6bcff; white-space: nowrap;
+}
+
 /* 弧の中点のラベル */
 .arc-label {
   transform: translate(-50%, -50%); pointer-events: none; white-space: nowrap;
@@ -278,9 +347,10 @@ a { color: var(--accent); }
   /* ボタンが2つ並ぶため、スマホではロゴの文字を視覚上だけ隠す（読み上げ用には残す） */
   .brand { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .current-year { text-align: left; }
-  .text-btn { padding: 4px 10px; font-size: 13px; }
-  .current-year { font-size: 22px; }
-  .view-switch { min-width: 0; }
+  .text-btn { padding: 4px 8px; font-size: 12px; }
+  .current-year { font-size: 20px; white-space: nowrap; }
+  .view-switch { min-width: 0; gap: 4px; }
+  .sp-hide { display: none; }
 
   .legend { left: 8px; top: 8px; padding: 4px; background: transparent; border: none; }
   .legend-toggle { display: inline-block; background: var(--panel); }
@@ -314,6 +384,10 @@ a { color: var(--accent); }
   .tour-nav { margin: 0 -16px; padding: 8px 16px 10px; }
   .tour-menu { padding: 12px 14px; }
   .tour-cards { grid-template-columns: 1fr; }
+  /* 閉じるボタン（上部に固定）と重ならないよう、作品の見出しの右側をあけておく */
+  .detail-work summary { padding-right: 44px; }
+  .works-cards { grid-template-columns: 1fr; }
+  .works-menu .tour-menu-lead { font-size: 13px; }
 
   /* 詳細表示中の下部バー：▶と年代スライダーだけを1行で残し、同時代リストなどは隠す */
   .has-detail .bottombar { padding: 4px 12px; }

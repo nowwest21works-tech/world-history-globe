@@ -4,7 +4,7 @@
 地球を指やマウスで回しながら、紀元前3000年頃から現代までの出来事を **時間（年代スライダー）** と **場所（地球上の地点）** の両方から探索できます。
 画面下の「同時代のできごと」には、いま見ている年の前後に世界の別の場所で起きていた出来事が並びます。
 
-> ⚠️ 収録データ（151件）と学習ツアー（4本）の文面は **すべて未検証（`verified: false`）** です。出典記事との一次照合の結果は [docs/VERIFICATION.md](docs/VERIFICATION.md) にあります。高校「世界史探究」の単元ごとの収録状況は [docs/COVERAGE.md](docs/COVERAGE.md)（`npm run coverage:doc` で再生成）にあります。人間が史実と出典を確認したものだけを `true` にする運用です。
+> ⚠️ 収録データ（151件）、学習ツアー（4本）、作品データ（36本）の文面は **すべて未検証（`verified: false`）** です。出典記事との一次照合の結果は [docs/VERIFICATION.md](docs/VERIFICATION.md) にあります。高校「世界史探究」の単元ごとの収録状況は [docs/COVERAGE.md](docs/COVERAGE.md)（`npm run coverage:doc` で再生成）にあります。人間が史実と出典を確認したものだけを `true` にする運用です。
 
 ## 使い方
 
@@ -17,10 +17,10 @@ npm run dev          # http://localhost:3000
 |---|---|
 | `npm run build` | 静的書き出し（`out/` に出力。`output: 'export'`） |
 | `npm run typecheck` | TypeScript 型チェック |
-| `npm test` | 単体テスト（年代計算・データ整合性・同時代表示） |
+| `npm test` | 単体テスト（年代計算・データ整合性・同時代表示・作品データ） |
 | `npm run test:e2e` | 操作テスト（要 `npm run build`。Playwright + Chromium） |
 | `npm run serve` | `out/` をローカル配信（http://127.0.0.1:4173/） |
-| `npm run check:sources` | 出典URL（ja.wikipedia.org）の実在を再確認 |
+| `npm run check:sources` | 出典URL（ja.wikipedia.org）の実在を再確認（イベントと作品の両方） |
 
 ### GitHub Pages での公開
 `.github/workflows/deploy-pages.yml` が、main への push 時と Actions 画面からの手動実行で動きます。
@@ -52,6 +52,9 @@ NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run serve      # http://127.0.0.1
 - **自動再生**：▶で年が進み、注目イベント（`featured`）の開始年を通過するとカメラがその地点へ移動。再生中に地球を触るとカメラ追従はオフになる。
 - **年表表示**：WebGL が使えない環境では自動で年表に切り替わる。対応環境でもボタンで切り替え可能。
 - **学習ツアー「歴史を旅する」**：同時代型（ある年に止まって世界を巡る）とつながり型（弧で結びながら時代を追う）の4本。前へ／次へ・途中で抜ける・`?tour=paper&step=3` のような URL からの直接開始ができる。つながりの確かさを線の種類（史実＝実線、伝承＝破線、諸説あり＝点線）で示す。設計は [docs/TOURS.md](docs/TOURS.md)。
+- **作品から探す**：ヘッダーの「作品から探す」から、歴史を描いた漫画・アニメ・映画・ドラマ・小説・舞台（36本）を選ぶと、年代スライダーがその時代に合わせて動き、紐づく出来事へカメラが移動して詳細が開く。一覧は描いている時代の古い順で、題名・作者の検索（ひらがな／カタカナの違いは吸収）と媒体での絞り込みができる。`?work=kingdom-hara` のような URL から直接開ける（`?tour=` と両方あればツアーを優先）。
+  - イベント詳細の「この時代を描いた作品」に、作品ごとの「史実との距離」（史実ベース／史実の枠に創作／時代を借りた創作）と、**「作品と史実のあいだ」の問い**を表示する。作品は入口で、違いは断定せず問いとして示し、答えは出典・教科書へ向かわせる。年表表示では、作品が紐づく出来事に「作品 n」が付く。
+  - 画像（書影・ポスター・スチルなど）は一切使わず、紹介文・あらすじも載せない。運用ルール・選定基準・ウィキペディアとの照合記録は [docs/WORKS.md](docs/WORKS.md)、実装指示は [docs/WORKS_SPEC.md](docs/WORKS_SPEC.md)。
 - 現代の国境線は表示しない（地球画像は国境線を含まない衛星画像）。
 
 ## データ（`src/data/events.json`）
@@ -71,6 +74,7 @@ NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run serve      # http://127.0.0.1
 ### 出典と文章の方針
 - 出典URLは、存在を確認できた記事だけを載せる。確認できない場合は空欄にし、推測で作らない。
 - 使用している198記事すべてについて、MediaWiki API で記事が存在することを確認済み（2026-10-30〜31。作業環境からは ja.wikipedia.org へ直接接続できなかったため、Exa の Web 取得機能経由で API を呼んだ）。曖昧さ回避ページ・転送ページでないことも確認している。`npm run check:sources` で再確認できる。
+- 作品データ（`src/data/works.json`）の出典46記事も、同じ方法（Exa 経由で MediaWiki API）で存在・曖昧さ回避でないこと・転送でないことを確認した（2026-11-05）。作者・初出年・メディア展開の照合と、修正・未確認の項目は [docs/WORKS.md](docs/WORKS.md) にある。
 - ウィキペディアの文章は CC BY-SA のため、**概要・注記はすべて独自の文章**で書き、ウィキペディアは**リンクの掲載のみ**としている。
 
 ## クレジットとライセンス

@@ -725,6 +725,201 @@ async function checkGroupedMarker(page, { tap }) {
   await ctx.close();
 }
 
+// ───────────── 作品から探す ─────────────
+{
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await openGlobe(page);
+
+  await check("作品(PC): 「作品から探す」→ キングダム で、前221年付近・秦による中国統一の詳細・キングダムが開く", async () => {
+    await page.getByTestId("works-open").click();
+    const menu = page.getByTestId("works-menu");
+    await menu.waitFor();
+    const n = await menu.locator(".work-card").count();
+    assert(n >= 30, `作品が少ない（${n}件）`);
+    assert(await page.getByTestId("works-search").evaluate((el) => el === document.activeElement), "検索欄にフォーカスがない");
+    await page.screenshot({ path: `${SHOTS}/works-menu.png` });
+    await page.getByTestId("work-start-kingdom-hara").click();
+    assert((await menu.count()) === 0, "ダイアログが閉じない");
+    const d = page.getByTestId("event-detail");
+    await d.waitFor({ timeout: 3000 });
+    await page.waitForTimeout(1900);
+    const y = await yearText(page);
+    assert(y === "前221年", `スライダーが前221年にならない: ${y}`);
+    const title = await d.locator(".detail-title").innerText();
+    assert(title === "秦による中国統一", `詳細が違う: ${title}`);
+    const sec = page.getByTestId("detail-works");
+    assert(await sec.isVisible(), "作品セクションがない");
+    const k = page.getByTestId("detail-work-kingdom-hara");
+    assert(await k.evaluate((el) => el.open), "キングダムが開いていない");
+    assert(await k.evaluate((el) => el.classList.contains("is-active")), "キングダムが強調されていない");
+    const body = await k.innerText();
+    assert(body.includes("作品と史実のあいだ"), "「作品と史実のあいだ」がない");
+    assert(await k.locator("[data-testid=unverified-badge]").isVisible(), "作品の未検証バッジがない");
+    assert((await query(page)) === "?work=kingdom-hara", `URL に作品が反映されない: ${await query(page)}`);
+    const p = await pov(page);
+    assert(near(p, 34.26, 108.94, 6), `カメラが咸陽付近に向いていない ${JSON.stringify(p)}`);
+    // 「歴史的な注記」と「出典」のあいだにある
+    const order = await d.evaluate((el) => {
+      const top = (sel) => el.querySelector(sel).getBoundingClientRect().top;
+      return [top("[data-testid=detail-note-head]"), top("[data-testid=detail-works]"), top(".detail > .sources, aside > ul.sources")];
+    });
+    assert(order[0] < order[1] && order[1] < order[2], `作品セクションの位置が違う ${order}`);
+    await page.screenshot({ path: `${SHOTS}/works-kingdom.png` });
+    return `${y}「${title}」・キングダムを開いた状態（URL ${await query(page)}）`;
+  });
+
+  await check("作品(PC): 作品を閉じると URL から外れ、詳細を閉じても外れる", async () => {
+    await page.locator("[data-testid=detail-work-kingdom-hara] > summary").click();
+    await page.waitForTimeout(200);
+    assert((await query(page)) === "", `作品を閉じても URL に残る: ${await query(page)}`);
+    await page.locator("[data-testid=detail-work-kingdom-hara] > summary").click();
+    await page.waitForTimeout(200);
+    assert((await query(page)) === "?work=kingdom-hara", "作品を開き直しても URL に戻らない");
+    await page.getByLabel("詳細を閉じる").click();
+    await page.waitForTimeout(200);
+    assert((await query(page)) === "", `詳細を閉じても URL に残る: ${await query(page)}`);
+    return "閉じる → 外れる／開く → 戻る／詳細を閉じる → 外れる";
+  });
+
+  await check("作品(PC): 検索欄に「ベルサイユ」と入れると1件に絞られる（ひらがなでも）", async () => {
+    await page.getByTestId("works-open").click();
+    const s = page.getByTestId("works-search");
+    await s.fill("ベルサイユ");
+    const a = await page.locator(".work-card").count();
+    const t = await page.locator(".work-card-title").first().innerText();
+    await s.fill("べるさいゆ");
+    const b = await page.locator(".work-card").count();
+    assert(a === 1 && t === "ベルサイユのばら", `1件に絞られない: ${a}件 ${t}`);
+    assert(b === 1, `ひらがなで絞られない: ${b}件`);
+    await s.fill("");
+    await page.getByTestId("works-media-stage").click();
+    const c = await page.locator(".work-card").count();
+    const all = await page.locator(".work-media").allInnerTexts();
+    assert(c > 0 && all.every((x) => x.includes("舞台")), "媒体の絞り込みが効かない");
+    await page.keyboard.press("Escape");
+    assert((await page.getByTestId("works-menu").count()) === 0, "Esc で閉じない");
+    return `「ベルサイユ」${a}件・「べるさいゆ」${b}件・舞台 ${c}件・Esc で閉じる`;
+  });
+
+  await check("作品(PC): 背景クリックで閉じる", async () => {
+    await page.getByTestId("works-open").click();
+    await page.getByTestId("works-menu").waitFor();
+    await page.mouse.click(8, 400);
+    assert((await page.getByTestId("works-menu").count()) === 0, "背景クリックで閉じない");
+  });
+
+  await check("作品(PC): ?work=rose-of-versailles で直接開くと、フランス革命の詳細が開く", async () => {
+    await page.goto(`${URL}?work=rose-of-versailles`);
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    const d = page.getByTestId("event-detail");
+    await d.waitFor({ timeout: 5000 });
+    const title = await d.locator(".detail-title").innerText();
+    assert(title === "フランス革命", `詳細が違う: ${title}`);
+    const r = page.getByTestId("detail-work-rose-of-versailles");
+    assert(await r.evaluate((el) => el.open), "ベルサイユのばらが開いていない");
+    assert((await yearText(page)) === "1789年", `年が違う: ${await yearText(page)}`);
+    await page.waitForTimeout(1900);
+    const p = await pov(page);
+    assert(near(p, 48.85, 2.35, 6), `カメラがパリに向いていない ${JSON.stringify(p)}`);
+    return `「${title}」${await yearText(page)}`;
+  });
+
+  await check("作品(PC): ?tour= と ?work= が両方あればツアーを優先する", async () => {
+    await page.goto(`${URL}?tour=paper&step=1&work=rose-of-versailles`);
+    await page.getByTestId("tour-panel").waitFor({ timeout: 20000 });
+    assert((await page.getByTestId("event-detail").count()) === 0, "作品の詳細も開いている");
+    return await page.getByTestId("tour-position").innerText();
+  });
+
+  await check("作品(PC): 年表表示で、作品が紐づく出来事に「作品 n」が付き、押すと作品セクションが見える", async () => {
+    await page.goto(URL);
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    await page.getByTestId("view-toggle").click();
+    await page.getByTestId("chronology").waitFor();
+    const badges = await page.locator("[data-testid=chrono-works]").count();
+    assert(badges >= 30, `「作品 n」が少ない（${badges}件）`);
+    const qin = page.getByTestId("chrono-qin-unification").locator("[data-testid=chrono-works]");
+    const label = await qin.innerText();
+    assert(/^作品 \d+$/.test(label), `表示が違う: ${label}`);
+    await qin.click();
+    const d = page.getByTestId("event-detail");
+    await d.waitFor();
+    await page.waitForTimeout(400);
+    const vis = await page.evaluate(() => {
+      const d = document.querySelector("[data-testid=event-detail]").getBoundingClientRect();
+      const s = document.querySelector("[data-testid=detail-works]").getBoundingClientRect();
+      return s.top >= d.top - 1 && s.top < d.bottom;
+    });
+    assert(vis, "作品セクションが見えるところまで送られない");
+    await page.getByTestId("view-toggle").click();
+    return `「作品 n」${badges}件・秦の統一は「${label}」`;
+  });
+
+  await check("作品(PC): ページエラーなし", async () => {
+    assert(errors.length === 0, errors.join(" | "));
+  });
+  await ctx.close();
+}
+
+{
+  const { defaultBrowserType: _ignored4, ...iphone4 } = devices["iPhone 13"];
+  const ctx = await browser.newContext(iphone4);
+  const page = await ctx.newPage();
+  await openGlobe(page);
+
+  await check("作品(SP): ヘッダーのボタンが収まり、ダイアログが崩れない", async () => {
+    const noScroll0 = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
+    assert(noScroll0, "ヘッダーのボタンで横スクロールが出る");
+    const btn = await page.getByTestId("works-open").boundingBox();
+    const vp = page.viewportSize();
+    assert(btn && btn.x + btn.width <= vp.width, "「作品から探す」が画面からはみ出す");
+    await page.getByTestId("works-open").tap();
+    const menu = page.getByTestId("works-menu");
+    await menu.waitFor();
+    const mb = await menu.boundingBox();
+    assert(mb.x >= 0 && mb.x + mb.width <= vp.width + 1, "ダイアログが横にはみ出す");
+    const cards = await page.locator(".work-card").evaluateAll((els) =>
+      els.slice(0, 5).map((e) => { const r = e.getBoundingClientRect(); return { l: r.left, r: r.right }; }),
+    );
+    assert(cards.every((c) => c.l >= 0 && c.r <= vp.width + 1), "カードが横にはみ出す");
+    const over = await menu.evaluate((el) => el.scrollWidth > el.clientWidth + 1);
+    assert(!over, "ダイアログの中で横スクロールが出る");
+    await page.screenshot({ path: `${SHOTS}/sp-works-menu.png` });
+    return `ダイアログ ${Math.round(mb.width)}×${Math.round(mb.height)}px`;
+  });
+
+  await check("作品(SP): 作品を選ぶと詳細が下45%に開き、作品セクションが崩れない", async () => {
+    await page.getByTestId("work-start-rose-of-versailles").tap();
+    const d = page.getByTestId("event-detail");
+    await d.waitFor();
+    await page.waitForTimeout(1900);
+    const g = await page.getByTestId("globe").boundingBox();
+    const box = await d.boundingBox();
+    const ratio = g.height / (g.height + box.height);
+    assert(Math.abs(ratio - 0.55) < 0.03, `比率が想定外（地球 ${Math.round(ratio * 100)}%）`);
+    const r = await page.evaluate(() => {
+      const s = document.querySelector("[data-testid=detail-works]");
+      const w = document.querySelector("[data-testid=detail-work-rose-of-versailles]");
+      const gap = w.querySelector("[data-testid=work-gap]").getBoundingClientRect();
+      return {
+        open: w.open,
+        overflow: s.scrollWidth > s.clientWidth + 1,
+        gapInside: gap.left >= 0 && gap.right <= innerWidth + 1,
+        noHScroll: document.documentElement.scrollWidth <= innerWidth,
+      };
+    });
+    assert(r.open, "作品が開いていない");
+    assert(!r.overflow && r.gapInside && r.noHScroll, `作品セクションが崩れている ${JSON.stringify(r)}`);
+    await page.getByTestId("detail-work-rose-of-versailles").scrollIntoViewIfNeeded();
+    await page.screenshot({ path: `${SHOTS}/sp-works-detail.png` });
+    return `地球 ${Math.round(ratio * 100)}%・作品セクションは横幅内`;
+  });
+  await ctx.close();
+}
+
 await browser.close();
 server.close();
 

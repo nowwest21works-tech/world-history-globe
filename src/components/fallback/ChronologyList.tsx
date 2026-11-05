@@ -4,6 +4,7 @@ import type { HistoryEvent } from "@/types/event";
 import { CATEGORIES } from "@/lib/categories";
 import { formatSpan } from "@/lib/year";
 import { CategoryIcon } from "@/components/legend/CategoryIcon";
+import { worksByEventId } from "@/data/works";
 
 const ERAS: { label: string; from: number; to: number }[] = [
   { label: "前3000年〜前501年", from: -Infinity, to: -501 },
@@ -19,10 +20,13 @@ export function ChronologyList({
   events,
   selectedId,
   onSelect,
+  onSelectWorks,
 }: {
   events: HistoryEvent[];
   selectedId: string | null;
   onSelect: (id: string) => void;
+  /** 「作品 n」の表示を押したとき：詳細を開き、作品セクションまで送る */
+  onSelectWorks?: (id: string) => void;
 }) {
   return (
     <div className="chronology" data-testid="chronology">
@@ -33,24 +37,37 @@ export function ChronologyList({
           <section key={era.label}>
             <h2>{era.label}</h2>
             <ol>
-              {list.map((e) => (
+              {list.map((e) => {
+                const nWorks = worksByEventId(e.id).length;
+                return (
                 <li key={e.id}>
                   <button
                     type="button"
                     className={`chrono-item${e.id === selectedId ? " is-selected" : ""}`}
-                    onClick={() => onSelect(e.id)}
+                    onClick={(ev) => {
+                      const onBadge = (ev.target as Element).closest?.(".chrono-works");
+                      if (onBadge && onSelectWorks) onSelectWorks(e.id);
+                      else onSelect(e.id);
+                    }}
+                    data-testid={`chrono-${e.id}`}
                   >
                     <span className="chrono-date">{formatSpan(e.start, e.end)}</span>
                     <span className="chrono-title">
                       <CategoryIcon category={e.category} size={12} />
                       {e.title}
+                      {nWorks > 0 && (
+                        <span className="chrono-works" title={`この時代を描いた作品が${nWorks}件あります`} data-testid="chrono-works">
+                          作品 {nWorks}
+                        </span>
+                      )}
                     </span>
                     <span className="chrono-place">
                       {CATEGORIES[e.category].label}・{e.location.placeName}
                     </span>
                   </button>
                 </li>
-              ))}
+                );
+              })}
             </ol>
           </section>
         );

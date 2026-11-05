@@ -21,9 +21,23 @@ import { TourPanel } from "@/components/tour/TourPanel";
 import { TOURS } from "@/data/tours";
 import type { Tour } from "@/types/tour";
 import { arcsUpTo, parseTourQuery, tourEventIds, tourQuery, type TourPosition } from "@/lib/tours";
+import { WorksMenu } from "@/components/works/WorksMenu";
+import { WORKS } from "@/data/works";
+import type { HistoryWork } from "@/types/work";
+import { parseWorkQuery, workQuery } from "@/lib/works";
 
 const TICK_MS = 450;
 const EVENT_MAP = new Map(EVENTS.map((e) => [e.id, e]));
+const WORK_MAP = new Map(WORKS.map((w) => [w.id, w]));
+
+/** URL を書き換える（書き換えられない環境でも画面は動く） */
+function replaceUrl(search: string) {
+  try {
+    window.history.replaceState(null, "", window.location.pathname + search);
+  } catch {
+    // 何もしない
+  }
+}
 
 export default function App() {
   const [year, setYear] = useState<AstroYear>(MIN_YEAR);
@@ -42,6 +56,12 @@ export default function App() {
   const [tourMenuOpen, setTourMenuOpen] = useState(false);
   /** ツアー中に「このできごとの詳細」を開いているか */
   const [tourDetail, setTourDetail] = useState(false);
+  // ── 作品から探す ──
+  const [worksMenuOpen, setWorksMenuOpen] = useState(false);
+  /** 詳細の作品セクションで開いている（強調している）作品 */
+  const [activeWorkId, setActiveWorkId] = useState<string | null>(null);
+  /** 年表の「作品 n」から開いたとき、詳細を作品セクションまで送るためのキー */
+  const [scrollWorksKey, setScrollWorksKey] = useState(0);
 
   useEffect(() => {
     const ok = hasWebGL();
@@ -142,11 +162,7 @@ export default function App() {
         setSelectedId(null);
         setFlyTo({ lat: e.location.lat, lng: e.location.lng, altitude: 2.6, key: flyKey.current });
       }
-      try {
-        window.history.replaceState(null, "", window.location.pathname + tourQuery(t, p));
-      } catch {
-        // URL を書き換えられない環境でもツアー自体は動く
-      }
+      replaceUrl(tourQuery(t, p));
     },
     [],
   );
@@ -154,6 +170,7 @@ export default function App() {
   const startTour = useCallback(
     (t: Tour, pos: TourPosition = -1) => {
       setTourMenuOpen(false);
+      setActiveWorkId(null);
       setTour(t);
       goTourPosition(t, pos);
     },
@@ -165,25 +182,62 @@ export default function App() {
     setTour(null);
     setTourDetail(false);
     setSelectedId(null);
-    try {
-      window.history.replaceState(null, "", window.location.pathname);
-    } catch {
-      // 何もしない
-    }
+    replaceUrl("");
   }, []);
 
   const tourPrev = useCallback(() => tour && goTourPosition(tour, tourPos - 1), [tour, tourPos, goTourPosition]);
   const tourNext = useCallback(() => tour && goTourPosition(tour, tourPos + 1), [tour, tourPos, goTourPosition]);
 
-  // URL から直接開始（?tour=paper&step=3）
+  // ── 作品から探す：作品を選ぶと、最初に紐づくイベントの年・地点へ移り、詳細の作品セクションで開く ──
+  const startWork = useCallback(
+    (w: HistoryWork) => {
+      const e = EVENT_MAP.get(w.eventIds[0]!);
+      if (!e) return;
+      setWorksMenuOpen(false);
+      setTour(null);
+      setTourDetail(false);
+      setPlaying(false);
+      setYear(e.start.year);
+      setSelectedId(e.id);
+      setActiveWorkId(w.id);
+      flyToEvent(e);
+      replaceUrl(workQuery(w));
+    },
+    [flyToEvent],
+  );
+
+  /** 詳細の中で作品を開閉したとき。開いた作品を URL に反映し、閉じたら外す */
+  const toggleWork = useCallback(
+    (id: string | null) => {
+      setActiveWorkId(id);
+      if (tour) return; // ツアー中の URL はツアーが持つ
+      const w = id ? WORK_MAP.get(id) : undefined;
+      replaceUrl(w ? workQuery(w) : "");
+    },
+    [tour],
+  );
+
+  // 選んだ作品に紐づかない出来事へ移ったら（詳細を閉じた・別の出来事を選んだ・自動再生など）、作品の強調と URL を外す
+  useEffect(() => {
+    if (!activeWorkId) return;
+    const w = WORK_MAP.get(activeWorkId);
+    if (!w || !selectedId || !w.eventIds.includes(selectedId)) toggleWork(null);
+  }, [selectedId, activeWorkId, toggleWork]);
+
+  // URL から直接開始（?tour=paper&step=3 ／ ?work=kingdom-hara。両方あればツアーを優先）
   useEffect(() => {
     const q = parseTourQuery(window.location.search, TOURS);
-    if (q) startTour(q.tour, q.position);
-  }, [startTour]);
+    if (q) {
+      startTour(q.tour, q.position);
+      return;
+    }
+    const w = parseWorkQuery(window.location.search, WORKS);
+    if (w) startWork(w);
+  }, [startTour, startWork]); // どちらも依存のない useCallback なので、実質的に初回だけ動く
 
   // キーボード：← → で前後、Esc で抜ける（スライダーなど入力中は除く）
   useEffect(() => {
-    if (!tour) return;
+    if (!tour || tourMenuOpen || worksMenuOpen) return;
     const onKey = (e: KeyboardEvent) => {
       const el = e.target as HTMLElement | null;
       if (el && ["INPUT", "SELECT", "TEXTAREA"].includes(el.tagName)) return;
@@ -196,7 +250,9 @@ export default function App() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [tour, tourDetail, tourNext, tourPrev, exitTour]);
+  }, [tour, tourDetail, tourNext, tourPrev, exitTour, tourMenuOpen, worksMenuOpen]);
+
+  const closeWorksMenu = useCallback(() => setWorksMenuOpen(false), []);
 
   const closeTourDetail = () => {
     setTourDetail(false);
@@ -241,6 +297,14 @@ export default function App() {
           >
             歴史を旅する
           </button>
+          <button
+            type="button"
+            className="text-btn works-open"
+            onClick={() => setWorksMenuOpen(true)}
+            data-testid="works-open"
+          >
+            作品から探す
+          </button>
           {webgl ? (
             <button
               type="button"
@@ -248,7 +312,8 @@ export default function App() {
               onClick={() => setView((v) => (v === "globe" ? "list" : "globe"))}
               data-testid="view-toggle"
             >
-              {view === "globe" ? "年表表示" : "地球表示"}
+              {view === "globe" ? "年表" : "地球"}
+              <span className="sp-hide">表示</span>
             </button>
           ) : null}
         </div>
@@ -277,7 +342,15 @@ export default function App() {
           </>
         )}
         {!showGlobe && webgl !== null && (
-          <ChronologyList events={filtered} selectedId={selectedId} onSelect={select} />
+          <ChronologyList
+            events={filtered}
+            selectedId={selectedId}
+            onSelect={select}
+            onSelectWorks={(id) => {
+              select(id);
+              setScrollWorksKey((k) => k + 1);
+            }}
+          />
         )}
         </div>
         {showTourPanel && (
@@ -297,6 +370,9 @@ export default function App() {
             event={selected}
             onClose={tour ? closeTourDetail : () => setSelectedId(null)}
             closeLabel={tour ? "ツアーに戻る" : "詳細を閉じる"}
+            activeWorkId={activeWorkId}
+            onWorkToggle={toggleWork}
+            scrollToWorksKey={scrollWorksKey}
           />
         )}
       </main>
@@ -327,6 +403,7 @@ export default function App() {
         </p>
       </footer>
       {tourMenuOpen && <TourMenu tours={TOURS} onStart={(t) => startTour(t)} onClose={() => setTourMenuOpen(false)} />}
+      {worksMenuOpen && <WorksMenu works={WORKS} onStart={startWork} onClose={closeWorksMenu} />}
     </div>
   );
 }
