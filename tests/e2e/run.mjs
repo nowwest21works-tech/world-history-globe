@@ -494,7 +494,10 @@ const query = (page) => page.evaluate(() => location.search);
     const menu = page.getByTestId("tour-menu");
     await menu.waitFor();
     const titles = await menu.locator(".tour-card h3").allInnerTexts();
-    assert(titles.join("/") === "前500年頃、世界では？/紙の旅/銀が世界をめぐる/800年頃、世界では？", `ツアー一覧が違う: ${titles}`);
+    assert(
+      titles.join("/") === "前500年頃、世界では？/紙の旅/銀が世界をめぐる/元寇――ユーラシアの嵐が博多湾へ/800年頃、世界では？",
+      `ツアー一覧が違う: ${titles}`,
+    );
     await page.getByTestId("tour-start-paper").click();
     await page.getByTestId("tour-panel").waitFor();
     assert((await menu.count()) === 0, "一覧が閉じない");
@@ -578,7 +581,7 @@ const query = (page) => page.evaluate(() => location.search);
     const pos = await page.getByTestId("tour-position").innerText();
     const title = await page.getByTestId("tour-step-title").innerText();
     const arcText = await page.getByTestId("tour-arc").innerText();
-    assert(pos === "3 / 8" && title.includes("ガマ"), `直接開始の位置が違う: ${pos} ${title}`);
+    assert(pos === "3 / 9" && title.includes("ガマ"), `直接開始の位置が違う: ${pos} ${title}`);
     assert(arcText.includes("諸説あり"), `諸説ありの弧の表示がない: ${arcText}`);
     assert((await yearText(page)) === "1498年", "年が合っていない");
     return `${pos}「${title.trim()}」（${arcText.replace(/\s+/g, " ").trim()}）`;
@@ -916,6 +919,429 @@ async function checkGroupedMarker(page, { tap }) {
     await page.getByTestId("detail-work-rose-of-versailles").scrollIntoViewIfNeeded();
     await page.screenshot({ path: `${SHOTS}/sp-works-detail.png` });
     return `地球 ${Math.round(ratio * 100)}%・作品セクションは横幅内`;
+  });
+  await ctx.close();
+}
+
+// ───────────── 日本史モード ─────────────
+const jpView = (page) => page.evaluate(() => window.__WHG_JP__?.view());
+const waitJapan = (page) => page.waitForFunction(() => !!window.__WHG_JP__ && window.__WHG_JP__.size().width > 0, null, { timeout: 20000 });
+const markerCenter = (page, id) =>
+  page.evaluate((id) => {
+    const el = document.querySelector(`.japan-map .marker[data-event-ids~="${id}"]`);
+    if (!el) return null;
+    const r = el.getBoundingClientRect();
+    const cx = r.x + r.width / 2, cy = r.y + r.height / 2;
+    return { x: cx, y: cy, hidden: el.classList.contains("is-behind"), hit: document.elementFromPoint(cx, cy)?.closest(".marker") === el };
+  }, id);
+
+{
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await openGlobe(page);
+
+  await check("日本(PC): ヘッダーの「🗾 日本」で日本地図に切り替わり、年は引き継がれ、URL に ?mode=japan が付く", async () => {
+    await setSlider(page, 590); // 1274年付近（世界の目盛り）
+    const y0 = await yearText(page);
+    await page.getByTestId("mode-japan").click();
+    await waitJapan(page);
+    const y1 = await yearText(page);
+    assert(y0 === y1, `年が引き継がれない: ${y0} → ${y1}`);
+    assert((await page.locator("canvas").count()) === 0, "地球儀（canvas）が残っている");
+    assert(await page.getByTestId("japan-map").isVisible(), "日本地図が出ない");
+    assert((await query(page)) === "?mode=japan", `URL: ${await query(page)}`);
+    assert(await page.getByTestId("mode-japan").getAttribute("aria-pressed") === "true", "切り替えボタンの状態が違う");
+    const attr = await page.getByTestId("map-attribution").innerText();
+    assert(attr.includes("Natural Earth"), `出典表記がない: ${attr}`);
+    assert(await page.getByTestId("era-bands").isVisible(), "時代区分の目盛りがない");
+    const eras = await page.locator("[data-era]").count();
+    assert(eras === 16, `時代区分が16ではない（${eras}）`);
+    return `${y0} のまま日本地図へ（時代区分 ${eras}・${attr}）`;
+  });
+
+  await check("日本(PC): 日本の範囲は前3万年から。世界へ戻ると範囲の端（前3000年）に合わせる", async () => {
+    await setSlider(page, 0);
+    const y = await yearText(page);
+    assert(y === "前30000年", `日本の始まりが違う: ${y}`);
+    await page.getByTestId("mode-world").click();
+    await page.waitForFunction(() => !!document.querySelector("canvas"), null, { timeout: 20000 });
+    const y2 = await yearText(page);
+    assert(y2 === "前3000年", `世界の範囲の端に合わない: ${y2}`);
+    assert((await query(page)) === "", `URL に mode が残る: ${await query(page)}`);
+    await page.getByTestId("mode-japan").click();
+    await waitJapan(page);
+    return `${y} → 世界 ${y2}`;
+  });
+
+  await check("日本(PC): ドラッグで移動、ホイールで拡大縮小（上限あり）", async () => {
+    const box = await page.getByTestId("japan-map").boundingBox();
+    const v0 = await jpView(page);
+    await page.mouse.move(box.x + 500, box.y + 300);
+    await page.mouse.down();
+    await page.mouse.move(box.x + 650, box.y + 260, { steps: 8 });
+    await page.mouse.up();
+    const v1 = await jpView(page);
+    assert(v1.lng < v0.lng - 1, `ドラッグで動かない ${JSON.stringify(v0)} → ${JSON.stringify(v1)}`);
+    for (let i = 0; i < 30; i++) await page.mouse.wheel(0, -400);
+    await page.waitForTimeout(200);
+    const v2 = await jpView(page);
+    assert(v2.zoom > v1.zoom && v2.zoom <= 12.0001, `ズームが効かないか上限を超える: ${v2.zoom}`);
+    for (let i = 0; i < 30; i++) await page.mouse.wheel(0, 400);
+    await page.waitForTimeout(200);
+    const v3 = await jpView(page);
+    assert(v3.zoom < 1, `縮小できない: ${v3.zoom}`);
+    return `lng ${v0.lng.toFixed(1)} → ${v1.lng.toFixed(1)}、zoom 最大 ${v2.zoom.toFixed(1)}・最小 ${v3.zoom.toFixed(2)}`;
+  });
+
+  await check("日本(PC): 最大まで拡大すると京都・奈良・大阪のマーカーが重ならない", async () => {
+    await page.goto(`${URL}?mode=japan&event=heian-kyo`);
+    await waitJapan(page);
+    await page.getByLabel("詳細を閉じる").click();
+    await page.getByTestId("legend-show-all").check().catch(async () => {
+      await page.getByText("他の時代のイベントも薄く表示").click();
+    });
+    const box = await page.getByTestId("japan-map").boundingBox();
+    const k = await markerCenter(page, "heian-kyo");
+    await page.mouse.move(k.x, k.y + 40);
+    for (let i = 0; i < 30; i++) await page.mouse.wheel(0, -400);
+    await page.waitForTimeout(300);
+    const pts = await page.evaluate(() =>
+      ["heian-kyo", "jp-todaiji-ganjin"].map((id) => {
+        const el = document.querySelector(`.japan-map .marker[data-event-ids~="${id}"]`);
+        const r = el.getBoundingClientRect();
+        return { id, x: r.x + r.width / 2, y: r.y + r.height / 2, ids: el.dataset.eventIds };
+      }),
+    );
+    const d = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+    // 同じ地点（平安京）の出来事どうしはまとまってよいが、京都と奈良は別のマーカーになる
+    assert(!pts[0].ids.split(" ").includes("jp-todaiji-ganjin"), `京都と奈良が1つにまとめられている ${JSON.stringify(pts)}`);
+    assert(d > 40, `京都と奈良のマーカーが近すぎる（${Math.round(d)}px）`);
+    await page.getByText("他の時代のイベントも薄く表示").click();
+    return `京都—奈良 ${Math.round(d)}px（地図 ${Math.round(box.width)}px 幅）`;
+  });
+
+  await check("日本(PC): ?mode=japan&event=jp-mongol-invasions で直接開き、「世界とのつながり」と地図の端の矢印が出る", async () => {
+    await page.goto(`${URL}?mode=japan&event=jp-mongol-invasions`);
+    await waitJapan(page);
+    const d = page.getByTestId("event-detail");
+    await d.waitFor();
+    const title = await d.locator(".detail-title").innerText();
+    assert(title.startsWith("元寇"), `詳細が違う: ${title}`);
+    assert((await yearText(page)) === "1274年", "年が合わない");
+    const cards = await page.locator("[data-testid=cross-links] .cross-card").allInnerTexts();
+    assert(cards.some((c) => c.includes("世界史で見る") && c.includes("元の成立")), `つながりのカード: ${cards}`);
+    await page.waitForTimeout(1200);
+    const edges = await page.locator(".edge-link").count();
+    assert(edges >= 2, `端の矢印が出ない（${edges}）`);
+    // 矢印どうし・凡例・詳細パネルと重ならない
+    const r = await page.evaluate(() => {
+      const rects = [...document.querySelectorAll(".edge-link, .legend, [data-testid=event-detail]")].map((e) => e.getBoundingClientRect());
+      let overlap = 0;
+      for (let i = 0; i < rects.length; i++)
+        for (let j = i + 1; j < rects.length; j++) {
+          const a = rects[i], b = rects[j];
+          if (a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top) overlap++;
+        }
+      return overlap;
+    });
+    assert(r === 0, `矢印が重なっている（${r}組）`);
+    await page.screenshot({ path: `${SHOTS}/jp-pc-mongol.png` });
+    return `「${title}」・カード ${cards.length}枚・端の矢印 ${edges}本`;
+  });
+
+  await check("日本(PC): 「🌏 世界史で見る」で地球儀へ移り、元の成立の詳細が開く（年・カメラ・URL も移る）", async () => {
+    await page.getByTestId("cross-link-yuan-dadu").click();
+    await page.waitForFunction(() => !!window.__WHG__ && !!document.querySelector("canvas"), null, { timeout: 20000 });
+    const d = page.getByTestId("event-detail");
+    await d.waitFor();
+    const t1 = await d.locator(".detail-title").innerText();
+    assert(t1.includes("元の成立"), `地球儀で開いた詳細が違う: ${t1}`);
+    assert((await yearText(page)) === "1271年", `年が違う: ${await yearText(page)}`);
+    assert((await query(page)) === "", `URL: ${await query(page)}`);
+    await page.waitForTimeout(1700);
+    const p = await pov(page);
+    assert(near(p, 39.95, 116.39, 6), `カメラが大都に向いていない ${JSON.stringify(p)}`);
+    return `日本「元寇」→ 世界「${t1}」（lat ${p.lat.toFixed(1)} lng ${p.lng.toFixed(1)}）`;
+  });
+
+  await check("日本(PC): 世界↔日本の往復（日明貿易 →🌏 明 →🗾 琉球王国）", async () => {
+    await page.goto(`${URL}?mode=japan&event=jp-ming-trade`);
+    await waitJapan(page);
+    await page.getByTestId("cross-link-ming").click();
+    await page.waitForFunction(() => !!document.querySelector("canvas"), null, { timeout: 20000 });
+    const t1 = await page.getByTestId("event-detail").locator(".detail-title").innerText();
+    assert(t1 === "明の成立", `世界で開いた詳細が違う: ${t1}`);
+    const back = await page.locator("[data-testid=cross-links] .cross-card").allInnerTexts();
+    assert(back.some((c) => c.includes("日本史で見る") && c.includes("琉球王国")), `日本へのカード: ${back}`);
+    await page.getByTestId("cross-link-jp-ryukyu-kingdom").click();
+    await waitJapan(page);
+    const t2 = await page.getByTestId("event-detail").locator(".detail-title").innerText();
+    assert(t2.includes("琉球王国"), `日本へ戻った詳細が違う: ${t2}`);
+    assert((await yearText(page)) === "1429年", `年が違う: ${await yearText(page)}`);
+    assert((await query(page)) === "?mode=japan", `URL: ${await query(page)}`);
+    await page.waitForTimeout(1200);
+    const m = await markerCenter(page, "jp-ryukyu-kingdom");
+    assert(m && !m.hidden && m.hit, "琉球王国のマーカーが見えていない");
+    return `日本「日明貿易」→ 世界「${t1}」→ 日本「${t2}」`;
+  });
+
+  await check("日本(PC): 地図の端の矢印を押すと、地球儀でそのイベントが開く", async () => {
+    await page.goto(`${URL}?mode=japan&event=jp-iwami-silver`);
+    await waitJapan(page);
+    await page.waitForTimeout(1200);
+    await page.getByTestId("edge-link-manila-galleon").click();
+    await page.waitForFunction(() => !!document.querySelector("canvas"), null, { timeout: 20000 });
+    const t = await page.getByTestId("event-detail").locator(".detail-title").innerText();
+    assert(t.includes("マニラ"), `開いた詳細が違う: ${t}`);
+    return `石見銀山 → 矢印 →「${t}」`;
+  });
+
+  await check("日本(PC): 共有イベント（平安京）は切り替えても選択が引き継がれる", async () => {
+    await page.goto(`${URL}?event=heian-kyo`);
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    await page.getByTestId("event-detail").waitFor();
+    assert(await page.getByTestId("shared-note").isVisible(), "共有イベントの表示がない");
+    await page.getByTestId("mode-japan").click();
+    await waitJapan(page);
+    const t = await page.getByTestId("event-detail").locator(".detail-title").innerText();
+    assert(t === "平安京への遷都", `選択が引き継がれない: ${t}`);
+    const m = await markerCenter(page, "heian-kyo");
+    assert(m && !m.hidden, "日本地図に平安京のマーカーがない");
+    return `世界「${t}」→ 日本でも選択中`;
+  });
+
+  await check("日本(PC): 同時代リストに「🌏 同じころ、世界では？」の段が出て、押すと地球儀で開く", async () => {
+    await page.goto(`${URL}?mode=japan&event=jp-ming-trade`);
+    await waitJapan(page);
+    await page.getByLabel("詳細を閉じる").click();
+    const other = page.getByTestId("strip-other");
+    assert(await other.isVisible(), "「同じころ、世界では？」の段がない");
+    const head = await other.locator(".strip-other-title").innerText();
+    assert(head.includes("同じころ、世界では"), head);
+    const chip = other.locator(".chip-other").first();
+    const id = await chip.getAttribute("data-event-id");
+    await chip.click();
+    await page.waitForFunction(() => !!document.querySelector("canvas"), null, { timeout: 20000 });
+    const t = await page.getByTestId("event-detail").locator(".detail-title").innerText();
+    // 世界モードでは「🗾 同じころ、日本では？」の段に分かれる
+    const head2 = await page.getByTestId("strip-other").locator(".strip-other-title").innerText();
+    assert(head2.includes("同じころ、日本では"), head2);
+    const worldChips = await page.getByTestId("strip-list").locator("button").allInnerTexts();
+    assert(!worldChips.some((c) => c.includes("日明貿易")), "世界の同時代リストに日本だけの出来事が混ざっている");
+    return `日本の段 → 世界「${t}」(${id})／世界側は「同じころ、日本では？」の段`;
+  });
+
+  await check("日本(PC): 年表表示は時代区分（目安）の見出しで並ぶ", async () => {
+    await page.goto(`${URL}?mode=japan`);
+    await waitJapan(page);
+    await page.getByTestId("view-toggle").click();
+    await page.getByTestId("chronology").waitFor();
+    const heads = await page.locator(".chronology h2").allInnerTexts();
+    assert(heads.some((h) => h.includes("鎌倉（目安）")), `見出し: ${heads}`);
+    const n = await page.locator(".chrono-item").count();
+    await page.getByTestId("view-toggle").click();
+    return `見出し ${heads.length}・項目 ${n}`;
+  });
+
+  await check("日本(PC): ページエラーなし", async () => {
+    assert(errors.length === 0, errors.join(" | "));
+  });
+  await ctx.close();
+}
+
+// ───────────── モードをまたぐツアー ─────────────
+{
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await openGlobe(page);
+
+  await check("またぐツアー(PC): 元寇ツアーを最後まで。地球儀で始まり、文永の役で日本地図に切り替わる", async () => {
+    await page.getByTestId("tour-open").click();
+    await page.getByTestId("tour-start-mongol").click();
+    await page.getByTestId("tour-panel").waitFor();
+    const modes = [];
+    const titles = [];
+    for (let i = 0; i < 6; i++) {
+      await page.getByTestId("tour-next").click();
+      await page.waitForTimeout(i === 3 ? 1600 : 400);
+      modes.push(await page.locator(".app").getAttribute("data-mode"));
+      titles.push((await page.getByTestId("tour-step-title").innerText()).trim());
+      if (i === 2) {
+        await page.waitForTimeout(1400);
+        await page.screenshot({ path: `${SHOTS}/tour-mongol-3-world.png` });
+      }
+      if (i === 3) {
+        assert(await page.getByTestId("japan-map").isVisible(), "4番目で日本地図にならない");
+        assert((await query(page)) === "?mode=japan&tour=mongol&step=4", `URL: ${await query(page)}`);
+        const v = await jpView(page);
+        assert(Math.abs(v.zoom - 2.2) < 0.05, `日本地図のカメラ（拡大率）が違う: ${v.zoom}`);
+        const arcs = await page.locator(".japan-map [data-testid=arc-label]").allInnerTexts();
+        assert(arcs.some((a) => a.includes("朝鮮半島から博多湾へ")), `日本地図に弧のラベルがない: ${arcs}`);
+        assert((await page.getByTestId("tour-mode").innerText()).includes("日本地図"), "パネルに日本地図の表示がない");
+        await page.screenshot({ path: `${SHOTS}/tour-mongol-4-japan.png` });
+      }
+    }
+    assert(modes.join(",") === "world,world,world,japan,japan,japan", `モードの並びが違う: ${modes}`);
+    assert((await yearText(page)) === "1333年", "最後の年が違う");
+    await page.getByTestId("tour-next").click();
+    assert((await page.getByTestId("tour-position").innerText()) === "まとめ", "まとめに着かない");
+    const lastArc = await page.locator(".japan-map [data-testid=arc-label][data-certainty=debated]").count();
+    assert(lastArc >= 1, "鎌倉幕府への弧（諸説あり）が描かれていない");
+    await page.getByTestId("tour-finish").click();
+    assert((await page.getByTestId("tour-panel").count()) === 0, "終えてもパネルが残る");
+    assert((await query(page)) === "?mode=japan", `終了後の URL: ${await query(page)}`);
+    return titles.join(" → ");
+  });
+
+  await check("またぐツアー(PC): 前へで日本地図から地球儀に戻り、?tour=mongol&step=4 で日本地図から直接始まる", async () => {
+    await page.goto(`${URL}?tour=mongol&step=4`);
+    await waitJapan(page);
+    assert((await page.locator(".app").getAttribute("data-mode")) === "japan", "直接開始で日本地図にならない");
+    await page.getByTestId("tour-prev").click();
+    await page.waitForFunction(() => !!document.querySelector("canvas"), null, { timeout: 20000 });
+    const t = (await page.getByTestId("tour-step-title").innerText()).trim();
+    assert(t.includes("高麗"), `3番目が高麗でない: ${t}`);
+    assert((await query(page)) === "?tour=mongol&step=3", `URL: ${await query(page)}`);
+    return `step4（日本）→ 前へ →「${t}」（地球儀）`;
+  });
+
+  await check("またぐツアー(PC): 銀のツアーはポトシ → 石見銀山（日本地図）→ マニラ（地球儀）", async () => {
+    await page.goto(`${URL}?tour=silver&step=7`);
+    await page.getByTestId("tour-panel").waitFor({ timeout: 20000 });
+    const seq = [];
+    for (let i = 0; i < 3; i++) {
+      if (i) {
+        await page.getByTestId("tour-next").click();
+        await page.waitForTimeout(500);
+      }
+      seq.push(`${(await page.getByTestId("tour-step-title").innerText()).trim()}(${await page.locator(".app").getAttribute("data-mode")})`);
+    }
+    assert(/ポトシ.*\(world\)/.test(seq[0]) && /石見銀山.*\(japan\)/.test(seq[1]) && /マニラ.*\(world\)/.test(seq[2]), seq.join(" → "));
+    return seq.join(" → ");
+  });
+
+  await check("またぐツアー(PC): ページエラーなし", async () => {
+    assert(errors.length === 0, errors.join(" | "));
+  });
+  await ctx.close();
+}
+
+{
+  const { defaultBrowserType: _ignored5, ...iphone5 } = devices["iPhone 13"];
+  const ctx = await browser.newContext(iphone5);
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+
+  await check("日本(SP): ?mode=japan で直接開き、横スクロールなし。切り替えボタンが画面内に収まる", async () => {
+    await page.goto(`${URL}?mode=japan`);
+    await waitJapan(page);
+    const r = await page.evaluate(() => ({ sw: document.documentElement.scrollWidth, w: innerWidth }));
+    assert(r.sw <= r.w, `横スクロール ${r.sw} > ${r.w}`);
+    const sw = await page.getByTestId("mode-switch").boundingBox();
+    assert(sw.x >= 0 && sw.x + sw.width <= r.w, "切り替えボタンがはみ出す");
+    const hdr = await page.locator(".topbar").evaluate((el) => el.scrollWidth <= el.clientWidth + 1);
+    assert(hdr, "ヘッダーのボタンがはみ出す");
+    await page.screenshot({ path: `${SHOTS}/jp-sp-initial.png` });
+    return `${r.w}px 幅`;
+  });
+
+  await check("日本(SP): イベントを開くと、上55%に日本地図・下45%に詳細の2段になり、地点が地図の中央に来る", async () => {
+    await page.goto(`${URL}?mode=japan&event=jp-mongol-invasions`);
+    await waitJapan(page);
+    await page.getByTestId("event-detail").waitFor();
+    await page.waitForTimeout(600);
+    const g = await page.getByTestId("japan-map").boundingBox();
+    const d = await page.getByTestId("event-detail").boundingBox();
+    const ratio = g.height / (g.height + d.height);
+    assert(Math.abs(ratio - 0.55) < 0.03, `比率が想定外（地図 ${Math.round(ratio * 100)}%）`);
+    assert(d.y >= g.y + g.height - 2, "詳細が地図の上に重なっている");
+    const m = await markerCenter(page, "jp-mongol-invasions");
+    const dx = Math.abs(m.x - (g.x + g.width / 2)), dy = Math.abs(m.y - (g.y + g.height / 2));
+    assert(m.hit && dx < 20 && dy < 20, `地点が中央にない（横${Math.round(dx)} 縦${Math.round(dy)}）`);
+    const noH = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
+    assert(noH, "横スクロールが出る");
+    await page.screenshot({ path: `${SHOTS}/jp-sp-detail.png` });
+    return `地図 ${Math.round(ratio * 100)}%・中央からのずれ 横${Math.round(dx)} 縦${Math.round(dy)}px`;
+  });
+
+  await check("日本(SP): タッチのドラッグで移動し、ピンチで拡大する", async () => {
+    await page.getByLabel("詳細を閉じる").tap();
+    await page.waitForTimeout(300);
+    const cdp = await ctx.newCDPSession(page);
+    const box = await page.getByTestId("japan-map").boundingBox();
+    // 地図の中央には選んでいたマーカーがあるので、海の上（マーカーのない所）から触る
+    const cx = box.x + box.width * 0.75, cy = box.y + box.height * 0.8;
+    const v0 = await jpView(page);
+    await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x: cx, y: cy }] });
+    for (let i = 1; i <= 10; i++) {
+      await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: cx + i * 10, y: cy }] });
+      await page.waitForTimeout(16);
+    }
+    await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
+    const v1 = await jpView(page);
+    assert(v1.lng < v0.lng - 0.2, `タッチで動かない ${v0.lng} → ${v1.lng}`);
+    await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x: cx - 20, y: cy, id: 1 }, { x: cx + 20, y: cy, id: 2 }] });
+    for (let d = 20; d <= 120; d += 10) {
+      await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: cx - d, y: cy, id: 1 }, { x: cx + d, y: cy, id: 2 }] });
+      await page.waitForTimeout(16);
+    }
+    await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
+    const v2 = await jpView(page);
+    assert(v2.zoom > v1.zoom * 2, `ピンチで拡大しない ${v1.zoom} → ${v2.zoom}`);
+    return `lng ${v0.lng.toFixed(1)} → ${v1.lng.toFixed(1)}、zoom ${v1.zoom.toFixed(2)} → ${v2.zoom.toFixed(2)}`;
+  });
+
+  await check("またぐツアー(SP): 元寇ツアーで地球儀から日本地図へ切り替わる（上に地図・下にツアー）", async () => {
+    await page.goto(`${URL}?tour=mongol&step=3`);
+    await page.getByTestId("tour-panel").waitFor({ timeout: 20000 });
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    await page.waitForTimeout(1800);
+    await page.screenshot({ path: `${SHOTS}/tour-mongol-sp-3-world.png` });
+    await page.getByTestId("tour-next").tap();
+    await waitJapan(page);
+    await page.waitForTimeout(1300);
+    const g = await page.getByTestId("japan-map").boundingBox();
+    const p = await page.getByTestId("tour-panel").boundingBox();
+    const ratio = g.height / (g.height + p.height);
+    assert(Math.abs(ratio - 0.55) < 0.03, `比率が想定外（地図 ${Math.round(ratio * 100)}%）`);
+    const noH = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
+    assert(noH, "横スクロールが出る");
+    await page.screenshot({ path: `${SHOTS}/tour-mongol-sp-4-japan.png` });
+    return `地図 ${Math.round(ratio * 100)}%（${(await page.getByTestId("tour-step-title").innerText()).trim()}）`;
+  });
+
+  await check("日本(SP): ページエラーなし", async () => {
+    assert(errors.length === 0, errors.join(" | "));
+  });
+  await ctx.close();
+}
+
+// ───────────── WebGL 非対応でも日本地図は出る ─────────────
+{
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  await ctx.addInitScript(() => {
+    const orig = HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext = function (type, ...rest) {
+      if (String(type).startsWith("webgl") || type === "experimental-webgl") return null;
+      return orig.call(this, type, ...rest);
+    };
+  });
+  const page = await ctx.newPage();
+  await check("WebGL無効: 日本モードでは地図（SVG）が表示され、年表にも切り替えられる", async () => {
+    await page.goto(`${URL}?mode=japan`);
+    await page.getByTestId("japan-map").waitFor({ timeout: 10000 });
+    assert((await page.getByTestId("fallback-notice").count()) === 0, "日本モードで WebGL の注意が出る");
+    await page.getByTestId("view-toggle").click();
+    await page.getByTestId("chronology").waitFor();
+    await page.getByTestId("mode-world").click();
+    await page.getByTestId("fallback-notice").waitFor();
+    assert((await page.getByTestId("view-toggle").count()) === 0, "世界モード（WebGL なし）で地図に戻すボタンが出る");
+    return "日本地図 → 年表 → 世界（年表のまま）";
   });
   await ctx.close();
 }
