@@ -78,7 +78,11 @@
         "year": 610,
         "narration": "紙は東へも伝わりました。高句麗から来日した僧の曇徴が、紙と墨の作り方を伝えたと『日本書紀』は記しています。",
         "question": "技術を伝えたのが、商人ではなく僧であったことには、どんな意味があるだろうか？",
-        "arcFrom": { "eventId": "cai-lun-paper", "certainty": "established", "label": "朝鮮半島を通って東へ" }
+        "arcFrom": {
+          "eventId": "cai-lun-paper",
+          "certainty": "established",
+          "label": "朝鮮半島を通って東へ"
+        }
       },
       {
         "id": "talas",
@@ -86,7 +90,11 @@
         "year": 751,
         "narration": "唐の勢力は中央アジアにまで及び、紙もその地で使われていました。751年、唐の軍とアッバース朝の軍がタラス河畔で戦い、唐は敗れます。",
         "question": "国どうしの戦争は、技術や文化の広がりにどんな影響を与えうるだろうか？",
-        "arcFrom": { "eventId": "cai-lun-paper", "certainty": "established", "label": "唐の西の端へ" }
+        "arcFrom": {
+          "eventId": "cai-lun-paper",
+          "certainty": "established",
+          "label": "唐の西の端へ"
+        }
       },
       {
         "id": "baghdad",
@@ -94,7 +102,11 @@
         "year": 795,
         "narration": "この戦いで捕虜になった唐の紙すき職人が、製紙法を西に伝えたと語り継がれてきました。ただし、これは伝承で、確かな記録は見つかっていません。いずれにせよ8世紀末には、アッバース朝の都バグダードで紙が作られるようになりました。",
         "question": "証拠が少ないのに、なぜ「タラスの捕虜」の話は広く知られるようになったのだろうか？",
-        "arcFrom": { "eventId": "talas", "certainty": "traditional", "label": "捕虜の紙すき職人" }
+        "arcFrom": {
+          "eventId": "talas",
+          "certainty": "traditional",
+          "label": "捕虜の紙すき職人"
+        }
       },
       {
         "id": "iberia",
@@ -102,7 +114,11 @@
         "year": 1150,
         "narration": "紙はイスラーム世界を西へ進み、イベリア半島に届きました。イスラーム勢力が治めていたこの地で、ヨーロッパでも早い時期に紙が作られます。",
         "question": "ヨーロッパに紙が伝わる入り口が、なぜイスラーム世界だったのだろうか？",
-        "arcFrom": { "eventId": "baghdad-paper", "certainty": "established", "label": "イスラーム世界を西へ" }
+        "arcFrom": {
+          "eventId": "baghdad-paper",
+          "certainty": "established",
+          "label": "イスラーム世界を西へ"
+        }
       },
       {
         "id": "gutenberg",
@@ -110,7 +126,11 @@
         "year": 1450,
         "narration": "やがて紙はヨーロッパ各地で作られるようになり、15世紀のマインツでは、グーテンベルクが金属活字による印刷を実用化しました。大量の紙があってこそ、本を大量に刷ることができたのです。",
         "question": "もし紙が伝わっていなかったら、印刷術はヨーロッパでこれほど広まっただろうか？",
-        "arcFrom": { "eventId": "european-paper", "certainty": "established", "label": "紙が支えた印刷" }
+        "arcFrom": {
+          "eventId": "european-paper",
+          "certainty": "established",
+          "label": "紙が支えた印刷"
+        }
       }
     ],
     "outro": "洛陽からマインツまで、紙は千年以上かけてユーラシアを横断しました。その途中には、はっきり確かめられたつながりと、伝承として語られてきたつながりが混ざっています。",
@@ -136,7 +156,11 @@
         "year": 1492,
         "narration": "コロンブスの船隊は大西洋を渡り、カリブ海の島々に着きました。ヨーロッパとアメリカ大陸のあいだで、人・作物・病気が大規模に行き来する時代の始まりです。",
         "question": "「発見」という言葉は、誰の立場から見た表現だろうか？",
-        "arcFrom": { "eventId": "fall-of-granada", "certainty": "established", "label": "同じ年、スペインが航海を支援" }
+        "arcFrom": {
+          "eventId": "fall-of-granada",
+          "certainty": "established",
+          "label": "同じ年、スペインが航海を支援"
+        }
       },
       {
         "id": "gama",
@@ -144,7 +168,11 @@
         "year": 1498,
         "narration": "ポルトガルのガマは、アフリカ南端を回ってインドに着きました。地中海東部でオスマン帝国が力を強めたことが、東方への新しい航路を求める理由の一つになったという見方もありますが、その関係には議論があります。",
         "question": "ポルトガルとスペインは、なぜ反対の方向へ航海したのだろうか？",
-        "arcFrom": { "eventId": "fall-of-constantinople", "certainty": "debated", "label": "東方への新航路" }
+        "arcFrom": {
+          "eventId": "fall-of-constantinople",
+          "certainty": "debated",
+          "label": "東方への新航路"
+        }
       },
       {
         "id": "magellan",
@@ -152,7 +180,11 @@
         "year": 1519,
         "narration": "スペインの船隊を率いたマゼランは、南アメリカ南端の海峡を抜けて太平洋を横断しました。生き残った船が西回りで帰国し、地球を一周できることが確かめられました。",
         "question": "世界一周によって、人々の世界の見方はどう変わっただろうか？",
-        "arcFrom": { "eventId": "columbus", "certainty": "established", "label": "西回りの航路" }
+        "arcFrom": {
+          "eventId": "columbus",
+          "certainty": "established",
+          "label": "西回りの航路"
+        }
       },
       {
         "id": "aztec",
@@ -160,7 +192,11 @@
         "year": 1521,
         "narration": "メキシコでは、スペインのコルテスが周辺の先住民勢力と手を結び、アステカの都テノチティトランを攻め落としました。感染症の流行も、先住民社会に大きな打撃を与えました。",
         "question": "少数のスペイン人が大きな国家を倒せたのはなぜか、さまざまな要因から考えてみよう。",
-        "arcFrom": { "eventId": "columbus", "certainty": "established", "label": "スペインの進出" }
+        "arcFrom": {
+          "eventId": "columbus",
+          "certainty": "established",
+          "label": "スペインの進出"
+        }
       },
       {
         "id": "inca",
@@ -168,7 +204,11 @@
         "year": 1533,
         "narration": "南アメリカでは、ピサロがインカ帝国の皇帝を捕らえ、首都クスコを占領しました。アンデスの広い地域がスペインの支配下に入ります。",
         "question": "征服された側の人々の視点から見ると、この出来事はどのように見えるだろうか？",
-        "arcFrom": { "eventId": "aztec-conquest", "certainty": "established", "label": "征服の拡大" }
+        "arcFrom": {
+          "eventId": "aztec-conquest",
+          "certainty": "established",
+          "label": "征服の拡大"
+        }
       },
       {
         "id": "potosi",
@@ -176,7 +216,29 @@
         "year": 1545,
         "narration": "アンデス山中のポトシで、豊かな銀の鉱脈が見つかりました。先住民が強制的に働かされ、掘り出された大量の銀がスペインの船で運び出されていきます。",
         "question": "銀の富は、誰の労働によって生み出され、誰のもとに集まったのだろうか？",
-        "arcFrom": { "eventId": "inca-conquest", "certainty": "established", "label": "征服地の銀山" }
+        "arcFrom": {
+          "eventId": "inca-conquest",
+          "certainty": "established",
+          "label": "征服地の銀山"
+        }
+      },
+      {
+        "id": "iwami",
+        "eventId": "jp-iwami-silver",
+        "year": 1557,
+        "mode": "japan",
+        "camera": {
+          "lat": 34.2,
+          "lng": 128.5,
+          "zoom": 1.5
+        },
+        "narration": "地図は日本へ。同じころ、石見銀山では灰吹法で銀が大量に取り出されていました。銀を求める明へ、日本の銀は中国やポルトガルの商人の船で運ばれ、東アジアの交易を大きく動かします。",
+        "question": "アメリカ大陸の銀と日本の銀は、なぜ同じころ中国へ向かったのだろうか？",
+        "arcFrom": {
+          "eventId": "ming",
+          "certainty": "established",
+          "label": "銀を求める明"
+        }
       },
       {
         "id": "manila",
@@ -184,11 +246,106 @@
         "year": 1571,
         "narration": "銀は大西洋を渡ってヨーロッパへ向かうだけでなく、メキシコから太平洋を渡ってフィリピンのマニラにも運ばれ、中国の絹や陶磁器と交換されました。明ではやがて、税を銀で納める仕組みが広まります。",
         "question": "アメリカ大陸の銀が、なぜ遠い中国の税の仕組みにまで影響したのだろうか？",
-        "arcFrom": { "eventId": "potosi", "certainty": "established", "label": "銀が太平洋を渡る" }
+        "arcFrom": {
+          "eventId": "potosi",
+          "certainty": "established",
+          "label": "銀が太平洋を渡る"
+        }
       }
     ],
-    "outro": "グラナダの開城からマニラの銀まで、80年ほどのあいだに、ヨーロッパ・アメリカ・アジアは航路と銀で結ばれました。その陰には、征服や強制労働で苦しんだ多くの人々がいました。",
+    "outro": "グラナダの開城からマニラの銀まで、80年ほどのあいだに、ヨーロッパ・アメリカ・アジアは航路と銀で結ばれました。日本の石見銀山の銀も、その流れの一部でした。その陰には、征服や強制労働で苦しんだ多くの人々がいました。",
     "closingQuestion": "世界が「ひとつにつながる」ことは、誰にとって、どんな意味をもっていたのだろうか？",
+    "verified": false
+  },
+  {
+    "id": "mongol",
+    "title": "元寇――ユーラシアの嵐が博多湾へ",
+    "kind": "connection",
+    "intro": "13世紀、モンゴル高原から広がった帝国は、ユーラシアの東西を一つの勢力圏に結びつけました。その動きは朝鮮半島をへて、日本の博多湾にまで及びます。地球儀から日本地図へ、嵐の行方をたどってみましょう。",
+    "steps": [
+      {
+        "id": "genghis",
+        "eventId": "genghis-khan",
+        "year": 1206,
+        "narration": "1206年、テムジンはモンゴル高原の遊牧民をまとめ、チンギス=カンとなりました。騎馬の軍団は東西へ遠征を重ね、やがて史上最大級の帝国が生まれます。",
+        "question": "遊牧民の国家が、短いあいだにこれほど広い地域を従えられたのはなぜだろうか？"
+      },
+      {
+        "id": "dadu",
+        "eventId": "yuan-dadu",
+        "year": 1271,
+        "narration": "チンギス=カンの孫フビライは、国号を元と定め、大都（現在の北京）を都としました。元は南の宋を追いつめながら、海の向こうの日本にも従うよう求める使いを送ります。",
+        "question": "フビライが日本に使いを送ったのは、何をねらってのことだったのだろうか？",
+        "arcFrom": {
+          "eventId": "genghis-khan",
+          "certainty": "established",
+          "label": "孫フビライが元を建てる"
+        }
+      },
+      {
+        "id": "goryeo",
+        "eventId": "goryeo",
+        "year": 1274,
+        "narration": "朝鮮半島の高麗は、長い抵抗のすえにモンゴルに従いました。日本への遠征では、高麗が船を造り、兵や水夫を出すことを求められ、重い負担を背負います。",
+        "question": "元寇を、高麗の人々の側から見ると、どんな出来事だったのだろうか？",
+        "arcFrom": {
+          "eventId": "yuan-dadu",
+          "certainty": "established",
+          "label": "高麗を従えて遠征へ"
+        }
+      },
+      {
+        "id": "bunei",
+        "eventId": "jp-mongol-invasions",
+        "year": 1274,
+        "mode": "japan",
+        "camera": {
+          "lat": 35.0,
+          "lng": 128.6,
+          "zoom": 2.2
+        },
+        "narration": "地図は日本へ。1274年、元と高麗の軍は対馬・壱岐を襲い、博多湾に上陸しました（文永の役）。御家人たちは慣れない集団戦法や火薬を使った武器に苦しみながら戦います。",
+        "question": "戦い方のちがう相手と戦ったことは、武士たちに何をもたらしたのだろうか？",
+        "arcFrom": {
+          "eventId": "goryeo",
+          "certainty": "established",
+          "label": "朝鮮半島から博多湾へ"
+        }
+      },
+      {
+        "id": "koan",
+        "eventId": "jp-mongol-invasions",
+        "year": 1281,
+        "mode": "japan",
+        "camera": {
+          "lat": 33.75,
+          "lng": 130.1,
+          "zoom": 4.5
+        },
+        "narration": "1281年、元はふたたび大軍を送りました（弘安の役）。幕府は博多湾の沿岸に石の防塁を築いて上陸を防ぎ、長い対陣のあと、元の船団は暴風雨にも見舞われて引き揚げます。",
+        "question": "「神風が吹いた」という語られ方は、のちの時代にどんな意味をもったのだろうか？",
+        "arcFrom": {
+          "eventId": "yuan-dadu",
+          "certainty": "established",
+          "label": "江南からも大船団"
+        }
+      },
+      {
+        "id": "kamakura",
+        "eventId": "jp-kamakura-fall",
+        "year": 1333,
+        "mode": "japan",
+        "narration": "外からの侵攻は退けたものの、守る戦いでは新しい領地が手に入らず、御家人は十分な恩賞を受けられませんでした。不満と社会の変化が重なり、鎌倉幕府は50年ほどのちに滅びます。",
+        "question": "元寇は、鎌倉幕府が滅んだ原因の一つといえるだろうか？ほかの要因とあわせて考えてみよう。",
+        "arcFrom": {
+          "eventId": "jp-mongol-invasions",
+          "certainty": "debated",
+          "label": "恩賞の不足と幕府のゆらぎ"
+        }
+      }
+    ],
+    "outro": "モンゴル高原で生まれた帝国の動きは、朝鮮半島の人々を巻き込み、博多湾の戦いをへて、日本の政治のゆらぎにまでつながっていきました。日本史の出来事も、ユーラシアの大きな動きの一部として見ることができます。",
+    "closingQuestion": "教科書で「日本史」と「世界史」に分かれて出てくる出来事を、一つのつながりとして見ると、何が新しく見えてくるだろうか？",
     "verified": false
   },
   {
