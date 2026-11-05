@@ -852,5 +852,728 @@
       "russo-japanese-war",
       "joseon"
     ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-iwajuku",
+    "title": "岩宿遺跡と日本列島の旧石器時代",
+    "category": "culture",
+    "start": {
+      "year": -29999,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -14499,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 36.403,
+      "lng": 139.287,
+      "placeName": "岩宿遺跡（群馬県みどり市）",
+      "precision": "exact"
+    },
+    "summary": "関東ローム層の中から打製石器が見つかり、土器が使われる前の日本列島にも人が暮らしていたことが確かめられた。人々は大型の動物を追い、石を打ち欠いてつくった道具を使っていた。",
+    "historicalNote": "旧石器時代の年代には諸説が大きく、現生人類が日本列島に来たのは約4万年前以降、縄文文化が始まるのは約1万6500年前とされる。ここでは岩宿遺跡の下層（約3万年前）を始まりの目安とした。発見は1946年頃、相沢忠洋による。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「岩宿遺跡」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E5%AE%BF%E9%81%BA%E8%B7%A1",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「日本列島の旧石器時代」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E5%88%97%E5%B3%B6%E3%81%AE%E6%97%A7%E7%9F%B3%E5%99%A8%E6%99%82%E4%BB%A3",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "旧石器"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-sannai-maruyama",
+    "title": "三内丸山遺跡（縄文時代の大集落）",
+    "category": "culture",
+    "start": {
+      "year": -3899,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": -2199,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 40.811,
+      "lng": 140.697,
+      "placeName": "三内丸山遺跡（青森市）",
+      "precision": "exact"
+    },
+    "summary": "青森の丘の上に、竪穴建物や高床の倉庫、大きな柱の建物が並ぶ大集落が長く営まれた。人々はクリなどの木を手入れして食料を得ており、狩りと採集だけの暮らしという見方を見直すきっかけになった。",
+    "historicalNote": "年代は約5900〜4200年前（縄文時代前期中頃〜中期末葉）とされ、ここでは前3900年頃〜前2200年頃として表した。縄文時代の年代は測定方法によって幅があり、諸説が大きい。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「三内丸山遺跡」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%86%85%E4%B8%B8%E5%B1%B1%E9%81%BA%E8%B7%A1",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "縄文"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-yoshinogari",
+    "title": "吉野ヶ里遺跡（弥生時代の環濠集落）",
+    "category": "war",
+    "start": {
+      "year": -799,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 249,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 33.326,
+      "lng": 130.385,
+      "placeName": "吉野ヶ里遺跡（佐賀県）",
+      "precision": "exact"
+    },
+    "summary": "佐賀平野の丘に、二重の堀と柵で囲まれた大きな集落が築かれた。見張りの建物や、傷を負った人骨も見つかっており、稲作の広がりとともに、むらどうしの争いが激しくなっていたことがうかがえる。",
+    "historicalNote": "集落は弥生時代前期（前8世紀頃）に形成が始まり、後期に最大規模になったとされる。弥生時代の始まりには前10世紀とする説もあり、年代には幅がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「吉野ヶ里遺跡」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E9%87%8E%E3%83%B6%E9%87%8C%E9%81%BA%E8%B7%A1",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "弥生",
+    "relatedEventIds": [
+      "jp-rice-farming"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-daisen-kofun",
+    "title": "大仙陵古墳（巨大な前方後円墳）",
+    "category": "politics",
+    "start": {
+      "year": 450,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 34.564,
+      "lng": 135.487,
+      "placeName": "大仙陵古墳（大阪府堺市）",
+      "precision": "exact"
+    },
+    "summary": "大阪湾に近い台地に、周りを堀で囲んだ日本最大の前方後円墳が築かれた。これほど大きな墓を造らせた王の力は、各地の豪族を従えるヤマト政権の広がりを示していると考えられている。",
+    "historicalNote": "築造は5世紀前期〜中期とされる。宮内庁は仁徳天皇陵としているが、実際の被葬者は明らかでない。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「大仙陵古墳」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%BB%99%E9%99%B5%E5%8F%A4%E5%A2%B3",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "古墳"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-horyuji",
+    "title": "法隆寺の創建",
+    "category": "religion",
+    "start": {
+      "year": 607,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.614,
+      "lng": 135.734,
+      "placeName": "法隆寺（奈良県斑鳩町）",
+      "precision": "exact"
+    },
+    "summary": "厩戸皇子（聖徳太子）ゆかりの寺として法隆寺が建てられた。仏教を国の柱の一つにしようとする動きのなかで生まれた寺で、現在の西院の建物は、今に残る世界最古の木造建築群とされる。",
+    "historicalNote": "創建は607年とされる。現在の西院の伽藍は、7世紀後半の焼失後に再建されたとする説が有力で、再建をめぐる論争があった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「法隆寺」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B3%95%E9%9A%86%E5%AF%BA",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "飛鳥",
+    "relatedEventIds": [
+      "jp-buddhism-arrives"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-taika-reform",
+    "title": "乙巳の変と大化の改新",
+    "category": "politics",
+    "start": {
+      "year": 645,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 701,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.469,
+      "lng": 135.82,
+      "placeName": "飛鳥板蓋宮",
+      "precision": "city"
+    },
+    "summary": "中大兄皇子と中臣鎌足は、権力をふるっていた蘇我入鹿を宮中で倒した。その後、豪族が土地と人を支配するしくみを改め、天皇を中心とする国づくりをめざす改革が進められた。",
+    "historicalNote": "645年の乙巳の変に始まる改革。狭義には大化年間（645年〜650年）の改革を、広義には701年の大宝律令の完成までを指す。改新の実在性や内容には議論がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「大化の改新」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%8C%96%E3%81%AE%E6%94%B9%E6%96%B0",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「乙巳の変」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B9%99%E5%B7%B3%E3%81%AE%E5%A4%89",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "飛鳥",
+    "relatedEventIds": [
+      "tang"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-jinshin-war",
+    "title": "壬申の乱",
+    "category": "war",
+    "start": {
+      "year": 672,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.36,
+      "lng": 136.46,
+      "placeName": "近江・美濃（不破の関など）",
+      "precision": "region"
+    },
+    "summary": "天智天皇の死後、弟の大海人皇子が挙兵し、天智天皇の子の大友皇子の軍を破った。勝った大海人皇子は天武天皇となり、天皇の力を強めながら律令国家づくりを進めた。",
+    "historicalNote": "古代日本で最大の内乱とされる。戦いは近江・美濃・大和など広い範囲に及び、地点は不破の関付近の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「壬申の乱」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A3%AC%E7%94%B3%E3%81%AE%E4%B9%B1",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "飛鳥"
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-heijo-kyo",
+    "title": "平城京への遷都",
+    "category": "politics",
+    "start": {
+      "year": 710,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.691,
+      "lng": 135.796,
+      "placeName": "平城京（現・奈良市）",
+      "precision": "city"
+    },
+    "summary": "唐の都長安にならい、碁盤の目のように区画した新しい都が奈良盆地に造られた。平城京は奈良時代の政治の中心となり、東大寺の大仏などもこの都で造られた。",
+    "historicalNote": "藤原京からの遷都は710年。784年に長岡京へ移るまでの奈良時代の都。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「平城京」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%9F%8E%E4%BA%AC",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "奈良",
+    "relatedEventIds": [
+      "tang"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kojiki-nihonshoki",
+    "title": "古事記と日本書紀",
+    "category": "culture",
+    "start": {
+      "year": 712,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 720,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.691,
+      "lng": 135.796,
+      "placeName": "平城京",
+      "precision": "city"
+    },
+    "summary": "天地のはじまりから天皇の系譜までをまとめた歴史書が、相次いでつくられた。『古事記』は神話や歌謡を多く含み、『日本書紀』は漢文で年ごとに記した国の正史として編まれた。",
+    "historicalNote": "『古事記』は712年、『日本書紀』は720年の成立とされる。両書の内容には差異があり、『古事記』には偽書説もある。神話や伝承の部分は、そのまま史実とみなすことはできない。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「古事記」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E4%BA%8B%E8%A8%98",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「日本書紀」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%9B%B8%E7%B4%80",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "奈良"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-masakado",
+    "title": "平将門・藤原純友の乱（天慶の乱）",
+    "category": "war",
+    "start": {
+      "year": 935,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 941,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 36.1,
+      "lng": 139.95,
+      "placeName": "関東（平将門の本拠の下総国）",
+      "precision": "region"
+    },
+    "summary": "関東では平将門が国府を襲って「新皇」を名のり、瀬戸内海では藤原純友が反乱を起こした。朝廷は地方の武士の力を借りて鎮めたが、武士が力をつけていく時代の始まりを示す出来事となった。",
+    "historicalNote": "かつては承平・天慶の乱と呼ばれたが、承平年間には朝廷への反乱はなかったとして、近年は天慶の乱とも呼ばれる。935年の一族の争いから941年の純友の敗死までを示す。地点は関東の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「承平天慶の乱」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%89%BF%E5%B9%B3%E5%A4%A9%E6%85%B6%E3%81%AE%E4%B9%B1",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-fujiwara-regency",
+    "title": "藤原道長と摂関政治",
+    "category": "politics",
+    "start": {
+      "year": 1016,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1027,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.0116,
+      "lng": 135.7681,
+      "placeName": "平安京",
+      "precision": "city"
+    },
+    "summary": "藤原氏は娘を天皇のきさきとし、生まれた子を天皇に立てて、摂政や関白として政治を動かした。藤原道長は3人の天皇の祖父となり、その一族はもっとも大きな力をもった。",
+    "historicalNote": "摂関政治の時期は研究者によって幅がある（9世紀後半〜11世紀後半）。ここでは道長が摂政となった1016年から没年の1027年までを示す。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「摂関政治」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%91%82%E9%96%A2%E6%94%BF%E6%B2%BB",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「藤原道長」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E5%8E%9F%E9%81%93%E9%95%B7",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安"
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kokufu-culture",
+    "title": "国風文化と仮名文学（源氏物語・枕草子）",
+    "category": "culture",
+    "start": {
+      "year": 1001,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1008,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 35.0116,
+      "lng": 135.7681,
+      "placeName": "平安京（宮廷）",
+      "precision": "city"
+    },
+    "summary": "かな文字が広まり、宮廷に仕える女性たちが日本語で物語や随筆を書いた。紫式部の『源氏物語』や清少納言の『枕草子』は、貴族の暮らしと心の動きを細やかに描いている。",
+    "historicalNote": "国風文化は10世紀初め〜11世紀の摂関期を中心とする文化。唐の文化がなくなったわけではなく、海商や僧による大陸との交流の中で生まれた文化として見直されている。『枕草子』は1001年頃にほぼ完成、『源氏物語』の文献上の初出は1008年。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「国風文化」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%A2%A8%E6%96%87%E5%8C%96",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「源氏物語」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%BA%90%E6%B0%8F%E7%89%A9%E8%AA%9E",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「枕草子」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9E%95%E8%8D%89%E5%AD%90",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安",
+    "relatedEventIds": [
+      "jp-kentoshi-end",
+      "song-dynasty"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-insei",
+    "title": "院政の始まり",
+    "category": "politics",
+    "start": {
+      "year": 1086,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.96,
+      "lng": 135.76,
+      "placeName": "平安京（白河の院御所）",
+      "precision": "city"
+    },
+    "summary": "白河天皇は位を譲って上皇となったあとも、院で政治の実権を握り続けた。上皇が天皇に代わって政治を動かすこのしくみは、平家の滅亡のころまで続き、武士の力を頼る場面も増えていった。",
+    "historicalNote": "1086年の白河上皇から1185年頃までを院政時代と呼ぶことがある。地点は京都の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「院政」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%99%A2%E6%94%BF",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-chusonji",
+    "title": "平泉と中尊寺金色堂",
+    "category": "religion",
+    "start": {
+      "year": 1124,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 38.997,
+      "lng": 141.1,
+      "placeName": "中尊寺（岩手県平泉町）",
+      "precision": "exact"
+    },
+    "summary": "東北を治めた奥州藤原氏は、平泉に仏教の都を築いた。藤原清衡が建てた金色堂は、内も外も金箔で飾られ、極楽浄土を地上に表そうとした浄土教の建築の代表とされる。",
+    "historicalNote": "金色堂の建立は1124年。奥州藤原氏は1189年に源頼朝に滅ぼされた。堂は内外ともに金箔貼りで、平等院鳳凰堂と並ぶ浄土教建築の代表例とされる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「中尊寺金色堂」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B0%8A%E5%AF%BA%E9%87%91%E8%89%B2%E5%A0%82",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-genpei-war",
+    "title": "源平の争乱と壇ノ浦の戦い",
+    "category": "war",
+    "start": {
+      "year": 1180,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1185,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 33.96,
+      "lng": 130.95,
+      "placeName": "壇ノ浦（現在の山口県下関市）",
+      "precision": "exact"
+    },
+    "summary": "平氏の政権に反発した各地の武士が兵を挙げ、源頼朝の勢力が中心となって平氏と戦った。関門海峡の壇ノ浦の戦いで平氏は滅び、東国に新しい武家政権が生まれる道が開かれた。",
+    "historicalNote": "治承・寿永の乱は1180年の以仁王の挙兵に始まり、1185年の壇ノ浦の戦いで平氏が滅んだ。1189年の奥州合戦までを含める見方もある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「治承・寿永の乱」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B2%BB%E6%89%BF%E3%83%BB%E5%AF%BF%E6%B0%B8%E3%81%AE%E4%B9%B1",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「壇ノ浦の戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A3%87%E3%83%8E%E6%B5%A6%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安",
+    "relatedEventIds": [
+      "jp-nisso-trade"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kamakura-shogunate",
+    "title": "鎌倉幕府の成立",
+    "category": "politics",
+    "start": {
+      "year": 1185,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1192,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.32,
+      "lng": 139.55,
+      "placeName": "鎌倉",
+      "precision": "city"
+    },
+    "summary": "源頼朝は鎌倉を本拠に、家来となった武士（御家人）を守護・地頭として各地に置き、武士による政権を築いた。朝廷と並び立つ二つの権力の時代が始まった。",
+    "historicalNote": "幕府の成立年には1185年（守護・地頭の設置）、1192年（征夷大将軍の任命）など諸説ある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「鎌倉幕府」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%8E%8C%E5%80%89%E5%B9%95%E5%BA%9C",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "鎌倉"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-jokyu-war",
+    "title": "承久の乱",
+    "category": "war",
+    "start": {
+      "year": 1221,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.0116,
+      "lng": 135.7681,
+      "placeName": "京都",
+      "precision": "city"
+    },
+    "summary": "後鳥羽上皇が幕府の執権北条義時を討とうと兵を挙げたが、幕府の大軍に敗れた。幕府は京都に六波羅探題を置いて朝廷を見張り、西国にも力を広げた。",
+    "historicalNote": "朝廷と武家政権のあいだで起きた初めての武力衝突とされる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「承久の乱」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%89%BF%E4%B9%85%E3%81%AE%E4%B9%B1",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "鎌倉"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-goseibai-shikimoku",
+    "title": "御成敗式目",
+    "category": "politics",
+    "start": {
+      "year": 1232,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.32,
+      "lng": 139.55,
+      "placeName": "鎌倉",
+      "precision": "city"
+    },
+    "summary": "執権北条泰時は、頼朝以来の先例や武士の社会の道理をもとに、裁判の基準となる法をまとめた。武士がつくった初めての体系的な法で、のちの武家の法にも受け継がれた。",
+    "historicalNote": "制定は1232年（貞永元年）。貞永式目とも呼ばれるが、正式名称は御成敗式目。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「御成敗式目」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E6%88%90%E6%95%97%E5%BC%8F%E7%9B%AE",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "鎌倉"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-nanbokucho",
+    "title": "南北朝の動乱",
+    "category": "war",
+    "start": {
+      "year": 1337,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1392,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.37,
+      "lng": 135.86,
+      "placeName": "吉野（南朝の拠点）",
+      "precision": "city"
+    },
+    "summary": "建武の新政が崩れたあと、足利尊氏が京都に立てた北朝と、吉野に移った後醍醐天皇の南朝が並び立ち、全国の武士を巻き込む争いが60年近く続いた。",
+    "historicalNote": "始まりは1337年（後醍醐天皇の吉野への移動）、終わりは1392年の南北朝の合一。始まりを建武の新政の1333年とする場合もある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「南北朝時代 (日本)」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8D%97%E5%8C%97%E6%9C%9D%E6%99%82%E4%BB%A3_(%E6%97%A5%E6%9C%AC)",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kinkakuji",
+    "title": "足利義満と北山文化（金閣）",
+    "category": "culture",
+    "start": {
+      "year": 1397,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.039,
+      "lng": 135.729,
+      "placeName": "鹿苑寺（京都市北区）",
+      "precision": "exact"
+    },
+    "summary": "室町幕府の3代将軍足利義満は、京都の北山に山荘を営み、金箔で飾った舎利殿（金閣）を建てた。公家と武家の文化、禅宗の文化が混じり合った北山文化を代表する建物である。",
+    "historicalNote": "鹿苑寺の創建（北山山荘の造営）は1397年。現在の金閣は1950年の放火による焼失後、1955年に再建されたもの。義満は日明貿易を始めた将軍でもある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「鹿苑寺」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%B9%BF%E8%8B%91%E5%AF%BA",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "jp-ming-trade"
+    ]
   }
 ]
