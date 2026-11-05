@@ -2,7 +2,8 @@
   "basis": "高等学校学習指導要領（平成30年告示）地理歴史「日本史探究」の大項目・中項目",
   "batchesDone": [
     "第1回（世界史とつなぐ橋 20件・PR①）",
-    "第2回（原始・古代・中世 20件）"
+    "第2回（原始・古代・中世 20件）",
+    "第3回（中世末・近世・近現代 20件）"
   ],
   "majors": [
     {
@@ -140,15 +141,12 @@
         "jp-kinkakuji",
         "jp-ming-trade",
         "jp-ryukyu-kingdom",
+        "jp-onin-war",
         "jp-iwami-silver",
         "jp-tanegashima-guns",
         "jp-xavier"
       ],
       "candidates": [
-        {
-          "title": "応仁の乱",
-          "batch": "第3回"
-        },
         {
           "title": "鎌倉新仏教（法然・親鸞・日蓮・禅宗）",
           "batch": "第4回"
@@ -212,47 +210,20 @@
       "summary": "織豊政権から江戸幕府の成立、対外関係の再編、産業と文化の発展、幕府の改革までをたどる単元。",
       "min": 25,
       "eventIds": [
+        "jp-honnoji",
+        "jp-taiko-kenchi",
         "jp-hideyoshi-korea",
+        "jp-sekigahara",
+        "jp-edo-shogunate",
+        "jp-shuinsen",
+        "jp-chosen-tsushinshi",
+        "jp-shimabara",
         "edo-sakoku",
-        "jp-dejima"
+        "jp-dejima",
+        "jp-shakushain",
+        "jp-kaitai-shinsho"
       ],
       "candidates": [
-        {
-          "title": "本能寺の変",
-          "batch": "第3回"
-        },
-        {
-          "title": "太閤検地と刀狩",
-          "batch": "第3回"
-        },
-        {
-          "title": "関ヶ原の戦い",
-          "batch": "第3回"
-        },
-        {
-          "title": "江戸幕府の成立",
-          "batch": "第3回"
-        },
-        {
-          "title": "朱印船貿易と東南アジアの日本町",
-          "batch": "第3回"
-        },
-        {
-          "title": "朝鮮通信使",
-          "batch": "第3回"
-        },
-        {
-          "title": "島原・天草一揆",
-          "batch": "第3回"
-        },
-        {
-          "title": "松前藩とアイヌ（シャクシャインの戦い）",
-          "batch": "第3回"
-        },
-        {
-          "title": "解体新書と蘭学",
-          "batch": "第3回"
-        },
         {
           "title": "元禄文化",
           "batch": "第4回"
@@ -334,51 +305,21 @@
       "eventIds": [
         "jp-perry",
         "meiji-restoration",
+        "jp-iwakura-mission",
+        "jp-meiji-constitution",
         "jp-sino-japanese-war",
         "russo-japanese-war",
-        "atomic-bombings"
+        "jp-korea-annexation",
+        "jp-wwi-entry",
+        "jp-manchurian-incident",
+        "jp-pacific-war",
+        "atomic-bombings",
+        "jp-potsdam-occupation",
+        "jp-constitution-1946",
+        "jp-sf-treaty",
+        "jp-high-growth"
       ],
       "candidates": [
-        {
-          "title": "岩倉使節団",
-          "batch": "第3回"
-        },
-        {
-          "title": "大日本帝国憲法の発布",
-          "batch": "第3回"
-        },
-        {
-          "title": "韓国併合",
-          "batch": "第3回"
-        },
-        {
-          "title": "第一次世界大戦への参戦（日独戦争）",
-          "batch": "第3回"
-        },
-        {
-          "title": "満洲事変",
-          "batch": "第3回"
-        },
-        {
-          "title": "太平洋戦争の開戦",
-          "batch": "第3回"
-        },
-        {
-          "title": "ポツダム宣言の受諾と占領",
-          "batch": "第3回"
-        },
-        {
-          "title": "日本国憲法の公布",
-          "batch": "第3回"
-        },
-        {
-          "title": "サンフランシスコ平和条約",
-          "batch": "第3回"
-        },
-        {
-          "title": "高度経済成長と東京オリンピック",
-          "batch": "第3回"
-        },
         {
           "title": "日米修好通商条約",
           "batch": "第4回"
