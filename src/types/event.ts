@@ -5,6 +5,12 @@
  */
 export type AstroYear = number;
 
+/**
+ * 表示モード（世界＝3D地球儀／日本＝日本周辺の平面地図）。
+ * イベントの scopes（どちらの地図に出すか）にも使う。
+ */
+export type Scope = "world" | "japan";
+
 /** 年代の不確実性。 */
 export type Uncertainty =
   | { kind: "exact" } // 確定
@@ -67,6 +73,16 @@ export interface HistoryEvent {
   verified: boolean;
   /** 将来拡張：探究用の問い（MVPでは未使用） */
   question?: string;
-  /** 将来拡張：関連イベントへの参照（伝播・影響のアーク表示用。MVPでは未使用） */
+  /**
+   * 関連イベントへの参照（ツアーの弧・「世界とのつながり」に使う）。
+   * 世界史（events.json）と日本史（events-japan.json）をまたいで参照してよい。
+   */
   relatedEventIds?: string[];
+  /**
+   * どちらの地図に出すか。省略時は、events.json のものは ["world"]、events-japan.json のものは ["japan"]。
+   * 両方に出す共有イベントは ["world", "japan"]（先頭がそのイベントの「本来の」モード）。
+   */
+  scopes?: Scope[];
+  /** 日本モードの時代区分（例：「鎌倉」）。表示と絞り込み用。区分の境目は目安 */
+  era?: string;
 }

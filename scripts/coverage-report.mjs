@@ -1,8 +1,19 @@
-// 単元カバー表 docs/COVERAGE.md を src/data/units.json と src/data/events.json から生成する。
-//   node scripts/coverage-report.mjs
-import { readFileSync, writeFileSync } from "node:fs";
+// 単元カバー表を生成する。
+//   node scripts/coverage-report.mjs                … 世界史：src/data/units.json と events.json から docs/COVERAGE.md
+//   node scripts/coverage-report.mjs --mode=japan   … 日本史：src/data/units-japan.json と、日本の地図に出るイベントから docs/COVERAGE-JAPAN.md
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
+const MODE = process.argv.includes("--mode=japan") ? "japan" : "world";
 const read = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url), "utf8"));
+if (MODE === "japan") {
+  if (!existsSync(new URL("../src/data/units-japan.json", import.meta.url))) {
+    console.log("src/data/units-japan.json がまだありません（日本史の単元カバー表は PR② で追加）。");
+    process.exit(0);
+  }
+  const { renderJapan } = await import("./coverage-japan.mjs");
+  renderJapan(read);
+  process.exit(0);
+}
 const { basis, majors, units } = read("../src/data/units.json");
 const events = read("../src/data/events.json");
 const ids = new Set(events.map((e) => e.id));
