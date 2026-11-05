@@ -1,0 +1,470 @@
+{
+  "basis": "高等学校学習指導要領（平成30年告示）地理歴史「日本史探究」の大項目・中項目",
+  "batchesDone": [
+    "第1回（世界史とつなぐ橋 20件・PR①）",
+    "第2回（原始・古代・中世 20件）"
+  ],
+  "majors": [
+    {
+      "code": "A",
+      "name": "原始・古代の日本と東アジア"
+    },
+    {
+      "code": "B",
+      "name": "中世の日本と世界"
+    },
+    {
+      "code": "C",
+      "name": "近世の日本と世界"
+    },
+    {
+      "code": "D",
+      "name": "近現代の地域・日本と世界"
+    }
+  ],
+  "units": [
+    {
+      "code": "A1",
+      "major": "A",
+      "name": "黎明期の日本列島と歴史的環境",
+      "summary": "旧石器・縄文の暮らしから、稲作や金属器の伝来、古代国家の成立までの大きな転換を見通し、時代を通して考える問いを立てる単元。個別の出来事は A(3) に置く。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "A2",
+      "major": "A",
+      "name": "歴史資料と原始・古代の展望",
+      "summary": "遺跡・遺物や中国の史書、日本の古い歴史書などの資料の性格を考え、原始・古代の特色について仮説を立てる単元。個別の出来事は A(3) に置く。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "A3",
+      "major": "A",
+      "name": "古代の国家・社会の展開と画期",
+      "summary": "ヤマト政権の成立から律令国家の形成、平安時代の貴族政治と文化までを、東アジアとの関わりのなかでたどる単元。",
+      "min": 30,
+      "eventIds": [
+        "jp-iwajuku",
+        "jp-sannai-maruyama",
+        "jp-rice-farming",
+        "jp-yoshinogari",
+        "jp-gold-seal",
+        "jp-himiko",
+        "jp-daisen-kofun",
+        "jp-buddhism-arrives",
+        "jp-kenzuishi",
+        "jp-horyuji",
+        "paper-east-asia",
+        "jp-taika-reform",
+        "jp-hakusonko",
+        "jp-jinshin-war",
+        "jp-heijo-kyo",
+        "jp-kojiki-nihonshoki",
+        "jp-todaiji-ganjin",
+        "heian-kyo",
+        "jp-kentoshi-end",
+        "jp-masakado",
+        "jp-fujiwara-regency",
+        "jp-kokufu-culture",
+        "jp-insei"
+      ],
+      "candidates": [
+        {
+          "title": "藤原京（日本初の本格的な都城）",
+          "batch": "第4回"
+        },
+        {
+          "title": "大宝律令の制定",
+          "batch": "第4回"
+        },
+        {
+          "title": "墾田永年私財法と荘園の始まり",
+          "batch": "第4回"
+        },
+        {
+          "title": "渤海との交流",
+          "batch": "第4回"
+        },
+        {
+          "title": "最澄・空海と平安仏教",
+          "batch": "第4回"
+        },
+        {
+          "title": "前九年・後三年合戦（奥羽の戦乱）",
+          "batch": "第5回"
+        },
+        {
+          "title": "浄土教の広まり（平等院鳳凰堂）",
+          "batch": "第5回"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "major": "B",
+      "name": "中世への転換と歴史的環境",
+      "summary": "武士の台頭や院政、日宋貿易などから、古代から中世への転換を見通す問いを立てる単元。個別の出来事は B(3) に置く。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "B2",
+      "major": "B",
+      "name": "歴史資料と中世の展望",
+      "summary": "絵巻物・古文書・軍記物語などの資料から、中世の特色について仮説を立てる単元。個別の出来事は B(3) に置く。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "B3",
+      "major": "B",
+      "name": "中世の国家・社会の展開と画期",
+      "summary": "鎌倉幕府の成立から室町幕府、戦国時代の始まりまで、武家政権の展開と東アジア・海域との交流をたどる単元。",
+      "min": 25,
+      "eventIds": [
+        "jp-chusonji",
+        "jp-nisso-trade",
+        "jp-genpei-war",
+        "jp-kamakura-shogunate",
+        "jp-jokyu-war",
+        "jp-goseibai-shikimoku",
+        "jp-mongol-invasions",
+        "jp-kamakura-fall",
+        "jp-nanbokucho",
+        "jp-kinkakuji",
+        "jp-ming-trade",
+        "jp-ryukyu-kingdom",
+        "jp-iwami-silver",
+        "jp-tanegashima-guns",
+        "jp-xavier"
+      ],
+      "candidates": [
+        {
+          "title": "応仁の乱",
+          "batch": "第3回"
+        },
+        {
+          "title": "鎌倉新仏教（法然・親鸞・日蓮・禅宗）",
+          "batch": "第4回"
+        },
+        {
+          "title": "倭寇の活動",
+          "batch": "第4回"
+        },
+        {
+          "title": "惣村と土一揆（正長の土一揆）",
+          "batch": "第4回"
+        },
+        {
+          "title": "銀閣と東山文化",
+          "batch": "第4回"
+        },
+        {
+          "title": "アイヌ文化の形成とコシャマインの戦い",
+          "batch": "第4回"
+        },
+        {
+          "title": "戦国大名と分国法",
+          "batch": "第5回"
+        },
+        {
+          "title": "加賀の一向一揆",
+          "batch": "第5回"
+        },
+        {
+          "title": "桶狭間の戦い",
+          "batch": "第5回"
+        },
+        {
+          "title": "長篠の戦い",
+          "batch": "第5回"
+        }
+      ]
+    },
+    {
+      "code": "C1",
+      "major": "C",
+      "name": "近世への転換と歴史的環境",
+      "summary": "ヨーロッパ人の来航や織豊政権の統一から、中世から近世への転換を見通す問いを立てる単元。個別の出来事は C(3) に置く。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "C2",
+      "major": "C",
+      "name": "歴史資料と近世の展望",
+      "summary": "検地帳・宗門改帳・浮世絵などの資料から、近世の特色について仮説を立てる単元。個別の出来事は C(3) に置く。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "C3",
+      "major": "C",
+      "name": "近世の国家・社会の展開と画期",
+      "summary": "織豊政権から江戸幕府の成立、対外関係の再編、産業と文化の発展、幕府の改革までをたどる単元。",
+      "min": 25,
+      "eventIds": [
+        "jp-hideyoshi-korea",
+        "edo-sakoku",
+        "jp-dejima"
+      ],
+      "candidates": [
+        {
+          "title": "本能寺の変",
+          "batch": "第3回"
+        },
+        {
+          "title": "太閤検地と刀狩",
+          "batch": "第3回"
+        },
+        {
+          "title": "関ヶ原の戦い",
+          "batch": "第3回"
+        },
+        {
+          "title": "江戸幕府の成立",
+          "batch": "第3回"
+        },
+        {
+          "title": "朱印船貿易と東南アジアの日本町",
+          "batch": "第3回"
+        },
+        {
+          "title": "朝鮮通信使",
+          "batch": "第3回"
+        },
+        {
+          "title": "島原・天草一揆",
+          "batch": "第3回"
+        },
+        {
+          "title": "松前藩とアイヌ（シャクシャインの戦い）",
+          "batch": "第3回"
+        },
+        {
+          "title": "解体新書と蘭学",
+          "batch": "第3回"
+        },
+        {
+          "title": "元禄文化",
+          "batch": "第4回"
+        },
+        {
+          "title": "享保の改革",
+          "batch": "第4回"
+        },
+        {
+          "title": "寛政の改革",
+          "batch": "第4回"
+        },
+        {
+          "title": "天保の改革",
+          "batch": "第4回"
+        },
+        {
+          "title": "伊能忠敬の日本地図",
+          "batch": "第4回"
+        },
+        {
+          "title": "参勤交代の制度化",
+          "batch": "第5回"
+        },
+        {
+          "title": "琉球への島津氏の侵攻",
+          "batch": "第5回"
+        },
+        {
+          "title": "生類憐みの令と文治政治",
+          "batch": "第5回"
+        },
+        {
+          "title": "田沼意次の政治",
+          "batch": "第5回"
+        },
+        {
+          "title": "大塩平八郎の乱",
+          "batch": "第6回"
+        },
+        {
+          "title": "異国船打払令とモリソン号事件",
+          "batch": "第6回"
+        },
+        {
+          "title": "国学の発展（本居宣長）",
+          "batch": "第6回"
+        },
+        {
+          "title": "化政文化（浮世絵）",
+          "batch": "第6回"
+        }
+      ]
+    },
+    {
+      "code": "D1",
+      "major": "D",
+      "name": "近代への転換と歴史的環境",
+      "summary": "欧米諸国のアジア進出と開国から、近世から近代への転換を見通す問いを立てる単元。個別の出来事は D(3) に置く。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "D2",
+      "major": "D",
+      "name": "歴史資料と近代の展望",
+      "summary": "新聞・写真・統計・地図などの資料から、近代の特色について仮説を立てる単元。個別の出来事は D(3) に置く。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    },
+    {
+      "code": "D3",
+      "major": "D",
+      "name": "近現代の地域・日本と世界の画期と構造",
+      "summary": "開国と明治維新から、立憲国家の成立、対外戦争と植民地支配、大正デモクラシー、戦争と敗戦、占領と戦後の復興・成長、現代までを、地域と世界の動きのなかでたどる単元。",
+      "min": 40,
+      "eventIds": [
+        "jp-perry",
+        "meiji-restoration",
+        "jp-sino-japanese-war",
+        "russo-japanese-war",
+        "atomic-bombings"
+      ],
+      "candidates": [
+        {
+          "title": "岩倉使節団",
+          "batch": "第3回"
+        },
+        {
+          "title": "大日本帝国憲法の発布",
+          "batch": "第3回"
+        },
+        {
+          "title": "韓国併合",
+          "batch": "第3回"
+        },
+        {
+          "title": "第一次世界大戦への参戦（日独戦争）",
+          "batch": "第3回"
+        },
+        {
+          "title": "満洲事変",
+          "batch": "第3回"
+        },
+        {
+          "title": "太平洋戦争の開戦",
+          "batch": "第3回"
+        },
+        {
+          "title": "ポツダム宣言の受諾と占領",
+          "batch": "第3回"
+        },
+        {
+          "title": "日本国憲法の公布",
+          "batch": "第3回"
+        },
+        {
+          "title": "サンフランシスコ平和条約",
+          "batch": "第3回"
+        },
+        {
+          "title": "高度経済成長と東京オリンピック",
+          "batch": "第3回"
+        },
+        {
+          "title": "日米修好通商条約",
+          "batch": "第4回"
+        },
+        {
+          "title": "廃藩置県",
+          "batch": "第4回"
+        },
+        {
+          "title": "関東大震災",
+          "batch": "第4回"
+        },
+        {
+          "title": "沖縄の本土復帰",
+          "batch": "第4回"
+        },
+        {
+          "title": "石油危機の日本への影響",
+          "batch": "第4回"
+        },
+        {
+          "title": "阪神・淡路大震災",
+          "batch": "第5回"
+        },
+        {
+          "title": "東日本大震災",
+          "batch": "第5回"
+        },
+        {
+          "title": "戊辰戦争",
+          "batch": "第5回"
+        },
+        {
+          "title": "地租改正",
+          "batch": "第5回"
+        },
+        {
+          "title": "自由民権運動",
+          "batch": "第5回"
+        },
+        {
+          "title": "条約改正の達成",
+          "batch": "第5回"
+        },
+        {
+          "title": "大正デモクラシーと普通選挙法",
+          "batch": "第5回"
+        },
+        {
+          "title": "米騒動",
+          "batch": "第6回"
+        },
+        {
+          "title": "二・二六事件",
+          "batch": "第6回"
+        },
+        {
+          "title": "沖縄戦",
+          "batch": "第6回"
+        },
+        {
+          "title": "日韓基本条約と日中国交正常化",
+          "batch": "第6回"
+        },
+        {
+          "title": "バブル経済とその崩壊",
+          "batch": "第6回"
+        },
+        {
+          "title": "北海道開拓とアイヌ",
+          "batch": "予備"
+        },
+        {
+          "title": "八幡製鉄所と産業革命",
+          "batch": "予備"
+        }
+      ]
+    },
+    {
+      "code": "D4",
+      "major": "D",
+      "name": "現代の日本の課題の探究",
+      "summary": "これまでの学習をふまえ、現代の日本の課題（人口・災害・エネルギー・地域づくりなど）について主題を立てて探究する単元。個別の出来事は置かず、ツアーや問いで扱う。",
+      "min": 0,
+      "eventIds": [],
+      "candidates": []
+    }
+  ]
+}
