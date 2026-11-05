@@ -1,0 +1,856 @@
+[
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-rice-farming",
+    "title": "大陸・朝鮮半島からの稲作の伝来",
+    "category": "exchange",
+    "start": {
+      "year": -799,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 249,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 33.55,
+      "lng": 130.45,
+      "placeName": "北部九州（板付遺跡などの玄界灘沿岸）",
+      "precision": "region"
+    },
+    "summary": "大陸から朝鮮半島をへて伝わった水田での稲作が、北部九州から西日本へ広がり、弥生時代が始まった。米を蓄えることで人口と集落が大きくなり、むらどうしの争いも生まれた。",
+    "historicalNote": "弥生時代の始まりは前800年前後とされることが多いが、前10世紀までさかのぼるとする説もあり、開始年代には大きな幅がある。終わりは3世紀中頃の古墳時代への移行とする。地点は北部九州の代表点で、伝来の範囲を示すものではない。世界史側には、この時期の朝鮮半島や長江流域の稲作を扱うイベントがまだないため、つながりは注記で示すにとどめている。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「弥生時代」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%BC%A5%E7%94%9F%E6%99%82%E4%BB%A3",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「稲作」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E4%BD%9C",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "弥生"
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-gold-seal",
+    "title": "奴国王の金印（後漢への遣使）",
+    "category": "exchange",
+    "start": {
+      "year": 57,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 33.67,
+      "lng": 130.3,
+      "placeName": "志賀島（金印の出土地）",
+      "precision": "exact"
+    },
+    "summary": "九州北部の奴国の王が後漢の都に使いを送り、皇帝から印を授けられたと中国の史書に記されている。江戸時代に志賀島で見つかった金印が、そのときの印にあたるとされる。",
+    "historicalNote": "金印の授与は中国側の史書（『後漢書』）の記述による。出土した金印をその印とみなす説が有力だが、印文の読み方には別の説もある。出土は1784年。後漢は、前漢がいったん途絶えたあとに漢を再興した王朝で、世界史側では「漢（前漢）の成立」とつないでいる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「漢委奴国王印」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%BC%A2%E5%A7%94%E5%A5%B4%E5%9B%BD%E7%8E%8B%E5%8D%B0",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「奴国」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A5%B4%E5%9B%BD",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "弥生",
+    "relatedEventIds": [
+      "han-dynasty"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-himiko",
+    "title": "卑弥呼と邪馬台国（魏への遣使）",
+    "category": "politics",
+    "start": {
+      "year": 239,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.54,
+      "lng": 135.84,
+      "placeName": "邪馬台国（所在地は未確定。地図上の点は畿内説の代表点）",
+      "precision": "region"
+    },
+    "summary": "倭の女王卑弥呼は、中国の三国時代の魏に使いを送り、「親魏倭王」の称号を受けたと中国の史書に記される。倭の国々がまとまりはじめた様子が、外の記録から見えてくる。",
+    "historicalNote": "遣使の年は238年とする説と239年とする説がある。邪馬台国の所在地は九州説と畿内説を中心に論争が続いており、地図上の点（奈良盆地）はあくまで代表点で、所在地を示すものではない。魏は中国の三国時代に華北を治めた王朝。世界史側には三国時代のイベントがまだないため、つながりは注記で示すにとどめている（第2段階の候補）。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「卑弥呼」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8D%91%E5%BC%A5%E5%91%BC",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「邪馬台国」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%82%AA%E9%A6%AC%E5%8F%B0%E5%9B%BD",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「魏 (三国)」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%AD%8F_(%E4%B8%89%E5%9B%BD)",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "弥生"
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-buddhism-arrives",
+    "title": "百済からの仏教の公伝",
+    "category": "religion",
+    "start": {
+      "year": 538,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.5,
+      "lng": 135.84,
+      "placeName": "大和（飛鳥周辺）",
+      "precision": "region"
+    },
+    "summary": "朝鮮半島の百済の王が、倭の大王に仏像や経典を贈ったことで、仏教が国どうしの交渉として伝えられた。仏教を受け入れるかどうかは、有力な豪族のあいだで争いのもとにもなった。",
+    "historicalNote": "公伝の年は538年説と552年説があり、現在は538年説が有力とされる。これより前から、渡来人によって私的には信仰されていたと考えられている。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「仏教公伝」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BB%8F%E6%95%99%E5%85%AC%E4%BC%9D",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「百済」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%99%BE%E6%B8%88",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "古墳",
+    "relatedEventIds": [
+      "buddha"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kenzuishi",
+    "title": "遣隋使の派遣",
+    "category": "exchange",
+    "start": {
+      "year": 600,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 618,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.48,
+      "lng": 135.81,
+      "placeName": "難波津から隋へ（地図上の点は飛鳥）",
+      "precision": "region"
+    },
+    "summary": "倭は統一王朝となった隋に使節を送り、制度や仏教、学問を学ばせた。607年の使節が持参した国書では、隋の皇帝と対等の立場をとろうとしたとされる。",
+    "historicalNote": "派遣の回数は3回から5回まで諸説ある。607年の使節は小野妹子が知られる。地点は都のあった飛鳥の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「遣隋使」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%81%A3%E9%9A%8B%E4%BD%BF",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "飛鳥",
+    "relatedEventIds": [
+      "sui-grand-canal"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-hakusonko",
+    "title": "白村江の戦い",
+    "category": "war",
+    "start": {
+      "year": 663,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 36.0,
+      "lng": 126.7,
+      "placeName": "白村江（現在の錦江河口付近）",
+      "precision": "region"
+    },
+    "summary": "百済の復興を助けるため朝鮮半島へ兵を送った倭の軍は、唐と新羅の連合軍に大敗した。敗戦のあと、倭は唐・新羅の侵攻に備えて九州や瀬戸内に城や水城を築き、国内の体制づくりを急いだ。",
+    "historicalNote": "戦いの場所は錦江の河口付近とされるが、正確な地点には諸説がある。地図上の点は河口付近の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「白村江の戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E6%9D%91%E6%B1%9F%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "飛鳥",
+    "relatedEventIds": [
+      "tang"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-todaiji-ganjin",
+    "title": "東大寺の大仏と鑑真の来日",
+    "category": "religion",
+    "start": {
+      "year": 752,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 754,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.689,
+      "lng": 135.84,
+      "placeName": "平城京（東大寺）",
+      "precision": "exact"
+    },
+    "summary": "聖武天皇は、仏教の力で国を守ろうと奈良の東大寺に大仏をつくらせ、752年に開眼の儀式を行った。2年後、何度も渡航に失敗した唐の僧鑑真が平城京に着き、僧になるための正式な戒律を伝えた。",
+    "historicalNote": "大仏の制作開始は745年、開眼供養は752年。鑑真は753年に九州に上陸し、754年に奈良に着いた。現在の大仏は後世に焼損して再建された部分が大部分を占める。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「東大寺盧舎那仏像」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%A4%A7%E5%AF%BA%E7%9B%A7%E8%88%8E%E9%82%A3%E4%BB%8F%E5%83%8F",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「鑑真」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%91%91%E7%9C%9F",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "奈良",
+    "relatedEventIds": [
+      "tang"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kentoshi-end",
+    "title": "遣唐使の停止",
+    "category": "exchange",
+    "start": {
+      "year": 894,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.0116,
+      "lng": 135.7681,
+      "placeName": "平安京",
+      "precision": "city"
+    },
+    "summary": "唐が衰えるなか、56年ぶりに計画された遣唐使は、菅原道真の進言をきっかけに取りやめとなり、その後再開されないまま唐は滅んだ。正式な使節は途絶えたが、商人の船による往来は続いた。",
+    "historicalNote": "最後に実際に派遣されたのは838年。894年は再開の計画が中止された年で、「廃止」の決定があったわけではないとする見方もある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「遣唐使」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%81%A3%E5%94%90%E4%BD%BF",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安",
+    "relatedEventIds": [
+      "tang"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-nisso-trade",
+    "title": "平清盛と日宋貿易",
+    "category": "economy",
+    "start": {
+      "year": 1167,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1181,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.65,
+      "lng": 135.17,
+      "placeName": "大輪田泊（現在の神戸港の一部）",
+      "precision": "city"
+    },
+    "summary": "平清盛は瀬戸内海の航路と大輪田泊の港を整え、宋の商船を畿内近くまで招いて貿易を進めた。宋から大量に入ってきた銅銭は、日本でお金が広く使われるきっかけになった。",
+    "historicalNote": "日宋貿易そのものは10世紀から13世紀まで続いた。ここでは清盛が太政大臣となった1167年頃から没年の1181年までを示す。大輪田泊の拡張は1173年。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「日宋貿易」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%AE%8B%E8%B2%BF%E6%98%93",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「平清盛」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E6%B8%85%E7%9B%9B",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「大輪田泊」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%BC%AA%E7%94%B0%E6%B3%8A",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安",
+    "relatedEventIds": [
+      "song-dynasty"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-mongol-invasions",
+    "title": "元寇（文永の役・弘安の役）",
+    "category": "war",
+    "start": {
+      "year": 1274,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1281,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 33.62,
+      "lng": 130.35,
+      "placeName": "博多湾",
+      "precision": "region"
+    },
+    "summary": "モンゴル帝国（元）は、従えた高麗とともに2度にわたって九州北部に攻め寄せた。鎌倉幕府は御家人を動員して戦い、2度目の前には博多湾の沿岸に石の防塁を築いて備えた。",
+    "historicalNote": "1度目は1274年（文永の役）、2度目は1281年（弘安の役）。2度目の遠征軍は当時世界最大規模の艦隊だったとされる。元軍の撤退と暴風雨の関係、被害の規模については、史料の読み方によって見解が分かれる。地点は博多湾の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「元寇」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%83%E5%AF%87",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "scopes": [
+      "japan",
+      "world"
+    ],
+    "era": "鎌倉",
+    "relatedEventIds": [
+      "genghis-khan",
+      "yuan-dadu",
+      "goryeo",
+      "jp-kamakura-fall"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kamakura-fall",
+    "title": "鎌倉幕府の滅亡と建武の新政",
+    "category": "politics",
+    "start": {
+      "year": 1333,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1336,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.32,
+      "lng": 139.55,
+      "placeName": "鎌倉",
+      "precision": "city"
+    },
+    "summary": "元寇のあと、戦っても新しい領地を得られなかった御家人の不満や、北条氏による政治への反発が強まった。後醍醐天皇の呼びかけに武士が応じて鎌倉幕府は滅び、天皇自らが政治を行う新政が始まったが、2年半ほどで崩れた。",
+    "historicalNote": "幕府の滅亡は1333年。建武の新政は1336年に足利尊氏との戦いに敗れて崩壊した。元寇の恩賞の不足が幕府の衰えにどの程度影響したかは、ほかの要因とあわせて考える必要がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「鎌倉幕府」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%8E%8C%E5%80%89%E5%B9%95%E5%BA%9C",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「建武の新政」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%BB%BA%E6%AD%A6%E3%81%AE%E6%96%B0%E6%94%BF",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「元弘の乱」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%83%E5%BC%98%E3%81%AE%E4%B9%B1",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "鎌倉"
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-ming-trade",
+    "title": "日明貿易（勘合貿易）",
+    "category": "economy",
+    "start": {
+      "year": 1404,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1549,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 33.59,
+      "lng": 130.4,
+      "placeName": "博多（遣明船の拠点の一つ）",
+      "precision": "city"
+    },
+    "summary": "室町幕府の足利義満は明に使いを送り、明の皇帝に臣下として仕える形をとって貿易を始めた。正式な船であることを示す勘合という証明書を使ったため、勘合貿易とも呼ばれる。",
+    "historicalNote": "交易は1401年から1549年まで続いた。勘合を持つ船に限られたのは1404年以降。遣明船の出発・帰着の拠点は博多のほか堺などがあり、地点は博多の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「日明貿易」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%98%8E%E8%B2%BF%E6%98%93",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「勘合」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8B%98%E5%90%88",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "ming"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-ryukyu-kingdom",
+    "title": "琉球王国の成立と中継貿易",
+    "category": "economy",
+    "start": {
+      "year": 1429,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1879,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 26.217,
+      "lng": 127.719,
+      "placeName": "首里（首里城）",
+      "precision": "exact"
+    },
+    "summary": "沖縄本島を統一した琉球王国は、明に朝貢しながら、日本・朝鮮・東南アジアを結ぶ中継貿易で栄えた。首里を都とし、外交では中国と日本の双方と関係を保った。",
+    "historicalNote": "成立は沖縄本島が統一された1429年、終わりは明治政府による琉球処分の1879年。1609年の島津氏の侵攻以後は、薩摩藩と江戸幕府の支配を受けながら中国への朝貢も続けた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「琉球王国」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%90%89%E7%90%83%E7%8E%8B%E5%9B%BD",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「首里城」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%A6%96%E9%87%8C%E5%9F%8E",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "ming",
+      "malacca"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-iwami-silver",
+    "title": "石見銀山と灰吹法",
+    "category": "economy",
+    "start": {
+      "year": 1527,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1600,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 35.11,
+      "lng": 132.44,
+      "placeName": "石見銀山（大森）",
+      "precision": "exact"
+    },
+    "summary": "博多の商人神屋寿禎が石見の銀山を本格的に開発し、1533年には朝鮮半島または中国から伝わったとされる灰吹法で銀を取り出すことに成功した。日本の銀は明やポルトガルとの交易で大量に海外へ運ばれた。",
+    "historicalNote": "本格的な開発の年は1526年とも1527年ともされる。灰吹法の伝来経路には中国由来説と朝鮮由来説がある。最盛期の日本は世界の銀の約3分の1を産出したとも推定されるが、推定値である。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「石見銀山」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「灰吹法」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%81%B0%E5%90%B9%E6%B3%95",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「神屋寿禎」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%B1%8B%E5%AF%BF%E7%A6%8E",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "scopes": [
+      "japan",
+      "world"
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "ming",
+      "manila-galleon"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-tanegashima-guns",
+    "title": "種子島への鉄砲伝来",
+    "category": "exchange",
+    "start": {
+      "year": 1543,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 30.48,
+      "lng": 130.97,
+      "placeName": "種子島（大隅国）",
+      "precision": "city"
+    },
+    "summary": "種子島に漂着した船に乗っていたポルトガル人が火縄銃を伝え、島主はこれを買い求めて製法を学ばせた。鉄砲はまたたく間に各地で作られるようになり、戦国時代の戦い方を変えていった。",
+    "historicalNote": "『鉄炮記』では1543年とされるが、ポルトガル側の記録などから1542年とする説もあり、年代には諸説ある。船は中国人の倭寇の頭目のものだったとされ、倭寇の密貿易によって火器がすでに持ち込まれていた可能性も指摘されている。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「鉄砲伝来」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%89%84%E7%A0%B2%E4%BC%9D%E6%9D%A5",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「種子島」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A8%AE%E5%AD%90%E5%B3%B6",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "vasco-da-gama",
+      "malacca"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-xavier",
+    "title": "ザビエルの来日とキリスト教の布教",
+    "category": "religion",
+    "start": {
+      "year": 1549,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1551,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 31.59,
+      "lng": 130.56,
+      "placeName": "鹿児島（上陸地）",
+      "precision": "city"
+    },
+    "summary": "イエズス会の宣教師フランシスコ・ザビエルは、ゴアやマラッカを経て鹿児島に上陸し、日本で初めてキリスト教を伝えた。山口や豊後で大名の保護を受けて布教し、2年余りで日本を離れた。",
+    "historicalNote": "上陸は1549年、日本を離れたのは1551年。イエズス会は宗教改革に対抗するカトリックの立て直しのなかで生まれた修道会で、アジアでの布教はポルトガルの航路と結びついていた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「フランシスコ・ザビエル」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B7%E3%82%B9%E3%82%B3%E3%83%BB%E3%82%B6%E3%83%93%E3%82%A8%E3%83%AB",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「イエズス会」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%82%A8%E3%82%BA%E3%82%B9%E4%BC%9A",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "reformation",
+      "vasco-da-gama"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-hideyoshi-korea",
+    "title": "豊臣秀吉の朝鮮侵略（文禄・慶長の役）",
+    "category": "war",
+    "start": {
+      "year": 1592,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1598,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.1,
+      "lng": 129.04,
+      "placeName": "釜山（上陸地。戦場は朝鮮半島の各地）",
+      "precision": "region"
+    },
+    "summary": "全国を統一した豊臣秀吉は明の征服をめざし、まず朝鮮に大軍を送った。朝鮮の人々と明の援軍の抵抗で戦いは長引き、秀吉の死によって日本軍は引き揚げた。朝鮮の国土と人々に大きな被害を残した。",
+    "historicalNote": "1592年に始まり翌年休戦した文禄の役と、1597年に再開し1598年に終わった慶長の役の総称。韓国では壬辰・丁酉倭乱と呼ばれる。地点は日本軍が最初に上陸した釜山の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「文禄・慶長の役」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%87%E7%A6%84%E3%83%BB%E6%85%B6%E9%95%B7%E3%81%AE%E5%BD%B9",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "安土桃山",
+    "relatedEventIds": [
+      "joseon",
+      "ming"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-dejima",
+    "title": "出島とオランダ風説書",
+    "category": "exchange",
+    "start": {
+      "year": 1641,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1859,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 32.744,
+      "lng": 129.873,
+      "placeName": "長崎・出島",
+      "precision": "exact"
+    },
+    "summary": "江戸幕府は長崎の人工島出島にオランダ商館を移し、ヨーロッパとの貿易をオランダだけに限った。幕府はオランダ商館長に海外の情勢をまとめた報告書（風説書）を出させ、世界の動きを知る窓口とした。",
+    "historicalNote": "出島は1634年に築かれ、はじめはポルトガル人を住まわせた。オランダ商館の移転は1641年。ここではオランダとの貿易が出島で行われた1641年から1859年までを示す。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「出島」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%87%BA%E5%B3%B6",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「オランダ風説書」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%A9%E3%83%B3%E3%83%80%E9%A2%A8%E8%AA%AC%E6%9B%B8",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "voc"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-perry",
+    "title": "ペリー来航と日米和親条約",
+    "category": "politics",
+    "start": {
+      "year": 1853,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1854,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.23,
+      "lng": 139.72,
+      "placeName": "浦賀沖・神奈川",
+      "precision": "region"
+    },
+    "summary": "アメリカのペリーが蒸気船を含む艦隊を率いて浦賀沖に現れ、開国を求める大統領の国書を渡した。翌年、幕府は日米和親条約を結んで下田と箱館の2港を開き、200年余り続いた対外政策は大きく転換した。",
+    "historicalNote": "来航は1853年、条約の締結は1854年。この条約は通商（貿易）までは認めておらず、貿易の開始は1858年の日米修好通商条約による。アメリカはアヘン戦争後の清との条約で、中国市場への進出を進めていた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「黒船来航」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%BB%92%E8%88%B9%E6%9D%A5%E8%88%AA",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「日米和親条約」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%B1%B3%E5%92%8C%E8%A6%AA%E6%9D%A1%E7%B4%84",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「浦賀」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B5%A6%E8%B3%80",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "scopes": [
+      "japan",
+      "world"
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "opium-war",
+      "industrial-revolution",
+      "edo-sakoku"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-sino-japanese-war",
+    "title": "日清戦争",
+    "category": "war",
+    "start": {
+      "year": 1894,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1895,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.03,
+      "lng": 125.75,
+      "placeName": "平壌（朝鮮半島の主な戦場の一つ）",
+      "precision": "region"
+    },
+    "summary": "朝鮮半島への影響力をめぐって日本と清が戦い、日本が勝って下関条約を結んだ。日本は台湾などを手に入れ、巨額の賠償金を得たが、ロシアなど3国の干渉で遼東半島は返還した。",
+    "historicalNote": "開戦は1894年7月、講和は1895年4月。台湾での戦闘を含めると1895年11月まで続いたとする見方もある。戦場は朝鮮半島・遼東半島・黄海などに及び、地点は平壌の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「日清戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%B8%85%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "明治",
+    "relatedEventIds": [
+      "opium-war",
+      "russo-japanese-war",
+      "joseon"
+    ]
+  }
+]
