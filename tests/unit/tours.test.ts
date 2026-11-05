@@ -1,17 +1,40 @@
 import { describe, expect, it } from "vitest";
-import { EVENTS } from "@/data/events";
+import { ALL_EVENTS as EVENTS } from "@/data/events";
 import { TOURS } from "@/data/tours";
-import { arcsUpTo, parseTourQuery, tourEventIds, tourQuery, validateTours } from "@/lib/tours";
+import { arcsUpTo, crossesModes, parseTourQuery, positionMode, stepMode, tourEventIds, tourQuery, validateTours } from "@/lib/tours";
 
 describe("tours.json", () => {
   it("検証に合格する", () => {
     expect(validateTours(TOURS, EVENTS)).toEqual([]);
   });
 
-  it("4本：同時代型2本・つながり型2本", () => {
-    expect(TOURS.map((t) => t.id)).toEqual(["bc500", "paper", "silver", "ad800"]);
+  it("5本：同時代型2本・つながり型3本（うち世界と日本をまたぐもの2本）", () => {
+    expect(TOURS.map((t) => t.id)).toEqual(["bc500", "paper", "silver", "mongol", "ad800"]);
     expect(TOURS.filter((t) => t.kind === "contemporary").length).toBe(2);
-    expect(TOURS.filter((t) => t.kind === "connection").length).toBe(2);
+    expect(TOURS.filter((t) => t.kind === "connection").length).toBe(3);
+    expect(TOURS.filter(crossesModes).map((t) => t.id)).toEqual(["silver", "mongol"]);
+  });
+
+  it("元寇ツアー：地球儀で始まり、文永の役で日本地図へ切り替わる", () => {
+    const t = TOURS.find((x) => x.id === "mongol")!;
+    expect(t.steps.map((s) => s.eventId)).toEqual([
+      "genghis-khan", "yuan-dadu", "goryeo", "jp-mongol-invasions", "jp-mongol-invasions", "jp-kamakura-fall",
+    ]);
+    expect(t.steps.map(stepMode)).toEqual(["world", "world", "world", "japan", "japan", "japan"]);
+    expect(positionMode(t, -1)).toBe("world"); // 導入は最初のステップのモード
+    expect(positionMode(t, t.steps.length)).toBe("japan"); // まとめは最後のステップのモード
+    // 日本地図のカメラは緯度・経度と拡大率で表す
+    expect(t.steps[3]!.camera?.zoom).toBeGreaterThan(0);
+    expect(t.steps[3]!.camera?.altitude).toBeUndefined();
+  });
+
+  it("銀のツアー：ポトシ → 石見銀山（日本地図）→ マニラ（地球儀に戻る）", () => {
+    const t = TOURS.find((x) => x.id === "silver")!;
+    const i = t.steps.findIndex((s) => s.eventId === "jp-iwami-silver");
+    expect(t.steps[i - 1]!.eventId).toBe("potosi");
+    expect(stepMode(t.steps[i]!)).toBe("japan");
+    expect(t.steps[i + 1]!.eventId).toBe("manila-galleon");
+    expect(stepMode(t.steps[i + 1]!)).toBe("world");
   });
 
   it("紙の旅：タラス→バグダードの弧は「伝承」", () => {

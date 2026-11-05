@@ -1369,6 +1369,9 @@
         "url": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%B3%E3%82%AE%E3%82%B9%E3%83%BB%E3%82%AB%E3%83%B3",
         "accessedAt": "2026-10-30"
       }
+    ],
+    "relatedEventIds": [
+      "yuan-dadu"
     ]
   },
   {
@@ -1799,7 +1802,12 @@
         "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB%E7%B6%AD%E6%96%B0",
         "accessedAt": "2026-10-30"
       }
-    ]
+    ],
+    "scopes": [
+      "world",
+      "japan"
+    ],
+    "era": "明治"
   },
   {
     "importance": 3,
@@ -2095,7 +2103,12 @@
         "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%AE%89%E4%BA%AC",
         "accessedAt": "2026-10-30"
       }
-    ]
+    ],
+    "scopes": [
+      "world",
+      "japan"
+    ],
+    "era": "平安"
   },
   {
     "importance": 2,
@@ -2203,7 +2216,12 @@
         "url": "https://ja.wikipedia.org/wiki/%E6%9B%87%E5%BE%B4",
         "accessedAt": "2026-10-30"
       }
-    ]
+    ],
+    "scopes": [
+      "world",
+      "japan"
+    ],
+    "era": "飛鳥"
   },
   {
     "importance": 3,
@@ -3239,7 +3257,12 @@
         "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E9%9C%B2%E6%88%A6%E4%BA%89",
         "accessedAt": "2026-10-30"
       }
-    ]
+    ],
+    "scopes": [
+      "world",
+      "japan"
+    ],
+    "era": "明治"
   },
   {
     "importance": 2,
@@ -3441,7 +3464,12 @@
         "url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B8%82%E3%81%B8%E3%81%AE%E5%8E%9F%E5%AD%90%E7%88%86%E5%BC%BE%E6%8A%95%E4%B8%8B",
         "accessedAt": "2026-10-30"
       }
-    ]
+    ],
+    "scopes": [
+      "world",
+      "japan"
+    ],
+    "era": "昭和"
   },
   {
     "importance": 3,
@@ -3886,7 +3914,12 @@
         "url": "https://ja.wikipedia.org/wiki/%E9%8E%96%E5%9B%BD",
         "accessedAt": "2026-10-30"
       }
-    ]
+    ],
+    "scopes": [
+      "world",
+      "japan"
+    ],
+    "era": "江戸"
   },
   {
     "importance": 3,
@@ -5009,6 +5042,10 @@
         "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%83%BD",
         "accessedAt": "2026-10-30"
       }
+    ],
+    "relatedEventIds": [
+      "goryeo",
+      "jp-mongol-invasions"
     ]
   },
   {
@@ -5078,6 +5115,9 @@
         "url": "https://ja.wikipedia.org/wiki/%E6%98%8E",
         "accessedAt": "2026-10-30"
       }
+    ],
+    "relatedEventIds": [
+      "jp-iwami-silver"
     ]
   },
   {
@@ -5183,6 +5223,45 @@
         "url": "https://ja.wikipedia.org/wiki/%E3%83%AB%E3%83%8D%E3%82%B5%E3%83%B3%E3%82%B9",
         "accessedAt": "2026-10-30"
       }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "goryeo",
+    "title": "高麗",
+    "category": "politics",
+    "start": {
+      "year": 918,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1392,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 37.97,
+      "lng": 126.55,
+      "placeName": "開京（現・開城）",
+      "precision": "city"
+    },
+    "summary": "朝鮮半島を統一した高麗は、仏教を厚く保護し、大蔵経の版木や青磁などの文化を生んだ。13世紀にはモンゴルの侵攻を受けてその支配下に入り、日本への遠征にも加わらされた。",
+    "historicalNote": "918年に建国し、936年に半島を統一した。1259年にモンゴルに服属し、1392年に朝鮮王朝（李氏朝鮮）に代わられた。都は開京だが、モンゴルの侵攻中は江華島に移った時期がある。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「高麗」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E9%BA%97",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "relatedEventIds": [
+      "jp-mongol-invasions",
+      "joseon"
     ]
   }
 ]

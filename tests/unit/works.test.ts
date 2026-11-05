@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { EVENTS } from "@/data/events";
+import { ALL_EVENTS as EVENTS } from "@/data/events";
 import { WORKS, worksByEventId } from "@/data/works";
 import { validateWorks } from "@/lib/validate";
 import {

@@ -2,7 +2,7 @@
 
 import type { HistoryEvent } from "@/types/event";
 import type { Tour } from "@/types/tour";
-import { CERTAINTY_LABEL, KIND_LABEL, type TourPosition } from "@/lib/tours";
+import { CERTAINTY_LABEL, KIND_LABEL, crossesModes, positionMode, type TourPosition } from "@/lib/tours";
 import { formatSpan, formatYear } from "@/lib/year";
 import { CategoryIcon } from "@/components/legend/CategoryIcon";
 
@@ -38,6 +38,11 @@ export function TourPanel({
       <div className="tour-head">
         <span className={`tour-kind is-${tour.kind}`}>{KIND_LABEL[tour.kind]}</span>
         <span className="tour-title">{tour.title}</span>
+        {crossesModes(tour) && (
+          <span className={`tour-mode is-${positionMode(tour, position)}`} data-testid="tour-mode">
+            {positionMode(tour, position) === "japan" ? "🗾 日本地図" : "🌏 地球儀"}
+          </span>
+        )}
         <span className="tour-position" data-testid="tour-position">
           {positionLabel}
         </span>

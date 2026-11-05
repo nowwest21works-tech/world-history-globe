@@ -1,4 +1,4 @@
-import type { AstroYear } from "./event";
+import type { AstroYear, Scope } from "./event";
 
 /** 同時代型：ある年に止まって世界各地を巡る／つながり型：弧でつなぎながら時代を追う */
 export type TourKind = "contemporary" | "connection";
@@ -6,10 +6,16 @@ export type TourKind = "contemporary" | "connection";
 /** つながりの確かさ。史実＝実線、伝承＝破線（「伝承」と表示）、諸説あり＝点線 */
 export type ArcCertainty = "established" | "traditional" | "debated";
 
+/**
+ * カメラの位置。モードによって解釈が変わる。
+ * - 世界（地球儀）：lat / lng と altitude（地球の半径を1とした高さ）
+ * - 日本（平面地図）：lat / lng（地図の中心）と zoom（日本全体が収まる大きさを1とした拡大率）
+ */
 export interface CameraPose {
   lat: number;
   lng: number;
-  altitude: number;
+  altitude?: number;
+  zoom?: number;
 }
 
 export interface TourArc {
@@ -35,6 +41,8 @@ export interface TourStep {
   question: string;
   /** つながり型のみ：どのイベントから弧を引くか */
   arcFrom?: TourArc;
+  /** このステップを表示するモード（省略時は世界）。ツアーの途中で地球儀と日本地図を切り替えられる */
+  mode?: Scope;
 }
 
 export interface Tour {

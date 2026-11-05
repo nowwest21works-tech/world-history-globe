@@ -1,5 +1,5 @@
-import type { HistoryEvent } from "@/types/event";
-import type { ArcCertainty, Tour } from "@/types/tour";
+import type { HistoryEvent, Scope } from "@/types/event";
+import type { ArcCertainty, Tour, TourStep } from "@/types/tour";
 import { contemporaryEvents, distanceFromEvent } from "./visibility";
 
 /**
@@ -11,6 +11,21 @@ import { contemporaryEvents, distanceFromEvent } from "./visibility";
 export type TourPosition = number;
 
 export const KIND_LABEL = { contemporary: "同時代型", connection: "つながり型" } as const;
+
+/** ステップを表示するモード（省略時は世界） */
+export const stepMode = (s: TourStep): Scope => s.mode ?? "world";
+
+/** 表示位置のモード（導入は最初のステップ、まとめは最後のステップのモード） */
+export function positionMode(tour: Tour, position: TourPosition): Scope {
+  const n = tour.steps.length;
+  const i = Math.max(0, Math.min(position, n - 1));
+  return stepMode(tour.steps[i]!);
+}
+
+/** 世界と日本の両方のモードを通るツアーか */
+export function crossesModes(tour: Tour): boolean {
+  return new Set(tour.steps.map(stepMode)).size > 1;
+}
 
 export const CERTAINTY_LABEL: Record<ArcCertainty, string> = {
   established: "史実として確かめられたつながり",
@@ -82,10 +97,15 @@ export function tourQuery(tour: Tour, position: TourPosition): string {
   return `?tour=${encodeURIComponent(tour.id)}&step=${position + 1}`;
 }
 
-/** tours.json の検証。問題の一覧を返す（空なら OK） */
+/**
+ * tours.json の検証。問題の一覧を返す（空なら OK）。
+ * events には世界と日本の両方のイベントを渡す（ステップのモードに合わせて、そのモードの地図に出るイベントだけで判定する）。
+ */
 export function validateTours(tours: Tour[], events: HistoryEvent[]): string[] {
   const errors: string[] = [];
   const byId = new Map(events.map((e) => [e.id, e]));
+  const scopes = (e: HistoryEvent): Scope[] => e.scopes ?? ["world"];
+  const byMode = (m: Scope) => events.filter((e) => scopes(e).includes(m));
   const tourIds = new Set<string>();
   for (const t of tours) {
     const p = `[${t.id}]`;
@@ -106,11 +126,20 @@ export function validateTours(tours: Tour[], events: HistoryEvent[]): string[] {
         return;
       }
       if (!Number.isInteger(s.year)) errors.push(`${q} year が整数ではない`);
+      const mode = stepMode(s);
+      if (s.mode !== undefined && s.mode !== "world" && s.mode !== "japan") errors.push(`${q} mode が不正: ${s.mode}`);
+      if (!scopes(e).includes(mode)) errors.push(`${q} ${e.id} は${mode === "japan" ? "日本" : "世界"}の地図に出ないイベント`);
+      if (s.camera) {
+        if (mode === "japan" && !(typeof s.camera.zoom === "number" && s.camera.zoom > 0))
+          errors.push(`${q} 日本地図のカメラに zoom がない`);
+        if (mode === "world" && s.camera.altitude !== undefined && !(s.camera.altitude > 0))
+          errors.push(`${q} 地球儀のカメラの altitude が不正`);
+      }
       if (s.narration.length < 40 || s.narration.length > 180) errors.push(`${q} 語り文の長さ ${s.narration.length} 字`);
       if (!s.question.endsWith("？") && !s.question.endsWith("。")) errors.push(`${q} 問いの形になっていない`);
       if (t.kind === "contemporary") {
         if (s.year !== t.steps[0]!.year) errors.push(`${q} 同時代型なのに年がそろっていない`);
-        if (!contemporaryEvents(events, s.year).events.some((x) => x.id === e.id))
+        if (!contemporaryEvents(byMode(mode), s.year).events.some((x) => x.id === e.id))
           errors.push(`${q} その年の「同時代」にイベントが入っていない`);
         if (s.arcFrom) errors.push(`${q} 同時代型に弧がある`);
       } else {

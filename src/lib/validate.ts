@@ -1,4 +1,5 @@
 import type { HistoryEvent } from "@/types/event";
+import { JAPAN_ERA_NAMES } from "./japanEras";
 import type { HistoryWork } from "@/types/work";
 import { FIDELITY_ORDER, MEDIA_ORDER, RATING_ALLOWLIST } from "./works";
 
@@ -6,8 +7,11 @@ const CATEGORIES = ["politics", "war", "religion", "culture", "economy", "exchan
 const PRECISIONS = ["exact", "city", "region"];
 const UNCERTAINTIES = ["exact", "circa", "plusMinus", "century"];
 
-/** events.json の整合性チェック。問題の一覧を返す（空なら OK）。 */
-export function validateEvents(events: HistoryEvent[]): string[] {
+/**
+ * events.json（または events-japan.json）の整合性チェック。問題の一覧を返す（空なら OK）。
+ * knownIds を渡すと、relatedEventIds の参照先をその集合で確かめる（世界と日本をまたぐ参照のため）。
+ */
+export function validateEvents(events: HistoryEvent[], knownIds?: Set<string>): string[] {
   const errors: string[] = [];
   const ids = new Set<string>();
   for (const e of events) {
@@ -36,11 +40,60 @@ export function validateEvents(events: HistoryEvent[]): string[] {
     }
     if (typeof e.verified !== "boolean") errors.push(`${p} verified が boolean ではない`);
     if (![1, 2, 3].includes(e.importance)) errors.push(`${p} importance が不正`);
+    if (e.scopes !== undefined) {
+      if (!Array.isArray(e.scopes) || e.scopes.length === 0) errors.push(`${p} scopes が空`);
+      else {
+        for (const sc of e.scopes) if (sc !== "world" && sc !== "japan") errors.push(`${p} scopes が不正: ${sc}`);
+        if (new Set(e.scopes).size !== e.scopes.length) errors.push(`${p} scopes が重複`);
+      }
+    }
+    if (e.era !== undefined && !JAPAN_ERA_NAMES.includes(e.era)) errors.push(`${p} era が時代区分の一覧にない: ${e.era}`);
   }
+  const known = knownIds ?? ids;
   for (const e of events) {
     for (const r of e.relatedEventIds ?? []) {
-      if (!ids.has(r)) errors.push(`[${e.id}] relatedEventIds の参照先が存在しない: ${r}`);
+      if (!known.has(r)) errors.push(`[${e.id}] relatedEventIds の参照先が存在しない: ${r}`);
     }
+  }
+  return errors;
+}
+
+/** 地球儀に出してよい日本側のイベントは importance 3 の数件まで（世界史の画面が混み合わないように） */
+export const MAX_JAPAN_ON_GLOBE = 6;
+
+/**
+ * 世界（events.json）と日本（events-japan.json）を合わせた整合性チェック。
+ * - それぞれの単体チェック（relatedEventIds は両方をまたいで参照してよい）
+ * - ID は世界・日本を通して一意。日本側の新しい ID は jp- で始める（世界側は jp- を使わない）
+ * - 日本側のイベントは必ず "japan" を含み、世界側のイベントは必ず "world" を含む
+ * - 日本側から地球儀にも出すもの（scopes に "world"）は importance 3 で、MAX_JAPAN_ON_GLOBE 件まで
+ * - 日本の地図に出るイベントには era（時代区分）を付ける
+ */
+export function validateAllEvents(world: HistoryEvent[], japan: HistoryEvent[]): string[] {
+  const all = [...world, ...japan];
+  const known = new Set(all.map((e) => e.id));
+  const errors = [...validateEvents(world, known), ...validateEvents(japan, known)];
+  const seen = new Set<string>();
+  for (const e of all) {
+    if (seen.has(e.id)) errors.push(`[${e.id}] id が世界と日本で重複`);
+    seen.add(e.id);
+  }
+  for (const e of japan) {
+    if (!e.id.startsWith("jp-")) errors.push(`[${e.id}] 日本側の id が jp- で始まらない`);
+    if (e.scopes && !e.scopes.includes("japan")) errors.push(`[${e.id}] 日本側のイベントの scopes に japan がない`);
+    if (e.scopes?.[0] !== undefined && e.scopes[0] !== "japan") errors.push(`[${e.id}] 日本側のイベントの scopes の先頭が japan ではない`);
+  }
+  for (const e of world) {
+    if (e.id.startsWith("jp-")) errors.push(`[${e.id}] 世界側の id が jp- で始まっている`);
+    if (e.scopes && !e.scopes.includes("world")) errors.push(`[${e.id}] 世界側のイベントの scopes に world がない`);
+    if (e.scopes?.[0] !== undefined && e.scopes[0] !== "world") errors.push(`[${e.id}] 世界側のイベントの scopes の先頭が world ではない`);
+  }
+  const onGlobe = japan.filter((e) => e.scopes?.includes("world"));
+  for (const e of onGlobe) if (e.importance !== 3) errors.push(`[${e.id}] 地球儀にも出す日本のイベントが importance 3 ではない`);
+  if (onGlobe.length > MAX_JAPAN_ON_GLOBE) errors.push(`地球儀にも出す日本のイベントが ${onGlobe.length} 件（上限 ${MAX_JAPAN_ON_GLOBE}）`);
+  for (const e of all) {
+    const onJapan = (e.scopes ?? []).includes("japan") || japan.includes(e);
+    if (onJapan && !e.era) errors.push(`[${e.id}] 日本の地図に出るイベントに era がない`);
   }
   return errors;
 }

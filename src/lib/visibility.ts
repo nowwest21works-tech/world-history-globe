@@ -46,3 +46,34 @@ export function contemporaryEvents(
   );
   return { events: hits, window, expanded: window > base };
 }
+
+/**
+ * 「同じころ、世界では？／日本では？」の段：もう一方のモードの出来事を、基本の幅で探す。
+ * 2件に満たないときは基本の幅の4倍まで広げ、それでもなければ空（無理に遠い時代のものは出さない）。
+ */
+export function otherContemporary(
+  events: HistoryEvent[],
+  year: AstroYear,
+  max = 6,
+): { events: HistoryEvent[]; window: number } {
+  const base = baseWindow(year);
+  let window = base;
+  let hits = events.filter((e) => distanceFromEvent(e, year) <= window);
+  if (hits.length < MIN_CONTEMPORARY) {
+    const dists = events
+      .map((e) => distanceFromEvent(e, year))
+      .filter((d) => d <= base * 4)
+      .sort((a, b) => a - b);
+    if (dists.length) {
+      window = Math.max(base, dists[Math.min(MIN_CONTEMPORARY, dists.length) - 1]!);
+      hits = events.filter((e) => distanceFromEvent(e, year) <= window);
+    }
+  }
+  hits.sort(
+    (a, b) =>
+      distanceFromEvent(a, year) - distanceFromEvent(b, year) ||
+      b.importance - a.importance ||
+      a.start.year - b.start.year,
+  );
+  return { events: hits.slice(0, max), window };
+}

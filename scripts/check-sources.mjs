@@ -1,5 +1,5 @@
 // 出典URL（ja.wikipedia.org）の実在確認。MediaWiki API で記事の存在・曖昧さ回避・転送を調べる。
-// 対象：src/data/events.json（イベント）と src/data/works.json（作品）の sources。
+// 対象：src/data/events.json（世界史のイベント）、src/data/events-japan.json（日本史のイベント）、src/data/works.json（作品）の sources。
 //   node scripts/check-sources.mjs         … 確認結果を表示（問題があれば終了コード1）
 //   node scripts/check-sources.mjs --fix   … 存在が確認できなかった URL を空欄にして JSON を書き戻す
 // ※ ja.wikipedia.org へ接続できるネットワークで実行すること。
@@ -8,6 +8,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 const PREFIX = "https://ja.wikipedia.org/wiki/";
 const FILES = [
   { name: "events.json", url: new URL("../src/data/events.json", import.meta.url) },
+  { name: "events-japan.json", url: new URL("../src/data/events-japan.json", import.meta.url) },
   { name: "works.json", url: new URL("../src/data/works.json", import.meta.url) },
 ];
 const toTitle = (url) => decodeURIComponent(url.slice(PREFIX.length)).replace(/_/g, " ");

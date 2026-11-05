@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { EVENTS } from "@/data/events";
+import { ALL_EVENTS, EVENTS } from "@/data/events";
 import { validateEvents } from "@/lib/validate";
 import { CATEGORIES } from "@/lib/categories";
 import { contemporaryEvents } from "@/lib/visibility";
 import { MAX_YEAR, MIN_YEAR } from "@/lib/timeScale";
 
 describe("events.json", () => {
-  it("整合性チェックに合格する", () => {
-    expect(validateEvents(EVENTS)).toEqual([]);
+  it("整合性チェックに合格する（relatedEventIds は日本側のイベントを指してもよい）", () => {
+    expect(validateEvents(EVENTS, new Set(ALL_EVENTS.map((e) => e.id)))).toEqual([]);
   });
 
   it("件数は 30〜250 件（骨格の完成目標は150〜200件）", () => {
@@ -42,8 +42,8 @@ describe("events.json", () => {
     for (const e of EVENTS) expect(e.question ?? "").toBe("");
   });
 
-  it("relatedEventIds は存在するイベントを指し、自分自身や重複を含まない", () => {
-    const ids = new Set(EVENTS.map((e) => e.id));
+  it("relatedEventIds は存在するイベント（世界・日本のどちらか）を指し、自分自身や重複を含まない", () => {
+    const ids = new Set(ALL_EVENTS.map((e) => e.id));
     for (const e of EVENTS) {
       const rel = e.relatedEventIds ?? [];
       expect(rel.every((r) => ids.has(r)), e.id).toBe(true);

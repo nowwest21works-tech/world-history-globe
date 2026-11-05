@@ -4,7 +4,9 @@
 地球を指やマウスで回しながら、紀元前3000年頃から現代までの出来事を **時間（年代スライダー）** と **場所（地球上の地点）** の両方から探索できます。
 画面下の「同時代のできごと」には、いま見ている年の前後に世界の別の場所で起きていた出来事が並びます。
 
-> ⚠️ 収録データ（151件）、学習ツアー（4本）、作品データ（36本）の文面は **すべて未検証（`verified: false`）** です。出典記事との一次照合の結果は [docs/VERIFICATION.md](docs/VERIFICATION.md) にあります。高校「世界史探究」の単元ごとの収録状況は [docs/COVERAGE.md](docs/COVERAGE.md)（`npm run coverage:doc` で再生成）にあります。人間が史実と出典を確認したものだけを `true` にする運用です。
+ヘッダーの「🌏 世界／🗾 日本」で **日本史モード**（日本周辺の平面地図と、旧石器時代から現代までの年表）に切り替えられます。元寇・鉄砲伝来・石見銀山・開国のような場面で、日本地図と地球儀を行き来しながら「同じころ、世界では？」と「つながり」をたどれます。設計は [docs/JAPAN_SPEC.md](docs/JAPAN_SPEC.md)。
+
+> ⚠️ 収録データ（世界史152件・日本史20件）、学習ツアー（5本）、作品データ（36本）の文面は **すべて未検証（`verified: false`）** です。出典記事との一次照合の結果は [docs/VERIFICATION.md](docs/VERIFICATION.md)（世界史）と [docs/VERIFICATION-JAPAN.md](docs/VERIFICATION-JAPAN.md)（日本史）にあります。高校「世界史探究」の単元ごとの収録状況は [docs/COVERAGE.md](docs/COVERAGE.md)（`npm run coverage:doc` で再生成）にあります。人間が史実と出典を確認したものだけを `true` にする運用です。
 
 ## 使い方
 
@@ -17,10 +19,11 @@ npm run dev          # http://localhost:3000
 |---|---|
 | `npm run build` | 静的書き出し（`out/` に出力。`output: 'export'`） |
 | `npm run typecheck` | TypeScript 型チェック |
-| `npm test` | 単体テスト（年代計算・データ整合性・同時代表示・作品データ） |
+| `npm test` | 単体テスト（年代計算・データ整合性・同時代表示・作品データ・日本モード） |
 | `npm run test:e2e` | 操作テスト（要 `npm run build`。Playwright + Chromium） |
 | `npm run serve` | `out/` をローカル配信（http://127.0.0.1:4173/） |
-| `npm run check:sources` | 出典URL（ja.wikipedia.org）の実在を再確認（イベントと作品の両方） |
+| `npm run check:sources` | 出典URL（ja.wikipedia.org）の実在を再確認（世界史・日本史のイベントと作品） |
+| `npm run map:japan` | 日本モードの地図データ `src/data/japan-land.json` を Natural Earth から作り直す（`scripts/build-japan-map.mjs`） |
 
 ### GitHub Pages での公開
 `.github/workflows/deploy-pages.yml` が、main への push 時と Actions 画面からの手動実行で動きます。
@@ -57,14 +60,26 @@ NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run serve      # http://127.0.0.1
   - 画像（書影・ポスター・スチルなど）は一切使わず、紹介文・あらすじも載せない。運用ルール・選定基準・ウィキペディアとの照合記録は [docs/WORKS.md](docs/WORKS.md)、実装指示は [docs/WORKS_SPEC.md](docs/WORKS_SPEC.md)。
 - 現代の国境線は表示しない（地球画像は国境線を含まない衛星画像）。
 
-## データ（`src/data/events.json`）
+### 日本史モード（`?mode=japan`）
+- **切り替え**：ヘッダーの「🌏 世界」「🗾 日本」（スマホでは地図の右上）。URL は `?mode=japan`（省略時は世界）で、`?tour=`・`?work=`・`?event=<id>` と組み合わせられる。切り替えても年はそのまま引き継ぎ、範囲の外なら端に合わせる。選んでいたイベントが両方の地図に出る共有イベントなら、選択も引き継ぐ。
+- **日本地図**：日本周辺（目安は北緯24〜46度・東経122〜150度。琉球・北海道・樺太南部・朝鮮半島・大陸沿岸が入る）の平面地図（SVG・メルカトル図法）。ドラッグで移動、ホイール・ピンチ・＋／－で拡大縮小。拡大の上限は京都・奈良・大阪のマーカーが重ならずに見分けられる程度。**海岸線（陸と海）だけを描き、現代の県境・国境は描かない。** WebGL を使わないので、WebGL 非対応の端末でも地図が出る。
+- **年代スライダー**：前3万年頃（旧石器時代）〜現代。先史時代を強く圧縮し、時代区分（旧石器〜令和）を薄い帯で添える。**時代区分の境目には諸説あるため「目安」と明記**している（`src/lib/japanEras.ts`）。
+- **世界との連動**：
+  - **共有イベント**：既存の日本の出来事（平安京・曇徴・江戸幕府の対外政策・明治維新・日露戦争・原爆投下）は作り直さず `scopes: ["world","japan"]` にして両方の地図に出す。日本側の新しいイベントで世界史としても重要なもの（元寇・石見銀山・ペリー来航）は地球儀にも出す（importance 3 の数件に限定）。
+  - **「世界とのつながり」**：イベント詳細に、`relatedEventIds`（向きは問わない）のうちもう一方のモードにあるものを「🌏 世界史で見る」「🗾 日本史で見る」のカードで出す。押すとモードを切り替え、その年・その地点へ移り、詳細を開く。
+  - **「同じころ、世界では？／日本では？」**：同時代リストに、もう一方のモードの出来事を別の段で出す（押すと切り替えて開く）。
+  - **地図の端の矢印**：日本地図で、選んだイベントとつながる世界のイベントの方角へ、地図の端から矢印を出す（押すとカードと同じ動き）。
+  - **モードをまたぐツアー**：ツアーのステップごとに `mode` を持ち、途中で地球儀と日本地図が切り替わる（「元寇――ユーラシアの嵐が博多湾へ」「銀が世界をめぐる」）。
 
-型定義は `src/types/event.ts`。主な決まりごと：
+## データ（`src/data/events.json`・`src/data/events-japan.json`）
+
+型定義は `src/types/event.ts`。世界史は `events.json`、日本史は `events-japan.json`（ID は `jp-` で始める）。ID は世界・日本を通して一意で、`relatedEventIds` は両方をまたいで参照してよい（整合性チェックは `src/lib/validate.ts` の `validateAllEvents`）。主な決まりごと：
 
 - **年は天文学的年号**で保持する（前1年＝0、前2年＝−1、前N年＝1−N）。表示時のみ `src/lib/year.ts` の `formatYear` などで「前○年／○年」に変換する。西暦に0年がないことは、この変換で吸収している。
 - 年代の不確実性：`exact`（確定）／`circa`（頃）／`plusMinus`（±n年）／`century`（「前18世紀頃」のように世紀単位でしか言えない場合）。継続期間は `start` と `end`。
 - 位置の精度：`exact`（正確な地点）／`city`（都市レベル）／`region`（地域レベル＝代表点）。
-- 将来拡張用の `question`（探究の問い）と `relatedEventIds`（関連イベント）は型だけ用意し、MVPでは空。
+- `relatedEventIds`（関連イベント）はツアーの弧と「世界とのつながり」に使う。`question`（探究の問い）は型だけ用意し、問いはツアー側に持たせている。
+- `scopes`（任意）：どちらの地図に出すか。省略時は `events.json` は `["world"]`、`events-japan.json` は `["japan"]`。`era`（任意）：日本モードの時代区分（目安）。日本の地図に出るイベントには必ず付ける。
 
 ### 検証の運用
 1. 人間が史実（年代・地点・概要・注記）と出典を確認する。`docs/VERIFICATION.md` の一次照合（出典記事の導入部との照合）で「要確認」「判断不能」とした項目から確認するとよい。
@@ -74,7 +89,8 @@ NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run serve      # http://127.0.0.1
 ### 出典と文章の方針
 - 出典URLは、存在を確認できた記事だけを載せる。確認できない場合は空欄にし、推測で作らない。
 - 使用している198記事すべてについて、MediaWiki API で記事が存在することを確認済み（2026-10-30〜31。作業環境からは ja.wikipedia.org へ直接接続できなかったため、Exa の Web 取得機能経由で API を呼んだ）。曖昧さ回避ページ・転送ページでないことも確認している。`npm run check:sources` で再確認できる。
-- 作品データ（`src/data/works.json`）の出典46記事も、同じ方法（Exa 経由で MediaWiki API）で存在・曖昧さ回避でないこと・転送でないことを確認した（2026-11-05）。作者・初出年・メディア展開の照合と、修正・未確認の項目は [docs/WORKS.md](docs/WORKS.md) にある。
+- 作品データ（`src/data/works.json`）の出典46記事も、同じ方法（Exa 経由で MediaWiki API）で存在・曖昧さ回避でないこと・転送でないことを確認した（2026-11-05）。
+- 日本史のイベント（`src/data/events-japan.json`）と世界史に足した「高麗」の出典記事も、同じ方法で存在・曖昧さ回避でないこと・転送でないことを確認した（2026-11-05〜06）。照合記録は [docs/VERIFICATION-JAPAN.md](docs/VERIFICATION-JAPAN.md)。作者・初出年・メディア展開の照合と、修正・未確認の項目は [docs/WORKS.md](docs/WORKS.md) にある。
 - ウィキペディアの文章は CC BY-SA のため、**概要・注記はすべて独自の文章**で書き、ウィキペディアは**リンクの掲載のみ**としている。
 
 ## クレジットとライセンス
@@ -90,6 +106,18 @@ NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run serve      # http://127.0.0.1
 | typescript（開発用） | 5.9.3 | Apache-2.0 |
 | vitest（開発用） | 5.0.5 | MIT |
 | playwright（開発用・環境にプリインストール済みのものを使用） | 1.63.0 | Apache-2.0 |
+
+日本モードのために新しく追加した依存ライブラリはない（地図の投影・描画は `src/lib/japanMap.ts` で自作。指示書で候補に挙がっていた d3-geo（ISC）は、メルカトル図法1つだけなら自作で足りるため使っていない）。
+
+### 日本モードの地図（地図：Natural Earth）
+- `src/data/japan-land.json` は **Natural Earth** の 1:10m 陸地（`ne_10m_land`）と小島（`ne_10m_minor_islands`）を、`scripts/build-japan-map.mjs` で日本周辺（東経96〜178度・北緯10〜58度）に切り出し、メルカトル図法で投影して点を間引いたもの（約60KB）。取得元は GitHub の [nvkelso/natural-earth-vector](https://github.com/nvkelso/natural-earth-vector)（master、2026-11-05 時点のコミット `ca96624`）。
+- Natural Earth のデータは **パブリックドメイン**（同リポジトリの LICENSE.md：「All versions of Natural Earth raster + vector map data … are in the public domain」）。表記は不要とされているが、画面の地図の隅とフッター、この README に「地図：Natural Earth」と入れている。
+- 陸地（land）のデータには国境・県境の線は含まれない。陸と海の区別（海岸線）だけを描いている。
+- 再生成：`npm run map:japan`（GitHub から取得）または `node scripts/build-japan-map.mjs <ダウンロードしたフォルダ>`。
+- **採用しなかった候補**：
+  - 国土地理院の地図タイル：現代の地名・行政界が入ること、タイル配信サーバーに依存してオフライン・静的書き出しで完結しなくなることから見送った。
+  - 3D地球儀のズームで日本を見せる案：京都・奈良・大阪のような近い地点を見分けられず、地表画像も粗くなるため見送った（指示書 1.2）。
+  - Natural Earth の 1:50m／1:110m：瀬戸内海の島々や琉球の島が欠けたり粗くなったりするため、1:10m を間引いて使った。
 
 ### 地球の画像
 - `public/textures/earth-blue-marble.jpg` は three-globe（MIT）の `example/img/earth-blue-marble.jpg` をコピーしたもの。
@@ -109,3 +137,4 @@ NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run serve      # http://127.0.0.1
 - **地球画像の正確な出どころ**：three-globe のリポジトリでは、この画像は 2019-03-17 のコミット「Add blue marble」で追加されている。ただしコミットにも README にも、元画像（NASA のどのデータセットか、加工の有無）の記載はなかった。NASA 由来であることは画像名と見た目からの推定にとどまり、**確認できていない**。
 - **出典の内容**：記事の導入部との一次照合は行った（`docs/VERIFICATION.md`）。本文までの照合と、教科書・学術資料との照合は未実施（＝`verified: false` の理由）。
 - 実機（iOS Safari / Android Chrome）での動作は未確認。スマホ幅の確認は Chromium のエミュレーション（iPhone 13 相当）で行った。
+- 日本モードの時代区分の境目は目安で、教科書によって区切り方が異なる（`src/lib/japanEras.ts` の注記）。
