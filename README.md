@@ -6,7 +6,7 @@
 
 ヘッダーの「🌏 世界／🗾 日本」で **日本史モード**（日本周辺の平面地図と、旧石器時代から現代までの年表）に切り替えられます。元寇・鉄砲伝来・石見銀山・開国のような場面で、日本地図と地球儀を行き来しながら「同じころ、世界では？」と「つながり」をたどれます。設計は [docs/JAPAN_SPEC.md](docs/JAPAN_SPEC.md)。
 
-> ⚠️ 収録データ（世界史152件・日本史20件）、学習ツアー（5本）、作品データ（36本）の文面は **すべて未検証（`verified: false`）** です。出典記事との一次照合の結果は [docs/VERIFICATION.md](docs/VERIFICATION.md)（世界史）と [docs/VERIFICATION-JAPAN.md](docs/VERIFICATION-JAPAN.md)（日本史）にあります。高校「世界史探究」の単元ごとの収録状況は [docs/COVERAGE.md](docs/COVERAGE.md)（`npm run coverage:doc` で再生成）にあります。人間が史実と出典を確認したものだけを `true` にする運用です。
+> ⚠️ 収録データ（世界史152件・日本史60件）、学習ツアー（6本）、作品データ（36本）の文面は **すべて未検証（`verified: false`）** です。出典記事との一次照合の結果は [docs/VERIFICATION.md](docs/VERIFICATION.md)（世界史）と [docs/VERIFICATION-JAPAN.md](docs/VERIFICATION-JAPAN.md)（日本史）にあります。高校「世界史探究」の単元ごとの収録状況は [docs/COVERAGE.md](docs/COVERAGE.md)、「日本史探究」は [docs/COVERAGE-JAPAN.md](docs/COVERAGE-JAPAN.md)（どちらも `npm run coverage:doc` で再生成。日本史の単元定義は `src/data/units-japan.json`）にあります。人間が史実と出典を確認したものだけを `true` にする運用です。
 
 ## 使い方
 
@@ -69,7 +69,7 @@ NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run serve      # http://127.0.0.1
   - **「世界とのつながり」**：イベント詳細に、`relatedEventIds`（向きは問わない）のうちもう一方のモードにあるものを「🌏 世界史で見る」「🗾 日本史で見る」のカードで出す。押すとモードを切り替え、その年・その地点へ移り、詳細を開く。
   - **「同じころ、世界では？／日本では？」**：同時代リストに、もう一方のモードの出来事を別の段で出す（押すと切り替えて開く）。
   - **地図の端の矢印**：日本地図で、選んだイベントとつながる世界のイベントの方角へ、地図の端から矢印を出す（押すとカードと同じ動き）。
-  - **モードをまたぐツアー**：ツアーのステップごとに `mode` を持ち、途中で地球儀と日本地図が切り替わる（「元寇――ユーラシアの嵐が博多湾へ」「銀が世界をめぐる」）。
+  - **モードをまたぐツアー**：ツアーのステップごとに `mode` を持ち、途中で地球儀と日本地図が切り替わる（「元寇――ユーラシアの嵐が博多湾へ」「銀が世界をめぐる」）。日本地図だけで巡る同時代型「1600年、日本では？ 世界では？」もある（画面下の「同じころ、世界では？」の段とあわせて見る）。
 
 ## データ（`src/data/events.json`・`src/data/events-japan.json`）
 
