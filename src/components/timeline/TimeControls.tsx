@@ -1,7 +1,8 @@
 "use client";
 
-import type { AstroYear } from "@/types/event";
-import { MAX_YEAR, MIN_YEAR, TICKS, sliderToYear, yearToSlider } from "@/lib/timeScale";
+import type { AstroYear, Scope } from "@/types/event";
+import { TIME_SCALES } from "@/lib/timeScale";
+import { ERA_NOTE, JAPAN_ERAS } from "@/lib/japanEras";
 import { formatYear } from "@/lib/year";
 
 const RES = 1000;
@@ -17,9 +18,19 @@ export interface TimeControlsProps {
   onFollow: (f: boolean) => void;
   /** ツアー中は自動再生を使わない */
   playDisabled?: boolean;
+  /** 年代の目盛り（世界と日本で範囲と目盛りが違う） */
+  mode?: Scope;
+}
+
+/** 目盛りの年の短い表示（「前30000年」→「前3万」） */
+function tickLabel(y: AstroYear): string {
+  const s = formatYear(y).replace("年", "");
+  return s.replace(/^前(\d+)0000$/, "前$1万");
 }
 
 export function TimeControls(p: TimeControlsProps) {
+  const mode = p.mode ?? "world";
+  const scale = TIME_SCALES[mode];
   return (
     <div className="time-controls">
       <div className="play-row">
@@ -47,25 +58,46 @@ export function TimeControls(p: TimeControlsProps) {
           カメラ追従
         </label>
       </div>
-      <div className="slider-wrap">
+      <div className={`slider-wrap${mode === "japan" ? " has-eras" : ""}`}>
+        {mode === "japan" && (
+          // 時代区分は目安（境目には諸説ある）。薄い帯で添える
+          <div className="eras" title={ERA_NOTE} data-testid="era-bands">
+            {JAPAN_ERAS.map((e) => {
+              const l = scale.yearToSlider(e.from);
+              const r = scale.yearToSlider(e.to);
+              return (
+                <span
+                  key={e.name}
+                  className="era"
+                  style={{ left: `${l * 100}%`, width: `${(r - l) * 100}%` }}
+                  data-era={e.name}
+                >
+                  <span className="era-name">{e.name}</span>
+                </span>
+              );
+            })}
+          </div>
+        )}
         <input
           type="range"
           className="slider"
           min={0}
           max={RES}
           step={1}
-          value={Math.round(yearToSlider(p.year) * RES)}
-          onChange={(e) => p.onYear(sliderToYear(Number(e.target.value) / RES))}
+          value={Math.round(scale.yearToSlider(p.year) * RES)}
+          onChange={(e) => p.onYear(scale.sliderToYear(Number(e.target.value) / RES))}
           aria-label="年代"
           aria-valuetext={formatYear(p.year)}
           data-testid="year-slider"
         />
         <div className="ticks" aria-hidden="true">
-          {TICKS.filter((t) => t >= MIN_YEAR && t <= MAX_YEAR).map((t) => (
-            <span key={t} style={{ left: `${yearToSlider(t) * 100}%` }}>
-              {formatYear(t).replace("年", "")}
-            </span>
-          ))}
+          {scale.ticks
+            .filter((t) => t >= scale.min && t <= scale.max)
+            .map((t) => (
+              <span key={t} style={{ left: `${scale.yearToSlider(t) * 100}%` }}>
+                {tickLabel(t)}
+              </span>
+            ))}
         </div>
       </div>
     </div>

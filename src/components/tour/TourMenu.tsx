@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import type { Tour } from "@/types/tour";
-import { KIND_LABEL } from "@/lib/tours";
+import { KIND_LABEL, crossesModes } from "@/lib/tours";
 
 /** ツアーの一覧（はじめるツアーを選ぶ） */
 export function TourMenu({
@@ -39,13 +39,14 @@ export function TourMenu({
             ×
           </button>
         </div>
-        <p className="tour-menu-lead">地球を巡りながら、「同じころ、世界では？」と「歴史のつながり」をたどります。</p>
+        <p className="tour-menu-lead">地球と日本地図を巡りながら、「同じころ、世界では？」と「歴史のつながり」をたどります。</p>
         <ul className="tour-cards">
           {tours.map((t) => (
             <li key={t.id} className="tour-card">
               <div className="tour-card-meta">
                 <span className={`tour-kind is-${t.kind}`}>{KIND_LABEL[t.kind]}</span>
                 <span className="sub">{t.steps.length}か所</span>
+                {crossesModes(t) && <span className="tour-mode">🌏↔🗾 世界と日本をまたぐ</span>}
               </div>
               <h3>{t.title}</h3>
               <p>{t.intro}</p>

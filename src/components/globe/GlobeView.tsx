@@ -16,6 +16,8 @@ export interface FlyTarget {
   lat: number;
   lng: number;
   altitude?: number;
+  /** 日本地図での拡大率（地球儀では使わない） */
+  zoom?: number;
   /** 同じ地点へ再度飛ぶ場合も反応させるためのキー */
   key: number;
 }
