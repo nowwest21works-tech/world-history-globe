@@ -8,11 +8,18 @@ describe("tours.json", () => {
     expect(validateTours(TOURS, EVENTS)).toEqual([]);
   });
 
-  it("5本：同時代型2本・つながり型3本（うち世界と日本をまたぐもの2本）", () => {
-    expect(TOURS.map((t) => t.id)).toEqual(["bc500", "paper", "silver", "mongol", "ad800"]);
-    expect(TOURS.filter((t) => t.kind === "contemporary").length).toBe(2);
+  it("6本：同時代型3本・つながり型3本（うち世界と日本をまたぐもの2本、日本だけのもの1本）", () => {
+    expect(TOURS.map((t) => t.id)).toEqual(["bc500", "paper", "silver", "mongol", "ad800", "jp1600"]);
+    expect(TOURS.filter((t) => t.kind === "contemporary").length).toBe(3);
     expect(TOURS.filter((t) => t.kind === "connection").length).toBe(3);
     expect(TOURS.filter(crossesModes).map((t) => t.id)).toEqual(["silver", "mongol"]);
+  });
+
+  it("「1600年、日本では？ 世界では？」：日本地図だけで巡る同時代型", () => {
+    const t = TOURS.find((x) => x.id === "jp1600")!;
+    expect(t.kind).toBe("contemporary");
+    expect(t.steps.every((s) => stepMode(s) === "japan" && s.year === 1600)).toBe(true);
+    expect(t.steps[0]!.eventId).toBe("jp-sekigahara");
   });
 
   it("元寇ツアー：地球儀で始まり、文永の役で日本地図へ切り替わる", () => {

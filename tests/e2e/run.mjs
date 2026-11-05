@@ -495,7 +495,7 @@ const query = (page) => page.evaluate(() => location.search);
     await menu.waitFor();
     const titles = await menu.locator(".tour-card h3").allInnerTexts();
     assert(
-      titles.join("/") === "前500年頃、世界では？/紙の旅/銀が世界をめぐる/元寇――ユーラシアの嵐が博多湾へ/800年頃、世界では？",
+      titles.join("/") === "前500年頃、世界では？/紙の旅/銀が世界をめぐる/元寇――ユーラシアの嵐が博多湾へ/800年頃、世界では？/1600年、日本では？ 世界では？",
       `ツアー一覧が違う: ${titles}`,
     );
     await page.getByTestId("tour-start-paper").click();
@@ -1222,6 +1222,34 @@ const markerCenter = (page, id) =>
     }
     assert(/ポトシ.*\(world\)/.test(seq[0]) && /石見銀山.*\(japan\)/.test(seq[1]) && /マニラ.*\(world\)/.test(seq[2]), seq.join(" → "));
     return seq.join(" → ");
+  });
+
+  await check("日本だけのツアー(PC): 「1600年、日本では？ 世界では？」を日本地図のまま最後まで。「同じころ、世界では？」の段も出る", async () => {
+    await page.goto(URL);
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    await page.getByTestId("tour-open").click();
+    await page.getByTestId("tour-start-jp1600").click();
+    await waitJapan(page);
+    assert((await query(page)) === "?mode=japan&tour=jp1600&step=0", `URL: ${await query(page)}`);
+    const years = [];
+    const titles = [];
+    for (let i = 0; i < 6; i++) {
+      await page.getByTestId("tour-next").click();
+      await page.waitForTimeout(300);
+      years.push(await yearText(page));
+      titles.push((await page.getByTestId("tour-step-title").innerText()).trim());
+      assert((await page.locator(".app").getAttribute("data-mode")) === "japan", `${i + 1}番目で日本地図でない`);
+    }
+    assert(new Set(years).size === 1 && years[0] === "1600年", `年が動いている: ${years}`);
+    assert(titles[0].includes("関ヶ原"), `1番目が関ヶ原でない: ${titles[0]}`);
+    const other = await page.getByTestId("strip-other").locator(".chip-other").allInnerTexts();
+    assert(other.some((t) => t.includes("明の成立")), `「同じころ、世界では？」に明がない: ${other}`);
+    await page.screenshot({ path: `${SHOTS}/tour-jp1600.png` });
+    await page.getByTestId("tour-next").click();
+    assert((await page.getByTestId("tour-position").innerText()) === "まとめ", "まとめに着かない");
+    await page.getByTestId("tour-finish").click();
+    assert((await page.getByTestId("tour-panel").count()) === 0, "終えてもパネルが残る");
+    return `1600年のまま ${titles.length} か所（${titles[0]} ほか）→ まとめ`;
   });
 
   await check("またぐツアー(PC): ページエラーなし", async () => {

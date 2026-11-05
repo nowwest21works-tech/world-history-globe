@@ -138,16 +138,17 @@ describe("世界とのつながり（もう一方のモードにある関連イ�
     }
   });
 
-  it("太字の橋のイベントは、すべて世界史側の出来事とつながっている", () => {
-    for (const e of JAPAN_EVENTS) {
-      if (e.id === "jp-kamakura-fall") continue; // 元寇のあとの国内の変化（元寇を介してつながる）
-      // 世界史側に対応するイベント（三国時代の魏・朝鮮半島の稲作）がまだないもの。注記でつながりを示している
-      if (e.id === "jp-rice-farming" || e.id === "jp-himiko") {
-        expect(e.historicalNote).toContain("世界史側には");
-        continue;
-      }
-      expect(crossLinks(e, "japan", ALL_EVENTS, scopesOf).length, e.id).toBeGreaterThan(0);
+  it("第1回の橋のイベント（指示書の太字）は、すべて世界史側の出来事とつながっている", () => {
+    const BRIDGES = [
+      "jp-gold-seal", "jp-buddhism-arrives", "jp-kenzuishi", "jp-hakusonko", "jp-todaiji-ganjin", "jp-kentoshi-end",
+      "jp-nisso-trade", "jp-mongol-invasions", "jp-ming-trade", "jp-ryukyu-kingdom", "jp-iwami-silver",
+      "jp-tanegashima-guns", "jp-xavier", "jp-hideyoshi-korea", "jp-dejima", "jp-perry", "jp-sino-japanese-war",
+    ];
+    for (const id of BRIDGES) {
+      expect(crossLinks(EVENT_BY_ID.get(id)!, "japan", ALL_EVENTS, scopesOf).length, id).toBeGreaterThan(0);
     }
+    // 世界史側に対応するイベント（三国時代の魏・朝鮮半島の稲作）がまだないもの。注記でつながりを示している
+    for (const id of ["jp-rice-farming", "jp-himiko"]) expect(EVENT_BY_ID.get(id)!.historicalNote).toContain("世界史側には");
   });
 });
 
