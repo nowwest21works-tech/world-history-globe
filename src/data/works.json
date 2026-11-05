@@ -2,10 +2,10 @@
   {
     "id": "tenha-akai-kawa-no-hotori",
     "title": "天は赤い河のほとり",
-    "media": ["manga"],
+    "media": ["manga", "anime"],
     "creators": "篠原千絵",
     "firstReleased": 1995,
-    "adaptations": "",
+    "adaptations": "テレビアニメ（2026年〜）",
     "era": { "from": -1399, "to": -1299 },
     "eraNote": "現代の少女が古代へ時間移動する物語。描かれるのはヒッタイト王国の時代（前14世紀頃）。",
     "setting": "ヒッタイト王国の都ハットゥシャ周辺。エジプトやミタンニとの外交・戦争も描かれる。",
@@ -15,15 +15,17 @@
     "gapQuestion": "ヒッタイトは鉄の技術で知られるが、「鉄を独占した帝国」というイメージは、近年の研究でどう見直されているだろう？",
     "contentNote": "戦闘・暴力の描写あり。",
     "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "officialUrl": "https://www.vap.co.jp/sorahaakaikawanohotori/index.html",
+    "sources": [
+      { "title": "ウィキペディア日本語版「天は赤い河のほとり」", "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E3%81%AF%E8%B5%A4%E3%81%84%E6%B2%B3%E3%81%AE%E3%81%BB%E3%81%A8%E3%82%8A", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
     "id": "houshin-engi-fujisaki",
     "title": "封神演義（藤崎竜）",
     "media": ["manga", "anime"],
-    "creators": "藤崎竜（原作：明代の小説『封神演義』）",
+    "creators": "藤崎竜（原作：安能務訳『封神演義』。もとは明代の小説）",
     "firstReleased": 1996,
     "adaptations": "テレビアニメ（1999年『仙界伝 封神演義』、2018年『覇穹 封神演義』）",
     "era": { "from": -1099, "to": -1045 },
@@ -36,7 +38,10 @@
     "contentNote": "戦闘描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「封神演義 (漫画)」", "url": "https://ja.wikipedia.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9_(%E6%BC%AB%E7%94%BB)", "accessedAt": "2026-11-05" },
+      { "title": "ウィキペディア日本語版「封神演義」", "url": "https://ja.wikipedia.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -56,7 +61,9 @@
     "contentNote": "暴力・死の描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「ブッダ (漫画)」", "url": "https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%83%E3%83%80_(%E6%BC%AB%E7%94%BB)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -65,7 +72,7 @@
     "media": ["manga"],
     "creators": "岩明均",
     "firstReleased": 2003,
-    "adaptations": "",
+    "adaptations": "テレビアニメ化が発表されている（2027年1月放送予定）",
     "era": { "from": -361, "to": -322 },
     "eraNote": "主人公エウメネスの少年期から、マケドニア王フィリッポス2世・アレクサンドロスの時代まで。",
     "setting": "ギリシア世界と、北方の新興国マケドニア。",
@@ -76,7 +83,9 @@
     "contentNote": "残酷な描写・性的な描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「ヒストリエ」", "url": "https://ja.wikipedia.org/wiki/%E3%83%92%E3%82%B9%E3%83%88%E3%83%AA%E3%82%A8", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -93,10 +102,12 @@
     "fidelity": "inspired",
     "hook": "スパルタの300人が守った隘路は、ペルシア戦争の舞台のひとつ。",
     "gapQuestion": "映画のペルシア軍の描き方は、ヘロドトスの記述や現在の研究とどう違う？ なぜそのように描かれたのだろう？",
-    "contentNote": "激しい戦闘・残酷な描写あり。年齢制限の有無を要確認。",
-    "rating": "",
+    "contentNote": "激しい戦闘・残酷な描写あり。",
+    "rating": "R15+",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「300 〈スリーハンドレッド〉」", "url": "https://ja.wikipedia.org/wiki/300_%E3%80%88%E3%82%B9%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E3%83%AC%E3%83%83%E3%83%89%E3%80%89", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -115,8 +126,12 @@
     "gapQuestion": "主人公・信のモデルは秦の将軍・李信。『史記』に記される李信の楚攻めは、どんな結果に終わったのだろう？",
     "contentNote": "戦闘・残酷な描写あり。",
     "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "officialUrl": "https://kingdom-anime.com/",
+    "sources": [
+      { "title": "ウィキペディア日本語版「キングダム (漫画)」", "url": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%80%E3%83%A0_(%E6%BC%AB%E7%94%BB)", "accessedAt": "2026-11-05" },
+      { "title": "ウィキペディア日本語版「キングダム (アニメ)」", "url": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%80%E3%83%A0_(%E3%82%A2%E3%83%8B%E3%83%A1)", "accessedAt": "2026-11-05" },
+      { "title": "ウィキペディア日本語版「キングダム (映画)」", "url": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%80%E3%83%A0_(%E6%98%A0%E7%94%BB)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -135,8 +150,11 @@
     "gapQuestion": "作品の舞台は架空の国。実際の唐の後宮はどんな組織で、そこで働く女性たちはどんな役職についていたのだろう？",
     "contentNote": "毒・死の描写あり。",
     "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "officialUrl": "https://kusuriyanohitorigoto.jp/",
+    "sources": [
+      { "title": "ウィキペディア日本語版「薬屋のひとりごと」", "url": "https://ja.wikipedia.org/wiki/%E8%96%AC%E5%B1%8B%E3%81%AE%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8", "accessedAt": "2026-11-05" },
+      { "title": "ウィキペディア日本語版「薬屋のひとりごと (アニメ)」", "url": "https://ja.wikipedia.org/wiki/%E8%96%AC%E5%B1%8B%E3%81%AE%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8_(%E3%82%A2%E3%83%8B%E3%83%A1)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -156,7 +174,9 @@
     "contentNote": "",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「おかざき真里」", "url": "https://ja.wikipedia.org/wiki/%E3%81%8A%E3%81%8B%E3%81%96%E3%81%8D%E7%9C%9F%E9%87%8C", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -176,16 +196,18 @@
     "contentNote": "戦闘描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「モンゴル (映画)」", "url": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%B3%E3%82%B4%E3%83%AB_(%E6%98%A0%E7%94%BB)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
     "id": "tenmaku-no-jadugar",
     "title": "天幕のジャードゥーガル",
-    "media": ["manga"],
+    "media": ["manga", "anime"],
     "creators": "トマトスープ",
-    "firstReleased": 2022,
-    "adaptations": "",
+    "firstReleased": 2021,
+    "adaptations": "テレビアニメ（2026年）",
     "era": { "from": 1221, "to": 1246 },
     "eraNote": "モンゴル帝国が西へ拡大した時代から、帝国の宮廷の権力争いまで。",
     "setting": "征服されたイラン東部の都市と、モンゴル帝国の宮廷。",
@@ -195,8 +217,10 @@
     "gapQuestion": "モンゴル帝国の宮廷では、征服された地域の人々（学者・商人・女性たち）がどんな役割を担っていたのだろう？",
     "contentNote": "戦争・死の描写あり。",
     "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "officialUrl": "https://anime-jaadugar.com/",
+    "sources": [
+      { "title": "ウィキペディア日本語版「天幕のジャードゥーガル」", "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E5%B9%95%E3%81%AE%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%89%E3%82%A5%E3%83%BC%E3%82%AC%E3%83%AB", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -216,7 +240,9 @@
     "contentNote": "",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「チェーザレ 破壊の創造者」", "url": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%BC%E3%82%B6%E3%83%AC_%E7%A0%B4%E5%A3%8A%E3%81%AE%E5%89%B5%E9%80%A0%E8%80%85", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -235,8 +261,10 @@
     "gapQuestion": "作品の「P王国」は架空の国。実際に地動説を唱えたコペルニクスの時代、教会や学者たちはこの説にどう反応したのだろう？ 作品の描き方と比べてみよう。",
     "contentNote": "拷問・処刑などの残酷な描写あり。",
     "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "officialUrl": "https://anime-chi.jp/",
+    "sources": [
+      { "title": "ウィキペディア日本語版「チ。-地球の運動について-」", "url": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%80%82-%E5%9C%B0%E7%90%83%E3%81%AE%E9%81%8B%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6-", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -256,7 +284,9 @@
     "contentNote": "暴力の描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「1492 コロンブス」", "url": "https://ja.wikipedia.org/wiki/1492_%E3%82%B3%E3%83%AD%E3%83%B3%E3%83%96%E3%82%B9", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -276,7 +306,9 @@
     "contentNote": "性的な描写・暴力の描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「オスマン帝国外伝〜愛と欲望のハレム〜」", "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%82%B9%E3%83%9E%E3%83%B3%E5%B8%9D%E5%9B%BD%E5%A4%96%E4%BC%9D%E3%80%9C%E6%84%9B%E3%81%A8%E6%AC%B2%E6%9C%9B%E3%81%AE%E3%83%8F%E3%83%AC%E3%83%A0%E3%80%9C", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -294,9 +326,12 @@
     "hook": "ヨーロッパから見た「禁教の日本」。世界史と日本史がぶつかる場所。",
     "gapQuestion": "江戸幕府はなぜキリスト教を禁じ、ヨーロッパの国ではオランダとだけ交易を続けたのだろう？",
     "contentNote": "拷問・処刑などの残酷な描写あり。",
-    "rating": "",
+    "rating": "PG12",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「沈黙 -サイレンス-」", "url": "https://ja.wikipedia.org/wiki/%E6%B2%88%E9%BB%99_-%E3%82%B5%E3%82%A4%E3%83%AC%E3%83%B3%E3%82%B9-", "accessedAt": "2026-11-05" },
+      { "title": "ウィキペディア日本語版「沈黙 (遠藤周作)」", "url": "https://ja.wikipedia.org/wiki/%E6%B2%88%E9%BB%99_(%E9%81%A0%E8%97%A4%E5%91%A8%E4%BD%9C)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -316,7 +351,9 @@
     "contentNote": "",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「ハミルトン (ミュージカル)」", "url": "https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%9F%E3%83%AB%E3%83%88%E3%83%B3_(%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%AB%E3%83%AB)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -335,8 +372,11 @@
     "gapQuestion": "マリー・アントワネットの言葉として有名な「パンがなければ…」の逸話は、本当に彼女が言ったものだろうか？ その言葉はなぜ広まったのだろう？",
     "contentNote": "戦闘・死の描写あり。",
     "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "officialUrl": "https://verbara-movie.jp/",
+    "sources": [
+      { "title": "ウィキペディア日本語版「ベルサイユのばら」", "url": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%A6%E3%81%AE%E3%81%B0%E3%82%89", "accessedAt": "2026-11-05" },
+      { "title": "ウィキペディア日本語版「ベルサイユのばら (宝塚歌劇)」", "url": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%A6%E3%81%AE%E3%81%B0%E3%82%89_(%E5%AE%9D%E5%A1%9A%E6%AD%8C%E5%8A%87)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -353,10 +393,12 @@
     "fidelity": "historical",
     "hook": "皇帝ナポレオンの戴冠式は、パリのノートルダム大聖堂で行われた。",
     "gapQuestion": "映画には演出のための脚色も多い。たとえばエジプト遠征でピラミッドを砲撃する場面は、史実だろうか？ ほかにどんな脚色があるか探してみよう。",
-    "contentNote": "激しい戦闘・残酷な描写あり。年齢制限の有無を要確認。",
+    "contentNote": "激しい戦闘・残酷な描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「ナポレオン (2023年の映画)」", "url": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%9D%E3%83%AC%E3%82%AA%E3%83%B3_(2023%E5%B9%B4%E3%81%AE%E6%98%A0%E7%94%BB)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -373,10 +415,12 @@
     "fidelity": "historical",
     "hook": "大西洋を越えて運ばれた人々の子孫が、アメリカ南部で置かれていた現実。",
     "gapQuestion": "主人公ソロモン・ノーサップは実在の人物で、自らの体験を手記に残した。自由黒人が誘拐されて売られる事件は、なぜ起きたのだろう？",
-    "contentNote": "暴力・虐待の描写あり。年齢制限の有無を要確認。",
+    "contentNote": "暴力・虐待の描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「それでも夜は明ける」", "url": "https://ja.wikipedia.org/wiki/%E3%81%9D%E3%82%8C%E3%81%A7%E3%82%82%E5%A4%9C%E3%81%AF%E6%98%8E%E3%81%91%E3%82%8B", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -396,7 +440,9 @@
     "contentNote": "",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「リンカーン (映画)」", "url": "https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%B3%E3%82%AB%E3%83%BC%E3%83%B3_(%E6%98%A0%E7%94%BB)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -415,8 +461,12 @@
     "gapQuestion": "明治政府は廃刀令（1876年）で何を変えようとしたのだろう？ 元・武士たちはそれをどう受け止めた？",
     "contentNote": "戦闘・流血の描写あり。",
     "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "officialUrl": "https://rurouni-kenshin.com/",
+    "sources": [
+      { "title": "ウィキペディア日本語版「るろうに剣心 -明治剣客浪漫譚-」", "url": "https://ja.wikipedia.org/wiki/%E3%82%8B%E3%82%8D%E3%81%86%E3%81%AB%E5%89%A3%E5%BF%83_-%E6%98%8E%E6%B2%BB%E5%89%A3%E5%AE%A2%E6%B5%AA%E6%BC%AB%E8%AD%9A-", "accessedAt": "2026-11-05" },
+      { "title": "ウィキペディア日本語版「るろうに剣心 -明治剣客浪漫譚- (アニメ)」", "url": "https://ja.wikipedia.org/wiki/%E3%82%8B%E3%82%8D%E3%81%86%E3%81%AB%E5%89%A3%E5%BF%83_-%E6%98%8E%E6%B2%BB%E5%89%A3%E5%AE%A2%E6%B5%AA%E6%BC%AB%E8%AD%9A-_(%E3%82%A2%E3%83%8B%E3%83%A1)", "accessedAt": "2026-11-05" },
+      { "title": "ウィキペディア日本語版「るろうに剣心 (実写映画)」", "url": "https://ja.wikipedia.org/wiki/%E3%82%8B%E3%82%8D%E3%81%86%E3%81%AB%E5%89%A3%E5%BF%83_(%E5%AE%9F%E5%86%99%E6%98%A0%E7%94%BB)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -436,7 +486,10 @@
     "contentNote": "戦闘描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「坂の上の雲」", "url": "https://ja.wikipedia.org/wiki/%E5%9D%82%E3%81%AE%E4%B8%8A%E3%81%AE%E9%9B%B2", "accessedAt": "2026-11-05" },
+      { "title": "ウィキペディア日本語版「坂の上の雲 (テレビドラマ)」", "url": "https://ja.wikipedia.org/wiki/%E5%9D%82%E3%81%AE%E4%B8%8A%E3%81%AE%E9%9B%B2_(%E3%83%86%E3%83%AC%E3%83%93%E3%83%89%E3%83%A9%E3%83%9E)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -455,8 +508,11 @@
     "gapQuestion": "作品はアイヌ文化の描写に専門家の監修を受けている。明治政府の北海道政策は、アイヌの人々の暮らしをどう変えたのだろう？",
     "contentNote": "戦闘・残酷な描写あり。",
     "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "officialUrl": "https://www.kamuy-anime.com/",
+    "sources": [
+      { "title": "ウィキペディア日本語版「ゴールデンカムイ」", "url": "https://ja.wikipedia.org/wiki/%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%E3%82%AB%E3%83%A0%E3%82%A4", "accessedAt": "2026-11-05" },
+      { "title": "ウィキペディア日本語版「ゴールデンカムイ (映画)」", "url": "https://ja.wikipedia.org/wiki/%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%E3%82%AB%E3%83%A0%E3%82%A4_(%E6%98%A0%E7%94%BB)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -476,7 +532,9 @@
     "contentNote": "",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「ラストエンペラー」", "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%B9%E3%83%88%E3%82%A8%E3%83%B3%E3%83%9A%E3%83%A9%E3%83%BC", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -496,7 +554,9 @@
     "contentNote": "戦闘・死の描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「1917 命をかけた伝令」", "url": "https://ja.wikipedia.org/wiki/1917_%E5%91%BD%E3%82%92%E3%81%8B%E3%81%91%E3%81%9F%E4%BC%9D%E4%BB%A4", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -516,7 +576,9 @@
     "contentNote": "",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「イミテーション・ゲーム/エニグマと天才数学者の秘密」", "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%9F%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%BB%E3%82%B2%E3%83%BC%E3%83%A0/%E3%82%A8%E3%83%8B%E3%82%B0%E3%83%9E%E3%81%A8%E5%A4%A9%E6%89%8D%E6%95%B0%E5%AD%A6%E8%80%85%E3%81%AE%E7%A7%98%E5%AF%86", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -535,17 +597,19 @@
     "gapQuestion": "1945年、日本の都市への空襲はどのように行われ、民間人の暮らしをどう変えたのだろう？",
     "contentNote": "死・飢えの描写あり。",
     "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "officialUrl": "https://www.ghibli.jp/works/hotarunohaka/",
+    "sources": [
+      { "title": "ウィキペディア日本語版「火垂るの墓」", "url": "https://ja.wikipedia.org/wiki/%E7%81%AB%E5%9E%82%E3%82%8B%E3%81%AE%E5%A2%93", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
     "id": "kono-sekai-no-katasumi-ni",
     "title": "この世界の片隅に",
-    "media": ["manga", "anime"],
+    "media": ["manga", "anime", "drama"],
     "creators": "こうの史代（原作漫画）、片渕須直監督（アニメ映画）",
     "firstReleased": 2007,
-    "adaptations": "劇場アニメ（2016年）",
+    "adaptations": "テレビドラマ（2011年・2018年）、劇場アニメ（2016年）",
     "era": { "from": 1933, "to": 1946 },
     "eraNote": "昭和初期から終戦直後まで。",
     "setting": "広島と、軍港の町・呉。戦時下の日常を描く。",
@@ -555,8 +619,10 @@
     "gapQuestion": "呉は軍港の町だった。戦時下の暮らし（配給や空襲）は、広島への原爆投下とどのようにつながっていたのだろう？",
     "contentNote": "空襲・死の描写あり。",
     "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "officialUrl": "https://konosekai.jp/",
+    "sources": [
+      { "title": "ウィキペディア日本語版「この世界の片隅に」", "url": "https://ja.wikipedia.org/wiki/%E3%81%93%E3%81%AE%E4%B8%96%E7%95%8C%E3%81%AE%E7%89%87%E9%9A%85%E3%81%AB", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -565,7 +631,7 @@
     "media": ["manga", "anime"],
     "creators": "中沢啓治",
     "firstReleased": 1973,
-    "adaptations": "劇場アニメ（1983年）",
+    "adaptations": "劇場アニメ（1983年・1986年）",
     "era": { "from": 1945, "to": 1953 },
     "eraNote": "原爆投下の前後から、戦後の広島の復興期まで。",
     "setting": "広島。作者自身の被爆体験をもとにしている。",
@@ -576,7 +642,9 @@
     "contentNote": "被爆の惨状など、強い描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「はだしのゲン」", "url": "https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A0%E3%81%97%E3%81%AE%E3%82%B2%E3%83%B3", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -593,10 +661,12 @@
     "fidelity": "historical",
     "hook": "原子爆弾を「つくった側」の物語。",
     "gapQuestion": "映画は広島・長崎の被害を直接は映さなかった。その描き方には、どんな賛否が寄せられたのだろう？",
-    "contentNote": "性的な描写あり。年齢制限の有無を要確認。",
-    "rating": "",
-    "officialUrl": "",
-    "sources": [],
+    "contentNote": "性的な描写あり。",
+    "rating": "R15+",
+    "officialUrl": "https://www.oppenheimermovie.jp/",
+    "sources": [
+      { "title": "ウィキペディア日本語版「オッペンハイマー (映画)」", "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%83%E3%83%9A%E3%83%B3%E3%83%8F%E3%82%A4%E3%83%9E%E3%83%BC_(%E6%98%A0%E7%94%BB)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -613,10 +683,12 @@
     "fidelity": "historical",
     "hook": "1000人以上のユダヤ人を救ったドイツ人実業家の実話。",
     "gapQuestion": "オスカー・シンドラーは実在の人物。彼に救われた人々の記録や証言は、どのように残され、伝えられてきたのだろう？",
-    "contentNote": "虐殺・暴力の描写あり。年齢制限の有無を要確認。",
+    "contentNote": "虐殺・暴力の描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「シンドラーのリスト」", "url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%B3%E3%83%89%E3%83%A9%E3%83%BC%E3%81%AE%E3%83%AA%E3%82%B9%E3%83%88", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -636,7 +708,9 @@
     "contentNote": "暴力の描写あり。",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「ガンジー (映画)」", "url": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%B3%E3%82%B8%E3%83%BC_(%E6%98%A0%E7%94%BB)", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -656,7 +730,9 @@
     "contentNote": "",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「13デイズ」", "url": "https://ja.wikipedia.org/wiki/13%E3%83%87%E3%82%A4%E3%82%BA", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -676,7 +752,9 @@
     "contentNote": "",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「ファースト・マン」", "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BB%E3%83%9E%E3%83%B3", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -696,7 +774,9 @@
     "contentNote": "",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「グッバイ、レーニン!」", "url": "https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%83%E3%83%90%E3%82%A4%E3%80%81%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3!", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   },
   {
@@ -716,7 +796,9 @@
     "contentNote": "",
     "rating": "",
     "officialUrl": "",
-    "sources": [],
+    "sources": [
+      { "title": "ウィキペディア日本語版「インビクタス/負けざる者たち」", "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%93%E3%82%AF%E3%82%BF%E3%82%B9/%E8%B2%A0%E3%81%91%E3%81%96%E3%82%8B%E8%80%85%E3%81%9F%E3%81%A1", "accessedAt": "2026-11-05" }
+    ],
     "verified": false
   }
 ]
