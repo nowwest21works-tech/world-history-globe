@@ -3135,5 +3135,778 @@
       "jp-edo-shogunate",
       "jp-hideyoshi-korea"
     ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-osaka-siege",
+    "title": "大坂の陣",
+    "category": "war",
+    "start": {
+      "year": 1614,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1615,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.687,
+      "lng": 135.526,
+      "placeName": "大坂城（大阪市）",
+      "precision": "exact"
+    },
+    "summary": "江戸幕府と豊臣家が、1614年の冬の陣と1615年の夏の陣の2度にわたって大坂で戦った。すでに徳川氏の優位は固まっており、豊臣秀頼の側は世の流れを覆すことができなかった。",
+    "historicalNote": "慶長19年（1614年）の大坂冬の陣と、慶長20年（1615年）の大坂夏の陣の総称。秀頼が進めた方広寺の大仏殿再建で、梵鐘の銘文をめぐる方広寺鐘銘事件が起き、戦いにつながった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「大坂の陣」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%9D%82%E3%81%AE%E9%99%A3",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「豊臣秀頼」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E8%87%A3%E7%A7%80%E9%A0%BC",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-sekigahara",
+      "jp-edo-shogunate"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-satsuma-ryukyu",
+    "title": "薩摩藩の琉球侵攻",
+    "category": "war",
+    "start": {
+      "year": 1609,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 26.217,
+      "lng": 127.719,
+      "placeName": "首里（琉球王国の王府）",
+      "precision": "region"
+    },
+    "summary": "薩摩藩が琉球王国に兵を送り、軍事行動をおこなった。琉球の王府は一貫して和睦を求め、全面的に抵抗しようとはしなかった。",
+    "historicalNote": "1609年。地点は琉球王国の王府があった首里の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「琉球侵攻」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%90%89%E7%90%83%E4%BE%B5%E6%94%BB",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-ryukyu-kingdom",
+      "ming"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-sankin-kotai",
+    "title": "参勤交代の制度化",
+    "category": "politics",
+    "start": {
+      "year": 1635,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.685,
+      "lng": 139.753,
+      "placeName": "江戸",
+      "precision": "city"
+    },
+    "summary": "江戸幕府は、各藩の大名を交代で江戸に出仕させる参勤交代を制度として定めた。大名は1年ごとに江戸と領地を行き来し、正室と跡継ぎは江戸に住み続けることになった。",
+    "historicalNote": "1635年（寛永12年）に3代将軍徳川家光が制度化した（記事本文）。もとは大名が将軍に従うことを示す儀礼として始まった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「参勤交代」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8F%82%E5%8B%A4%E4%BA%A4%E4%BB%A3",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-edo-shogunate",
+      "jp-chosen-tsushinshi"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-genroku",
+    "title": "元禄文化",
+    "category": "culture",
+    "start": {
+      "year": 1688,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1704,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 34.69,
+      "lng": 135.5,
+      "placeName": "大坂・京都（上方）",
+      "precision": "region"
+    },
+    "summary": "農村での商品作物づくりと町人の台頭で経済が活発になり、大坂・京都など上方の都市を中心に、庶民の暮らしや心情を描く文化が花開いた。井原西鶴の浮世草子、松尾芭蕉の俳諧、近松門左衛門の浄瑠璃などが生まれた。",
+    "historicalNote": "元禄年間（1688年〜1704年）前後、17世紀後半から18世紀初めの文化。尾形光琳や、浮世絵の始祖とされる菱川師宣もあらわれた。担い手には武士出身の者も多かった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「元禄文化」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%83%E7%A6%84%E6%96%87%E5%8C%96",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-osaka-siege",
+      "jp-dejima"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kyoho-reform",
+    "title": "享保の改革",
+    "category": "politics",
+    "start": {
+      "year": 1716,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1745,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.685,
+      "lng": 139.753,
+      "placeName": "江戸",
+      "precision": "city"
+    },
+    "summary": "8代将軍徳川吉宗は、幕府の財政を立て直すための改革を進めた。先例にとらわれない政策がとられ、法典の整備による裁判の改革や、江戸の町の行政改革など、内容は多岐にわたった。",
+    "historicalNote": "1716年（享保元年）に始まった。終わりは1735年とする説や1745年とする説などがある。寛政の改革・天保の改革と合わせて「江戸時代の三大改革」と呼ばれる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「享保の改革」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%AB%E4%BF%9D%E3%81%AE%E6%94%B9%E9%9D%A9",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-genroku",
+      "jp-kaitai-shinsho"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kansei-reform",
+    "title": "寛政の改革",
+    "category": "politics",
+    "start": {
+      "year": 1787,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1793,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.685,
+      "lng": 139.753,
+      "placeName": "江戸",
+      "precision": "city"
+    },
+    "summary": "老中の松平定信が中心となって、幕府の政治の改革を進めた。享保の改革をお手本にした改革の一つで、江戸時代の三大改革に数えられる。",
+    "historicalNote": "1787年〜1793年（松平定信の老中在任期間）。享保の改革にならった改革であることは「享保の改革」の記事による。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「寛政の改革」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AF%9B%E6%94%BF%E3%81%AE%E6%94%B9%E9%9D%A9",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「享保の改革」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%AB%E4%BF%9D%E3%81%AE%E6%94%B9%E9%9D%A9",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-kyoho-reform"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-ino-tadataka",
+    "title": "伊能忠敬の日本地図",
+    "category": "culture",
+    "start": {
+      "year": 1800,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1816,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.685,
+      "lng": 139.753,
+      "placeName": "江戸（代表点）",
+      "precision": "region"
+    },
+    "summary": "伊能忠敬は56歳から17年をかけて日本全国を歩いて測量した。忠敬の死後、弟子たちが『大日本沿海輿地全図』を完成させ、日本の国土の正確な姿が明らかになった。",
+    "historicalNote": "測量は1800年（寛政12年）から1816年（文化13年）まで。忠敬は商人であり、天文学者・地理学者・測量家でもあった。1818年に73歳で亡くなった。測量は全国に及ぶため、地点は江戸の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「伊能忠敬」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E8%83%BD%E5%BF%A0%E6%95%AC",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-kaitai-shinsho",
+      "jp-kansei-reform"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-ikokusen",
+    "title": "異国船打払令とモリソン号事件",
+    "category": "politics",
+    "start": {
+      "year": 1825,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1842,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.24,
+      "lng": 139.72,
+      "placeName": "浦賀沖（代表点）",
+      "precision": "region"
+    },
+    "summary": "江戸幕府は、日本の沿岸に近づく外国船を追い払うよう命じた。1837年には、日本人の漂流民を送り届けに来たアメリカの商船モリソン号が砲撃されて退去し、のちに事情が分かると打払令への批判が強まった。",
+    "historicalNote": "異国船打払令は1825年（文政8年）。1842年（天保13年）に薪水給与令が出されて廃止された。モリソン号は鹿児島湾と浦賀沖で砲撃された（イギリス軍艦と勘違いされた）。地点は浦賀沖の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「異国船打払令」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%95%B0%E5%9B%BD%E8%88%B9%E6%89%93%E6%89%95%E4%BB%A4",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「モリソン号事件」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%AA%E3%82%BD%E3%83%B3%E5%8F%B7%E4%BA%8B%E4%BB%B6",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "edo-sakoku",
+      "jp-dejima",
+      "jp-perry",
+      "jp-tenpo-reform"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-tenpo-reform",
+    "title": "天保の改革",
+    "category": "politics",
+    "start": {
+      "year": 1841,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1843,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.685,
+      "lng": 139.753,
+      "placeName": "江戸",
+      "precision": "city"
+    },
+    "summary": "貨幣経済の発達で苦しくなった幕府の財政を立て直そうと、幕政の改革が行われた。同じころ、各地の藩でも藩政の改革が進められた。",
+    "historicalNote": "天保12年〜14年（1841年〜1843年）。享保の改革・寛政の改革と並ぶ三大改革の一つ。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「天保の改革」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E4%BF%9D%E3%81%AE%E6%94%B9%E9%9D%A9",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-kyoho-reform",
+      "jp-kansei-reform",
+      "jp-ikokusen"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-harris-treaty",
+    "title": "日米修好通商条約",
+    "category": "politics",
+    "start": {
+      "year": 1858,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.685,
+      "lng": 139.753,
+      "placeName": "江戸（条約に調印した幕府の所在地）",
+      "precision": "region"
+    },
+    "summary": "江戸幕府はアメリカと通商条約を結んだ。同じ年にほかの国々とも結んだ安政五カ国条約の一つで、アメリカの全権ハリスの名からハリス条約とも呼ばれる。",
+    "historicalNote": "安政5年6月19日（1858年7月29日）に結ばれた。批准書には14代将軍徳川家茂の署名があり、1860年にワシントンで批准書が交換された。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「日米修好通商条約」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%B1%B3%E4%BF%AE%E5%A5%BD%E9%80%9A%E5%95%86%E6%9D%A1%E7%B4%84",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-perry",
+      "jp-ansei-purge"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-ansei-purge",
+    "title": "安政の大獄",
+    "category": "politics",
+    "start": {
+      "year": 1858,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1859,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.685,
+      "lng": 139.753,
+      "placeName": "江戸",
+      "precision": "city"
+    },
+    "summary": "大老井伊直弼らは、天皇の許しを得ないまま日米修好通商条約に調印し、将軍の跡継ぎを徳川家茂に決めた。これに反対する尊王攘夷派や一橋派の大名・公家・志士たちを厳しく処罰し、連座した者は100人以上にのぼった。",
+    "historicalNote": "安政5年（1858年）〜安政6年（1859年）。当時は「戊午の大獄」などと呼ばれた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「安政の大獄」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%94%BF%E3%81%AE%E5%A4%A7%E7%8D%84",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-harris-treaty",
+      "jp-sakuradamon"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-sakuradamon",
+    "title": "桜田門外の変",
+    "category": "politics",
+    "start": {
+      "year": 1860,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.6775,
+      "lng": 139.7525,
+      "placeName": "江戸城桜田門外（東京都千代田区）",
+      "precision": "exact"
+    },
+    "summary": "江戸城の桜田門の外で、水戸藩を脱藩した17人と薩摩藩士1人が彦根藩の行列を襲い、大老井伊直弼を暗殺した。",
+    "historicalNote": "安政7年3月3日（1860年3月24日）。「桜田事変」とも言う。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「桜田門外の変」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A1%9C%E7%94%B0%E9%96%80%E5%A4%96%E3%81%AE%E5%A4%89",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-ansei-purge"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-namamugi-satsuei",
+    "title": "生麦事件と薩英戦争",
+    "category": "war",
+    "start": {
+      "year": 1862,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1863,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 31.59,
+      "lng": 130.57,
+      "placeName": "鹿児島湾（薩英戦争の舞台）",
+      "precision": "region"
+    },
+    "summary": "島津久光の行列に出くわしたイギリス人たちを薩摩藩士が殺傷した生麦事件の処理がもつれ、翌年、イギリス艦隊と薩摩藩が鹿児島湾で戦った。双方に大きな損害が出たが、これをきっかけに薩摩とイギリスは互いをよく知ろうとし、一転して接近していった。",
+    "historicalNote": "生麦事件は文久2年8月21日（1862年9月14日）、現在の横浜市鶴見区生麦付近で起き、1人が死亡、2人が重傷を負った。薩英戦争は文久3年7月2日〜4日（1863年8月15日〜17日）で、鹿児島の城下の約1割が焼けた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「生麦事件」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E9%BA%A6%E4%BA%8B%E4%BB%B6",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「薩英戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%96%A9%E8%8B%B1%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-shimonoseki-war",
+      "jp-satcho-alliance"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-shimonoseki-war",
+    "title": "下関戦争（四国艦隊下関砲撃事件）",
+    "category": "war",
+    "start": {
+      "year": 1863,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1864,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 33.96,
+      "lng": 130.95,
+      "placeName": "関門海峡（下関）",
+      "precision": "region"
+    },
+    "summary": "攘夷を掲げる長州藩が、イギリス・フランス・オランダ・アメリカの4か国と2度にわたって戦った。敗れた長州藩は攘夷が無理だと知り、以後はイギリスに近づいて軍備を強め、倒幕へと進んでいった。",
+    "historicalNote": "文久3年（1863年）と元治元年（1864年）。文久3年の戦いを「下関事件」、元治元年の戦いを「四国艦隊下関砲撃事件」と呼んで区別することもある。「馬関戦争」とも呼ばれる（馬関は下関の古い呼び名）。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「下関戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E9%96%A2%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-namamugi-satsuei",
+      "jp-satcho-alliance",
+      "opium-war"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-ikedaya",
+    "title": "池田屋事件",
+    "category": "politics",
+    "start": {
+      "year": 1864,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.009,
+      "lng": 135.7706,
+      "placeName": "池田屋（京都・三条小橋）",
+      "precision": "exact"
+    },
+    "summary": "京都三条の旅籠池田屋にひそんでいた長州藩・土佐藩などの尊王攘夷派の志士たちを、京都守護職の配下の新選組が襲った。",
+    "historicalNote": "元治元年6月5日（1864年7月8日）。池田屋騒動などとも呼ばれ、近藤勇は「洛陽動乱」と名づけている。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「池田屋事件」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B1%A0%E7%94%B0%E5%B1%8B%E4%BA%8B%E4%BB%B6",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-shimonoseki-war",
+      "jp-satcho-alliance"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-satcho-alliance",
+    "title": "薩長同盟",
+    "category": "politics",
+    "start": {
+      "year": 1866,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.03,
+      "lng": 135.755,
+      "placeName": "小松帯刀邸（京都市上京区）",
+      "precision": "region"
+    },
+    "summary": "坂本龍馬の仲介により、薩摩藩と長州藩が、京都で政治的・軍事的な同盟を結んだ。",
+    "historicalNote": "慶応2年1月21日（1866年3月7日）、近衛家の別邸・御花畑屋敷（小松帯刀邸）で結ばれた。薩長盟約・薩長連合とも言う。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「薩長同盟」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%96%A9%E9%95%B7%E5%90%8C%E7%9B%9F",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-namamugi-satsuei",
+      "jp-shimonoseki-war",
+      "jp-taisei-hokan",
+      "jp-boshin"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-taisei-hokan",
+    "title": "大政奉還",
+    "category": "politics",
+    "start": {
+      "year": 1867,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.0142,
+      "lng": 135.7481,
+      "placeName": "二条城（京都市）",
+      "precision": "exact"
+    },
+    "summary": "15代将軍徳川慶喜は、京都の二条城で、政権を明治天皇に返すことを申し出た。翌日、天皇はこれを許した。",
+    "historicalNote": "慶応3年10月14日（1867年11月9日）に奏上し、翌15日に勅許された。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「大政奉還」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%94%BF%E5%A5%89%E9%82%84",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-edo-shogunate",
+      "jp-osei-fukko",
+      "meiji-restoration"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-osei-fukko",
+    "title": "王政復古の大号令",
+    "category": "politics",
+    "start": {
+      "year": 1868,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.0254,
+      "lng": 135.7621,
+      "placeName": "京都御所",
+      "precision": "exact"
+    },
+    "summary": "大政奉還を受けて、京都御所で明治天皇から王政復古の大号令が出された。江戸幕府と摂政・関白を廃止し、新たに三職を置いて、天皇のもとで公家・大名・藩士から人を登用する新しい政府が生まれた。",
+    "historicalNote": "慶応3年12月9日（1868年1月3日）。岩倉具視ら倒幕派の公家と、尾張・越前・土佐・安芸・薩摩の5藩による政変で、排除された旧幕府の勢力との対立は戊辰戦争へとつながった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「王政復古 (日本)」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%8E%8B%E6%94%BF%E5%BE%A9%E5%8F%A4_(%E6%97%A5%E6%9C%AC)",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-taisei-hokan",
+      "jp-boshin",
+      "meiji-restoration"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-boshin",
+    "title": "戊辰戦争",
+    "category": "war",
+    "start": {
+      "year": 1868,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1869,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.94,
+      "lng": 135.75,
+      "placeName": "鳥羽・伏見（京都南部。代表点）",
+      "precision": "region"
+    },
+    "summary": "王政復古で生まれた新政府の軍（薩摩・長州・土佐藩などが中心）と、旧幕府軍や奥羽越列藩同盟などが戦った、日本の近代で最大の内戦。新政府軍が勝ち、明治新政府が日本を治める政府として国際的にも認められた。",
+    "historicalNote": "慶応4年／明治元年（1868年）〜明治2年（1869年）。名前は1868年の干支「戊辰」から。戦いは各地に及んだため、地点は鳥羽・伏見の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「戊辰戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%88%8A%E8%BE%B0%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "明治",
+    "relatedEventIds": [
+      "meiji-restoration",
+      "jp-osei-fukko",
+      "jp-edo-castle"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-edo-castle",
+    "title": "江戸無血開城",
+    "category": "politics",
+    "start": {
+      "year": 1868,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.6852,
+      "lng": 139.7528,
+      "placeName": "江戸城（東京都千代田区）",
+      "precision": "exact"
+    },
+    "summary": "新政府軍と旧幕府（徳川家）との交渉の末、江戸城が戦うことなく新政府に明け渡された。戊辰戦争のなかで、新政府の側が一気に優勢になる転機となった。",
+    "historicalNote": "慶応4年4月11日（1868年5月3日）に引き渡された。そこに至る交渉の過程は、小説・演劇・テレビドラマ・映画の題材にたびたび取り上げられてきた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「江戸開城」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E6%88%B8%E9%96%8B%E5%9F%8E",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "明治",
+    "relatedEventIds": [
+      "jp-boshin",
+      "jp-edo-shogunate"
+    ]
   }
 ]

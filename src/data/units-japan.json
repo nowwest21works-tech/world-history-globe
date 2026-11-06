@@ -4,7 +4,8 @@
     "第1回（世界史とつなぐ橋 20件・PR①）",
     "第2回（原始・古代・中世 20件）",
     "第3回（中世末・近世・近現代 20件）",
-    "第4回（古代・中世・戦国 20件）"
+    "第4回（古代・中世・戦国 20件）",
+    "第5回（近世・幕末 20件）"
   ],
   "majors": [
     {
@@ -185,45 +186,18 @@
         "jp-azuchi",
         "jp-yamazaki",
         "jp-komaki-nagakute",
-        "jp-odawara"
+        "jp-odawara",
+        "jp-osaka-siege",
+        "jp-satsuma-ryukyu",
+        "jp-sankin-kotai",
+        "jp-genroku",
+        "jp-kyoho-reform",
+        "jp-kansei-reform",
+        "jp-ino-tadataka",
+        "jp-ikokusen",
+        "jp-tenpo-reform"
       ],
       "candidates": [
-        {
-          "title": "元禄文化",
-          "batch": "第5回"
-        },
-        {
-          "title": "享保の改革",
-          "batch": "第5回"
-        },
-        {
-          "title": "寛政の改革",
-          "batch": "第5回"
-        },
-        {
-          "title": "天保の改革",
-          "batch": "第5回"
-        },
-        {
-          "title": "伊能忠敬の日本地図",
-          "batch": "第5回"
-        },
-        {
-          "title": "参勤交代の制度化",
-          "batch": "第5回"
-        },
-        {
-          "title": "琉球への島津氏の侵攻",
-          "batch": "第5回"
-        },
-        {
-          "title": "異国船打払令とモリソン号事件",
-          "batch": "第5回"
-        },
-        {
-          "title": "大坂の陣",
-          "batch": "第5回"
-        },
         {
           "title": "生類憐みの令と文治政治",
           "batch": "予備"
@@ -285,53 +259,20 @@
         "jp-potsdam-occupation",
         "jp-constitution-1946",
         "jp-sf-treaty",
-        "jp-high-growth"
+        "jp-high-growth",
+        "jp-harris-treaty",
+        "jp-ansei-purge",
+        "jp-sakuradamon",
+        "jp-namamugi-satsuei",
+        "jp-shimonoseki-war",
+        "jp-ikedaya",
+        "jp-satcho-alliance",
+        "jp-taisei-hokan",
+        "jp-osei-fukko",
+        "jp-boshin",
+        "jp-edo-castle"
       ],
       "candidates": [
-        {
-          "title": "日米修好通商条約",
-          "batch": "第5回"
-        },
-        {
-          "title": "戊辰戦争",
-          "batch": "第5回"
-        },
-        {
-          "title": "安政の大獄",
-          "batch": "第5回"
-        },
-        {
-          "title": "桜田門外の変",
-          "batch": "第5回"
-        },
-        {
-          "title": "生麦事件と薩英戦争",
-          "batch": "第5回"
-        },
-        {
-          "title": "下関戦争（四国艦隊下関砲撃事件）",
-          "batch": "第5回"
-        },
-        {
-          "title": "池田屋事件",
-          "batch": "第5回"
-        },
-        {
-          "title": "薩長同盟",
-          "batch": "第5回"
-        },
-        {
-          "title": "大政奉還",
-          "batch": "第5回"
-        },
-        {
-          "title": "王政復古の大号令",
-          "batch": "第5回"
-        },
-        {
-          "title": "江戸無血開城",
-          "batch": "第5回"
-        },
         {
           "title": "廃藩置県",
           "batch": "第6回"
