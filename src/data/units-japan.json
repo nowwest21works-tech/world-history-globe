@@ -5,7 +5,8 @@
     "第2回（原始・古代・中世 20件）",
     "第3回（中世末・近世・近現代 20件）",
     "第4回（古代・中世・戦国 20件）",
-    "第5回（近世・幕末 20件）"
+    "第5回（近世・幕末 20件）",
+    "第6回（明治〜平成 14件）"
   ],
   "majors": [
     {
@@ -270,65 +271,23 @@
         "jp-taisei-hokan",
         "jp-osei-fukko",
         "jp-boshin",
-        "jp-edo-castle"
+        "jp-edo-castle",
+        "jp-hakodate",
+        "jp-haihan-chiken",
+        "jp-jiyu-minken",
+        "jp-treaty-revision",
+        "jp-anglo-japanese",
+        "jp-taisho-democracy",
+        "jp-washington-conference",
+        "jp-kanto-eq",
+        "jp-league-withdrawal",
+        "jp-okinawa-battle",
+        "jp-okinawa-reversion",
+        "jp-oil-shock",
+        "jp-hanshin-eq",
+        "jp-east-japan-eq"
       ],
       "candidates": [
-        {
-          "title": "廃藩置県",
-          "batch": "第6回"
-        },
-        {
-          "title": "関東大震災",
-          "batch": "第6回"
-        },
-        {
-          "title": "沖縄の本土復帰",
-          "batch": "第6回"
-        },
-        {
-          "title": "石油危機の日本への影響",
-          "batch": "第6回"
-        },
-        {
-          "title": "阪神・淡路大震災",
-          "batch": "第6回"
-        },
-        {
-          "title": "東日本大震災",
-          "batch": "第6回"
-        },
-        {
-          "title": "自由民権運動",
-          "batch": "第6回"
-        },
-        {
-          "title": "条約改正の達成",
-          "batch": "第6回"
-        },
-        {
-          "title": "大正デモクラシーと普通選挙法",
-          "batch": "第6回"
-        },
-        {
-          "title": "沖縄戦",
-          "batch": "第6回"
-        },
-        {
-          "title": "箱館戦争",
-          "batch": "第6回"
-        },
-        {
-          "title": "日英同盟",
-          "batch": "第6回"
-        },
-        {
-          "title": "ワシントン会議",
-          "batch": "第6回"
-        },
-        {
-          "title": "国際連盟からの脱退",
-          "batch": "第6回"
-        },
         {
           "title": "地租改正",
           "batch": "予備"
