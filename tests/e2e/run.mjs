@@ -495,7 +495,7 @@ const query = (page) => page.evaluate(() => location.search);
     await menu.waitFor();
     const titles = await menu.locator(".tour-card h3").allInnerTexts();
     assert(
-      titles.join("/") === "前500年頃、世界では？/紙の旅/銀が世界をめぐる/元寇――ユーラシアの嵐が博多湾へ/800年頃、世界では？/1600年、日本では？ 世界では？",
+      titles.join("/") === "前500年頃、世界では？/紙の旅/銀が世界をめぐる/元寇――ユーラシアの嵐が博多湾へ/800年頃、世界では？/1600年、日本では？ 世界では？/幕末――黒船から箱館まで",
       `ツアー一覧が違う: ${titles}`,
     );
     await page.getByTestId("tour-start-paper").click();
@@ -1222,6 +1222,27 @@ const markerCenter = (page, id) =>
     }
     assert(/ポトシ.*\(world\)/.test(seq[0]) && /石見銀山.*\(japan\)/.test(seq[1]) && /マニラ.*\(world\)/.test(seq[2]), seq.join(" → "));
     return seq.join(" → ");
+  });
+
+  await check("またぐツアー(PC): 「幕末――黒船から箱館まで」は地球儀（アヘン戦争・ペリー来航）から日本地図へ移り、箱館戦争で終わる", async () => {
+    await page.goto(`${URL}?tour=bakumatsu&step=1`);
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    await page.getByTestId("tour-step-title").waitFor();
+    const seq = [];
+    for (let i = 0; i < 10; i++) {
+      if (i > 0) {
+        await page.getByTestId("tour-next").click();
+        await page.waitForTimeout(400);
+      }
+      seq.push(`${(await page.getByTestId("tour-step-title").innerText()).trim()}(${await page.locator(".app").getAttribute("data-mode")})`);
+    }
+    assert(/アヘン戦争.*\(world\)/.test(seq[0]) && /ペリー.*\(world\)/.test(seq[1]) && /日米修好通商条約.*\(japan\)/.test(seq[2]), seq.slice(0, 3).join(" → "));
+    assert(/箱館戦争.*\(japan\)/.test(seq[9]), `最後が箱館戦争でない: ${seq[9]}`);
+    const arcs = await page.locator(".japan-map [data-testid=arc-label]").count();
+    assert(arcs >= 5, `日本地図の弧が少ない（${arcs}）`);
+    await page.waitForTimeout(1500);
+    await page.screenshot({ path: `${SHOTS}/tour-bakumatsu-last.png` });
+    return `${seq[0]} → … → ${seq[9]}（弧 ${arcs}本）`;
   });
 
   await check("日本だけのツアー(PC): 「1600年、日本では？ 世界では？」を日本地図のまま最後まで。「同じころ、世界では？」の段も出る", async () => {

@@ -482,5 +482,179 @@
     "outro": "1600年の日本は、関ヶ原の戦いで新しい政権が生まれる一方、銀と交易を通じて東アジアや世界の動きとも深く結びついていました。画面下の「同じころ、世界では？」には、明や朝鮮、太平洋を渡る銀の道などが並んでいます。",
     "closingQuestion": "1600年の日本の出来事のうち、世界の動きとつながっているものはどれだろうか？ そのつながりを、地球儀に切り替えて確かめてみよう。",
     "verified": false
+  },
+  {
+    "id": "bakumatsu",
+    "title": "幕末――黒船から箱館まで",
+    "kind": "connection",
+    "intro": "アヘン戦争で清がイギリスに敗れたころから、欧米の船が日本の近海にも姿を見せるようになりました。黒船の来航から箱館での最後の戦いまで、およそ15年。地球儀から日本地図へ移りながら、幕府が倒れ新しい政府が生まれるまでの流れを追ってみましょう。",
+    "steps": [
+      {
+        "id": "opium",
+        "eventId": "opium-war",
+        "year": 1840,
+        "narration": "1840年、清とイギリスのあいだでアヘン戦争が起こり、清は敗れて港を開くことになりました。アジアの大国が欧米の軍艦に屈したという知らせは、海を越えて日本にも伝わります。",
+        "question": "清の敗北は、日本の人々にどのように受け止められたのだろうか？"
+      },
+      {
+        "id": "perry",
+        "eventId": "jp-perry",
+        "year": 1853,
+        "narration": "1853年、ペリーの率いるアメリカの艦隊が浦賀沖に現れ、開国を求めました。翌年、幕府は日米和親条約を結び、長く続いた対外政策は大きく転換します。",
+        "question": "幕府が戦わずに条約を結ぶ道を選んだのは、なぜだろうか？",
+        "arcFrom": {
+          "eventId": "opium-war",
+          "certainty": "established",
+          "label": "清の敗北の知らせ"
+        }
+      },
+      {
+        "id": "harris",
+        "eventId": "jp-harris-treaty",
+        "year": 1858,
+        "mode": "japan",
+        "camera": {
+          "lat": 35.5,
+          "lng": 139.6,
+          "zoom": 3
+        },
+        "narration": "地図は日本へ。1858年、幕府はアメリカと通商条約を結び、港を開いて貿易を始めることになりました。天皇の許しを得ないままの調印は強い反発を呼び、安政の大獄や桜田門外の変へと続きます。",
+        "question": "通商条約の調印をきっかけに、国内の対立が激しくなったのはなぜだろうか？",
+        "arcFrom": {
+          "eventId": "jp-perry",
+          "certainty": "established",
+          "label": "和親から通商へ"
+        }
+      },
+      {
+        "id": "satsuei",
+        "eventId": "jp-namamugi-satsuei",
+        "year": 1863,
+        "mode": "japan",
+        "camera": {
+          "lat": 32.6,
+          "lng": 131.5,
+          "zoom": 2.6
+        },
+        "narration": "1862年の生麦事件をきっかけに、翌年イギリス艦隊と薩摩藩が鹿児島湾で戦いました。双方が大きな損害を出したこの戦いのあと、薩摩とイギリスはかえって近づいていきます。",
+        "question": "戦った相手と手を結ぶようになったのは、なぜだろうか？",
+        "arcFrom": {
+          "eventId": "jp-harris-treaty",
+          "certainty": "established",
+          "label": "開港と攘夷のぶつかり合い"
+        }
+      },
+      {
+        "id": "shimonoseki",
+        "eventId": "jp-shimonoseki-war",
+        "year": 1864,
+        "mode": "japan",
+        "camera": {
+          "lat": 33.4,
+          "lng": 131.3,
+          "zoom": 3
+        },
+        "narration": "長州藩は攘夷を掲げて関門海峡を通る外国船を砲撃し、1864年にはイギリス・フランス・オランダ・アメリカの4か国の艦隊に反撃されて敗れました。長州もまた、攘夷から軍備の近代化へと向きを変えます。",
+        "question": "薩摩と長州が、どちらも欧米との戦いのあとに方針を変えたことには、どんな共通点があるだろうか？",
+        "arcFrom": {
+          "eventId": "jp-namamugi-satsuei",
+          "certainty": "established",
+          "label": "攘夷の行きづまり"
+        }
+      },
+      {
+        "id": "satcho",
+        "eventId": "jp-satcho-alliance",
+        "year": 1866,
+        "mode": "japan",
+        "camera": {
+          "lat": 34.6,
+          "lng": 134.0,
+          "zoom": 2.6
+        },
+        "narration": "1866年、坂本龍馬の仲介で、薩摩藩と長州藩が京都で同盟を結びました。欧米との戦いを経験した二つの藩が手を組んだことで、幕府を倒す動きが一気に強まります。",
+        "question": "薩長同盟は、幕府にとってどんな意味を持ったのだろうか？",
+        "arcFrom": {
+          "eventId": "jp-shimonoseki-war",
+          "certainty": "established",
+          "label": "攘夷から倒幕へ"
+        }
+      },
+      {
+        "id": "taisei",
+        "eventId": "jp-taisei-hokan",
+        "year": 1867,
+        "mode": "japan",
+        "camera": {
+          "lat": 35.01,
+          "lng": 135.75,
+          "zoom": 5
+        },
+        "narration": "1867年、15代将軍徳川慶喜は京都の二条城で、政権を天皇に返すと申し出ました（大政奉還）。同じ年の暮れには王政復古の大号令が出され、江戸幕府は廃止されます。",
+        "question": "慶喜が自分から政権を返したのは、どんなねらいがあったからだと考えられるだろうか？",
+        "arcFrom": {
+          "eventId": "jp-satcho-alliance",
+          "certainty": "established",
+          "label": "倒幕の圧力"
+        }
+      },
+      {
+        "id": "boshin",
+        "eventId": "jp-boshin",
+        "year": 1868,
+        "mode": "japan",
+        "camera": {
+          "lat": 35.0,
+          "lng": 135.75,
+          "zoom": 4
+        },
+        "narration": "1868年、新政府の軍と旧幕府軍のあいだで戊辰戦争が始まりました。薩摩・長州・土佐などの藩を中心とする新政府軍は、京都から東へと兵を進めていきます。",
+        "question": "同じ日本の人どうしが戦った戊辰戦争は、各地の人々にとってどんな出来事だったのだろうか？",
+        "arcFrom": {
+          "eventId": "jp-satcho-alliance",
+          "certainty": "established",
+          "label": "新政府軍の中心に"
+        }
+      },
+      {
+        "id": "edo",
+        "eventId": "jp-edo-castle",
+        "year": 1868,
+        "mode": "japan",
+        "camera": {
+          "lat": 35.69,
+          "lng": 139.75,
+          "zoom": 4
+        },
+        "narration": "新政府軍と旧幕府側の話し合いの末、江戸城は戦うことなく新政府に明け渡されました。大きな町が戦火をまぬがれたこの出来事で、新政府の側が一気に優勢になります。",
+        "question": "江戸城が戦わずに明け渡されたことは、町に住む人々にとってどんな意味があっただろうか？",
+        "arcFrom": {
+          "eventId": "jp-boshin",
+          "certainty": "established",
+          "label": "東へ進む新政府軍"
+        }
+      },
+      {
+        "id": "hakodate",
+        "eventId": "jp-hakodate",
+        "year": 1869,
+        "mode": "japan",
+        "camera": {
+          "lat": 41.8,
+          "lng": 140.76,
+          "zoom": 3
+        },
+        "narration": "旧幕府軍の一部は北へ逃れ、箱館の五稜郭にたてこもりました。1869年、ここでの戦いが戊辰戦争の最後となり、新しい政府が日本全体を治める時代が始まります。",
+        "question": "黒船の来航から箱館の戦いまでの約15年で、日本の何が一番大きく変わったと考えるだろうか？",
+        "arcFrom": {
+          "eventId": "jp-boshin",
+          "certainty": "established",
+          "label": "最後の戦いは北の地で"
+        }
+      }
+    ],
+    "outro": "清の敗北の知らせ、黒船、通商条約、薩英戦争と下関戦争。欧米との出会いと衝突が、攘夷から倒幕へ、そして新しい政府の誕生へと日本を動かしていきました。幕末は、日本の中だけでなく、世界の動きの中で起きた変化でもあります。",
+    "closingQuestion": "幕末の日本の変化を、同じころの清やインド、アメリカの動きと比べると、何が見えてくるだろうか？地球儀に切り替えて確かめてみよう。",
+    "verified": false
   }
 ]

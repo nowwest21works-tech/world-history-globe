@@ -809,7 +809,8 @@
     "relatedEventIds": [
       "opium-war",
       "industrial-revolution",
-      "edo-sakoku"
+      "edo-sakoku",
+      "jp-harris-treaty"
     ]
   },
   {
@@ -3532,7 +3533,8 @@
     "era": "江戸",
     "relatedEventIds": [
       "jp-perry",
-      "jp-ansei-purge"
+      "jp-ansei-purge",
+      "jp-namamugi-satsuei"
     ]
   },
   {
@@ -3872,7 +3874,8 @@
     "relatedEventIds": [
       "meiji-restoration",
       "jp-osei-fukko",
-      "jp-edo-castle"
+      "jp-edo-castle",
+      "jp-hakodate"
     ]
   },
   {
