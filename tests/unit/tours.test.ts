@@ -8,11 +8,11 @@ describe("tours.json", () => {
     expect(validateTours(TOURS, EVENTS)).toEqual([]);
   });
 
-  it("6本：同時代型3本・つながり型3本（うち世界と日本をまたぐもの2本、日本だけのもの1本）", () => {
-    expect(TOURS.map((t) => t.id)).toEqual(["bc500", "paper", "silver", "mongol", "ad800", "jp1600"]);
+  it("7本：同時代型3本・つながり型4本（うち世界と日本をまたぐもの3本、日本だけのもの1本）", () => {
+    expect(TOURS.map((t) => t.id)).toEqual(["bc500", "paper", "silver", "mongol", "ad800", "jp1600", "bakumatsu"]);
     expect(TOURS.filter((t) => t.kind === "contemporary").length).toBe(3);
-    expect(TOURS.filter((t) => t.kind === "connection").length).toBe(3);
-    expect(TOURS.filter(crossesModes).map((t) => t.id)).toEqual(["silver", "mongol"]);
+    expect(TOURS.filter((t) => t.kind === "connection").length).toBe(4);
+    expect(TOURS.filter(crossesModes).map((t) => t.id)).toEqual(["silver", "mongol", "bakumatsu"]);
   });
 
   it("「1600年、日本では？ 世界では？」：日本地図だけで巡る同時代型", () => {
@@ -33,6 +33,18 @@ describe("tours.json", () => {
     // 日本地図のカメラは緯度・経度と拡大率で表す
     expect(t.steps[3]!.camera?.zoom).toBeGreaterThan(0);
     expect(t.steps[3]!.camera?.altitude).toBeUndefined();
+  });
+
+  it("幕末ツアー：アヘン戦争とペリー来航を地球儀で見てから日本地図へ移り、箱館戦争で終わる", () => {
+    const t = TOURS.find((x) => x.id === "bakumatsu")!;
+    expect(t.kind).toBe("connection");
+    expect(t.steps.map((s) => s.eventId)).toEqual([
+      "opium-war", "jp-perry", "jp-harris-treaty", "jp-namamugi-satsuei", "jp-shimonoseki-war",
+      "jp-satcho-alliance", "jp-taisei-hokan", "jp-boshin", "jp-edo-castle", "jp-hakodate",
+    ]);
+    expect(t.steps.map(stepMode)).toEqual(["world", "world", ...Array(8).fill("japan")]);
+    expect(t.steps[2]!.camera?.zoom).toBeGreaterThan(0);
+    expect(positionMode(t, t.steps.length)).toBe("japan");
   });
 
   it("銀のツアー：ポトシ → 石見銀山（日本地図）→ マニラ（地球儀に戻る）", () => {
