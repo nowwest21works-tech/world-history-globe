@@ -3,7 +3,8 @@
   "batchesDone": [
     "第1回（世界史とつなぐ橋 20件・PR①）",
     "第2回（原始・古代・中世 20件）",
-    "第3回（中世末・近世・近現代 20件）"
+    "第3回（中世末・近世・近現代 20件）",
+    "第4回（古代・中世・戦国 20件）"
   ],
   "majors": [
     {
@@ -71,38 +72,16 @@
         "jp-masakado",
         "jp-fujiwara-regency",
         "jp-kokufu-culture",
-        "jp-insei"
+        "jp-insei",
+        "jp-fujiwara-kyo",
+        "jp-taiho-code",
+        "jp-konden-einen",
+        "jp-bokkai",
+        "jp-saicho-kukai",
+        "jp-zenkunen-gosannen",
+        "jp-byodoin"
       ],
-      "candidates": [
-        {
-          "title": "藤原京（日本初の本格的な都城）",
-          "batch": "第4回"
-        },
-        {
-          "title": "大宝律令の制定",
-          "batch": "第4回"
-        },
-        {
-          "title": "墾田永年私財法と荘園の始まり",
-          "batch": "第4回"
-        },
-        {
-          "title": "渤海との交流",
-          "batch": "第4回"
-        },
-        {
-          "title": "最澄・空海と平安仏教",
-          "batch": "第4回"
-        },
-        {
-          "title": "前九年・後三年合戦（奥羽の戦乱）",
-          "batch": "第5回"
-        },
-        {
-          "title": "浄土教の広まり（平等院鳳凰堂）",
-          "batch": "第5回"
-        }
-      ]
+      "candidates": []
     },
     {
       "code": "B1",
@@ -144,44 +123,25 @@
         "jp-onin-war",
         "jp-iwami-silver",
         "jp-tanegashima-guns",
-        "jp-xavier"
+        "jp-xavier",
+        "jp-kamakura-buddhism",
+        "jp-wako",
+        "jp-shocho-ikki",
+        "jp-ginkakuji",
+        "jp-kaga-ikko-ikki",
+        "jp-itsukushima",
+        "jp-kawanakajima",
+        "jp-okehazama",
+        "jp-nagashino"
       ],
       "candidates": [
         {
-          "title": "鎌倉新仏教（法然・親鸞・日蓮・禅宗）",
-          "batch": "第4回"
-        },
-        {
-          "title": "倭寇の活動",
-          "batch": "第4回"
-        },
-        {
-          "title": "惣村と土一揆（正長の土一揆）",
-          "batch": "第4回"
-        },
-        {
-          "title": "銀閣と東山文化",
-          "batch": "第4回"
-        },
-        {
           "title": "アイヌ文化の形成とコシャマインの戦い",
-          "batch": "第4回"
+          "batch": "予備"
         },
         {
           "title": "戦国大名と分国法",
-          "batch": "第5回"
-        },
-        {
-          "title": "加賀の一向一揆",
-          "batch": "第5回"
-        },
-        {
-          "title": "桶狭間の戦い",
-          "batch": "第5回"
-        },
-        {
-          "title": "長篠の戦い",
-          "batch": "第5回"
+          "batch": "予備"
         }
       ]
     },
@@ -221,28 +181,32 @@
         "edo-sakoku",
         "jp-dejima",
         "jp-shakushain",
-        "jp-kaitai-shinsho"
+        "jp-kaitai-shinsho",
+        "jp-azuchi",
+        "jp-yamazaki",
+        "jp-komaki-nagakute",
+        "jp-odawara"
       ],
       "candidates": [
         {
           "title": "元禄文化",
-          "batch": "第4回"
+          "batch": "第5回"
         },
         {
           "title": "享保の改革",
-          "batch": "第4回"
+          "batch": "第5回"
         },
         {
           "title": "寛政の改革",
-          "batch": "第4回"
+          "batch": "第5回"
         },
         {
           "title": "天保の改革",
-          "batch": "第4回"
+          "batch": "第5回"
         },
         {
           "title": "伊能忠敬の日本地図",
-          "batch": "第4回"
+          "batch": "第5回"
         },
         {
           "title": "参勤交代の制度化",
@@ -253,28 +217,32 @@
           "batch": "第5回"
         },
         {
-          "title": "生類憐みの令と文治政治",
+          "title": "異国船打払令とモリソン号事件",
           "batch": "第5回"
+        },
+        {
+          "title": "大坂の陣",
+          "batch": "第5回"
+        },
+        {
+          "title": "生類憐みの令と文治政治",
+          "batch": "予備"
         },
         {
           "title": "田沼意次の政治",
-          "batch": "第5回"
+          "batch": "予備"
         },
         {
           "title": "大塩平八郎の乱",
-          "batch": "第6回"
-        },
-        {
-          "title": "異国船打払令とモリソン号事件",
-          "batch": "第6回"
+          "batch": "予備"
         },
         {
           "title": "国学の発展（本居宣長）",
-          "batch": "第6回"
+          "batch": "予備"
         },
         {
           "title": "化政文化（浮世絵）",
-          "batch": "第6回"
+          "batch": "予備"
         }
       ]
     },
@@ -322,30 +290,6 @@
       "candidates": [
         {
           "title": "日米修好通商条約",
-          "batch": "第4回"
-        },
-        {
-          "title": "廃藩置県",
-          "batch": "第4回"
-        },
-        {
-          "title": "関東大震災",
-          "batch": "第4回"
-        },
-        {
-          "title": "沖縄の本土復帰",
-          "batch": "第4回"
-        },
-        {
-          "title": "石油危機の日本への影響",
-          "batch": "第4回"
-        },
-        {
-          "title": "阪神・淡路大震災",
-          "batch": "第5回"
-        },
-        {
-          "title": "東日本大震災",
           "batch": "第5回"
         },
         {
@@ -353,27 +297,75 @@
           "batch": "第5回"
         },
         {
-          "title": "地租改正",
+          "title": "安政の大獄",
           "batch": "第5回"
         },
         {
-          "title": "自由民権運動",
+          "title": "桜田門外の変",
           "batch": "第5回"
         },
         {
-          "title": "条約改正の達成",
+          "title": "生麦事件と薩英戦争",
           "batch": "第5回"
         },
         {
-          "title": "大正デモクラシーと普通選挙法",
+          "title": "下関戦争（四国艦隊下関砲撃事件）",
           "batch": "第5回"
         },
         {
-          "title": "米騒動",
+          "title": "池田屋事件",
+          "batch": "第5回"
+        },
+        {
+          "title": "薩長同盟",
+          "batch": "第5回"
+        },
+        {
+          "title": "大政奉還",
+          "batch": "第5回"
+        },
+        {
+          "title": "王政復古の大号令",
+          "batch": "第5回"
+        },
+        {
+          "title": "江戸無血開城",
+          "batch": "第5回"
+        },
+        {
+          "title": "廃藩置県",
           "batch": "第6回"
         },
         {
-          "title": "二・二六事件",
+          "title": "関東大震災",
+          "batch": "第6回"
+        },
+        {
+          "title": "沖縄の本土復帰",
+          "batch": "第6回"
+        },
+        {
+          "title": "石油危機の日本への影響",
+          "batch": "第6回"
+        },
+        {
+          "title": "阪神・淡路大震災",
+          "batch": "第6回"
+        },
+        {
+          "title": "東日本大震災",
+          "batch": "第6回"
+        },
+        {
+          "title": "自由民権運動",
+          "batch": "第6回"
+        },
+        {
+          "title": "条約改正の達成",
+          "batch": "第6回"
+        },
+        {
+          "title": "大正デモクラシーと普通選挙法",
           "batch": "第6回"
         },
         {
@@ -381,12 +373,40 @@
           "batch": "第6回"
         },
         {
-          "title": "日韓基本条約と日中国交正常化",
+          "title": "箱館戦争",
           "batch": "第6回"
         },
         {
-          "title": "バブル経済とその崩壊",
+          "title": "日英同盟",
           "batch": "第6回"
+        },
+        {
+          "title": "ワシントン会議",
+          "batch": "第6回"
+        },
+        {
+          "title": "国際連盟からの脱退",
+          "batch": "第6回"
+        },
+        {
+          "title": "地租改正",
+          "batch": "予備"
+        },
+        {
+          "title": "米騒動",
+          "batch": "予備"
+        },
+        {
+          "title": "二・二六事件",
+          "batch": "予備"
+        },
+        {
+          "title": "日韓基本条約と日中国交正常化",
+          "batch": "予備"
+        },
+        {
+          "title": "バブル経済とその崩壊",
+          "batch": "予備"
         },
         {
           "title": "北海道開拓とアイヌ",

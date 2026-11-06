@@ -2352,5 +2352,788 @@
       "oil-crisis",
       "korean-war"
     ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-fujiwara-kyo",
+    "title": "藤原京（日本初の本格的な都城）",
+    "category": "politics",
+    "start": {
+      "year": 694,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 710,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.502,
+      "lng": 135.807,
+      "placeName": "藤原京（奈良県橿原市・明日香村）",
+      "precision": "city"
+    },
+    "summary": "持統天皇は飛鳥の北西に新しい都を造り、宮を移した。道路で碁盤の目のように区切る唐風の条坊制を日本で初めて取り入れた都で、平城京に移るまで日本の都だった。",
+    "historicalNote": "694年に飛鳥浄御原宮から宮が移された（記事本文）。『日本書紀』では「新益京（あらましのみやこ）」などと書かれ、「藤原京」は大正時代の研究者が使い始めた呼び名が定着したもの。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「藤原京」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E5%8E%9F%E4%BA%AC",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "飛鳥",
+    "relatedEventIds": [
+      "jp-jinshin-war",
+      "jp-heijo-kyo",
+      "tang"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-taiho-code",
+    "title": "大宝律令の制定",
+    "category": "politics",
+    "start": {
+      "year": 701,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.502,
+      "lng": 135.807,
+      "placeName": "藤原京（当時の都）",
+      "precision": "region"
+    },
+    "summary": "刑罰を定めた「律」と、国の政治のしくみを定めた「令」をそろえた法典がつくられた。唐の律令を手本にしたと考えられ、律令にもとづいて国を治める体制が形づくられていった。",
+    "historicalNote": "701年（大宝元年）制定。律6巻・令11巻の全17巻。地点は当時の都・藤原京の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「大宝律令」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%AE%9D%E5%BE%8B%E4%BB%A4",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "飛鳥",
+    "relatedEventIds": [
+      "jp-taika-reform",
+      "jp-fujiwara-kyo",
+      "tang"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-konden-einen",
+    "title": "墾田永年私財法と荘園の始まり",
+    "category": "economy",
+    "start": {
+      "year": 743,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.691,
+      "lng": 135.796,
+      "placeName": "平城京（当時の都）",
+      "precision": "region"
+    },
+    "summary": "聖武天皇の時代に、自分で新しく切り開いた田地を、いつまでも自分のものとして耕してよいと認める命令が出された。のちに貴族や寺社の荘園が生まれる土台となった。",
+    "historicalNote": "天平15年5月27日（743年6月23日）に出された勅（天皇の名による命令）。記事は荘園発生の基礎となった法令と位置づける。地点は当時の都・平城京の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「墾田永年私財法」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A2%BE%E7%94%B0%E6%B0%B8%E5%B9%B4%E7%A7%81%E8%B2%A1%E6%B3%95",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "奈良",
+    "relatedEventIds": [
+      "jp-heijo-kyo"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-bokkai",
+    "title": "渤海との交流（渤海使）",
+    "category": "exchange",
+    "start": {
+      "year": 727,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 919,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 43.9,
+      "lng": 129.5,
+      "placeName": "渤海（現在の中国東北部から朝鮮半島北部・沿海地方にかけての国。代表点）",
+      "precision": "region"
+    },
+    "summary": "中国東北部から朝鮮半島北部にかけて栄えた渤海から、日本へたびたび使節がやって来た。記録に残る使節は、727年から919年までに34回にのぼる。",
+    "historicalNote": "渤海（698年〜926年）は大祚栄が建てた国で、周囲との交易で栄え、唐からは「海東の盛国」と呼ばれた。最後は契丹（遼）に滅ぼされた。使節の回数は数え方によって35回ともされる。地点は渤海の領域の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「渤海使」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B8%A4%E6%B5%B7%E4%BD%BF",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「渤海 (国)」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B8%A4%E6%B5%B7_(%E5%9B%BD)",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "奈良",
+    "relatedEventIds": [
+      "tang",
+      "jp-heijo-kyo",
+      "heian-kyo"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-saicho-kukai",
+    "title": "最澄・空海と平安仏教",
+    "category": "religion",
+    "start": {
+      "year": 804,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 835,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.07,
+      "lng": 135.841,
+      "placeName": "比叡山延暦寺（滋賀県大津市）",
+      "precision": "region"
+    },
+    "summary": "最澄と空海は唐に渡って仏教を学んだ。帰国後、最澄は比叡山に延暦寺を建てて天台宗を開き、空海は真言密教を伝えて真言宗の祖となった。奈良の仏教から平安の仏教へと移るきっかけとなった。",
+    "historicalNote": "空海は唐に渡る直前の804年（延暦23年）に得度受戒したとする説が有力（記事本文）。最澄は822年、空海は835年に亡くなった。地点は最澄が建てた延暦寺の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「最澄」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%80%E6%BE%84",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「空海」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A9%BA%E6%B5%B7",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安",
+    "relatedEventIds": [
+      "tang",
+      "heian-kyo"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-zenkunen-gosannen",
+    "title": "前九年・後三年合戦（奥羽の戦乱）",
+    "category": "war",
+    "start": {
+      "year": 1051,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1087,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.2,
+      "lng": 141.0,
+      "placeName": "陸奥・出羽（東北地方。代表点）",
+      "precision": "region"
+    },
+    "summary": "陸奥の豪族安倍氏が国司と争い、源頼義が出羽の豪族清原氏と組んで安倍氏を滅ぼした（前九年合戦）。その後、力を伸ばした清原氏も後三年合戦で滅び、勝ち残った藤原清衡から奥州藤原氏の時代が始まった。",
+    "historicalNote": "前九年合戦は1051年〜1062年、後三年合戦は1083年〜1087年（年は記事本文の和暦による）。清衡を助けた源義家は、朝廷から私戦とみなされ、10年にわたって官職から遠ざけられた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「前九年の役」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E4%B9%9D%E5%B9%B4%E3%81%AE%E5%BD%B9",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「後三年の役」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E4%B8%89%E5%B9%B4%E3%81%AE%E5%BD%B9",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安",
+    "relatedEventIds": [
+      "jp-chusonji",
+      "jp-masakado"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-byodoin",
+    "title": "浄土教の広まりと平等院鳳凰堂",
+    "category": "religion",
+    "start": {
+      "year": 1052,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.889,
+      "lng": 135.808,
+      "placeName": "平等院（京都府宇治市）",
+      "precision": "exact"
+    },
+    "summary": "阿弥陀仏を信じ、念仏をとなえれば極楽浄土に生まれ変われるという浄土教の教えが広まった。藤原頼通は宇治に平等院を開き、阿弥陀如来をまつる鳳凰堂を建てた。",
+    "historicalNote": "1052年（永承7年）、末法の世が到来したこともあって、頼通は宇治の別荘を寺に改めた（記事本文）。鳳凰堂を中心とする文化財が11世紀以来伝わり、世界遺産「古都京都の文化財」の一つになっている。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「平等院」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E7%AD%89%E9%99%A2",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「浄土教」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B5%84%E5%9C%9F%E6%95%99",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安",
+    "relatedEventIds": [
+      "jp-fujiwara-regency",
+      "jp-kokufu-culture"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kamakura-buddhism",
+    "title": "鎌倉新仏教",
+    "category": "religion",
+    "start": {
+      "year": 1185,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1333,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 35.319,
+      "lng": 139.55,
+      "placeName": "鎌倉（代表点）",
+      "precision": "region"
+    },
+    "summary": "法然・親鸞・栄西・道元・日蓮・一遍らが、念仏や禅などの新しい教えを広めた。貴族中心だったそれまでの仏教にくらべて信仰しやすく、地震や飢饉、元寇の不安が続く時代に人々の心をとらえた。",
+    "historicalNote": "平安時代末期から鎌倉時代にかけて広まった。浄土宗・浄土真宗・臨済宗・曹洞宗・日蓮宗・時宗の6宗を指すことが多い。1052年を末法の始まりとする末法思想が背景にあった。開祖たちが活動した場所は京都・鎌倉など各地にわたるため、地点は鎌倉の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「鎌倉仏教」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%8E%8C%E5%80%89%E4%BB%8F%E6%95%99",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "鎌倉",
+    "relatedEventIds": [
+      "jp-kamakura-shogunate",
+      "jp-mongol-invasions"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-wako",
+    "title": "倭寇",
+    "category": "exchange",
+    "start": {
+      "year": 1250,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1600,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "location": {
+      "lat": 34.2,
+      "lng": 127.8,
+      "placeName": "朝鮮半島・中国大陸の沿岸（代表点）",
+      "precision": "region"
+    },
+    "summary": "朝鮮半島や中国大陸の沿岸などで、海賊や私貿易・密貿易をおこなう人々が活動した。中国や朝鮮の側は彼らを倭寇と呼んで恐れた。",
+    "historicalNote": "13世紀から16世紀にかけての活動を指すのが一般的。「倭寇」は中国・朝鮮側での蔑称で、「和寇」とも書き、「八幡（ばはん）」とも呼ばれた。地点は朝鮮半島南岸沖の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「倭寇」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%80%AD%E5%AF%87",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "鎌倉",
+    "relatedEventIds": [
+      "goryeo",
+      "ming",
+      "joseon",
+      "jp-ming-trade"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-shocho-ikki",
+    "title": "正長の土一揆",
+    "category": "politics",
+    "start": {
+      "year": 1428,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.07,
+      "lng": 135.87,
+      "placeName": "近江坂本（滋賀県大津市）",
+      "precision": "region"
+    },
+    "summary": "飢饉や疫病、将軍の代替わりなどで社会の不安が高まるなか、近江の馬借が借金の帳消し（徳政）を求めて立ち上がった。一揆は京都に広がって酒屋や土倉を襲い、奈良など畿内の各地にも及んだ。",
+    "historicalNote": "1428年（正長元年）8月から。興福寺の尋尊がまとめた記録は、土民の蜂起は日本始まって以来これが初めてだと書いている。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「正長の土一揆」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AD%A3%E9%95%B7%E3%81%AE%E5%9C%9F%E4%B8%80%E6%8F%86",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "jp-onin-war"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-ginkakuji",
+    "title": "銀閣と東山文化",
+    "category": "culture",
+    "start": {
+      "year": 1482,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.027,
+      "lng": 135.798,
+      "placeName": "慈照寺（銀閣寺、京都市左京区）",
+      "precision": "exact"
+    },
+    "summary": "8代将軍足利義政は京都の東山に山荘を築き、これがのちの慈照寺（銀閣寺）となった。武家・公家・禅僧の文化がとけあい、能・茶道・華道・庭園・連歌など、今に続く日本的な文化が育った。",
+    "historicalNote": "1482年（文明14年）に山荘の造営が始まった（記事本文）。応仁の乱のあと、京都を離れた文化人が地方の大名のもとへ移り、文化が地方へ広がった。華やかな北山文化に対し、わび・さびに通じる美意識で語られる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「慈照寺」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%85%88%E7%85%A7%E5%AF%BA",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「東山文化」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%B1%B1%E6%96%87%E5%8C%96",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "jp-kinkakuji",
+      "jp-onin-war"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kaga-ikko-ikki",
+    "title": "加賀の一向一揆",
+    "category": "religion",
+    "start": {
+      "year": 1488,
+      "uncertainty": {
+        "kind": "circa"
+      }
+    },
+    "end": {
+      "year": 1582,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 36.56,
+      "lng": 136.65,
+      "placeName": "加賀国（現在の石川県。代表点）",
+      "precision": "region"
+    },
+    "summary": "加賀では本願寺の門徒（一向宗の信者）が中心となり、国人や農民も加わった一揆が大きな力を持った。一国規模の一揆（惣国一揆）が、およそ100年にわたって続いた。",
+    "historicalNote": "長享2年（1488年）頃から天正10年（1582年）まで。地点は加賀国の代表点。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「加賀一向一揆」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%B3%80%E4%B8%80%E5%90%91%E4%B8%80%E6%8F%86",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "jp-onin-war"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-itsukushima",
+    "title": "厳島の戦い",
+    "category": "war",
+    "start": {
+      "year": 1555,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.296,
+      "lng": 132.32,
+      "placeName": "厳島（広島県廿日市市）",
+      "precision": "region"
+    },
+    "summary": "安芸の毛利元就と、主君の大内義隆を討って大内氏の実権を握っていた陶晴賢が、厳島で戦った。元就はのちに安芸・周防・長門・出雲など6か国を支配する中国地方の大大名へと勢力を伸ばした。",
+    "historicalNote": "天文24年10月1日（1555年10月16日）。陶晴賢（もとの名は隆房）は1551年の大寧寺の変で主君の大内義隆を討った。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「厳島の戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8E%B3%E5%B3%B6%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「毛利元就」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AF%9B%E5%88%A9%E5%85%83%E5%B0%B1",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "jp-onin-war",
+      "jp-iwami-silver"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kawanakajima",
+    "title": "川中島の戦い",
+    "category": "war",
+    "start": {
+      "year": 1553,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1564,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 36.62,
+      "lng": 138.18,
+      "placeName": "川中島（八幡原、長野市）",
+      "precision": "region"
+    },
+    "summary": "甲斐の武田信玄と越後の上杉謙信が、北信濃の支配をめぐって川中島で何度も戦った。最大の激戦となった第4次の戦いは、千曲川と犀川が合わさる八幡原のあたりが主な戦場だったと考えられている。",
+    "historicalNote": "主な戦いは計5回、12年余りに及んだ。始まりは1553年（天文22年、記事本文）。両軍とも勝利を主張した。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「川中島の戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E4%B8%AD%E5%B3%B6%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "jp-nagashino"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-okehazama",
+    "title": "桶狭間の戦い",
+    "category": "war",
+    "start": {
+      "year": 1560,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.06,
+      "lng": 136.99,
+      "placeName": "尾張国知多郡桶狭間（愛知県。代表点）",
+      "precision": "region"
+    },
+    "summary": "尾張に攻め込んだ今川義元の大軍に対し、織田信長が本陣を奇襲して義元を討ち取った。信長が勢力を広げるきっかけとなり、松平元康（のちの徳川家康）も三河で独立して信長と同盟を結んだ。",
+    "historicalNote": "永禄3年5月19日（1560年6月12日）。今川軍は2万5千人とされる。家康と信長の清洲同盟は、戦国時代の転機となった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「桶狭間の戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A1%B6%E7%8B%AD%E9%96%93%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "室町",
+    "relatedEventIds": [
+      "jp-kawanakajima",
+      "jp-honnoji"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-nagashino",
+    "title": "長篠の戦い",
+    "category": "war",
+    "start": {
+      "year": 1575,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.92,
+      "lng": 137.55,
+      "placeName": "設楽原（愛知県新城市）",
+      "precision": "exact"
+    },
+    "summary": "三河の長篠城をめぐって、織田信長・徳川家康の連合軍と武田勝頼の軍勢が戦い、武田軍は敗れた。この敗戦をきっかけに武田氏の領国は揺らぎ始めた。",
+    "historicalNote": "天正3年5月21日（1575年）。連合軍3万8千人、武田軍1万5千人とされる。決戦地が設楽原（設楽ヶ原）だったため「長篠・設楽ヶ原の戦い」とも書く。勝頼は1582年に織田信長の侵攻を受けて自害し、戦国大名の武田氏は滅んだ。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「長篠の戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E7%AF%A0%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「武田勝頼」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E7%94%B0%E5%8B%9D%E9%A0%BC",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "安土桃山",
+    "relatedEventIds": [
+      "jp-okehazama",
+      "jp-kawanakajima",
+      "jp-tanegashima-guns"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-azuchi",
+    "title": "安土城",
+    "category": "politics",
+    "start": {
+      "year": 1576,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1582,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.156,
+      "lng": 136.139,
+      "placeName": "安土山（滋賀県近江八幡市）",
+      "precision": "exact"
+    },
+    "summary": "織田信長は琵琶湖の東岸の安土山に城を築き、本拠とした。本能寺の変のあと、山崎の戦いで明智光秀が敗れたのち、天主とその周辺の建物が焼失した。",
+    "historicalNote": "1576年（天正4年）に築城が始まった（記事本文）。焼失の経緯や理由については諸説あり、分かっていない。城跡は国の特別史跡。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「安土城」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E5%9C%9F%E5%9F%8E",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "安土桃山",
+    "relatedEventIds": [
+      "jp-nagashino",
+      "jp-honnoji"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-yamazaki",
+    "title": "山崎の戦い",
+    "category": "war",
+    "start": {
+      "year": 1582,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.893,
+      "lng": 135.676,
+      "placeName": "山崎（天王山付近、京都府大山崎町）",
+      "precision": "exact"
+    },
+    "summary": "本能寺の変から11日後、備中高松城の攻撃から引き返してきた羽柴秀吉の軍が、山城と摂津の境の山崎で明智光秀の軍とぶつかった。光秀は敗れて討ち取られた。",
+    "historicalNote": "天正10年6月13日（1582年7月2日）。古くは「天王山の戦い」と呼ばれてきた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「山崎の戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%B4%8E%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「明智光秀」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%99%BA%E5%85%89%E7%A7%80",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "安土桃山",
+    "relatedEventIds": [
+      "jp-honnoji",
+      "jp-azuchi",
+      "jp-taiko-kenchi"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-komaki-nagakute",
+    "title": "小牧・長久手の戦い",
+    "category": "war",
+    "start": {
+      "year": 1584,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.293,
+      "lng": 136.912,
+      "placeName": "小牧山（愛知県小牧市）",
+      "precision": "region"
+    },
+    "summary": "羽柴秀吉の陣営と、織田信雄・徳川家康の陣営が、尾張北部の小牧山城などを中心に戦った。合戦は美濃・伊勢・紀伊などにも広がり、北陸・四国・関東の戦いとも連動した全国規模の戦役となった。",
+    "historicalNote": "1584年（天正12年）3月〜11月。江戸時代の合戦記では「小牧」や「長久手」を冠した名で呼ばれることが多い。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「小牧・長久手の戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%89%A7%E3%83%BB%E9%95%B7%E4%B9%85%E6%89%8B%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "安土桃山",
+    "relatedEventIds": [
+      "jp-yamazaki",
+      "jp-sekigahara"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "jp-odawara",
+    "title": "小田原征伐",
+    "category": "war",
+    "start": {
+      "year": 1590,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.251,
+      "lng": 139.153,
+      "placeName": "小田原城（神奈川県小田原市）",
+      "precision": "exact"
+    },
+    "summary": "豊臣秀吉は、領地争いの裁定に武力で従わなかった北条氏を、大名どうしの私戦を禁じた惣無事令に背いたとみなし、大軍で攻めた。本拠の小田原城を囲んで北条氏を降した。",
+    "historicalNote": "1590年（天正18年）。北条氏の領地各地での攻略戦もふくめて呼ぶ。秀吉は織田信長の後を継いで天下統一を果たし、近世の社会の基礎を築いたとされる（「豊臣秀吉」導入部）。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「小田原征伐」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%B0%E5%8E%9F%E5%BE%81%E4%BC%90",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「豊臣秀吉」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E8%87%A3%E7%A7%80%E5%90%89",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "安土桃山",
+    "relatedEventIds": [
+      "jp-taiko-kenchi",
+      "jp-edo-shogunate",
+      "jp-hideyoshi-korea"
+    ]
   }
 ]
