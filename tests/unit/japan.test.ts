@@ -234,3 +234,45 @@ describe("作品データ（works.json）は日本の出来事にも紐づく", 
     }
   });
 });
+
+describe("日本史の作品：大河ドラマ3作（PR③）", () => {
+  const TAIGA = {
+    ryomaden: ["jp-perry", "jp-ansei-purge", "jp-sakuradamon", "jp-shimonoseki-war", "jp-ikedaya", "jp-kinmon", "jp-satcho-alliance", "jp-taisei-hokan", "jp-omiya-incident"],
+    sanadamaru: ["jp-honnoji", "jp-tensho-jingo", "jp-komaki-nagakute", "jp-ueda-kassen", "jp-odawara", "jp-hideyoshi-korea", "jp-sekigahara", "jp-edo-shogunate", "jp-osaka-siege"],
+    "kamakuradono-no-13-nin": ["jp-ishibashiyama", "jp-genpei-war", "jp-kamakura-shogunate", "jp-hiki-incident", "jp-jokyu-war"],
+  } as const;
+
+  it("3作が作品データにあり、ドラマ・史実ベース・未検証・出典は作品記事", () => {
+    for (const [id, events] of Object.entries(TAIGA)) {
+      const w = WORKS.find((x) => x.id === id)!;
+      expect(w, id).toBeDefined();
+      expect(w.media).toEqual(["drama"]);
+      expect(w.fidelity).toBe("historical");
+      expect(w.verified).toBe(false);
+      expect(w.eventIds).toEqual(events);
+      expect(w.sources[0]!.url.startsWith("https://ja.wikipedia.org/wiki/")).toBe(true);
+    }
+  });
+
+  it("紐づく出来事はすべて日本の地図に出る（日本モードで選ぶと日本地図のまま移る）", () => {
+    for (const events of Object.values(TAIGA))
+      for (const e of events) expect(inScope(EVENT_BY_ID.get(e)!, "japan"), e).toBe(true);
+  });
+
+  it("世界モードから選んだときの行き先：龍馬伝は共有イベント（ペリー来航）なので地球儀のまま、ほかの2作は日本地図へ切り替わる", () => {
+    const first = (id: keyof typeof TAIGA) => EVENT_BY_ID.get(TAIGA[id][0])!;
+    expect(inScope(first("ryomaden"), "world")).toBe(true);
+    expect(inScope(first("sanadamaru"), "world")).toBe(false);
+    expect(inScope(first("kamakuradono-no-13-nin"), "world")).toBe(false);
+  });
+
+  it("追加した錨のイベント6件は jp- で始まり、日本の地図にだけ出る", () => {
+    for (const id of ["jp-ishibashiyama", "jp-hiki-incident", "jp-tensho-jingo", "jp-ueda-kassen", "jp-kinmon", "jp-omiya-incident"]) {
+      const e = EVENT_BY_ID.get(id)!;
+      expect(e, id).toBeDefined();
+      expect(inScope(e, "japan")).toBe(true);
+      expect(inScope(e, "world")).toBe(false);
+      expect(e.verified).toBe(false);
+    }
+  });
+});
