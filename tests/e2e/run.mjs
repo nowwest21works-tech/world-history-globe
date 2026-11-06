@@ -961,6 +961,20 @@ const markerCenter = (page, id) =>
     return `${y0} のまま日本地図へ（時代区分 ${eras}・${attr}）`;
   });
 
+  await check("日本(PC): 背景の陰影起伏画像（Natural Earth のラスター）が読み込まれ、ベクターの陸地は海岸線だけになる", async () => {
+    await page.waitForSelector("[data-testid=jp-relief-lo].is-ready", { timeout: 15000 });
+    const r = await page.evaluate(() => {
+      const img = document.querySelector("[data-testid=jp-relief-lo]");
+      const land = document.querySelector(".jp-land");
+      return { href: img.getAttribute("href"), outline: land.classList.contains("is-outline"), fill: getComputedStyle(land).fill };
+    });
+    assert(r.href === `${BASE}/japan/relief-lo.webp`, `画像のパスが違う: ${r.href}`);
+    assert(r.outline && r.fill === "none", `陸地が塗られたまま: ${JSON.stringify(r)}`);
+    const res = await page.evaluate(async (href) => (await fetch(href)).status, r.href);
+    assert(res === 200, `画像が取れない: ${res}`);
+    return `${r.href}（HTTP ${res}）`;
+  });
+
   await check("日本(PC): 日本の範囲は前3万年から。世界へ戻ると範囲の端（前3000年）に合わせる", async () => {
     await setSlider(page, 0);
     const y = await yearText(page);
@@ -1278,6 +1292,13 @@ const markerCenter = (page, id) =>
     return `${r.w}px 幅`;
   });
 
+  await check("日本(SP): 画素密度の高い画面では、高解像度の背景画像に切り替わる", async () => {
+    await page.waitForSelector("[data-testid=jp-relief-hi].is-ready", { timeout: 15000 });
+    const href = await page.getByTestId("jp-relief-hi").getAttribute("href");
+    assert(href === `${BASE}/japan/relief-hi.webp`, `画像のパスが違う: ${href}`);
+    return href;
+  });
+
   await check("日本(SP): イベントを開くと、上55%に日本地図・下45%に詳細の2段になり、地点が地図の中央に来る", async () => {
     await page.goto(`${URL}?mode=japan&event=jp-mongol-invasions`);
     await waitJapan(page);
@@ -1370,6 +1391,29 @@ const markerCenter = (page, id) =>
     await page.getByTestId("fallback-notice").waitFor();
     assert((await page.getByTestId("view-toggle").count()) === 0, "世界モード（WebGL なし）で地図に戻すボタンが出る");
     return "日本地図 → 年表 → 世界（年表のまま）";
+  });
+  await ctx.close();
+}
+
+{
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  await ctx.route("**/japan/relief-*.webp", (route) => route.abort());
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await check("背景画像なし: 陰影起伏の画像を読み込めないときは、これまでのベクターの陸地（塗りつぶし）で描く", async () => {
+    await page.goto(`${URL}?mode=japan&event=jp-sekigahara`);
+    await waitJapan(page);
+    await page.waitForFunction(() => !document.querySelector("[data-testid=jp-relief-lo]"), null, { timeout: 10000 });
+    const r = await page.evaluate(() => {
+      const land = document.querySelector(".jp-land");
+      return { outline: land.classList.contains("is-outline"), fill: getComputedStyle(land).fill, hi: !!document.querySelector("[data-testid=jp-relief-hi]") };
+    });
+    assert(!r.outline && r.fill !== "none" && !r.hi, `ベクターの陸地に戻らない: ${JSON.stringify(r)}`);
+    const m = await markerCenter(page, "jp-sekigahara");
+    assert(m && m.hit, "マーカーが押せない");
+    assert(errors.length === 0, errors.join(" | "));
+    return `陸地の塗り ${r.fill}`;
   });
   await ctx.close();
 }

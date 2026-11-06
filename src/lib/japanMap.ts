@@ -145,3 +145,31 @@ export interface Rect {
   w: number;
   h: number;
 }
+
+/** 背景の陰影起伏画像（scripts/build-japan-relief.py が作る）の1枚分の範囲 */
+export interface ReliefLayer {
+  file: string;
+  west: number;
+  east: number;
+  south: number;
+  north: number;
+  width: number;
+  height: number;
+  pxPerDeg: number;
+}
+
+/** 背景画像を置く四角（地図単位）。画像はメルカトル図法に投影済みなので、四隅を合わせるだけで全体が重なる */
+export function reliefRect(layer: ReliefLayer): Rect {
+  const nw = project(layer.north, layer.west);
+  const se = project(layer.south, layer.east);
+  return { x: nw.x, y: nw.y, w: se.x - nw.x, h: se.y - nw.y };
+}
+
+/**
+ * 高解像度の背景に切り替えるか。低解像度の画像が画面上で 1.3 倍より大きく引き伸ばされるとき
+ * （= 画面の1度あたりの画素数が、低解像度の画像の1度あたりの画素数の 1.3 倍を超えるとき）に切り替える。
+ * k は「地図単位 → 画面ピクセル」の倍率、dpr は端末の画素密度。
+ */
+export function wantsHiRes(k: number, dpr: number, loPxPerDeg: number): boolean {
+  return k * MAP_SCALE * dpr > loPxPerDeg * 1.3;
+}

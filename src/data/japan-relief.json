@@ -1,0 +1,25 @@
+{
+  "source": "NE1_HR_LC_SR_W_DR",
+  "layers": {
+    "lo": {
+      "file": "/japan/relief-lo.webp",
+      "west": 96,
+      "east": 178,
+      "south": 10.02016,
+      "north": 58,
+      "width": 1640,
+      "height": 1230,
+      "pxPerDeg": 20
+    },
+    "hi": {
+      "file": "/japan/relief-hi.webp",
+      "west": 122,
+      "east": 150,
+      "south": 24.007437,
+      "north": 46,
+      "width": 1680,
+      "height": 1631,
+      "pxPerDeg": 60
+    }
+  }
+}

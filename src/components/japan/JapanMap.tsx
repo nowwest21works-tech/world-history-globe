@@ -18,12 +18,17 @@ import {
   panBy,
   pixelScale,
   project,
+  reliefRect,
   toScreen,
+  wantsHiRes,
+  type ReliefLayer,
   unproject,
   zoomAt,
   type MapView,
 } from "@/lib/japanMap";
 import land from "@/data/japan-land.json";
+import relief from "@/data/japan-relief.json";
+import { assetPath } from "@/lib/assetPath";
 import { CategoryIcon } from "@/components/legend/CategoryIcon";
 import { useElementSize } from "@/components/globe/useElementSize";
 import type { FlyTarget } from "@/components/globe/GlobeView";
@@ -106,6 +111,9 @@ export default function JapanMap({
     setViewState(v);
   }, []);
   const [picker, setPicker] = useState<Picker | null>(null);
+  // 背景の陰影起伏画像。読み込めるまで（読み込めなかったときも）は、これまでのベクターの陸地で描く
+  const [reliefState, setReliefState] = useState<"loading" | "ok" | "error">("loading");
+  const [hiState, setHiState] = useState<"off" | "loading" | "ok" | "error">("off");
   const anim = useRef(0);
   const interactRef = useRef(onUserInteract);
   interactRef.current = onUserInteract;
@@ -233,7 +241,13 @@ export default function JapanMap({
   const k = size.width ? pixelScale(view, size) : 0;
   const c = project(view.lat, view.lng);
   const landTransform = `translate(${size.width / 2 - c.x * k} ${size.height / 2 - c.y * k}) scale(${k})`;
-  const landPath = useMemo(() => <path d={(land as { path: string }).path} className="jp-land" />, []);
+  const landClass = reliefState === "ok" ? "jp-land is-outline" : "jp-land";
+  const landPath = useMemo(() => <path d={(land as { path: string }).path} className={landClass} />, [landClass]);
+  const dpr = typeof window === "undefined" ? 1 : window.devicePixelRatio || 1;
+  const hiWanted = reliefState === "ok" && k > 0 && wantsHiRes(k, dpr, RELIEF_LO.pxPerDeg);
+  useEffect(() => {
+    if (hiWanted) setHiState((s) => (s === "off" ? "loading" : s));
+  }, [hiWanted]);
   const visible = (x: number, y: number, m = 0) => x >= -m && y >= -m && x <= size.width + m && y <= size.height + m;
 
   const selected = selectedId ? events.find((e) => e.id === selectedId) : undefined;
@@ -314,7 +328,27 @@ export default function JapanMap({
       {size.width > 0 && (
         <>
           <svg className="jp-svg" width={size.width} height={size.height} aria-hidden="true">
-            <g transform={landTransform}>{landPath}</g>
+            <g transform={landTransform}>
+              {reliefState !== "error" && (
+                <ReliefImage
+                  layer={RELIEF_LO}
+                  className={`jp-relief${reliefState === "ok" ? " is-ready" : ""}`}
+                  testId="jp-relief-lo"
+                  onLoad={() => setReliefState("ok")}
+                  onError={() => setReliefState("error")}
+                />
+              )}
+              {reliefState === "ok" && (hiState === "loading" || hiState === "ok") && (
+                <ReliefImage
+                  layer={RELIEF_HI}
+                  className={`jp-relief${hiState === "ok" ? " is-ready" : ""}`}
+                  testId="jp-relief-hi"
+                  onLoad={() => setHiState("ok")}
+                  onError={() => setHiState("error")}
+                />
+              )}
+              {landPath}
+            </g>
             {arcViews.map(({ a, d }) => (
               <path
                 key={a.id}
@@ -473,3 +507,36 @@ export default function JapanMap({
   );
 }
 
+const RELIEF_LO = relief.layers.lo as ReliefLayer;
+const RELIEF_HI = relief.layers.hi as ReliefLayer;
+
+/** 背景の陰影起伏画像（メルカトル図法に投影済み）を、地図単位の四角に合わせて置く */
+function ReliefImage({
+  layer,
+  className,
+  testId,
+  onLoad,
+  onError,
+}: {
+  layer: ReliefLayer;
+  className: string;
+  testId: string;
+  onLoad: () => void;
+  onError: () => void;
+}) {
+  const r = reliefRect(layer);
+  return (
+    <image
+      href={assetPath(layer.file)}
+      x={r.x}
+      y={r.y}
+      width={r.w}
+      height={r.h}
+      preserveAspectRatio="none"
+      className={className}
+      data-testid={testId}
+      onLoad={onLoad}
+      onError={onError}
+    />
+  );
+}
