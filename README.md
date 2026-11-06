@@ -114,6 +114,15 @@ NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run serve      # http://127.0.0.1
 - Natural Earth のデータは **パブリックドメイン**（同リポジトリの LICENSE.md：「All versions of Natural Earth raster + vector map data … are in the public domain」）。表記は不要とされているが、画面の地図の隅とフッター、この README に「地図：Natural Earth」と入れている。
 - 陸地（land）のデータには国境・県境の線は含まれない。陸と海の区別（海岸線）だけを描いている。
 - 再生成：`npm run map:japan`（GitHub から取得）または `node scripts/build-japan-map.mjs <ダウンロードしたフォルダ>`。
+
+#### 背景の陰影起伏（地形が見える衛星写真ふうの背景）
+- `public/japan/relief-lo.webp`（東経96〜178度・北緯10〜58度、1度あたり20画素）と `public/japan/relief-hi.webp`（東経122〜150度・北緯24〜46度、1度あたり60画素＝原寸）は、**Natural Earth の 1:10m ラスター「Natural Earth I with Shaded Relief, Water, and Drainages」（`NE1_HR_LC_SR_W_DR`、21600×10800、正距円筒図法）** から作ったもの。こちらも **パブリックドメイン**（上記と同じ LICENSE.md）。取得元は GitHub の [nvkelso/natural-earth-raster](https://github.com/nvkelso/natural-earth-raster)（コミット `f04832c`）の `10m_rasters/NE1_HR_LC_SR_W_DR/`。
+- 植生の色・陰影起伏（山地）・湖（琵琶湖など）・主な川が入っている。現代の国境・県境・地名は含まない。
+- `scripts/build-japan-relief.py` で、アプリと同じメルカトル図法に投影し直し（地図の座標と画素が一致する）、海を濃紺に・陸を少し暗くして（暗い画面と世界の地球儀に合わせる）、WebP で書き出す（合計約290KB）。範囲は `src/data/japan-relief.json` に入り、画面ではベクターの海岸線を細い線として上に重ねている。
+- 低解像度を先に読み込み、拡大したとき（または画素密度の高い画面）だけ高解像度を読み込む。画像を読み込めないときは、これまでのベクターの陸地（塗りつぶし）で描く。
+- 再生成：元の .tif（約700MB）は大きいのでリポジトリに入れない。`git clone --filter=blob:none --no-checkout --depth 1 https://github.com/nvkelso/natural-earth-raster.git` のあと `git cat-file -p HEAD:10m_rasters/NE1_HR_LC_SR_W_DR/NE1_HR_LC_SR_W_DR.tif > NE1_HR_LC_SR_W_DR.tif` で1つだけ取り、Pillow・numpy・tifffile を入れた Python で `python scripts/build-japan-relief.py NE1_HR_LC_SR_W_DR.tif`。
+- 比べた候補：`NE1_HR_LC_SR_W`（同じ見た目だが湖と川がなく、琵琶湖が陸になる）、`HYP_HR_SR_OB_DR`（標高を段彩で塗る地図帳ふうの見た目で、衛星写真ふうではない）。
+
 - **採用しなかった候補**：
   - 国土地理院の地図タイル：現代の地名・行政界が入ること、タイル配信サーバーに依存してオフライン・静的書き出しで完結しなくなることから見送った。
   - 3D地球儀のズームで日本を見せる案：京都・奈良・大阪のような近い地点を見分けられず、地表画像も粗くなるため見送った（指示書 1.2）。

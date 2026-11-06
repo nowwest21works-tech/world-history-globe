@@ -317,6 +317,10 @@ a { color: var(--accent); }
 .japan-map:active { cursor: grabbing; }
 .jp-svg { position: absolute; left: 0; top: 0; display: block; }
 .jp-land { fill: #2f4a3a; stroke: #8fb59a; stroke-width: 0.9; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+/* 背景の陰影起伏画像（Natural Earth のラスター）。読み込めたら、ベクターの陸地は細い海岸線だけにする */
+.jp-relief { opacity: 0; transition: opacity 0.35s ease; image-rendering: auto; }
+.jp-relief.is-ready { opacity: 1; filter: brightness(0.86) saturate(0.95); }
+.jp-land.is-outline { fill: none; stroke: rgba(214, 232, 220, 0.55); stroke-width: 0.6; }
 .jp-pos { position: absolute; }
 .japan-map .marker { position: absolute; }
 .jp-arc { vector-effect: non-scaling-stroke; stroke-linecap: round; }
