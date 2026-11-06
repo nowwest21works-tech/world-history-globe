@@ -495,7 +495,7 @@ const query = (page) => page.evaluate(() => location.search);
     await menu.waitFor();
     const titles = await menu.locator(".tour-card h3").allInnerTexts();
     assert(
-      titles.join("/") === "前500年頃、世界では？/紙の旅/銀が世界をめぐる/元寇――ユーラシアの嵐が博多湾へ/800年頃、世界では？/1600年、日本では？ 世界では？/幕末――黒船から箱館まで",
+      titles.join("/") === "前500年頃、世界では？/紙の旅/銀が世界をめぐる/元寇――ユーラシアの嵐が博多湾へ/800年頃、世界では？/1600年、日本では？ 世界では？/幕末――黒船から箱館まで/『龍馬伝』で歩く幕末――池田屋から近江屋まで",
       `ツアー一覧が違う: ${titles}`,
     );
     await page.getByTestId("tour-start-paper").click();
@@ -1159,6 +1159,56 @@ const markerCenter = (page, id) =>
     return `見出し ${heads.length}・項目 ${n}`;
   });
 
+  await check("日本・作品(PC): 「作品から探す」に大河ドラマ3作が出て、『龍馬伝』を選ぶと日本地図のままペリー来航へ移る", async () => {
+    await page.goto(`${URL}?mode=japan`);
+    await waitJapan(page);
+    await page.getByTestId("works-open").click();
+    await page.getByTestId("works-menu").waitFor();
+    for (const id of ["ryomaden", "sanadamaru", "kamakuradono-no-13-nin"])
+      assert((await page.getByTestId(`work-start-${id}`).count()) === 1, `${id} が一覧にない`);
+    await page.getByTestId("works-search").fill("大河");
+    const count = await page.getByTestId("works-count").innerText();
+    assert(count.startsWith("3件"), `「大河」での件数: ${count}`);
+    const titles = await page.locator("[data-testid=works-list] .work-card-title").allInnerTexts();
+    assert(titles.join("/") === "鎌倉殿の13人/真田丸/龍馬伝", `時代順でない: ${titles}`);
+    await page.screenshot({ path: `${SHOTS}/jp-works-taiga.png` });
+    await page.getByTestId("work-start-ryomaden").click();
+    const d = page.getByTestId("event-detail");
+    await d.waitFor();
+    assert((await page.locator(".app").getAttribute("data-mode")) === "japan", "日本地図のままでない");
+    const title = await d.locator(".detail-title").innerText();
+    assert(title.startsWith("ペリー来航"), `詳細が違う: ${title}`);
+    assert((await query(page)) === "?mode=japan&work=ryomaden", `URL: ${await query(page)}`);
+    const w = page.getByTestId("detail-work-ryomaden");
+    assert(await w.evaluate((el) => el.open), "龍馬伝が開いていない");
+    await page.waitForTimeout(1500);
+    const m = await markerCenter(page, "jp-perry");
+    assert(m && m.hit, "ペリー来航のマーカーが見えない");
+    await page.screenshot({ path: `${SHOTS}/jp-works-ryomaden.png` });
+    return `一覧 ${titles.join("・")} → 「${title}」（${await query(page)}）`;
+  });
+
+  await check("日本・作品(PC): 世界モードから選ぶと、『真田丸』は日本地図へ切り替わって本能寺の変、『龍馬伝』は地球儀のままペリー来航", async () => {
+    await page.goto(URL);
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    await page.getByTestId("works-open").click();
+    await page.getByTestId("work-start-sanadamaru").click();
+    const d = page.getByTestId("event-detail");
+    await d.waitFor();
+    await page.waitForFunction(() => document.querySelector(".app")?.getAttribute("data-mode") === "japan", null, { timeout: 10000 });
+    const t1 = await d.locator(".detail-title").innerText();
+    assert(t1.startsWith("本能寺の変"), `詳細が違う: ${t1}`);
+    await page.goto(URL);
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    await page.getByTestId("works-open").click();
+    await page.getByTestId("work-start-ryomaden").click();
+    await d.waitFor();
+    const t2 = await d.locator(".detail-title").innerText();
+    const mode = await page.locator(".app").getAttribute("data-mode");
+    assert(mode === "world" && t2.startsWith("ペリー来航"), `龍馬伝: ${mode} ${t2}`);
+    return `真田丸 → 日本「${t1}」／龍馬伝 → 世界「${t2}」`;
+  });
+
   await check("日本(PC): ページエラーなし", async () => {
     assert(errors.length === 0, errors.join(" | "));
   });
@@ -1287,6 +1337,28 @@ const markerCenter = (page, id) =>
     return `1600年のまま ${titles.length} か所（${titles[0]} ほか）→ まとめ`;
   });
 
+  await check("作品のツアー(PC): 「『龍馬伝』で歩く幕末」は日本地図で池田屋から近江屋までたどり、明治維新で地球儀に戻る", async () => {
+    await page.goto(`${URL}?tour=ryomaden-bakumatsu&step=1`);
+    await page.waitForFunction(() => !!window.__WHG__ || !!window.__WHG_JP__, null, { timeout: 20000 });
+    await page.getByTestId("tour-step-title").waitFor();
+    const seq = [];
+    for (let i = 0; i < 6; i++) {
+      if (i > 0) {
+        await page.getByTestId("tour-next").click();
+        await page.waitForTimeout(400);
+      }
+      seq.push(`${(await page.getByTestId("tour-step-title").innerText()).trim()}(${await page.locator(".app").getAttribute("data-mode")})`);
+      if (i === 4) {
+        const arcs = await page.locator(".japan-map [data-testid=arc-label]").count();
+        assert(arcs >= 4, `日本地図の弧が少ない（${arcs}）`);
+        await page.waitForTimeout(1200);
+        await page.screenshot({ path: `${SHOTS}/tour-ryomaden-omiya.png` });
+      }
+    }
+    assert(/池田屋.*\(japan\)/.test(seq[0]) && /近江屋.*\(japan\)/.test(seq[4]) && /明治維新.*\(world\)/.test(seq[5]), seq.join(" → "));
+    return seq.join(" → ");
+  });
+
   await check("またぐツアー(PC): ページエラーなし", async () => {
     assert(errors.length === 0, errors.join(" | "));
   });
@@ -1383,6 +1455,29 @@ const markerCenter = (page, id) =>
     assert(noH, "横スクロールが出る");
     await page.screenshot({ path: `${SHOTS}/tour-mongol-sp-4-japan.png` });
     return `地図 ${Math.round(ratio * 100)}%（${(await page.getByTestId("tour-step-title").innerText()).trim()}）`;
+  });
+
+  await check("日本・作品(SP): 作品一覧で大河ドラマを選ぶと、日本地図の下に詳細が開き、作品セクションが崩れない", async () => {
+    await page.goto(`${URL}?mode=japan`);
+    await waitJapan(page);
+    await page.getByTestId("works-open").tap();
+    await page.getByTestId("works-menu").waitFor();
+    await page.getByTestId("works-search").fill("大河");
+    await page.screenshot({ path: `${SHOTS}/jp-sp-works-taiga.png` });
+    await page.getByTestId("work-start-kamakuradono-no-13-nin").tap();
+    const d = page.getByTestId("event-detail");
+    await d.waitFor();
+    await page.waitForTimeout(1500);
+    const title = await d.locator(".detail-title").innerText();
+    assert(title.startsWith("源頼朝の挙兵"), `詳細が違う: ${title}`);
+    const r = await page.evaluate(() => {
+      const s = document.querySelector("[data-testid=detail-works]");
+      return { open: document.querySelector("[data-testid=detail-work-kamakuradono-no-13-nin]")?.open, overflow: s.scrollWidth > s.clientWidth + 1, noH: document.documentElement.scrollWidth <= innerWidth };
+    });
+    assert(r.open && !r.overflow && r.noH, `作品セクションが崩れている ${JSON.stringify(r)}`);
+    await page.getByTestId("detail-work-kamakuradono-no-13-nin").scrollIntoViewIfNeeded();
+    await page.screenshot({ path: `${SHOTS}/jp-sp-works-kamakuradono.png` });
+    return `「${title}」・作品セクションは横幅内`;
   });
 
   await check("日本(SP): ページエラーなし", async () => {

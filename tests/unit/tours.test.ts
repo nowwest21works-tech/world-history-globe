@@ -8,11 +8,22 @@ describe("tours.json", () => {
     expect(validateTours(TOURS, EVENTS)).toEqual([]);
   });
 
-  it("7本：同時代型3本・つながり型4本（うち世界と日本をまたぐもの3本、日本だけのもの1本）", () => {
-    expect(TOURS.map((t) => t.id)).toEqual(["bc500", "paper", "silver", "mongol", "ad800", "jp1600", "bakumatsu"]);
+  it("8本：同時代型3本・つながり型5本（うち世界と日本をまたぐもの4本）", () => {
+    expect(TOURS.map((t) => t.id)).toEqual(["bc500", "paper", "silver", "mongol", "ad800", "jp1600", "bakumatsu", "ryomaden-bakumatsu"]);
     expect(TOURS.filter((t) => t.kind === "contemporary").length).toBe(3);
-    expect(TOURS.filter((t) => t.kind === "connection").length).toBe(4);
-    expect(TOURS.filter(crossesModes).map((t) => t.id)).toEqual(["silver", "mongol", "bakumatsu"]);
+    expect(TOURS.filter((t) => t.kind === "connection").length).toBe(5);
+    expect(TOURS.filter(crossesModes).map((t) => t.id)).toEqual(["silver", "mongol", "bakumatsu", "ryomaden-bakumatsu"]);
+  });
+
+  it("『龍馬伝』で歩く幕末：作品に紐づく出来事を日本地図でたどり、明治維新で地球儀に戻る", () => {
+    const t = TOURS.find((x) => x.id === "ryomaden-bakumatsu")!;
+    expect(t.kind).toBe("connection");
+    expect(t.steps.map((s) => s.eventId)).toEqual([
+      "jp-ikedaya", "jp-kinmon", "jp-satcho-alliance", "jp-taisei-hokan", "jp-omiya-incident", "meiji-restoration",
+    ]);
+    expect(t.steps.map(stepMode)).toEqual([...Array(5).fill("japan"), "world"]);
+    expect(positionMode(t, -1)).toBe("japan");
+    expect(positionMode(t, t.steps.length)).toBe("world");
   });
 
   it("「1600年、日本では？ 世界では？」：日本地図だけで巡る同時代型", () => {

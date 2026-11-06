@@ -3727,7 +3727,8 @@
     "era": "江戸",
     "relatedEventIds": [
       "jp-shimonoseki-war",
-      "jp-satcho-alliance"
+      "jp-satcho-alliance",
+      "jp-kinmon"
     ]
   },
   {
@@ -3798,7 +3799,8 @@
     "relatedEventIds": [
       "jp-edo-shogunate",
       "jp-osei-fukko",
-      "meiji-restoration"
+      "meiji-restoration",
+      "jp-omiya-incident"
     ]
   },
   {
@@ -4445,6 +4447,218 @@
     "relatedEventIds": [
       "jp-hanshin-eq",
       "jp-kanto-eq"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-ishibashiyama",
+    "title": "源頼朝の挙兵と石橋山の戦い",
+    "category": "war",
+    "start": {
+      "year": 1180,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.2197,
+      "lng": 139.1329,
+      "placeName": "石橋山（相模国。現在の神奈川県小田原市）",
+      "precision": "exact"
+    },
+    "summary": "源頼朝は以仁王の令旨を受けて兵を挙げ、伊豆の目代の山木兼隆を討った。続く相模の石橋山の戦いでは、平氏方の大庭景親らの大軍に敗れて箱根の山中へ逃れ、船で安房へ渡って再起した。",
+    "historicalNote": "治承4年（1180年）。治承・寿永の乱（源平の争乱）の戦いの一つで、『義経記』では「小早川の合戦」と書かれる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「石橋山の戦い」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E6%A9%8B%E5%B1%B1%E3%81%AE%E6%88%A6%E3%81%84",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "平安",
+    "relatedEventIds": [
+      "jp-genpei-war",
+      "jp-kamakura-shogunate"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-hiki-incident",
+    "title": "比企能員の変",
+    "category": "politics",
+    "start": {
+      "year": 1203,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.3165,
+      "lng": 139.5555,
+      "placeName": "鎌倉",
+      "precision": "city"
+    },
+    "summary": "2代将軍源頼家の外戚として力を持った比企能員とその一族が、北条時政のはかりごとによって滅ぼされた。鎌倉幕府の内部で起きた政変。",
+    "historicalNote": "建仁3年（1203年）9月2日。比企能員の乱、比企氏の乱、小御所合戦とも呼ばれる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「比企能員の変」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AF%94%E4%BC%81%E8%83%BD%E5%93%A1%E3%81%AE%E5%A4%89",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "鎌倉",
+    "relatedEventIds": [
+      "jp-kamakura-shogunate",
+      "jp-jokyu-war"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-tensho-jingo",
+    "title": "天正壬午の乱",
+    "category": "war",
+    "start": {
+      "year": 1582,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.836,
+      "lng": 138.424,
+      "placeName": "甲斐・信濃など武田氏の旧領（代表点は若御子）",
+      "precision": "region"
+    },
+    "summary": "本能寺の変で織田信長が倒れたあと、武田氏の旧領で織田氏の領国になっていた甲斐・信濃などで起きた一連の争乱。8月から10月にかけての若御子での対陣が山場となった。",
+    "historicalNote": "天正10年（1582年）。この年の干支が壬午であることからの呼び名で、壬午の乱・壬午の役とも呼ばれる。記事では、同じ年の2〜3月に織田信長が武田氏を攻めた武田征伐もあわせて扱う。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「天正壬午の乱」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E6%AD%A3%E5%A3%AC%E5%8D%88%E3%81%AE%E4%B9%B1",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "安土桃山",
+    "relatedEventIds": [
+      "jp-honnoji",
+      "jp-ueda-kassen"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-ueda-kassen",
+    "title": "第一次上田合戦",
+    "category": "war",
+    "start": {
+      "year": 1585,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 36.4033,
+      "lng": 138.2445,
+      "placeName": "上田城（長野県上田市）",
+      "precision": "exact"
+    },
+    "summary": "信濃の上田城と周りの山城、神川の付近で、真田昌幸が徳川氏の軍勢と戦った。昌幸はおもに上田城に籠もって戦い、砥石城などの山城も含めた総力戦となった。",
+    "historicalNote": "天正13年（1585年）。真田氏と徳川氏はこの地で2度戦っており、慶長5年（1600年）の戦いを第二次として区別することがある。上田城の戦い・上田城攻防戦とも呼ばれる。「第一次上田合戦」は「上田合戦」への転送のため、「上田合戦」を出典にした。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「上田合戦」",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E7%94%B0%E5%90%88%E6%88%A6",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "安土桃山",
+    "relatedEventIds": [
+      "jp-tensho-jingo",
+      "jp-komaki-nagakute",
+      "jp-sekigahara"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-kinmon",
+    "title": "禁門の変（蛤御門の変）",
+    "category": "war",
+    "start": {
+      "year": 1864,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.0236,
+      "lng": 135.7593,
+      "placeName": "蛤御門（京都御所の西側）",
+      "precision": "exact"
+    },
+    "summary": "前の年の八月十八日の政変で京都を追われた長州藩の勢力が、京都守護職の松平容保らを除こうと兵を挙げ、京都御所の門の周りで戦った。長州藩の勢力は敗れ、京都の町は戦火で約3万戸が焼けた。",
+    "historicalNote": "元治元年7月19日（1864年8月20日）。元治の変とも呼ぶ。最も激しく戦われたのが蛤御門の周辺だったことが名の由来。本文によると、池田屋事件の知らせが長州に届いたことで、藩の議論は京都へ兵を進める方へ傾いた。変の後、長州藩は「朝敵」とされ、第一次長州征討が行われた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「禁門の変」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A6%81%E9%96%80%E3%81%AE%E5%A4%89",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-ikedaya",
+      "jp-satcho-alliance",
+      "jp-shimonoseki-war"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "jp-omiya-incident",
+    "title": "近江屋事件（坂本龍馬の暗殺）",
+    "category": "politics",
+    "start": {
+      "year": 1867,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.0049,
+      "lng": 135.7689,
+      "placeName": "近江屋（京都・河原町通蛸薬師下ル）",
+      "precision": "exact"
+    },
+    "summary": "京都河原町の近江屋で、坂本龍馬と中岡慎太郎、龍馬の従僕の山田藤吉の3人が襲われ、殺された。",
+    "historicalNote": "慶応3年11月15日（1867年12月10日）。大政奉還の翌月にあたる。実行犯には諸説あり、京都見廻組によるとする説が有力とされる。龍馬は土佐藩の郷士の家に生まれ、脱藩して亀山社中（のちの海援隊）をつくり、薩長同盟の成立に協力した（「坂本龍馬」導入部）。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「近江屋事件」",
+        "url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E5%B1%8B%E4%BA%8B%E4%BB%B6",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「坂本龍馬」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9D%82%E6%9C%AC%E9%BE%8D%E9%A6%AC",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "era": "江戸",
+    "relatedEventIds": [
+      "jp-taisei-hokan",
+      "jp-satcho-alliance",
+      "meiji-restoration"
     ]
   }
 ]

@@ -6,7 +6,8 @@
     "第3回（中世末・近世・近現代 20件）",
     "第4回（古代・中世・戦国 20件）",
     "第5回（近世・幕末 20件）",
-    "第6回（明治〜平成 14件）"
+    "第6回（明治〜平成 14件）",
+    "第7回（大河ドラマ3作の錨 6件・PR③）"
   ],
   "majors": [
     {
@@ -134,7 +135,9 @@
         "jp-itsukushima",
         "jp-kawanakajima",
         "jp-okehazama",
-        "jp-nagashino"
+        "jp-nagashino",
+        "jp-ishibashiyama",
+        "jp-hiki-incident"
       ],
       "candidates": [
         {
@@ -196,7 +199,9 @@
         "jp-kansei-reform",
         "jp-ino-tadataka",
         "jp-ikokusen",
-        "jp-tenpo-reform"
+        "jp-tenpo-reform",
+        "jp-tensho-jingo",
+        "jp-ueda-kassen"
       ],
       "candidates": [
         {
@@ -285,7 +290,9 @@
         "jp-okinawa-reversion",
         "jp-oil-shock",
         "jp-hanshin-eq",
-        "jp-east-japan-eq"
+        "jp-east-japan-eq",
+        "jp-kinmon",
+        "jp-omiya-incident"
       ],
       "candidates": [
         {

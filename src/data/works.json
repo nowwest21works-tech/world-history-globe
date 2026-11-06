@@ -1267,5 +1267,129 @@
       }
     ],
     "verified": false
+  },
+  {
+    "id": "ryomaden",
+    "title": "龍馬伝",
+    "media": [
+      "drama"
+    ],
+    "creators": "NHK大河ドラマ第49作（脚本：福田靖）",
+    "firstReleased": 2010,
+    "adaptations": "",
+    "era": {
+      "from": 1843,
+      "to": 1867
+    },
+    "eraNote": "天保14年（1843年）の少年時代から、慶応3年（1867年）の京都での最期まで。明治15年（1882年）に岩崎弥太郎が記者の取材に答えて振り返る、という枠で語られる。",
+    "setting": "土佐から江戸・京都・長崎・下関・薩摩へ。土佐の下士の家に生まれた坂本龍馬の歩みを、のちに三菱を興す岩崎弥太郎の目を通して描く。",
+    "eventIds": [
+      "jp-perry",
+      "jp-ansei-purge",
+      "jp-sakuradamon",
+      "jp-shimonoseki-war",
+      "jp-ikedaya",
+      "jp-kinmon",
+      "jp-satcho-alliance",
+      "jp-taisei-hokan",
+      "jp-omiya-incident"
+    ],
+    "fidelity": "historical",
+    "hook": "黒船の年に江戸へ出た若者は、14年後に京都で倒れる。その間の足どりを、日本地図でたどる。",
+    "gapQuestion": "薩長同盟や大政奉還で坂本龍馬が果たした役割は、史料でどこまで確かめられるのだろう？ 私たちの知る「龍馬像」は、いつ・だれによって形づくられてきたのだろう？",
+    "contentNote": "暗殺・切腹・戦闘の描写あり。",
+    "rating": "",
+    "officialUrl": "",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「龍馬伝」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E9%A6%AC%E4%BC%9D",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "verified": false
+  },
+  {
+    "id": "sanadamaru",
+    "title": "真田丸",
+    "media": [
+      "drama"
+    ],
+    "creators": "NHK大河ドラマ第55作（脚本：三谷幸喜）",
+    "firstReleased": 2016,
+    "adaptations": "",
+    "era": {
+      "from": 1582,
+      "to": 1615
+    },
+    "eraNote": "天正10年（1582年）の武田家の滅亡と本能寺の変から、大坂の陣の終わり（1615年）まで。",
+    "setting": "信濃の上田と上野の沼田、大坂城、紀伊の九度山。主家の武田家を失った信濃の国衆・真田家が、大大名のあいだで生き残りを図る姿を、次男の真田信繁（幸村）を軸に描く。",
+    "eventIds": [
+      "jp-honnoji",
+      "jp-tensho-jingo",
+      "jp-komaki-nagakute",
+      "jp-ueda-kassen",
+      "jp-odawara",
+      "jp-hideyoshi-korea",
+      "jp-sekigahara",
+      "jp-edo-shogunate",
+      "jp-osaka-siege"
+    ],
+    "fidelity": "historical",
+    "hook": "戦国の終わりを、天下人ではなく、信濃の小さな家の側から見ると？",
+    "gapQuestion": "主君を次々に替えた真田家の動きは、当時の国衆にとって特別なことだったのだろうか？ 「真田幸村」という名は、史料ではどのように扱われているのだろう？",
+    "contentNote": "戦闘・切腹・処刑の描写あり。",
+    "rating": "",
+    "officialUrl": "",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「真田丸 (NHK大河ドラマ)」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%9C%9F%E7%94%B0%E4%B8%B8_(NHK%E5%A4%A7%E6%B2%B3%E3%83%89%E3%83%A9%E3%83%9E)",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "verified": false
+  },
+  {
+    "id": "kamakuradono-no-13-nin",
+    "title": "鎌倉殿の13人",
+    "media": [
+      "drama"
+    ],
+    "creators": "NHK大河ドラマ第61作（脚本：三谷幸喜）",
+    "firstReleased": 2022,
+    "adaptations": "",
+    "era": {
+      "from": 1180,
+      "to": 1224
+    },
+    "eraNote": "平安時代の末期から鎌倉時代の初めまで。源頼朝の挙兵（1180年）の少し前から、主人公の北条義時が亡くなる元仁元年（1224年）まで。",
+    "setting": "伊豆・鎌倉・京都など。伊豆の小さな豪族の次男だった北条義時が、頼朝の挙兵、平家の滅亡、頼朝の死後の御家人どうしの争い、承久の乱を経て、幕府の中心に立つまでを描く。",
+    "eventIds": [
+      "jp-ishibashiyama",
+      "jp-genpei-war",
+      "jp-kamakura-shogunate",
+      "jp-hiki-incident",
+      "jp-jokyu-war"
+    ],
+    "fidelity": "historical",
+    "hook": "頼朝の死後に置かれた「13人」の合議は、なぜ続かなかったのか。鎌倉の争いを地図に置いてみる。",
+    "gapQuestion": "頼朝の死後、有力な御家人による合議はどんな仕組みで、なぜ長く続かなかったのだろう？ この時代を知る手がかりの『吾妻鏡』は、だれの立場から書かれたと考えられているのだろう？",
+    "contentNote": "暗殺・粛清・戦闘の描写あり。",
+    "rating": "",
+    "officialUrl": "",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「鎌倉殿の13人」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%8E%8C%E5%80%89%E6%AE%BF%E3%81%AE13%E4%BA%BA",
+        "accessedAt": "2026-11-06"
+      },
+      {
+        "title": "ウィキペディア日本語版「北条義時」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E7%BE%A9%E6%99%82",
+        "accessedAt": "2026-11-06"
+      }
+    ],
+    "verified": false
   }
 ]
