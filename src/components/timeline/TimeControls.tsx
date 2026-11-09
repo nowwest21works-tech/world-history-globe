@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import type { AstroYear, Scope } from "@/types/event";
 import { TIME_SCALES } from "@/lib/timeScale";
 import { ERA_NOTE, JAPAN_ERAS } from "@/lib/japanEras";
@@ -20,6 +21,8 @@ export interface TimeControlsProps {
   playDisabled?: boolean;
   /** 年代の目盛り（世界と日本で範囲と目盛りが違う） */
   mode?: Scope;
+  /** 再生ボタンの並びの右端に添えるもの（スマホのマホロバ学校へ戻るリンク） */
+  trailing?: ReactNode;
 }
 
 /** 目盛りの年の短い表示（「前30000年」→「前3万」） */
@@ -57,6 +60,7 @@ export function TimeControls(p: TimeControlsProps) {
           <input type="checkbox" checked={p.follow} onChange={(e) => p.onFollow(e.target.checked)} />
           カメラ追従
         </label>
+        {p.trailing}
       </div>
       <div className={`slider-wrap${mode === "japan" ? " has-eras" : ""}`}>
         {mode === "japan" && (
