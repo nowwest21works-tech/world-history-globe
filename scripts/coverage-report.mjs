@@ -95,5 +95,25 @@ const spare = counted.flatMap((u) => u.candidates.filter((c) => c.batch === "予
 md += `\n- 予備（最低件数の達成には不要だが、地域の偏りを減らすために次の段階で検討）：${spare.join("、") || "なし"}\n`;
 md += `- 各回とも、出典記事の実在確認・独自の文章・verified=false・\`docs/VERIFICATION.md\` への照合結果の追記を通す（\`docs/EVENT_PLAN.md\`）。\n`;
 
+// 骨格の完成後に、目的を決めて足した分（単元の最低件数とは別の理由で追加したもの）
+const SUPPLEMENTS = [
+  {
+    title: "マホロバ学校との接続：1979〜2000年の補充（2026-11-09・8件）",
+    why: "MAHOROBA の広場の年代史（1979〜2000年の22年）から `?year=` で地球儀を開いたとき、その年の世界の出来事が少なかったため補った（`docs/MAHOROBA_SPEC.md` の 4）。照合の記録は `docs/VERIFICATION.md` の「マホロバ学校との接続のために追加したイベント」。",
+    ids: ["iran-revolution", "soviet-afghan-war", "chernobyl", "tiananmen", "gulf-war", "rwanda-genocide", "hong-kong-handover", "asian-financial-crisis"],
+  },
+];
+md += `\n## 目的を決めた補充\n`;
+for (const s of SUPPLEMENTS) {
+  md += `\n### ${s.title}\n\n${s.why}\n\n| 年 | 出来事 | 単元 |\n|---|---|---|\n`;
+  for (const id of s.ids) {
+    const e = events.find((x) => x.id === id);
+    if (!e) continue;
+    const u = units.find((x) => x.eventIds.includes(id));
+    const y = e.end && e.end.year !== e.start.year ? `${e.start.year}〜${e.end.year}` : `${e.start.year}`;
+    md += `| ${y} | ${e.title} | ${u ? `${u.major}(${u.code.slice(1)})` : "—"} |\n`;
+  }
+}
+
 writeFileSync(new URL("../docs/COVERAGE.md", import.meta.url), md);
 console.log(`イベント ${events.length} 件、充足 ${doneUnits}/${counted.length} 単元、不足 ${shortfall} 件 → 骨格の完成時 約${completeTotal} 件`);

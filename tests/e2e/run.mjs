@@ -1534,6 +1534,222 @@ const markerCenter = (page, id) =>
   await ctx.close();
 }
 
+// ───────────── マホロバ学校との接続（?year= と学校へ戻るリンク） ─────────────
+const SCHOOL_SHOTS = "docs/screenshots/mahoroba-school";
+mkdirSync(SCHOOL_SHOTS, { recursive: true });
+const SCHOOL_HREF = "https://www.mahoroba-office.co.jp/b05#school-globe";
+/** 2つの矩形が重なるか（1px の接触は重なりとみなさない） */
+const overlaps = (a, b) => a && b && a.x < b.x + b.width - 1 && b.x < a.x + a.width - 1 && a.y < b.y + b.height - 1 && b.y < a.y + a.height - 1;
+/** リンクが見えていて、中心を押したときにリンク自身に当たるか */
+const linkHit = (page, testid) =>
+  page.evaluate((testid) => {
+    const el = document.querySelector(`[data-testid="${testid}"]`);
+    if (!el) return null;
+    const r = el.getBoundingClientRect();
+    const cx = r.x + r.width / 2, cy = r.y + r.height / 2;
+    return {
+      box: { x: r.x, y: r.y, width: r.width, height: r.height },
+      inView: r.width > 0 && r.height > 0 && r.x >= 0 && r.y >= 0 && r.right <= innerWidth && r.bottom <= innerHeight,
+      hit: document.elementFromPoint(cx, cy)?.closest("a") === el,
+      href: el.getAttribute("href"),
+      target: el.getAttribute("target"),
+      text: el.innerText,
+    };
+  }, testid);
+/** 学校へのリンクを押したら、同じタブで学校の URL へ移ろうとすることを確かめる（外部へは実際には出さない） */
+async function clickSchoolLink(page, testid, { tap = false } = {}) {
+  let requested = null;
+  await page.route("https://www.mahoroba-office.co.jp/**", (route) => {
+    requested = route.request().url();
+    return route.fulfill({ status: 200, contentType: "text/html", body: "<!doctype html><title>school</title>" });
+  });
+  const popups = [];
+  page.context().on("page", (p) => popups.push(p));
+  const loc = page.getByTestId(testid);
+  if (tap) await loc.tap();
+  else await loc.click();
+  await page.waitForURL(/mahoroba-office\.co\.jp\/b05/, { timeout: 10000 });
+  await page.unroute("https://www.mahoroba-office.co.jp/**");
+  assert(popups.length === 0, "新しいタブが開いた");
+  assert(requested && requested.startsWith("https://www.mahoroba-office.co.jp/b05"), `移動先が違う: ${requested}`);
+  return page.url();
+}
+
+{
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+
+  await check("学校(PC): ?year=1989 で開くと年が1989年に合い、その年の出来事が並び、詳細は自動で開かない", async () => {
+    await page.goto(`${URL}?year=1989`);
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    await page.waitForTimeout(2000); // カメラの移動（1.5秒）を待つ
+    assert((await yearText(page)) === "1989年", `年 = ${await yearText(page)}`);
+    const slider = await page.getByTestId("year-slider").getAttribute("aria-valuetext");
+    assert(slider === "1989年", `スライダー = ${slider}`);
+    assert((await page.getByTestId("event-detail").count()) === 0, "詳細パネルが自動で開いた");
+    const chips = await page.getByTestId("strip-list").innerText();
+    assert(chips.includes("ベルリンの壁崩壊") && chips.includes("天安門事件"), `同時代に1989年の出来事がない: ${chips.slice(0, 120)}`);
+    const p = await pov(page);
+    // カメラはその年に近い出来事（ベルリン／北京）のほうを向く
+    const nearBerlin = Math.abs(p.lat - 52.5) < 6 && Math.abs(p.lng - 13.4) < 6;
+    const nearBeijing = Math.abs(p.lat - 39.9) < 6 && Math.abs(p.lng - 116.4) < 6;
+    assert(nearBerlin || nearBeijing, `カメラの向き lat ${p.lat.toFixed(1)} lng ${p.lng.toFixed(1)}`);
+    assert(new globalThis.URL(page.url()).search === "?year=1989", `URL = ${page.url()}`);
+    await page.screenshot({ path: `${SCHOOL_SHOTS}/pc-year-1989.png` });
+    return `${await yearText(page)}・カメラ ${nearBerlin ? "ベルリン" : "北京"}付近・詳細は閉じたまま`;
+  });
+
+  await check("学校(PC): ?year=-470 で前470年（紀元前は負の数）", async () => {
+    await page.goto(`${URL}?year=-470`);
+    await page.getByTestId("current-year").waitFor();
+    await page.waitForFunction(() => document.querySelector("[data-testid=current-year]")?.textContent === "前470年", null, { timeout: 10000 });
+    assert((await page.getByTestId("event-detail").count()) === 0, "詳細パネルが自動で開いた");
+    assert(new globalThis.URL(page.url()).search === "?year=-470", `URL = ${page.url()}`);
+    return await yearText(page);
+  });
+
+  await check("学校(PC): ?year=0・?year=abc・?year=2026 は無視して、いつもの初期表示（前3000年）", async () => {
+    const got = [];
+    for (const v of ["0", "abc", "2026"]) {
+      await page.goto(`${URL}?year=${v}`);
+      await page.waitForFunction(() => document.querySelector("[data-testid=current-year]")?.textContent === "前3000年", null, { timeout: 10000 });
+      got.push(`${v}→${await yearText(page)}`);
+    }
+    return got.join("、");
+  });
+
+  await check("学校(PC): ?event= と ?year= が両方あるときは ?event= を優先する", async () => {
+    await page.goto(`${URL}?year=1989&event=september-11`);
+    await page.getByTestId("event-detail").waitFor({ timeout: 10000 });
+    assert((await yearText(page)) === "2001年", `年 = ${await yearText(page)}`);
+    const title = await page.locator(".detail-title").innerText();
+    assert(title.includes("同時多発テロ"), `詳細 = ${title}`);
+    return `${await yearText(page)}・${title}`;
+  });
+
+  await check("学校(PC): ?mode=japan&year=1868 で日本地図が1868年で開く", async () => {
+    await page.goto(`${URL}?mode=japan&year=1868`);
+    await waitJapan(page);
+    await page.waitForTimeout(800);
+    assert((await page.locator(".app").getAttribute("data-mode")) === "japan", "日本モードで開かない");
+    assert((await yearText(page)) === "1868年", `年 = ${await yearText(page)}`);
+    assert((await page.getByTestId("event-detail").count()) === 0, "詳細パネルが自動で開いた");
+    const search = new globalThis.URL(page.url()).search;
+    assert(search === "?mode=japan&year=1868", `URL = ${search}`);
+    await page.screenshot({ path: `${SCHOOL_SHOTS}/pc-japan-year-1868.png` });
+    return `${await yearText(page)}・${search}`;
+  });
+
+  await check("学校(PC): ヘッダーの右端に「🏫 マホロバ学校へ」があり、同じタブで学校の地球儀の教室へ移る", async () => {
+    await openGlobe(page);
+    const l = await linkHit(page, "school-link-header");
+    assert(l && l.inView && l.hit, `見えない・押せない: ${JSON.stringify(l)}`);
+    assert(l.href === SCHOOL_HREF, `href = ${l.href}`);
+    assert(!l.target, `target = ${l.target}`);
+    assert(l.text.includes("マホロバ学校へ"), `文言 = ${l.text}`);
+    assert((await page.getByTestId("school-link-bottom").count()) === 0, "PC で下部にもリンクが出ている");
+    // ヘッダーの中の右端（ほかのボタンより右）にある
+    const tb = await page.locator(".topbar").boundingBox();
+    const vs = await page.locator(".view-switch").boundingBox();
+    assert(l.box.y >= tb.y && l.box.y + l.box.height <= tb.y + tb.height, "ヘッダーの外にある");
+    assert(l.box.x >= vs.x + vs.width - 1, "ほかのボタンより右にない");
+    await page.locator(".topbar").screenshot({ path: `${SCHOOL_SHOTS}/pc-school-link.png` });
+    await page.screenshot({ path: `${SCHOOL_SHOTS}/pc-school-link-full.png` });
+    const to = await clickSchoolLink(page, "school-link-header");
+    return `→ ${to}`;
+  });
+
+  await check("学校(PC): 詳細パネルを開いても、学校へのリンクはパネルと重ならない", async () => {
+    await page.goto(`${URL}?event=berlin-wall`);
+    await page.getByTestId("event-detail").waitFor({ timeout: 10000 });
+    const l = await linkHit(page, "school-link-header");
+    const d = await page.getByTestId("event-detail").boundingBox();
+    assert(l && l.hit && !overlaps(l.box, d), "詳細パネルと重なる");
+    return "重なりなし";
+  });
+
+  await check("学校(PC): ページエラーなし", async () => {
+    assert(errors.length === 0, errors.join(" | "));
+  });
+  await ctx.close();
+}
+
+{
+  const { defaultBrowserType: _ignored, ...iphone5 } = devices["iPhone 13"];
+  const ctx = await browser.newContext(iphone5);
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+
+  await check("学校(SP): ?year=1989 で開くと年が合い、横スクロールなし、詳細は自動で開かない", async () => {
+    await page.goto(`${URL}?year=1989`);
+    await page.waitForFunction(() => !!window.__WHG__, null, { timeout: 20000 });
+    await page.waitForTimeout(2000);
+    const w = await page.evaluate(() => innerWidth);
+    assert(w === 390, `画面幅 ${w}px`);
+    assert((await yearText(page)) === "1989年", `年 = ${await yearText(page)}`);
+    assert((await page.getByTestId("event-detail").count()) === 0, "詳細パネルが自動で開いた");
+    const sw = await page.evaluate(() => document.documentElement.scrollWidth);
+    assert(sw <= 390, `横スクロールが出る（${sw}px）`);
+    await page.screenshot({ path: `${SCHOOL_SHOTS}/sp-year-1989.png` });
+    return `${await yearText(page)}・幅 ${w}px`;
+  });
+
+  await check("学校(SP): 画面下に「🏫 マホロバ学校へ」が見えて押せ、地図・試作版の帯・再生ボタン・スライダーと重ならない", async () => {
+    const l = await linkHit(page, "school-link-bottom");
+    assert(l && l.inView && l.hit, `見えない・押せない: ${JSON.stringify(l)}`);
+    assert(l.href === SCHOOL_HREF && !l.target, `href = ${l.href} target = ${l.target}`);
+    assert((await page.getByTestId("school-link-header").count()) === 0, "スマホでヘッダーにもリンクが出ている");
+    assert(l.box.height >= 30, `押しにくい高さ（${l.box.height}px）`);
+    const stage = await page.locator(".stage").boundingBox();
+    const banner = await page.getByTestId("preview-banner").boundingBox();
+    const play = await page.getByTestId("play").boundingBox();
+    const slider = await page.getByTestId("year-slider").boundingBox();
+    const mode = await page.getByTestId("mode-switch").boundingBox();
+    for (const [name, b] of [["地図", stage], ["試作版の帯", banner], ["再生ボタン", play], ["スライダー", slider], ["世界/日本の切り替え", mode]]) {
+      assert(!overlaps(l.box, b), `${name}と重なる`);
+    }
+    await page.screenshot({ path: `${SCHOOL_SHOTS}/sp-school-link.png` });
+    return `高さ ${Math.round(l.box.height)}px・下部の再生ボタンの並びの右端（y=${Math.round(l.box.y)}）`;
+  });
+
+  await check("学校(SP): 詳細パネルを開いても、学校へのリンク（🏫）は詳細・地図・スライダーと重ならず押せる", async () => {
+    await page.goto(`${URL}?event=tiananmen`);
+    await page.getByTestId("event-detail").waitFor({ timeout: 10000 });
+    await page.waitForTimeout(600);
+    const l = await linkHit(page, "school-link-bottom");
+    assert(l && l.inView && l.hit, `見えない・押せない: ${JSON.stringify(l)}`);
+    const d = await page.getByTestId("event-detail").boundingBox();
+    const main = await page.locator(".stage-main").boundingBox();
+    const slider = await page.getByTestId("year-slider").boundingBox();
+    for (const [name, b] of [["詳細", d], ["地図", main], ["スライダー", slider]]) assert(!overlaps(l.box, b), `${name}と重なる`);
+    assert(slider.width >= 200, `スライダーが狭い（${slider.width}px）`);
+    const sw = await page.evaluate(() => document.documentElement.scrollWidth);
+    assert(sw <= 390, `横スクロールが出る（${sw}px）`);
+    await page.screenshot({ path: `${SCHOOL_SHOTS}/sp-school-link-detail.png` });
+    return `スライダー幅 ${Math.round(slider.width)}px`;
+  });
+
+  await check("学校(SP): 日本モード（?mode=japan&year=1868）でも学校へのリンクが見えて、タップで同じタブのまま学校へ移る", async () => {
+    await page.goto(`${URL}?mode=japan&year=1868`);
+    await waitJapan(page);
+    assert((await yearText(page)) === "1868年", `年 = ${await yearText(page)}`);
+    const l = await linkHit(page, "school-link-bottom");
+    assert(l && l.inView && l.hit, `見えない・押せない: ${JSON.stringify(l)}`);
+    const sw = await page.evaluate(() => document.documentElement.scrollWidth);
+    assert(sw <= 390, `横スクロールが出る（${sw}px）`);
+    const to = await clickSchoolLink(page, "school-link-bottom", { tap: true });
+    return `${l.text.replace(/\s+/g, " ")} → ${to}`;
+  });
+
+  await check("学校(SP): ページエラーなし", async () => {
+    assert(errors.length === 0, errors.join(" | "));
+  });
+  await ctx.close();
+}
+
 await browser.close();
 server.close();
 

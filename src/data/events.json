@@ -5266,5 +5266,279 @@
       "jp-mongol-invasions",
       "joseon"
     ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "iran-revolution",
+    "title": "イラン革命",
+    "category": "politics",
+    "start": {
+      "year": 1978,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1979,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 35.689,
+      "lng": 51.389,
+      "placeName": "テヘラン（イラン）",
+      "precision": "city"
+    },
+    "summary": "皇帝（シャー）による親欧米の専制と上からの近代化に反発して、イラン各地で反政府のデモが広がった。皇帝は国外へ逃れ、亡命先から帰国したシーア派の法学者ホメイニーを中心とする勢力が政権を握り、国民投票をへてイスラム共和国の樹立が宣言された。",
+    "historicalNote": "動きの始まりは1978年1月、皇帝の出国と反体制側による政権の掌握は1979年。「イスラム革命」とも呼ばれる。新しい体制は、ホメイニーが唱えた「法学者の統治」を国家の柱に掲げた。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「イラン革命」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%A9%E3%83%B3%E9%9D%A9%E5%91%BD",
+        "accessedAt": "2026-11-09"
+      }
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "soviet-afghan-war",
+    "title": "ソ連のアフガニスタン侵攻",
+    "category": "war",
+    "start": {
+      "year": 1979,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1989,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 34.528,
+      "lng": 69.172,
+      "placeName": "カーブル（アフガニスタン）",
+      "precision": "city"
+    },
+    "summary": "アフガニスタンの共産主義政権に対する武装蜂起が全土に広がるなか、ソ連が軍事介入し、ムジャーヒディーンと呼ばれる抵抗勢力との長い戦争になった。アメリカや周辺のイスラム諸国などが抵抗勢力を支援した。ソ連軍は決定的な勝利を得られないまま撤退した。",
+    "historicalNote": "ソ連軍の介入は1979年12月。撤退は1988年5月に始まり、1989年2月に完了したと発表された。戦火はソ連の撤退後も続いた。出典記事は1978年から1989年までの紛争全体を扱う。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アフガニスタン紛争 (1978年-1989年)」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%95%E3%82%AC%E3%83%8B%E3%82%B9%E3%82%BF%E3%83%B3%E7%B4%9B%E4%BA%89_(1978%E5%B9%B4-1989%E5%B9%B4)",
+        "accessedAt": "2026-11-09"
+      }
+    ],
+    "relatedEventIds": [
+      "cold-war"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "chernobyl",
+    "title": "チェルノブイリ原子力発電所事故",
+    "category": "culture",
+    "start": {
+      "year": 1986,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 51.39,
+      "lng": 30.099,
+      "placeName": "チェルノブイリ原子力発電所（現ウクライナ北部）",
+      "precision": "exact"
+    },
+    "summary": "ソ連を構成するウクライナ共和国のチェルノブイリ原子力発電所で、4号炉の事故が起きた。のちに定められた国際原子力事象評価尺度（INES）で、最も深刻な事故を示すレベル7に分類された。",
+    "historicalNote": "日本では近年、ウクライナ語にもとづく「チョルノービリ原子力発電所事故」の表記も使われる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「チェルノブイリ原子力発電所事故」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%AB%E3%83%8E%E3%83%96%E3%82%A4%E3%83%AA%E5%8E%9F%E5%AD%90%E5%8A%9B%E7%99%BA%E9%9B%BB%E6%89%80%E4%BA%8B%E6%95%85",
+        "accessedAt": "2026-11-09"
+      }
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "tiananmen",
+    "title": "天安門事件（六四天安門事件）",
+    "category": "politics",
+    "start": {
+      "year": 1989,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 39.903,
+      "lng": 116.391,
+      "placeName": "北京（天安門広場）",
+      "precision": "exact"
+    },
+    "summary": "北京の天安門広場を占拠して民主化を求めていたデモ隊に対し、中国人民解放軍が武力を用いて排除し、多くの死傷者が出た。",
+    "historicalNote": "1976年の「四五天安門事件」と区別するため、「第二次天安門事件」とも呼ばれる。同じ1989年にはベルリンの壁が崩壊しており、あわせて見ると冷戦の終わりの多様さを考える手がかりになる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「六四天安門事件」",
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%AD%E5%9B%9B%E5%A4%A9%E5%AE%89%E9%96%80%E4%BA%8B%E4%BB%B6",
+        "accessedAt": "2026-11-09"
+      }
+    ],
+    "relatedEventIds": [
+      "reform-and-opening",
+      "berlin-wall"
+    ]
+  },
+  {
+    "importance": 3,
+    "featured": true,
+    "verified": false,
+    "id": "gulf-war",
+    "title": "湾岸戦争",
+    "category": "war",
+    "start": {
+      "year": 1990,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "end": {
+      "year": 1991,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 29.375,
+      "lng": 47.977,
+      "placeName": "クウェート（ペルシア湾岸）",
+      "precision": "region"
+    },
+    "summary": "イラクが隣国クウェートに侵攻し、撤退に応じなかったため、アメリカ合衆国を中心とする多国籍軍が国連安全保障理事会の決議にもとづいて武力を行使した。空爆と地上戦のすえイラク軍は撤退し、クウェートは解放された。",
+    "historicalNote": "イラクのクウェート侵攻は1990年8月、多国籍軍の攻撃開始は1991年1月。作戦名から「砂漠の嵐作戦」とも呼ばれ、2003年のイラク戦争と区別して「第1次湾岸戦争」とも呼ばれる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「湾岸戦争」",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B9%BE%E5%B2%B8%E6%88%A6%E4%BA%89",
+        "accessedAt": "2026-11-09"
+      },
+      {
+        "title": "ウィキペディア日本語版「砂漠の嵐作戦」",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A0%82%E6%BC%A0%E3%81%AE%E5%B5%90%E4%BD%9C%E6%88%A6",
+        "accessedAt": "2026-11-09"
+      }
+    ],
+    "relatedEventIds": [
+      "united-nations"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "rwanda-genocide",
+    "title": "ルワンダ虐殺",
+    "category": "war",
+    "start": {
+      "year": 1994,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": -1.95,
+      "lng": 30.059,
+      "placeName": "ルワンダ（首都キガリ付近）",
+      "precision": "region"
+    },
+    "summary": "東アフリカのルワンダで、大統領の暗殺をきっかけに、フツ系の政府とそれに同調する過激派が、ツチの人々とフツ穏健派を大量に殺害した。虐殺は約100日間続き、犠牲者は80万人以上とも約100万人とも推計されている。",
+    "historicalNote": "ツチ系のルワンダ愛国戦線との内戦（ルワンダ紛争）と同時に進み、愛国戦線が全土を制圧して終わった。民族の対立だけで語られることもあるが、ここに至るまでには多くの要因があったとされる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「ルワンダ虐殺」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%AB%E3%83%AF%E3%83%B3%E3%83%80%E8%99%90%E6%AE%BA",
+        "accessedAt": "2026-11-09"
+      }
+    ],
+    "relatedEventIds": [
+      "year-of-africa"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "hong-kong-handover",
+    "title": "香港返還",
+    "category": "politics",
+    "start": {
+      "year": 1997,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 22.28,
+      "lng": 114.16,
+      "placeName": "香港",
+      "precision": "city"
+    },
+    "summary": "イギリスの統治下にあった香港の主権が、中華人民共和国へ移された。香港は中国の特別行政区となり、中国は「一国二制度」のもとで、返還から50年間は香港で社会主義の政策を行わないと約束した。",
+    "historicalNote": "香港島がイギリスに割譲されたのは、アヘン戦争の講和条約である1842年の南京条約による。「香港主権移譲」とも呼ばれる。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「香港返還」",
+        "url": "https://ja.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E8%BF%94%E9%82%84",
+        "accessedAt": "2026-11-09"
+      }
+    ],
+    "relatedEventIds": [
+      "opium-war"
+    ]
+  },
+  {
+    "importance": 2,
+    "featured": true,
+    "verified": false,
+    "id": "asian-financial-crisis",
+    "title": "アジア通貨危機",
+    "category": "economy",
+    "start": {
+      "year": 1997,
+      "uncertainty": {
+        "kind": "exact"
+      }
+    },
+    "location": {
+      "lat": 13.756,
+      "lng": 100.502,
+      "placeName": "バンコク（タイ）",
+      "precision": "city"
+    },
+    "summary": "タイの通貨バーツの暴落をきっかけに、通貨の大幅な下落と経済危機がアジアの国々に広がった。タイ・インドネシア・韓国は大きな打撃を受け、国際通貨基金（IMF）の管理下に入った。",
+    "historicalNote": "海外の機関投資家によるバーツの大量の空売りが引き金になったとされる。翌1998年のロシア、1999年のブラジルでも通貨危機が起きた。一方で、1998年からの回復は比較的早かった。",
+    "sources": [
+      {
+        "title": "ウィキペディア日本語版「アジア通貨危機」",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B8%E3%82%A2%E9%80%9A%E8%B2%A8%E5%8D%B1%E6%A9%9F",
+        "accessedAt": "2026-11-09"
+      }
+    ],
+    "relatedEventIds": [
+      "financial-crisis-2008"
+    ]
   }
 ]

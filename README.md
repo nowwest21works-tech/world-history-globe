@@ -6,7 +6,7 @@
 
 ヘッダーの「🌏 世界／🗾 日本」で **日本史モード**（日本周辺の平面地図と、旧石器時代から現代までの年表）に切り替えられます。元寇・鉄砲伝来・石見銀山・開国のような場面で、日本地図と地球儀を行き来しながら「同じころ、世界では？」と「つながり」をたどれます。設計は [docs/JAPAN_SPEC.md](docs/JAPAN_SPEC.md)。
 
-> ⚠️ 収録データ（世界史152件・日本史120件）、学習ツアー（8本）、作品データ（39本）の文面は **すべて未検証（`verified: false`）** です。出典記事との一次照合の結果は [docs/VERIFICATION.md](docs/VERIFICATION.md)（世界史）と [docs/VERIFICATION-JAPAN.md](docs/VERIFICATION-JAPAN.md)（日本史）にあります。高校「世界史探究」の単元ごとの収録状況は [docs/COVERAGE.md](docs/COVERAGE.md)、「日本史探究」は [docs/COVERAGE-JAPAN.md](docs/COVERAGE-JAPAN.md)（どちらも `npm run coverage:doc` で再生成。日本史の単元定義は `src/data/units-japan.json`）にあります。人間が史実と出典を確認したものだけを `true` にする運用です。
+> ⚠️ 収録データ（世界史160件・日本史120件）、学習ツアー（8本）、作品データ（39本）の文面は **すべて未検証（`verified: false`）** です。出典記事との一次照合の結果は [docs/VERIFICATION.md](docs/VERIFICATION.md)（世界史）と [docs/VERIFICATION-JAPAN.md](docs/VERIFICATION-JAPAN.md)（日本史）にあります。高校「世界史探究」の単元ごとの収録状況は [docs/COVERAGE.md](docs/COVERAGE.md)、「日本史探究」は [docs/COVERAGE-JAPAN.md](docs/COVERAGE-JAPAN.md)（どちらも `npm run coverage:doc` で再生成。日本史の単元定義は `src/data/units-japan.json`）にあります。人間が史実と出典を確認したものだけを `true` にする運用です。
 
 ## 使い方
 
@@ -59,6 +59,15 @@ NEXT_PUBLIC_BASE_PATH=/world-history-globe npm run serve      # http://127.0.0.1
   - イベント詳細の「この時代を描いた作品」に、作品ごとの「史実との距離」（史実ベース／史実の枠に創作／時代を借りた創作）と、**「作品と史実のあいだ」の問い**を表示する。作品は入口で、違いは断定せず問いとして示し、答えは出典・教科書へ向かわせる。年表表示では、作品が紐づく出来事に「作品 n」が付く。
   - 画像（書影・ポスター・スチルなど）は一切使わず、紹介文・あらすじも載せない。運用ルール・選定基準・ウィキペディアとの照合記録は [docs/WORKS.md](docs/WORKS.md)、実装指示は [docs/WORKS_SPEC.md](docs/WORKS_SPEC.md)。
 - 現代の国境線は表示しない（地球画像は国境線を含まない衛星画像）。
+
+### マホロバ学校との接続（`?year=`）
+この地球儀は、MAHOROBA（https://www.mahoroba-office.co.jp/）のマホロバ学校（/b05）の「地球儀の教室」として使う。実装指示は [docs/MAHOROBA_SPEC.md](docs/MAHOROBA_SPEC.md)。
+- **年を指定して開く**：`?year=1989` で、年代スライダーがその年に合い、その年に近い出来事（「同時代」の範囲）のほうへカメラが向いた状態で開く。**詳細パネルは自動では開かない**（どれを開くかは訪れた人が選ぶ）。開いたあとの URL は `?year=1989` のまま（年を動かしても書き換えない）。
+  - **正の数は西暦、負の数は紀元前**：`?year=-470` は「前470年」、`?year=-1` は「前1年」。**`0` は無効**（西暦0年は存在しない）。内部の天文学的年号（前1年＝0）への変換はアプリ側で行うので、リンクを作る側は「前N年 → -N」と書けばよい。
+  - 書けるのは整数だけ（`+`・小数・全角数字・「前470」「BC470」などは無効）。範囲は世界モードが前3000年〜2025年（`-3000`〜`2025`）、日本モード（`?mode=japan&year=…`）が前30000年〜2025年（`-30000`〜`2025`）。**範囲外・無効な値は無視して、いつもの初期表示**になる（端に合わせることはしない）。
+  - `?mode=japan&year=1868` のように `mode` と組み合わせられる。`?tour=`・`?work=`・`?event=` と一緒に書かれたときは、ツアー → 作品 → イベント → 年 の順に優先する（`?event=` と `?year=` が両方あれば `?event=`）。
+- **学校へ戻る**：PC はヘッダーの右端、スマホは画面下の ▶ の並びの右端（詳細を開いているときはスライダーの右の 🏫）に「🏫 マホロバ学校へ」を置く。リンク先は `https://www.mahoroba-office.co.jp/b05#school-globe`（`src/config/site.ts` の `SCHOOL_URL`）。同じタブで開く。
+- **1979〜2000年の世界の出来事**：年代史の22年に合わせて8件（イラン革命・ソ連のアフガニスタン侵攻・チェルノブイリ原子力発電所事故・天安門事件・湾岸戦争・ルワンダ虐殺・香港返還・アジア通貨危機）を補った。照合の記録は [docs/VERIFICATION.md](docs/VERIFICATION.md)。
 
 ### 日本史モード（`?mode=japan`）
 - **切り替え**：ヘッダーの「🌏 世界」「🗾 日本」（スマホでは地図の右上）。URL は `?mode=japan`（省略時は世界）で、`?tour=`・`?work=`・`?event=<id>` と組み合わせられる。切り替えても年はそのまま引き継ぎ、範囲の外なら端に合わせる。選んでいたイベントが両方の地図に出る共有イベントなら、選択も引き継ぐ。

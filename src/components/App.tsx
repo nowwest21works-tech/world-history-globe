@@ -18,7 +18,9 @@ import { MIN_YEAR, TIME_SCALES, carryYear } from "@/lib/timeScale";
 import { contemporaryEvents, otherContemporary } from "@/lib/visibility";
 import { crossLinks } from "@/lib/crossLinks";
 import { DEFAULT_VIEW } from "@/lib/japanMap";
-import { MODE_LABEL, buildQuery, parseEventQuery, parseModeQuery } from "@/lib/mode";
+import { MODE_LABEL, buildQuery } from "@/lib/mode";
+import { parseStartQuery, yearFocusEvent, yearQuery } from "@/lib/startQuery";
+import { SchoolLink } from "@/components/SchoolLink";
 import JapanMapLoader from "@/components/japan/JapanMapLoader";
 import { formatYear } from "@/lib/year";
 import { hasWebGL } from "@/lib/webgl";
@@ -34,11 +36,11 @@ import { TourMenu } from "@/components/tour/TourMenu";
 import { TourPanel } from "@/components/tour/TourPanel";
 import { TOURS } from "@/data/tours";
 import type { Tour } from "@/types/tour";
-import { arcsUpTo, parseTourQuery, positionMode, stepMode, tourEventIds, tourQuery, type TourPosition } from "@/lib/tours";
+import { arcsUpTo, positionMode, stepMode, tourEventIds, tourQuery, type TourPosition } from "@/lib/tours";
 import { WorksMenu } from "@/components/works/WorksMenu";
 import { WORKS } from "@/data/works";
 import type { HistoryWork } from "@/types/work";
-import { parseWorkQuery, workQuery } from "@/lib/works";
+import { workQuery } from "@/lib/works";
 
 const TICK_MS = 450;
 const EVENT_MAP = EVENT_BY_ID;
@@ -332,32 +334,41 @@ export default function App() {
     [flyToEvent],
   );
 
-  // URL から直接開始（?tour=paper&step=3 ／ ?work=kingdom-hara ／ ?event=<id>。?mode=japan と組み合わせられる。
-  // 複数あれば ツアー → 作品 → イベント の順に優先）
+  // URL から直接開始（?tour=paper&step=3 ／ ?work=kingdom-hara ／ ?event=<id> ／ ?year=1989。
+  // ?mode=japan と組み合わせられる。複数あれば ツアー → 作品 → イベント → 年 の順に優先）
   useEffect(() => {
-    const search = window.location.search;
-    const q = parseTourQuery(search, TOURS);
-    if (q) {
+    const q = parseStartQuery(window.location.search, { tours: TOURS, works: WORKS, events: EVENT_MAP });
+    if (q.kind === "tour") {
       startTour(q.tour, q.position);
       return;
     }
-    const m = parseModeQuery(search);
+    const m = q.mode;
     setMode(m);
     modeRef.current = m;
-    const w = parseWorkQuery(search, WORKS);
-    if (w) {
-      startWork(w);
+    if (q.kind === "work") {
+      startWork(q.work);
       return;
     }
-    const id = parseEventQuery(search);
-    const e = id ? EVENT_MAP.get(id) : undefined;
-    if (e) {
+    if (q.kind === "event") {
+      const e = q.event;
       const to = inScope(e, m) ? m : homeMode(e);
       setMode(to);
       setYear(carryYear(e.start.year, to));
       setSelectedId(e.id);
       flyToEvent(e);
       replaceUrl(buildQuery(to, `event=${encodeURIComponent(e.id)}`));
+      return;
+    }
+    if (q.kind === "year") {
+      // 年だけを合わせ、その年に近い出来事が見えるようにカメラを向ける。詳細パネルは開かない（どれを開くかは訪れた人が選ぶ）
+      setYear(q.year);
+      const focus = yearFocusEvent(EVENTS_BY_MODE[m], q.year);
+      if (focus) {
+        flyKey.current += 1;
+        const far = m === "japan" ? { zoom: 1.4 } : { altitude: 2.2 };
+        setFlyTo({ lat: focus.location.lat, lng: focus.location.lng, ...far, key: flyKey.current });
+      }
+      replaceUrl(buildQuery(m, yearQuery(q.year)));
       return;
     }
     setYear(TIME_SCALES[m].min);
@@ -472,6 +483,7 @@ export default function App() {
             </button>
           ) : null}
         </div>
+        {wide && <SchoolLink place="header" />}
       </header>
 
       {webgl === false && mode === "world" && (
@@ -578,6 +590,7 @@ export default function App() {
           onSpeed={setSpeed}
           onFollow={setFollow}
           playDisabled={tour !== null}
+          trailing={wide ? undefined : <SchoolLink place="bottom" />}
         />
         <p className="credit">
           収録データはすべて<strong>未検証</strong>です（人間による史実・出典の確認前）。出典はリンクのみで、本文は独自に作成しています。

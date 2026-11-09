@@ -298,7 +298,13 @@
         "soviet-dissolution",
         "eu-founding",
         "apartheid-end",
-        "september-11"
+        "september-11",
+        "iran-revolution",
+        "soviet-afghan-war",
+        "tiananmen",
+        "gulf-war",
+        "rwanda-genocide",
+        "hong-kong-handover"
       ],
       "candidates": []
     },
@@ -313,7 +319,8 @@
         "oil-crisis",
         "reform-and-opening",
         "wto",
-        "financial-crisis-2008"
+        "financial-crisis-2008",
+        "asian-financial-crisis"
       ],
       "candidates": []
     },
@@ -328,7 +335,8 @@
         "apollo-11",
         "www",
         "human-genome",
-        "paris-agreement"
+        "paris-agreement",
+        "chernobyl"
       ],
       "candidates": []
     },
